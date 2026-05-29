@@ -1,220 +1,373 @@
 ---
 name: design-system-extractor
-description: Ative esta skill quando o usuário pedir para extrair, analisar ou criar um design system a partir de um arquivo HTML. Também ativa com: "analisar página", "extrair design system", "criar style guide", "processar projeto".
+description: Activate this skill when the user asks to extract, analyze or create a design system from an HTML file. Also activates with: "analyze page", "extract design system", "create style guide", "process project".
+updated: 2026-05-29
+tags:
+  - vibe-design
+  - design-system
+  - skill
 ---
 
 # Skill: Design System Extractor
 
-## Princípio fundamental
-O design system não é documentação — é um site vivo que usa a identidade visual do projeto original para se apresentar. A HERO tem 70% do peso total. CSS e JS são transplantados, nunca resumidos.
+## Core principle
+The design system is not documentation — it is a living site that uses the original project's visual identity to present itself. The HERO carries 70% of the total value. CSS and JS are transplanted word for word, never summarized. Every asset is extracted into organized files. Nothing is invented.
 
----
-
-## FASE 1 — LEITURA COMPLETA (não escreva nada ainda)
-
-Leia o HTML inteiro antes de qualquer ação. Procure CSS em todos os lugares:
-- Blocos `<style>` inline
-- Atributos `style=""` em cada elemento  
-- Classes Tailwind (extraia os valores reais, não apenas os nomes)
-- CSS variables em `:root {}`
-- `@property` declarations (para animações avançadas como border-spin)
-- Arquivos externos linkados via `<link>`
-
-Monte internamente estas listas:
-1. **Estrutura da Hero** — layout exato, colunas, elementos flutuantes, badges, botões
-2. **Tipografia** — todas as font-family, tamanhos, pesos, line-heights
-3. **Cores** — todo hex, rgba, hsl, gradiente encontrado
-4. **Animações** — todo `@keyframes`, `animation`, `transition` com valores exatos
-5. **Componentes JS** — cursor custom, carousel, tabs, parallax, Three.js, GSAP, stack cards
-6. **Efeitos especiais** — glass panels, glow, blobs, noise overlay, gradient-blur, dot-grid, border-spin
-
-
-**Após a leitura, confirme ao usuário:**
-"Li o HTML completo. Encontrei: [descrição da Hero em 2 linhas] / [X fontes] / [X cores] / [lista de animações] / [lista de componentes JS] / [lista de efeitos especiais]. 
-Posso prosseguir?"
-
-**Espere confirmação antes de escrever qualquer arquivo.**
-
----
-
-## FASE 2 — ESTRUTURA DO design-system.html
-
-O design system usa a identidade visual do projeto original. Não crie um layout genérico neutro.
-
-### `<head>` — transplante exato
-Copie todos os assets do `<head>` original:
-- Fontes (Google Fonts, CDN)
-- CSS externos (arquivos `assets/css2_*.css`)
-- Scripts de runtime (Tailwind, Lucide, Iconify, GSAP, Three.js, etc.)
-- Todo o bloco `<style>` original — palavra por palavra, sem resumir
-
-Acrescente ao `<style>` apenas as classes estruturais do design system:
-```css
-/* DS-specific — não alterar o visual do projeto */
-.ds-nav { position: sticky; top: 0; z-index: 100; /* estilizado com a identidade do projeto */ }
-.ds-section { padding: 6rem 0; }
-.ds-type-row { display: flex; align-items: baseline; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid [cor de borda do projeto]; }
-.ds-type-name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: [cor muted do projeto]; width: 180px; flex-shrink: 0; }
-.ds-type-spec { font-size: 0.75rem; color: [cor muted do projeto]; text-align: right; flex-shrink: 0; font-family: monospace; }
-.ds-swatch { width: 100%; height: 80px; border-radius: [radius do projeto]; }
+## Output structure
+All files are created relative to the INPUT's folder. INPUT is never modified.
+```
+assets/
+  css/          ← extracted CSS files
+  js/           ← extracted JS files
+  images/svg/   ← extracted hardcoded SVGs
+design-system.html
+STACK.md
 ```
 
-### Navegação do design system
-Use a navbar original do projeto como base.
-Mude apenas os links para apontar para as seções do design system:
-`#hero` `#typography` `#colors` `#components` `#layout` `#motion` `#icons`
-Mantenha todos os efeitos visuais da navbar original (glass, blur, border-gradient, etc.).
+---
+
+## STEP 1 — READ & ANALYZE (write nothing yet)
+
+Read the entire INPUT HTML before any action. Locate CSS in every possible place:
+- Inline `<style>` blocks
+- `style=""` attributes on elements
+- Tailwind / utility classes (extract real values, not class names)
+- CSS variables in `:root {}`
+- `@property` declarations (e.g. for border-spin animations)
+- External files linked via `<link>`
+
+Internally build these inventories:
+1. **Hero structure** — exact layout, columns, floating elements, badges, buttons, background effects
+2. **Typography** — every font-family, size, weight, line-height found
+3. **Colors** — every hex, rgba, hsl, gradient found
+4. **Animations** — every `@keyframes`, `animation`, `transition` with exact values and durations
+5. **JS components** — custom cursor, carousel, tabs, parallax, Three.js, GSAP, stack cards, smooth scroll
+6. **Special effects** — glass panels, glow, blobs, noise overlay, gradient-blur, dot-grid, border-spin, mix-blend-mode
+7. **Every SVG element** — classify each (see Step 3)
+8. **Every asset referenced** — CSS, JS, fonts, images, CDNs
+
+**After reading, report to the user:**
+"Read complete. Found:
+- Hero: [2-line description of layout and key elements]
+- Fonts: [list]
+- Colors: [count] unique values
+- Animations: [list with durations]
+- JS components: [list]
+- Special effects: [list]
+- SVGs: [count and categories]
+Can I proceed?"
+
+**Wait for confirmation before writing any file.**
 
 ---
 
-## FASE 3 — SEÇÃO HERO (70% do trabalho — máxima fidelidade)
+## STEP 2 — EXTRACT INLINE CSS
 
-**Esta é a seção mais importante. Trate com prioridade absoluta.**
+Scan INPUT for every inline `<style>` block.
 
-### O que fazer
-Reconstrua a Hero do zero com texto adaptado para o design system.
-Não é cópia — é reinterpretação com a mesma linguagem visual.
+For each block:
+- Determine what the CSS does
+- Save its content to `assets/css/[descriptive-name].css`
+- Name by function: `animations.css`, `components.css`, `buttons.css`, `layout.css`
+- If multiple blocks serve the same concern, merge into one file
+- Add DS-specific structural classes to the appropriate CSS file:
 
-Exemplos de adaptação de texto:
-- "Web3 Finance Mastery Lab" → "Design System Pattern Library"  
+```css
+/* DS-specific — do not alter project visual */
+.ds-section { padding: 6rem 0; }
+.ds-type-row { display: flex; align-items: baseline; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid [project border color]; }
+.ds-type-name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: [project muted color]; width: 180px; flex-shrink: 0; }
+.ds-type-spec { font-size: 0.75rem; color: [project muted color]; text-align: right; flex-shrink: 0; font-family: monospace; }
+.ds-swatch { width: 100%; height: 80px; border-radius: [project radius]; }
+```
+
+---
+
+## STEP 3 — EXTRACT INLINE JS
+
+Scan INPUT for every inline `<script>` block containing actual JS code.
+
+For each block:
+- Determine what the JS does
+- Save its content to `assets/js/[descriptive-name].js`
+- Name by function: `cursor.js`, `scroll-reveal.js`, `carousel.js`, `parallax.js`, `interactions.js`
+- If multiple blocks serve the same concern, merge into one file
+
+Do NOT extract:
+- `<script type="application/ld+json">` blocks
+- `<script data-img-fallback-handler>` and similar firewall/polyfill scripts
+- Single-line event handler scripts
+
+**CRITICAL for complex JS (cursor snake, Three.js canvas, GSAP, Lenis):**
+Copy the script COMPLETELY — line by line, without summarizing.
+Only adjust what is strictly necessary for the design system context
+(e.g. canvas z-index to stay behind content, removing firewall scripts).
+
+---
+
+## STEP 4 — CLASSIFY EVERY SVG
+
+Scan INPUT for every inline `<svg>` element.
+Classify each into exactly one of three categories:
+
+**Category A — Lucide icon**
+The SVG has `class="lucide lucide-[name]..."` or `data-lucide="[name]"`.
+Replace with: `<i data-lucide="[name]" class="[original non-lucide classes]"></i>`
+The Lucide JS runtime already linked will render them correctly.
+Color classes (text-orange-500, fill-current, etc.) will work as expected.
+Do NOT save these as files.
+
+**Category B — Custom SVG using currentColor**
+The SVG uses `fill="currentColor"`, `stroke="currentColor"`,
+or relies on Tailwind color classes inherited via CSS.
+These MUST remain inline — extracting to `<img>` breaks color inheritance.
+Do NOT save these as files.
+Minify to a single line.
+
+**Category C — Custom SVG with hardcoded colors only**
+The SVG uses only hardcoded hex/rgba values and does not rely on
+CSS color inheritance in any state (including hover).
+Save to `assets/images/svg/[descriptive-name].svg`
+Replace with: `<img src="assets/images/svg/[name].svg" class="[original classes]" alt="[description]"/>`
+
+Rules:
+- When in doubt between B and C, always keep inline (choose B)
+- Never use `<img>` for SVGs that change color on hover or via parent classes
+- If the same SVG appears multiple times, classify once and apply consistently
+
+---
+
+## STEP 5 — WRITE design-system.html FROM SCRATCH
+
+Write a new `design-system.html` in the same folder as INPUT.
+This is NOT a copy or edit of INPUT. Write it clean, from scratch, section by section.
+The design system uses the project's own visual identity — never a generic neutral layout.
+
+### `<head>` structure
+```html
+<head>
+  <!-- fonts -->
+  <link .../>
+  <!-- css — [what this file contains] -->
+  <link rel="stylesheet" href="assets/css/animations.css"/>
+  <!-- head-only js — [what this script does] -->
+  <script src="assets/resource_xxx.js"></script>
+</head>
+```
+
+Copy ALL assets from the original `<head>`:
+- Fonts (Google Fonts, CDN)
+- External CSS files (preserved paths)
+- Runtime scripts (Tailwind, Lucide, Iconify, GSAP, Three.js — must stay in head)
+- Link to extracted CSS files
+
+### Navigation
+Use the original project navbar as the base.
+Change only the links to point to design system sections:
+`#hero` `#typography` `#colors` `#components` `#layout` `#motion` `#icons`
+Preserve all navbar visual effects (glass, blur, border-gradient, sticky behavior).
+
+### `<body>` structure
+```html
+<body>
+  <!-- hero -->
+  ...hero content...
+  <!-- typography -->
+  ...typography section...
+  <!-- js — [what this file does] -->
+  <script src="assets/js/cursor.js"></script>
+  <script src="assets/js/interactions.js"></script>
+</body>
+```
+
+### SVG rendering rules
+- Category A (Lucide): `<i data-lucide="[name]" class="[classes]"></i>`
+- Category B (currentColor): keep full SVG inline, minified to one line
+- Category C (hardcoded): `<img src="assets/images/svg/[name].svg" .../>`
+
+### Compactness rules
+- No blank lines or unnecessary whitespace
+- No empty or redundant attributes
+- No unused asset references
+- Inline SVGs (Category B) minified to a single line each
+- No firewall scripts, scroll-fix polyfills, or analytics from INPUT
+
+---
+
+## STEP 5A — HERO SECTION (highest priority — 70% of the work)
+
+The Hero is the most critical section. Treat it with absolute priority.
+
+**What to do:**
+Rebuild the Hero from scratch with text adapted for the design system.
+This is a reinterpretation with the same visual language — not a copy.
+
+Text adaptation examples:
+- "Web3 Finance Mastery Lab" → "Design System Pattern Library"
 - "42 Projects Shipped" → "14 Components" / "05 Color Tokens"
 - "Start free trial" → "Explore Components" / "View Tokens"
-- Badge "UI/UX · Interaction" → "v1.0 · 2024"
+- Badge "UI/UX · Interaction" → "v1.0 · 2026"
 
-### O que preservar intacto (sem modificar)
-- Layout exato: grid, colunas, proporções (ex: `lg:col-span-7` + `lg:col-span-5`)
-- Todos os elementos flutuantes e decorativos (floating cards, badges, tickets, portrait cards)
-- Imagens originais com os mesmos caminhos `src="assets/..."`
-- Efeitos de fundo (parallax, canvas Three.js, blobs, noise overlay, UnicornStudio)
-- Animações de entrada com delays exatos (`fadeSlideIn`, `columnReveal`, `text-reveal-content`)
-- Cursor customizado — transplante o JS completo linha por linha
-- Stats dinâmicos adaptados para métricas do design system
-- Todos os hover states e transições
+**What to preserve intact (do not modify):**
+- Exact layout: grid, columns, proportions (e.g. `lg:col-span-7` + `lg:col-span-5`)
+- All floating and decorative elements (floating cards, badges, tickets, portrait cards)
+- Original images with the same `src="assets/..."` paths
+- Background effects (parallax, Three.js canvas, blobs, noise overlay, UnicornStudio)
+- Entry animations with exact delays (`fadeSlideIn`, `columnReveal`, `text-reveal-content`)
+- Custom cursor — transplant the full JS, word by word
+- Dynamic stats adapted to design system metrics
+- All hover states and transitions
 
-### Elementos flutuantes do hero — regra especial
-Cards flutuantes, tickets, portrait cards, badges sobrepostos:
-→ Adapte o conteúdo para refletir o design system (tokens de cor, componentes, tipografia)
-→ Mantenha rotação, posição, z-index, animações exatos
-
----
-
-## FASE 4 — TIPOGRAFIA
-
-Use sempre o formato de tabela/grid de 3 colunas:
-- Coluna esquerda: nome do estilo (mono, muted) — ex: "Heading 1", "Body Large", "Micro"
-- Coluna central: exemplo visual REAL com as classes originais exatas
-- Coluna direita: spec técnica — ex: "96px / 0.85 · Manrope 500 · tracking-tighter"
-
-Documente TODOS os estilos encontrados — mínimo 8, sem limite máximo.
-Inclua: gradient text, mono labels, micro text, stat values, italic quotes — tudo.
-
-Use o texto original da página como exemplo (não invente texto genérico).
+**Floating elements — special rule:**
+Floating cards, tickets, portrait cards, overlapping badges:
+→ Adapt content to reflect the design system (color tokens, components, typography)
+→ Keep rotation, position, z-index, animations exactly as in the original
 
 ---
 
-## FASE 5 — CORES & SUPERFÍCIES
+## STEP 5B — TYPOGRAPHY SECTION
 
-Para cada cor/superfície, mostre:
-- Swatch visual real (div com a cor/gradiente/glass exato)
-- Nome semântico: "Page Background", "Glass Panel", "Primary Blue", "Accent Red"
-- Valor técnico exato: `#050a14`, `rgba(255,255,255,0.03) + blur(16px)`, `#007bff → #00bfff`
+Always use a 3-column table/grid format:
+- Left column: style name (mono, muted) — e.g. "Heading 1", "Body Large", "Micro"
+- Center column: REAL visual example using the exact original classes
+- Right column: technical spec — e.g. "96px / 0.85 · Manrope 500 · tracking-tighter"
 
-Categorias obrigatórias:
-- Backgrounds e superfícies
-- Cores primárias e de acento
-- Cores de texto (com opacidades: white/100, white/70, white/40)
-- Bordas e divisores
-- Gradientes usados
-- Efeitos especiais (glass, glow, blob colors)
-
-**Os próprios swatches devem usar `.glass-panel`, `.glow-card` ou o estilo de container do projeto.**
+Document ALL styles found — minimum 8, no maximum.
+Include: gradient text, mono labels, micro text, stat values, italic quotes — everything.
+Use original page text as examples (do not invent generic text).
 
 ---
 
-## FASE 6 — COMPONENTES UI
+## STEP 5C — COLORS & SURFACES SECTION
 
-Para cada componente, mostre o preview FUNCIONANDO — não uma descrição.
-Use o HTML e CSS exatos do componente original.
+For each color/surface, show:
+- Real visual swatch (div with exact color/gradient/glass)
+- Semantic name: "Page Background", "Glass Panel", "Primary Blue", "Accent Red"
+- Exact technical value: `#050a14`, `rgba(255,255,255,0.03) + blur(16px)`, `#007bff → #00bfff`
 
-Lista mínima a documentar:
-- Todos os botões com seus estados (hover, active) — incluindo os complexos com glow, spin border, conic-gradient
-- Cards (com hover states funcionais: 3D transform, glow, scale)
-- Navbar com blur e border-gradient
-- Badges, pills, tags com animações
-- Formulários e inputs com estados focus
-- Ícones (Lucide + Iconify) com tamanhos e cores
-- Componentes especiais do projeto (stack carousel, accordion, tabs interativas)
+Required categories:
+- Backgrounds and surfaces
+- Primary and accent colors
+- Text colors (with opacities: white/100, white/70, white/40)
+- Borders and dividers
+- Gradients used
+- Special effects (glass, glow, blob colors)
 
-**Adapte o conteúdo mas preserve o HTML/CSS/JS exatos de cada componente.**
-
----
-
-## FASE 7 — LAYOUT & GRID
-
-Mostre os padrões de grid usados na página com wireframes visuais:
-- Container principal (max-width, padding)
-- Grids principais (proporções exatas: `flex-1` + `flex-[1.6]`, `col-span-7` + `col-span-5`)
-- Espaçamentos recorrentes
-- Breakpoints e comportamento responsivo
+Swatches must use `.glass-panel`, `.glow-card` or the project's container style.
 
 ---
 
-## FASE 8 — MOTION & INTERAÇÃO
+## STEP 5D — UI COMPONENTS SECTION
 
-Documente e demonstre TODAS as animações encontradas:
+For each component, show a WORKING preview — not a description.
+Use the exact HTML and CSS from the original.
 
-**Para CSS animations:** mostre cards ao vivo com a animação rodando
+Minimum list to document:
+- All buttons with states (hover, active) — including complex ones with glow, spin border, conic-gradient
+- Cards with functional hover states (3D transform, glow, scale)
+- Navbar with blur and border-gradient
+- Badges, pills, tags with animations
+- Forms and inputs with focus states
+- Icons (Lucide + Iconify) with sizes and colors
+- Special project components (stack carousel, accordion, interactive tabs)
+
+Adapt content but preserve exact HTML/CSS/JS of each component.
+Add HTML comments documenting the usage pattern of each component.
+
+---
+
+## STEP 5E — LAYOUT & GRID SECTION
+
+Show the grid patterns used with visual wireframes:
+- Main container (max-width, padding)
+- Primary grids (exact proportions: `flex-1` + `flex-[1.6]`, `col-span-7` + `col-span-5`)
+- Recurring spacing values
+- Breakpoints and responsive behavior
+
+---
+
+## STEP 5F — MOTION & INTERACTION SECTION
+
+Document and demonstrate ALL animations found.
+
+**For CSS animations:** show live cards with the animation running:
 ```html
 <div class="animate-glow">Glow Pulse — 2s ease-in-out infinite</div>
 ```
 
-**Para JS complexo (cursor snake, parallax, Three.js, GSAP):**
-Transplante o script COMPLETO. Não resuma. Não descreva. Copie.
-Ajuste apenas o que for necessário para funcionar no contexto do design system
-(ex: canvas z-index para ficar atrás do conteúdo).
-
-Inclua um bloco `<pre>` com o código das animações CSS para referência.
+**For complex JS (cursor snake, parallax, Three.js, GSAP):**
+Transplant the COMPLETE script. Do not summarize. Do not describe. Copy.
+Only adjust what is necessary for the design system context.
+Include a `<pre>` block with the CSS animation code for reference.
 
 ---
 
-## FASE 9 — ÍCONES
+## STEP 5G — ICONS SECTION
 
-- Sistema(s) de ícones identificados (Lucide, Iconify/Solar, Simple Icons, SVG inline)
-- Variantes de tamanho com preview (12px, 16px, 20px, 24px)
-- Variantes de cor (white, accent, muted) com preview
-- Os ícones mais usados no projeto com nome
-
----
-
-## FASE 10 — STACK.md
-
-Após salvar o design-system.html, crie um `STACK.md` na mesma pasta:
-Lista de todas as tecnologias encontradas, uma por linha:
-- **Tailwind CSS** — utility-first CSS usado em todo layout e estilização
-- **Lucide** — ícones stroke usados em botões e cards
+- Icon system(s) identified (Lucide, Iconify/Solar, Simple Icons, inline SVG)
+- Size variants with preview (12px, 16px, 20px, 24px)
+- Color variants (white, accent, muted) with preview
+- Most used icons in the project with names
 
 ---
 
-## QUALITY BAR — verificação antes de salvar
+## STEP 5H — SPECIAL CASE: React / Vite Bundled HTML
 
-- [ ] Hero reconstruída com fidelidade total — layout, efeitos, animações, textos adaptados
-- [ ] CSS original transplantado inteiro — sem resumir nenhuma linha
-- [ ] JS de cursor/parallax/carousel copiado palavra por palavra
-- [ ] Componentes mostram preview funcionando, não descrição
-- [ ] Tipografia em tabela 3 colunas com specs reais
-- [ ] Swatches de cor usam os valores exatos (hex, rgba, gradiente)
-- [ ] Navegação do design system usa a identidade visual do projeto
-- [ ] Comentários HTML documentam padrão de uso de cada seção
-- [ ] Arquivo menor e mais limpo que o INPUT (sem scripts de firewall, sem scroll-fix styles)
+If the INPUT contains a React/Vite bundle (`__modules`, `data-offline-sandbox`, empty `<div id="root">`):
+
+1. Extract CSS and JS strings from the `__modules` object using a Python or Node.js script
+2. Reconstruct the static HTML by reverse-engineering the JSX component tree
+3. Convert React logic (useEffect, useRef) to Vanilla JS (document.querySelector, addEventListener)
+4. Proceed with all steps above using the reconstructed static HTML as the source
+5. The final design-system.html must be a standalone static file — not a React app
 
 ---
 
-## Ao finalizar
+## QUALITY BAR
 
-Confirme:
-✅ Seções documentadas: [lista]
-✅ Componentes com preview: [quantidade]
-✅ Scripts JS transplantados: [lista]
-⚠️ Limitações: [o que não foi possível capturar e por quê]
+Before saving, verify:
+- [ ] Every section from the original is present and visually faithful
+- [ ] No inline `<style>` or `<script>` blocks remain (all extracted to files)
+- [ ] All Lucide icons use `<i data-lucide>` — never `<img>` or inline SVG
+- [ ] No currentColor SVG was moved to an `<img>` tag
+- [ ] All extracted asset paths resolve correctly
+- [ ] All imports in `<head>` and before `</body>` have descriptive comments
+- [ ] No comments inside body other than section labels and asset imports
+- [ ] All visible text translated to Brazilian Portuguese (PT-BR)
+- [ ] Hero rebuilt with full fidelity — layout, effects, animations, adapted texts
+- [ ] JS for cursor/parallax/carousel copied word by word
+- [ ] Components show working previews, not descriptions
+- [ ] Typography in 3-column table with real specs
+- [ ] Color swatches use exact values (hex, rgba, gradient)
+- [ ] HTML comments document usage pattern of each section
+- [ ] File is meaningfully smaller and cleaner than INPUT
 
-Depois pergunte: "Quer que eu crie um Knowledge Item com os padrões deste projeto?"
+---
+
+## STEP 6 — WRITE STACK.md
+
+After saving design-system.html, create a `STACK.md` in the same folder.
+List every technology, library, and tool found in INPUT.
+One line per item: name + what it does in this project.
+No categories, no headers, no padding. Just the list.
+
+Format:
+- **Tailwind CSS** — utility-first CSS framework used for all layout and styling
+- **Lucide** — icon library used throughout the interface
+
+Only include what is actually present in the source.
+Do not invent or assume technologies not found in INPUT.
+
+---
+
+## COMPLETION REPORT
+
+Confirm to the user:
+✅ Sections documented: [list]
+✅ Components with working preview: [count]
+✅ JS scripts transplanted: [list]
+✅ CSS files extracted: [list]
+✅ SVGs classified: [count A / count B / count C]
+⚠️ Limitations: [what could not be captured and why]
+
+Then ask: "Would you like me to create a Knowledge Item with the patterns found in this project?"
