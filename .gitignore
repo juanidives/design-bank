@@ -1,0 +1,11 @@
+# Vídeos
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+
+# Arquivos pesados de mídia
+*.zip
+*.tar
+*.gz
