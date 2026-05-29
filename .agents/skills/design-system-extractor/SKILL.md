@@ -194,7 +194,7 @@ Preserve all navbar visual effects (glass, blur, border-gradient, sticky behavio
 
 ---
 
-## STEP 5A — HERO SECTION (highest priority — 70% of the work)
+## STEP 6 — HERO SECTION (highest priority — 70% of the work)
 
 The Hero is the most critical section. Treat it with absolute priority.
 
@@ -225,7 +225,7 @@ Floating cards, tickets, portrait cards, overlapping badges:
 
 ---
 
-## STEP 5B — TYPOGRAPHY SECTION
+## STEP 7 — TYPOGRAPHY SECTION
 
 Always use a 3-column table/grid format:
 - Left column: style name (mono, muted) — e.g. "Heading 1", "Body Large", "Micro"
@@ -238,7 +238,7 @@ Use original page text as examples (do not invent generic text).
 
 ---
 
-## STEP 5C — COLORS & SURFACES SECTION
+## STEP 8 — COLORS & SURFACES SECTION
 
 For each color/surface, show:
 - Real visual swatch (div with exact color/gradient/glass)
@@ -257,7 +257,7 @@ Swatches must use `.glass-panel`, `.glow-card` or the project's container style.
 
 ---
 
-## STEP 5D — UI COMPONENTS SECTION
+## STEP 9 — UI COMPONENTS SECTION
 
 For each component, show a WORKING preview — not a description.
 Use the exact HTML and CSS from the original.
@@ -276,7 +276,7 @@ Add HTML comments documenting the usage pattern of each component.
 
 ---
 
-## STEP 5E — LAYOUT & GRID SECTION
+## STEP 10 — LAYOUT & GRID SECTION
 
 Show the grid patterns used with visual wireframes:
 - Main container (max-width, padding)
@@ -286,7 +286,7 @@ Show the grid patterns used with visual wireframes:
 
 ---
 
-## STEP 5F — MOTION & INTERACTION SECTION
+## STEP 11 — MOTION & INTERACTION SECTION
 
 Document and demonstrate ALL animations found.
 
@@ -302,7 +302,7 @@ Include a `<pre>` block with the CSS animation code for reference.
 
 ---
 
-## STEP 5G — ICONS SECTION
+## STEP 12 — ICONS SECTION
 
 - Icon system(s) identified (Lucide, Iconify/Solar, Simple Icons, inline SVG)
 - Size variants with preview (12px, 16px, 20px, 24px)
@@ -311,7 +311,7 @@ Include a `<pre>` block with the CSS animation code for reference.
 
 ---
 
-## STEP 5H — SPECIAL CASE: React / Vite Bundled HTML
+## STEP 13 — SPECIAL CASE: React / Vite Bundled HTML
 
 If the INPUT contains a React/Vite bundle (`__modules`, `data-offline-sandbox`, empty `<div id="root">`):
 
@@ -323,7 +323,7 @@ If the INPUT contains a React/Vite bundle (`__modules`, `data-offline-sandbox`, 
 
 ---
 
-## QUALITY BAR
+## STEP 14 — QUALITY BAR
 
 Before saving, verify:
 - [ ] Every section from the original is present and visually faithful
@@ -344,7 +344,7 @@ Before saving, verify:
 
 ---
 
-## STEP 6 — WRITE STACK.md
+## STEP 15 — WRITE STACK.md
 
 After saving design-system.html, create a `STACK.md` in the same folder.
 List every technology, library, and tool found in INPUT.
