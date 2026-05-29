@@ -1,0 +1,41 @@
+body {
+  line-height: inherit;
+  margin: 0;
+}
+
+:root {
+  --size: 430;
+  --clamp: 10px;
+  --global-font-size: clamp(1px, calc((100vw/var(--size))*10), var(--clamp));
+  --theme-background: #000;
+  --theme-text: #fff;
+  --theme-text-70: hsla(0, 0%, 100%, .7);
+  --theme-text-60: hsla(0, 0%, 100%, .6);
+  --theme-text-15: hsla(0, 0%, 100%, .15);
+}
+
+html {
+  font-kerning: none;
+  font-size: var(--global-font-size);
+  font-variant-ligatures: common-ligatures;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+html {
+  overscroll-behavior: none;
+}
+
+body {
+  color: var(--theme-text);
+  font-family: sans;
+  font-size: 2rem;
+  letter-spacing: -.01em;
+  line-height: 1.4;
+  transition: color .3s ease-out;
+}

@@ -1,0 +1,1 @@
+.media-hero{--background:var(--theme-background)}.media-hero__media:after{background:linear-gradient(to bottom,transparent 0,var(--background) 100%);bottom:0;content:"";height:50%;left:0;position:absolute;width:100%;z-index:2}

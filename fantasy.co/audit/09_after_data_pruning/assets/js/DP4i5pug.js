@@ -1,0 +1,340 @@
+import {
+  a as z,
+  a2 as D,
+  r as P,
+  a3 as T,
+  a4 as $,
+  i as V,
+  a5 as j,
+  a6 as W,
+  f as x,
+  e as R,
+  a7 as J,
+  a8 as U,
+  L as I,
+  u as K,
+  b as k,
+  h as v,
+  J as F,
+  c as q,
+  p as G,
+  g as Q,
+  t as X
+} from "/assets/js/CZZ0Kowu.js";
+import {
+  u as Y
+} from "/assets/js/BMrMtYDV.js";
+const Z = r => r === "defer" || r === !1;
+
+function ne(...r) {
+  var d;
+  const a = typeof r[r.length - 1] == "string" ? r.pop() : void 0;
+  typeof r[0] != "string" && r.unshift(a);
+  let [s, p, e = {}] = r;
+  if (typeof s != "string") throw new TypeError("[nuxt] [asyncData] key must be a string.");
+  if (typeof p != "function") throw new TypeError("[nuxt] [asyncData] handler must be a function.");
+  const t = z(),
+    h = p,
+    y = () => D.value,
+    w = () => t.isHydrating ? t.payload.data[s] : t.static.data[s];
+  e.server ?? (e.server = !0), e.default ?? (e.default = y), e.getCachedData ?? (e.getCachedData = w), e.lazy ?? (e.lazy = !1), e.immediate ?? (e.immediate = !0), e.deep ?? (e.deep = D.deep), e.dedupe ?? (e.dedupe = "cancel");
+  const g = e.getCachedData(s, t),
+    b = g != null;
+  if (!t._asyncData[s] || !e.immediate) {
+    (d = t.payload._errors)[s] ?? (d[s] = D.errorValue);
+    const i = e.deep ? P : T;
+    t._asyncData[s] = {
+      data: i(b ? g : e.default()),
+      pending: P(!b),
+      error: $(t.payload._errors, s),
+      status: P("idle"),
+      _default: e.default
+    }
+  }
+  const o = {
+    ...t._asyncData[s]
+  };
+  delete o._default, o.refresh = o.execute = (i = {}) => {
+    if (t._asyncDataPromises[s]) {
+      if (Z(i.dedupe ?? e.dedupe)) return t._asyncDataPromises[s];
+      t._asyncDataPromises[s].cancelled = !0
+    }
+    if (i._initial || t.isHydrating && i._initial !== !1) {
+      const l = i._initial ? g : e.getCachedData(s, t);
+      if (l != null) return Promise.resolve(l)
+    }
+    o.pending.value = !0, o.status.value = "pending";
+    const f = new Promise((l, c) => {
+      try {
+        l(h(t))
+      } catch (_) {
+        c(_)
+      }
+    }).then(async l => {
+      if (f.cancelled) return t._asyncDataPromises[s];
+      let c = l;
+      e.transform && (c = await e.transform(l)), e.pick && (c = ee(c, e.pick)), t.payload.data[s] = c, o.data.value = c, o.error.value = D.errorValue, o.status.value = "success"
+    }).catch(l => {
+      if (f.cancelled) return t._asyncDataPromises[s];
+      o.error.value = x(l), o.data.value = R(e.default()), o.status.value = "error"
+    }).finally(() => {
+      f.cancelled || (o.pending.value = !1, delete t._asyncDataPromises[s])
+    });
+    return t._asyncDataPromises[s] = f, t._asyncDataPromises[s]
+  }, o.clear = () => A(t, s);
+  const n = () => o.refresh({
+      _initial: !0
+    }),
+    u = e.server !== !1 && t.payload.serverRendered;
+  {
+    const i = J();
+    if (i && u && e.immediate && !i.sp && (i.sp = []), i && !i._nuxtOnBeforeMountCbs) {
+      i._nuxtOnBeforeMountCbs = [];
+      const c = i._nuxtOnBeforeMountCbs;
+      U(() => {
+        c.forEach(_ => {
+          _()
+        }), c.splice(0, c.length)
+      }), I(() => c.splice(0, c.length))
+    }
+    u && t.isHydrating && (o.error.value || g != null) ? (o.pending.value = !1, o.status.value = o.error.value ? "error" : "success") : i && (t.payload.serverRendered && t.isHydrating || e.lazy) && e.immediate ? i._nuxtOnBeforeMountCbs.push(n) : e.immediate && n();
+    const f = W();
+    if (e.watch) {
+      const c = V(e.watch, () => o.refresh());
+      f && j(c)
+    }
+    const l = t.hook("app:data:refresh", async c => {
+      (!c || c.includes(s)) && await o.refresh()
+    });
+    f && j(l)
+  }
+  const m = Promise.resolve(t._asyncDataPromises[s]).then(() => o);
+  return Object.assign(m, o), m
+}
+
+function A(r, a) {
+  a in r.payload.data && (r.payload.data[a] = void 0), a in r.payload._errors && (r.payload._errors[a] = D.errorValue), r._asyncData[a] && (r._asyncData[a].data.value = void 0, r._asyncData[a].error.value = D.errorValue, r._asyncData[a].pending.value = !1, r._asyncData[a].status.value = "idle"), a in r._asyncDataPromises && (r._asyncDataPromises[a] && (r._asyncDataPromises[a].cancelled = !0), r._asyncDataPromises[a] = void 0)
+}
+
+function ee(r, a) {
+  const s = {};
+  for (const p of a) s[p] = r[p];
+  return s
+}
+const te = {
+    key: 0
+  },
+  re = {
+    __name: "Seo",
+    props: {
+      seo: {
+        type: Object,
+        default: () => ({})
+      },
+      type: {
+        type: String,
+        default: "webpage"
+      },
+      schema: {
+        type: Object,
+        default: () => ({})
+      },
+      debug: {
+        type: Boolean,
+        default: !1
+      }
+    },
+    setup(r) {
+      const a = r,
+        s = K(),
+        p = F(),
+        e = k(),
+        t = v(() => {
+          var n, u;
+          return ((u = (n = e.site) == null ? void 0 : n.globalSeo) == null ? void 0 : u.fallbackSeo) || {
+            title: "",
+            description: "",
+            image: {
+              url: ""
+            }
+          }
+        }),
+        h = v(() => {
+          let n = p.public.BASE_URL || "https://fantasy.co";
+          return n.endsWith("/") && (n = n.slice(0, -1)), n.includes("www.") && (n = n.replace("www.", "")), n
+        }),
+        y = v(() => {
+          var c, _, S, O, C, B, L, M, N, E, H;
+          const n = ((c = a.seo) == null ? void 0 : c.title) || ((_ = t.value) == null ? void 0 : _.title) || "",
+            u = ((S = a.seo) == null ? void 0 : S.description) || ((O = t.value) == null ? void 0 : O.description) || "",
+            m = ((B = (C = a.seo) == null ? void 0 : C.image) == null ? void 0 : B.url) || ((M = (L = t.value) == null ? void 0 : L.image) == null ? void 0 : M.url) || "",
+            d = s.path,
+            i = d.endsWith("/") && d !== "/" ? d.slice(0, -1) : d,
+            f = `${h.value}${i.startsWith("/")?"":"/"}${i}`,
+            l = ((E = (N = e.site) == null ? void 0 : N.globalSeo) == null ? void 0 : E.siteName) || ((H = e.site) == null ? void 0 : H.name) || "";
+          return {
+            title: n,
+            description: u,
+            image: m,
+            url: f,
+            siteName: l
+          }
+        }),
+        w = n => n.charAt(0).toUpperCase() + n.slice(1).replace(/-/g, " "),
+        g = v(() => ({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: y.value.siteName,
+          url: h.value
+        })),
+        b = v(() => {
+          var f, l, c;
+          const {
+            title: n,
+            description: u,
+            image: m,
+            url: d,
+            siteName: i
+          } = y.value;
+          return a.type === "article" ? {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: ((f = a.schema) == null ? void 0 : f.title) || n,
+            description: u,
+            ...m && {
+              image: m
+            },
+            ...((l = a.schema) == null ? void 0 : l.datePublished) && {
+              datePublished: a.schema.datePublished
+            },
+            ...((c = a.schema) == null ? void 0 : c.dateModified) && {
+              dateModified: a.schema.dateModified
+            },
+            author: {
+              "@type": "Organization",
+              name: i
+            },
+            publisher: {
+              "@type": "Organization",
+              name: i
+            },
+            url: d,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": d
+            }
+          } : {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: n,
+            description: u,
+            url: d
+          }
+        }),
+        o = v(() => {
+          if (a.type === "home") return null;
+          const n = s.path.split("/").filter(Boolean);
+          if (!n.length) return null;
+          const u = [{
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: h.value
+          }];
+          let m = "";
+          return n.forEach((d, i) => {
+            var l;
+            m += `/${d}`;
+            const f = i === n.length - 1;
+            u.push({
+              "@type": "ListItem",
+              position: i + 2,
+              name: f && ((l = a.schema) != null && l.title) ? a.schema.title : w(d),
+              item: `${h.value}${m}`
+            })
+          }), {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: u
+          }
+        });
+      return Y(() => {
+        const {
+          title: n,
+          description: u,
+          image: m,
+          url: d,
+          siteName: i
+        } = y.value, f = [{
+          key: "schema-org",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(g.value)
+        }, {
+          key: "schema-page",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(b.value)
+        }];
+        return o.value && f.push({
+          key: "schema-breadcrumb",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(o.value)
+        }), {
+          title: n,
+          meta: [{
+            name: "description",
+            content: u
+          }, {
+            property: "og:type",
+            content: a.type === "article" ? "article" : "website"
+          }, {
+            property: "og:title",
+            content: n
+          }, {
+            property: "og:description",
+            content: u
+          }, {
+            property: "og:image",
+            content: m
+          }, {
+            property: "og:url",
+            content: d
+          }, {
+            property: "og:site_name",
+            content: i
+          }, {
+            property: "og:locale",
+            content: "en_us"
+          }, {
+            property: "og:image:type",
+            content: "image/jpeg"
+          }, {
+            property: "og:image:width",
+            content: "1200"
+          }, {
+            property: "og:image:height",
+            content: "630"
+          }, {
+            name: "twitter:card",
+            content: "summary_large_image"
+          }, {
+            name: "twitter:title",
+            content: n
+          }, {
+            name: "twitter:description",
+            content: u
+          }, {
+            name: "twitter:image",
+            content: m
+          }],
+          link: [{
+            rel: "canonical",
+            href: d
+          }],
+          script: f
+        }
+      }), (n, u) => r.debug ? (Q(), q("span", te, X(R(y)), 1)) : G("", !0)
+    }
+  };
+export {
+  re as _, ne as u
+};

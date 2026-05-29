@@ -1,0 +1,1 @@
+.menu__text a{color:#fff}.menu-link{transition:opacity .35s ease-out}.menu-link.router-link-exact-active{opacity:.5}@media (hover:hover) and (pointer:fine){.menu-link:hover{opacity:.5}}.menu-sub-link{transition:opacity .35s ease-out}.menu-sub-link.router-link-exact-active{opacity:1}@media (hover:hover) and (pointer:fine){.menu-sub-link:hover{opacity:1}}

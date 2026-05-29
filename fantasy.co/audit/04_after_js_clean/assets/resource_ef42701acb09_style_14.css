@@ -1,0 +1,10 @@
+.sf__gradient:after {
+  background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .85));
+  bottom: 0;
+  content: "";
+  height: 50rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 2
+}

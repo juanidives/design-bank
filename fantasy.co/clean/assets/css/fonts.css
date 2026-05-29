@@ -1,0 +1,79 @@
+@font-face {
+  font-display: swap;
+  font-family: sans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/font_001.woff2") format("woff2"), local("") format("woff")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: condensed;
+  font-style: normal;
+  font-weight: 700;
+  src: local("") format("woff2"), local("") format("woff")
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-feature-settings: normal;
+  font-size: 1em;
+  font-variation-settings: normal;
+}
+
+small {
+  font-size: 80%;
+}
+
+.font-condensed {
+  font-family: condensed;
+}
+
+.text-15 {
+  font-size: 1.5rem;
+}
+
+.text-\[\.5em\] {
+  font-size: .5em;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+.footer-1 {
+  font-size: 3.4rem;
+  line-height: 1.15;
+}
+
+.body-normal {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.body-small {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}

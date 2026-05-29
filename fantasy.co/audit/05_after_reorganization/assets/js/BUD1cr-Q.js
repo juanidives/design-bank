@@ -1,0 +1,7434 @@
+import {
+  a as le,
+  h as R,
+  r as T,
+  o as ee,
+  n as Y,
+  s as V,
+  I as We,
+  L as he,
+  c as f,
+  g as u,
+  d as L,
+  m as G,
+  j as o,
+  k as J,
+  e as $,
+  p as k,
+  H as Pe,
+  t as Se,
+  _ as $e,
+  M as Me,
+  S as qe,
+  F as K,
+  l as X,
+  B as U,
+  N as it,
+  E as te,
+  O as qt,
+  T as Dt,
+  K as I,
+  P as ie,
+  v as S,
+  y as gn,
+  z as ts,
+  Q as ns,
+  q as mt,
+  R as ss,
+  U as is,
+  V as rs,
+  W as Re,
+  X as bn,
+  Y as ft,
+  Z as as,
+  i as Pt,
+  b as rt,
+  $ as ls,
+  u as os,
+  G as cs,
+  a0 as us,
+  a1 as Qe
+} from "./CZZ0Kowu.js";
+import {
+  _ as Ee,
+  u as wn
+} from "./BMrMtYDV.js";
+import {
+  l as ds
+} from "./CeXuehBR.js";
+const ms = {
+    class: "absolute inset-0 flex items-end overflow-hidden z-4"
+  },
+  fs = {
+    class: "site-max flex flex-col pb-75 s:pb-95"
+  },
+  hs = {
+    class: "flex flex-col items-start relative"
+  },
+  ps = ["innerHTML"],
+  vs = ["innerHTML"],
+  ys = ["innerHTML"],
+  gs = {
+    __name: "Case",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = R(() => n != null && n.small && t.item.mediaMobile ? t.item.mediaMobile : t.item.media),
+        i = T(null),
+        a = T(null),
+        r = T(null),
+        l = T(null);
+      let c;
+      return ee(async () => {
+        await Y(), c = V.timeline({
+          scrollTrigger: {
+            trigger: i.value,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: !0
+          },
+          defaults: {
+            duration: .5
+          }
+        }).to(a.value, {
+          y: () => `-${We(a.value).height+n.wh}px`,
+          ease: "none"
+        }), r.value && c.from(r.value, {
+          alpha: 0,
+          duration: .3
+        }, .15), l.value && c.from(l.value, {
+          alpha: 0,
+          duration: .3
+        }, .15)
+      }), he(() => {
+        c == null || c.kill()
+      }), (d, p) => {
+        const m = J,
+          v = Pe;
+        return u(), f("section", {
+          ref_key: "el",
+          ref: i,
+          class: "case-full relative text-white"
+        }, [L(v, {
+          to: `/work/${e.item.case.slug}`,
+          class: "case-full__content sticky top-0 left-0 w-full h-full-screen overflow-hidden block"
+        }, {
+          default: G(() => [L(m, {
+            item: $(s),
+            aspect: !1,
+            class: "z-1"
+          }, null, 8, ["item"]), o("div", ms, [o("div", fs, [o("div", hs, [o("div", {
+            ref_key: "title",
+            ref: a,
+            class: "absolute top-[calc(100%+9.5rem)] left-0 flex flex-col gap-y-12"
+          }, [e.item.titleEyebrow ? (u(), f("div", {
+            key: 0,
+            class: "body-large opacity-60",
+            innerHTML: d.$sanitize(e.item.titleEyebrow)
+          }, null, 8, ps)) : k("", !0), o("h2", {
+            class: "h2-alt",
+            innerHTML: d.$sanitize(e.item.case.title)
+          }, null, 8, vs)], 512), e.item.subtitle ? (u(), f("p", {
+            key: 0,
+            ref_key: "text",
+            ref: r,
+            class: "body-large max-w-[30rem] s:max-w-[37.5rem]",
+            innerHTML: d.$sanitize(e.item.subtitle)
+          }, null, 8, ys)) : k("", !0)])])])]),
+          _: 1
+        }, 8, ["to"])], 512)
+      }
+    }
+  },
+  bs = {
+    class: "relative flex items-end overflow-hidden"
+  },
+  ws = {
+    class: "site-max flex flex-col items-start"
+  },
+  _s = {
+    class: "relative flex flex-col gap-y-12"
+  },
+  xs = ["innerHTML"],
+  ks = {
+    __name: "Card",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      },
+      i: {
+        type: Number,
+        default: 0
+      }
+    },
+    setup(e) {
+      const t = T(null),
+        n = T(null),
+        s = T(null);
+      let i;
+      return ee(async () => {
+        await Y(), i = V.timeline({
+          scrollTrigger: {
+            trigger: s.value,
+            scrub: !0
+          }
+        }).charsInOut([n.value, s.value])
+      }), he(() => {
+        i == null || i.kill()
+      }), (a, r) => (u(), f("section", {
+        ref_key: "el",
+        ref: t,
+        class: "relative text-white"
+      }, [o("div", bs, [o("div", ws, [o("div", _s, [o("div", {
+        ref_key: "index",
+        ref: n,
+        class: "body-large opacity-60"
+      }, "0" + Se(e.i + 1) + " /", 513), o("h2", {
+        ref_key: "title",
+        ref: s,
+        class: "h2-alt js-t",
+        innerHTML: a.$sanitize(e.item.case.title)
+      }, null, 8, xs), r[0] || (r[0] = o("div", {
+        class: "absolute bottom-0 left-0 w-full h-[17.5rem] s:h-[12.5rem] m:h-[17.5rem] pointer-events-none js-t-t"
+      }, null, -1))])])])], 512))
+    }
+  },
+  Ts = {
+    class: "absolute inset-0"
+  },
+  $s = {
+    class: "sticky top-0 left-0 h-full-screen-e w-full"
+  },
+  Ls = {
+    class: "case-list__content absolute top-0 left-0 w-full h-full-screen-e flex items-end z-3"
+  },
+  Ms = {
+    class: "site-max flex flex-col items-start gap-y-32 js-texts"
+  },
+  Ss = ["innerHTML"],
+  Es = {
+    class: "case-list__cards relative flex flex-col pointer-events-none"
+  },
+  Os = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le();
+      R(() => t == null ? void 0 : t.small);
+      const n = T(null),
+        s = T(0);
+      let i, a;
+      const r = c => t != null && t.small && c.mediaMobile ? c.mediaMobile : c.media || c.case.featuredMedia,
+        l = c => {
+          if (!c) return {
+            "--gradient": "0, 0, 0"
+          };
+          const d = parseInt(c.slice(1, 3), 16),
+            p = parseInt(c.slice(3, 5), 16),
+            m = parseInt(c.slice(5, 7), 16);
+          return {
+            "--gradient": `${d}, ${p}, ${m}`
+          }
+        };
+      return ee(async () => {
+        await Y();
+        const c = Me(".js-t", n.value),
+          d = Me(".js-t-t", n.value),
+          p = Me(".js-texts", n.value);
+        i = c.map((m, v) => qe.create({
+          trigger: m,
+          onToggle: g => {
+            g.isActive && (s.value = v)
+          }
+        })), a = d.map((m, v) => V.timeline({
+          scrollTrigger: {
+            trigger: m,
+            start: "bottom+=100% bottom",
+            end: "bottom+=200% bottom",
+            scrub: !0
+          }
+        }).fromTo(p[v], {
+          alpha: 0
+        }, {
+          alpha: 1,
+          duration: .5,
+          ease: "linear"
+        }))
+      }), he(() => {
+        i == null || i.forEach(c => c == null ? void 0 : c.kill()), a == null || a.forEach(c => c == null ? void 0 : c.kill())
+      }), (c, d) => {
+        const p = J,
+          m = Ee,
+          v = te,
+          g = Pe;
+        return u(), f("div", {
+          ref_key: "el",
+          ref: n,
+          class: "case-list relative bg-black",
+          "data-c": "View"
+        }, [o("div", Ts, [o("div", $s, [(u(!0), f(K, null, X(e.item.items, (y, w) => (u(), f("div", {
+          key: e.item.id,
+          class: "absolute inset-0 overflow-hidden pointer-events-none overflow-hidden"
+        }, [L(Dt, {
+          name: "fade"
+        }, {
+          default: G(() => [U(L(g, {
+            to: `/work/${y.case.slug}`,
+            class: "case-list__media absolute inset-0 pointer-events-auto"
+          }, {
+            default: G(() => [L(m, null, {
+              default: G(() => {
+                var _;
+                return [o("div", {
+                  class: "case-list__media absolute inset-0 overflow-hidden z-1",
+                  style: it(l((_ = y.gradient) == null ? void 0 : _.hex))
+                }, [L(p, {
+                  item: r(y),
+                  aspect: !1,
+                  class: "z-1"
+                }, null, 8, ["item"])], 4)]
+              }),
+              _: 2
+            }, 1024), o("div", Ls, [o("div", Ms, [o("div", {
+              class: "body-large opacity-60 max-w-[33.5rem] s:max-w-[40rem]",
+              innerHTML: c.$sanitize(y.subtitle || "Harnessing AI to transform how the art world engages")
+            }, null, 8, Ss), L(v, {
+              label: "View",
+              icon: !0,
+              blurred: !0,
+              light: e.item.light || !0,
+              class: "pointer-events-auto"
+            }, null, 8, ["light"])])])]),
+            _: 2
+          }, 1032, ["to"]), [
+            [qt, $(s) === w]
+          ])]),
+          _: 2
+        }, 1024)]))), 128))])]), o("div", Es, [(u(!0), f(K, null, X(e.item.items, (y, w) => (u(), I(ks, {
+          key: y.id,
+          item: y,
+          i: w,
+          class: "relative z-2"
+        }, null, 8, ["item", "i"]))), 128))])], 512)
+      }
+    }
+  },
+  As = $e(Os, [
+    ["__scopeId", "data-v-f159d4a7"]
+  ]),
+  Hs = {
+    class: "relative overflow-hidden"
+  },
+  Cs = {
+    class: "site-max pt-48"
+  },
+  Rs = {
+    key: 0,
+    class: "site-grid"
+  },
+  Bs = {
+    class: "col-start-4 col-span-3 s:col-start-10 s:col-span-3 m:col-start-11 m:col-span-2 max-s:flex max-s:justify-end"
+  },
+  Ns = {
+    class: "col-span-6 s:col-span-9 m:col-span-8"
+  },
+  js = {
+    class: "flex flex-col items-start gap-y-28"
+  },
+  Fs = {
+    key: 0,
+    class: "eyebrow opacity-60"
+  },
+  zs = ["innerHTML"],
+  Is = ["innerHTML"],
+  qs = {
+    key: 0,
+    class: "col-span-6 s:col-span-3 m:col-span-4 flex justify-start s:justify-end mt-32 s:mt-0"
+  },
+  Ds = {
+    key: 1,
+    class: "absolute bottom-0 left-0 h-15 w-auto",
+    viewBox: "0 0 14 15",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  },
+  Ps = {
+    __name: "Headline",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le(), n = R(() => t == null ? void 0 : t.small);
+      return (s, i) => {
+        const a = J,
+          r = Ee,
+          l = te,
+          c = ie("st-words");
+        return u(), f("section", Hs, [o("div", Cs, [e.item.media ? (u(), f("div", Rs, [o("div", Bs, [L(a, {
+          class: "max-s:max-w-[15rem] radius-media",
+          item: e.item.media,
+          aspect: 66.8
+        }, null, 8, ["item"])])])) : k("", !0), o("div", {
+          class: S(["site-grid items-end relative pb-48", e.item.media ? "pt-135 s:pt-160 m:pt-220" : ""])
+        }, [o("div", Ns, [o("div", js, [e.item.eyebrow ? (u(), f("h2", Fs, "Expertise")) : k("", !0), L(r, null, {
+          default: G(() => [$(n) && e.item.titleMobile ? U((u(), f("h3", {
+            key: 0,
+            class: "h4",
+            innerHTML: s.$sanitize(e.item.titleMobile, ["em"], !0)
+          }, null, 8, zs)), [
+            [c]
+          ]) : U((u(), f("h3", {
+            key: 1,
+            class: "h4",
+            innerHTML: s.$sanitize(e.item.title, ["em"], !0)
+          }, null, 8, Is)), [
+            [c]
+          ])]),
+          _: 1
+        })])]), e.item.cta ? (u(), f("div", qs, [L(l, {
+          item: e.item.cta
+        }, null, 8, ["item"])])) : k("", !0), e.item.arrow ? (u(), f("svg", Ds, i[0] || (i[0] = [o("path", {
+          class: "fill-current",
+          d: "M13.467 8.36869L6.96704 14.1631L0.467041 8.36869L0.467041 5.54159L5.95304 10.4715L5.95304 0.163086L7.98104 0.163086L7.98104 10.4715L13.467 5.54159V8.36869Z"
+        }, null, -1)]))) : k("", !0)], 2)])])
+      }
+    }
+  },
+  Vs = {
+    class: "relative overflow-hidden z-2"
+  },
+  Us = ["innerHTML"],
+  Js = ["innerHTML"],
+  Gs = {
+    __name: "HeadlineIntro",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J,
+          i = ie("st-words");
+        return u(), f("section", Vs, [o("div", {
+          class: S(["site-max site-grid gap-y-90 pt-48 s:pt-96 pb-90 s:pb-90 m:pb-90", [e.item.alignmentVertical]])
+        }, [e.item.media ? (u(), f("div", {
+          key: 0,
+          class: S(["col-span-3 m:col-span-2", [e.item.alignmentHorizontal ? "" : "s:col-start-10 m:col-start-11 s:order-2"]])
+        }, [L(s, {
+          class: "max-s:max-w-[15rem] radius-media",
+          item: e.item.media,
+          aspect: 66.8
+        }, null, 8, ["item"])], 2)) : k("", !0), o("div", {
+          class: S(["col-span-6 s:col-span-7 flex flex-col items-start gap-y-32", [e.item.alignmentHorizontal ? "s:col-start-6 s:order-1" : ""]])
+        }, [e.item.eyebrow ? (u(), f("div", {
+          key: 0,
+          class: "body-large",
+          innerHTML: t.$sanitize(e.item.eyebrow)
+        }, null, 8, Us)) : k("", !0), U(o("div", {
+          class: "h4",
+          innerHTML: t.$sanitize(e.item.title, ["em"], !0)
+        }, null, 8, Js), [
+          [i]
+        ])], 2)], 2)])
+      }
+    }
+  },
+  _n = {
+    __name: "index",
+    setup(e, {
+      expose: t
+    }) {
+      const n = le(),
+        {
+          $resize: s,
+          $event: i
+        } = n,
+        a = R(() => !s.mouse),
+        r = T(null),
+        l = T(2),
+        c = T(0),
+        d = T(0),
+        p = T(0),
+        m = T(0),
+        v = T(0),
+        g = T(0),
+        y = T(0),
+        w = T(0),
+        _ = T(0),
+        M = T(0),
+        O = T(!1),
+        N = T(!1),
+        B = T(!1),
+        H = T(null),
+        q = T({});
+      let oe, me, ne, W;
+      const pe = () => {
+          N.value = !0, !W && (W = mt(".js-progress", r.value));
+          const A = Me(".js-slide", r.value);
+          if (!A.length) return;
+          const C = mt(".js-slides", r.value),
+            Q = We(C);
+          ne = We(r.value);
+          const ue = A.length - 1,
+            Ne = Q.left - ne.left;
+          l.value = s.small ? 3.5 : 2, oe = [], H.value = [], H.value = A.map((Be, Zn) => {
+            Be.style.transform = "translate3d(0, 0, 0)";
+            const {
+              left: Kt,
+              right: Yn
+            } = We(Be), es = Kt - ne.width, Wt = Yn;
+            return oe.push(Kt - Q.left), Zn === ue && Ae(Wt, Ne), {
+              el: Be,
+              start: es,
+              end: Wt,
+              out: !0
+            }
+          }), D(), Y(() => N.value = !1)
+        },
+        Ae = (A, C) => {
+          w.value = Math.max(0, A - (s == null ? void 0 : s.ww) + C)
+        },
+        h = A => {
+          const C = A.changedTouches ? A.changedTouches[0].clientX : A.clientX,
+            Q = A.changedTouches ? A.changedTouches[0].clientY : A.clientY;
+          return {
+            x: C,
+            y: Q
+          }
+        },
+        x = A => {
+          const {
+            x: C,
+            y: Q
+          } = h(A);
+          O.value = !0, d.value = C, p.value = Q, m.value = C, c.value = v.value + C * l.value, P()
+        },
+        E = A => {
+          if (!O.value) return;
+          const {
+            x: C,
+            y: Q
+          } = h(A);
+          Math.abs(C - d.value) > Math.abs(Q - p.value) && A.cancelable && (A.preventDefault(), A.stopPropagation()), v.value = c.value - C * l.value, P()
+        },
+        F = A => {
+          if (!O.value) return;
+          O.value = !1;
+          const {
+            x: C
+          } = h(A);
+          if (Math.abs(C - m.value) < 10) {
+            const Q = A.target.closest("[data-url]");
+            Q && Q.dataset.url && ns(Q.dataset.url)
+          } else Z()
+        },
+        P = () => {
+          v.value = Math.min(Math.max(v.value, 0), w.value)
+        },
+        Z = () => {
+          const A = V.utils.wrap(0, w.value, v.value),
+            C = V.utils.snap(oe, A),
+            Q = C - A;
+          v.value += Q, M.value = oe.indexOf(C), P()
+        },
+        j = ({
+          ratio: A
+        }) => {
+          B.value && (g.value = ds(g.value, v.value, .1 * A), g.value = Math.round(g.value * 100) / 100, y.value = g.value - v.value, y.value = Math.round(y.value * 1e3) / 1e3, !N.value && D())
+        },
+        D = () => {
+          var A;
+          (A = H.value) == null || A.forEach(C => {
+            const {
+              start: Q,
+              end: ue,
+              el: Ne
+            } = C;
+            ae(Q, ue) || N.value ? (C.out && (C.out = !1), ce(Ne)) : C.out || (C.out = !0, ce(Ne))
+          }), W && (W.style.transform = `scaleX(${V.utils.wrap(0,1,g.value/w.value)})`)
+        },
+        ce = (A, C = g.value) => {
+          A.style.transform = `translate3d(${-C}px,0,0)`
+        },
+        ae = (A, C, Q = g.value) => Q > A && Q < C,
+        ve = () => {
+          q.value = {
+            move: a.value ? "touchmove" : "mousemove",
+            down: a.value ? "touchstart" : "mousedown",
+            up: a.value ? "touchend" : "mouseup"
+          }
+        },
+        Le = () => {
+          if (console.log("CAROUSEL: NEXT"), !H.value) return;
+          const A = H.value[M.value];
+          if (!A) return;
+          const C = A.width;
+          v.value += C + _.value, M.value = V.utils.wrap(0, H.value.length, M.value + 1)
+        },
+        ye = () => {
+          if (console.log("CAROUSEL: PREVIOUS"), !H.value) return;
+          const A = H.value[M.value];
+          if (!A) return;
+          const C = A.width;
+          v.value -= C + _.value, M.value = V.utils.wrap(0, H.value.length, M.value - 1)
+        },
+        se = () => {
+          var A, C;
+          ve(), (A = r.value) == null || A.addEventListener(q.value.down, x), (C = r.value) == null || C.addEventListener(q.value.move, E), window.addEventListener(q.value.up, F), s.add(pe), i.on("tick", j), console.log("draggable: bindEvents")
+        },
+        Ce = () => {
+          var A, C;
+          (A = r.value) == null || A.removeEventListener(q.value.down, x), (C = r.value) == null || C.removeEventListener(q.value.move, E), window.removeEventListener(q.value.up, F), pe(), s.remove(pe), i.off("tick", j), console.log("draggable: unbindEvents")
+        };
+      return ee(async () => {
+        await Y(), me = qe.create({
+          trigger: r.value,
+          onToggle: ({
+            isActive: A
+          }) => B.value = A
+        }), se()
+      }), gn(() => {
+        Ce(), me == null || me.kill()
+      }), t({
+        next: Le,
+        previous: ye,
+        idx: M,
+        diff: y,
+        cache: H
+      }), (A, C) => (u(), f("div", {
+        ref_key: "el",
+        ref: r,
+        class: S(["select-none cursor-grab", $(O) && "is-active"])
+      }, [ts(A.$slots, "default")], 2))
+    }
+  },
+  Ks = ["data-url"],
+  Ws = {
+    class: "relative radius-media"
+  },
+  Qs = {
+    class: "flex flex-col items-start gap-y-16 mt-36"
+  },
+  Xs = ["innerHTML"],
+  Zs = ["innerHTML"],
+  Ys = {
+    __name: "Slide",
+    props: {
+      slide: {
+        type: Object,
+        required: !0
+      },
+      layout: {
+        type: String,
+        default: ""
+      },
+      condensed: {
+        type: Boolean,
+        default: !1
+      },
+      aspect: {
+        type: [Boolean, Number],
+        required: !0
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le(), n = R(() => t == null ? void 0 : t.mouse), s = R(() => {
+        var c;
+        const a = e.slide.link || ((c = e.slide.cta) == null ? void 0 : c.link);
+        if (!a) return "";
+        const l = ss({
+          item: a
+        }).value;
+        return l.href ? l.href : l.to ? l.to : ""
+      }), i = T(!1);
+      return (a, r) => {
+        const l = J,
+          c = te;
+        return u(), f("article", is({
+          class: "relative min-w-[33rem] max-w-[33rem] mr-20 js-slide"
+        }, rs($(n) && e.slide.mediaHover ? {
+          mouseenter: () => i.value = !0,
+          mouseleave: () => i.value = !1
+        } : {}), {
+          "data-url": $(s),
+          class: [e.layout === "landscape" ? "s:min-w-[84.5rem] s:max-w-[84.5rem] m:min-w-[120rem] m:max-w-[120rem]" : "s:min-w-[52.5rem] s:max-w-[52.5rem] m:min-w-[70rem] m:max-w-[70rem]", e.condensed ? "s:max-w-[65%]" : "s:max-w-[40rem]"]
+        }), [o("div", Ws, [L(l, {
+          aspect: e.aspect,
+          item: e.slide.media
+        }, null, 8, ["aspect", "item"]), e.slide.mediaHover && $(i) && $(n) ? (u(), I(l, {
+          key: 0,
+          aspect: !1,
+          item: e.slide.mediaHover,
+          class: "z-2"
+        }, null, 8, ["item"])) : k("", !0)]), o("div", Qs, [e.slide.title ? (u(), f("h2", {
+          key: 0,
+          class: S([e.layout === "landscape" ? "s:max-w-[65%]" : "s:max-w-[40rem]", e.condensed ? "h3-c uppercase" : "h6"]),
+          innerHTML: a.$sanitize(e.slide.title)
+        }, null, 10, Xs)) : k("", !0), e.slide.text ? (u(), f("p", {
+          key: 1,
+          class: S(["body-normal opacity-60", [e.layout === "landscape" ? "s:max-w-[65%]" : "s:max-w-[40rem]"]]),
+          innerHTML: a.$sanitize(e.slide.text)
+        }, null, 10, Zs)) : k("", !0), e.slide.cta ? (u(), I(c, {
+          key: 2,
+          item: e.slide.cta,
+          class: "mt-16"
+        }, null, 8, ["item"])) : k("", !0)])], 16, Ks)
+      }
+    }
+  },
+  ei = {
+    class: "site-max"
+  },
+  ti = {
+    class: "flex js-slides"
+  },
+  ni = `<svg class="h-10 w-auto"viewBox="0 0 37 10"fill="none"xmlns="http://www.w3.org/2000/svg"><path class="fill-current"d="M4.8908 0.356934L0.751952 4.99979L4.8908 9.64265L6.91016 9.64265L3.3888 5.72408L10.752 5.72408V4.2755L3.3888 4.2755L6.91016 0.356934L4.8908 0.356934Z"/><path class="fill-current"d="M32.6131 0.356934L36.752 4.99979L32.6131 9.64265L30.5937 9.64265L34.1151 5.72408L26.752 5.72408V4.2755L34.1151 4.2755L30.5937 0.356934L32.6131 0.356934Z"/></svg>`,
+  si = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = R(() => n == null ? void 0 : n.small),
+        i = R(() => {
+          const r = t.item.items || [];
+          let l = [...r];
+          for (; l.length < 5;) l = [...l, ...r];
+          return l
+        }),
+        a = R(() => t.item.layout === "aspect" ? !0 : t.item.layout === "square" ? 100 : t.item.layout === "landscape" && !s.value ? 56.25 : 130);
+      return (r, l) => {
+        const c = _n;
+        return u(), I(c, {
+          class: "relative overflow-hidden py-48 js-carousel",
+          "data-c": ni
+        }, {
+          default: G(() => [o("div", ei, [o("div", ti, [(u(!0), f(K, null, X($(i), (d, p) => (u(), I(Ys, {
+            key: p,
+            slide: d,
+            layout: e.item.layout,
+            condensed: e.item.condensed,
+            aspect: $(a)
+          }, null, 8, ["slide", "layout", "condensed", "aspect"]))), 128))])])]),
+          _: 1
+        })
+      }
+    }
+  },
+  ii = {
+    class: "flex items-center gap-x-10"
+  },
+  ri = ["src", "alt"],
+  ai = {
+    key: 1,
+    class: "relative opacity-60 transition-opacity duration-500 ease-out has-hover:hover:opacity-100"
+  },
+  li = ["innerHTML"],
+  oi = ["innerHTML"],
+  ci = {
+    class: "absolute bottom-0 left-0 w-full"
+  },
+  ui = {
+    class: "site-max flex flex-col s:flex-row s:justify-between s:items-end pb-40 overflow-hidden"
+  },
+  di = {
+    key: 0,
+    class: "relative flex flex-col s:items-start gap-y-35"
+  },
+  mi = {
+    class: "relative flex items-end max-s:justify-between max-s:w-full"
+  },
+  fi = ["innerHTML"],
+  hi = {
+    key: 0,
+    class: "flex gap-x-12"
+  },
+  pi = {
+    key: 1,
+    type: "button",
+    class: "ml-auto hidden s:block s:mb-3",
+    "aria-label": "Scroll"
+  },
+  vi = {
+    __name: "MediaHero",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le(), n = T(null), s = T(null), i = T(null), a = T(null), r = R(() => (t == null ? void 0 : t.small) || !1);
+      let l;
+      return ee(async () => {
+        await Y(), l = V.timeline({
+          scrollTrigger: {
+            trigger: n.value,
+            start: "top top",
+            end: "bottom top",
+            scrub: !0
+          },
+          defaults: {
+            ease: "none",
+            force3D: !0
+          }
+        }).fromTo(a.value.$el, {
+          alpha: 1
+        }, {
+          alpha: 0
+        }, 0)
+      }), he(() => {
+        l == null || l.kill()
+      }), (c, d) => {
+        var w, _, M, O;
+        const p = J,
+          m = Ee,
+          v = Re,
+          g = te,
+          y = ie("st-chars-out");
+        return u(), f("section", {
+          ref_key: "el",
+          ref: n,
+          class: "media-hero relative h-full-screen text-white"
+        }, [o("div", {
+          ref_key: "t",
+          ref: s,
+          class: "sticky top-0 left-0 h-0 w-full"
+        }, [o("div", {
+          ref_key: "parallax",
+          ref: i,
+          class: "absolute top-0 left-0 w-full h-full-screen"
+        }, [L(m, null, {
+          default: G(() => [L(p, {
+            ref_key: "media",
+            ref: a,
+            class: "media-hero__media z-1",
+            item: $(r) && e.item.mediaMobile ? e.item.mediaMobile : e.item.media,
+            aspect: !1
+          }, null, 8, ["item"])]),
+          _: 1
+        })], 512)], 512), o("div", {
+          class: S(["absolute inset-0 flex overflow-hidden z-2", e.item.titleAlignment || "items-end"])
+        }, [e.item.title ? (u(), f("div", {
+          key: 0,
+          class: S(["media-hero__title site-max relative w-full flex flex-col gap-y-30 pb-40 overflow-hidden", ((w = e.item.titleAlignment) == null ? void 0 : w.includes("justify-center")) && "items-center text-center"])
+        }, [o("div", ii, [e.item.icon ? (u(), f("img", {
+          key: 0,
+          src: e.item.icon.url,
+          class: "h-20 w-auto",
+          alt: e.item.icon.alt
+        }, null, 8, ri)) : k("", !0), e.item.breadcrumb ? (u(), f("div", ai, [L(v, {
+          item: e.item.breadcrumb
+        }, null, 8, ["item"])])) : e.item.eyebrow ? (u(), f("div", {
+          key: 2,
+          class: "relative opacity-60",
+          innerHTML: c.$sanitize(e.item.eyebrow)
+        }, null, 8, li)) : k("", !0)]), U(o("h1", {
+          class: S(["relative ml-[-.05em] z-2", [e.item.titleSize || "h1", e.item.titleSize === "h2" || e.item.titleSize === "h1" ? "" : "s:max-w-[75rem]"]]),
+          innerHTML: c.$sanitize(e.item.title)
+        }, null, 10, oi), [
+          [y]
+        ])], 2)) : k("", !0), o("div", ci, [o("div", ui, [(e.item.subtitle || (_ = e.item.ctas) != null && _.length) && !((M = e.item.titleAlignment) != null && M.includes("items-end")) ? (u(), f("div", di, [o("div", mi, [e.item.subtitle ? (u(), f("p", {
+          key: 0,
+          class: "s:max-w-[55rem]",
+          innerHTML: c.$sanitize(e.item.subtitle)
+        }, null, 8, fi)) : k("", !0), d[0] || (d[0] = o("button", {
+          type: "button",
+          class: "mb-5 s:hidden",
+          "aria-label": "Scroll"
+        }, [o("svg", {
+          class: "h-15 w-auto",
+          viewBox: "0 0 14 14",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, [o("path", {
+          class: "fill-current",
+          d: "M13.1523 8.20561L6.65234 14L0.152344 8.20561L0.152344 5.3785L5.63834 10.3084L5.63834 0L7.66634 8.86466e-08L7.66634 10.3084L13.1523 5.37851V8.20561Z"
+        })])], -1))]), (O = e.item.ctas) != null && O.length ? (u(), f("div", hi, [(u(!0), f(K, null, X(e.item.ctas, N => (u(), I(g, {
+          item: N
+        }, null, 8, ["item"]))), 256))])) : k("", !0)])) : k("", !0), e.item.arrow ? (u(), f("button", pi, d[1] || (d[1] = [o("svg", {
+          class: "h-15 w-auto",
+          viewBox: "0 0 14 14",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, [o("path", {
+          class: "fill-current",
+          d: "M13.1523 8.20561L6.65234 14L0.152344 8.20561L0.152344 5.3785L5.63834 10.3084L5.63834 0L7.66634 8.86466e-08L7.66634 10.3084L13.1523 5.37851V8.20561Z"
+        })], -1)]))) : k("", !0)])])], 2)], 512)
+      }
+    }
+  },
+  yi = {
+    key: 0,
+    class: "relative opacity-60 transition-opacity duration-500 ease-out has-hover:hover:opacity-100"
+  },
+  gi = ["innerHTML"],
+  bi = ["innerHTML"],
+  wi = {
+    class: "absolute bottom-0 left-0 w-full"
+  },
+  _i = {
+    class: "site-max flex justify-between items-end pb-40 overflow-hidden"
+  },
+  xi = ["innerHTML"],
+  ki = {
+    class: "media-hero-exp__content relative pt-46 m:pt-96 pb-90 s:pb-195 m:pb-225 z-3"
+  },
+  Ti = {
+    class: "site-max site-grid items-start gap-y-96 relative z-2"
+  },
+  $i = ["innerHTML"],
+  Li = {
+    __name: "MediaHeroExpanded",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le(), n = T(null), s = T(null), i = R(() => (t == null ? void 0 : t.small) || !1);
+      let a;
+      return ee(async () => {
+        await Y(), a = V.fromTo(s.value, {
+          yPercent: 0
+        }, {
+          yPercent: 25,
+          ease: "none",
+          scrollTrigger: {
+            trigger: n.value,
+            start: "top top",
+            end: "bottom top",
+            scrub: !0
+          }
+        })
+      }), he(() => {
+        a == null || a.kill()
+      }), (r, l) => {
+        var v, g, y, w;
+        const c = J,
+          d = Ee,
+          p = Re,
+          m = ie("st-words");
+        return u(), f("section", {
+          ref_key: "el",
+          ref: n,
+          class: "media-hero-exp relative text-white overflow-hidden",
+          style: it(`--background:${(g=(v=e.item.theme)==null?void 0:v.background)==null?void 0:g.hex}`)
+        }, [o("div", {
+          ref_key: "parallax",
+          ref: s,
+          class: "absolute inset-0 media-hero-exp__media opacity-60 z-1"
+        }, [L(d, null, {
+          default: G(() => [L(c, {
+            item: $(i) && e.item.mediaMobile ? e.item.mediaMobile : e.item.media,
+            aspect: !1
+          }, null, 8, ["item"])]),
+          _: 1
+        })], 512), o("div", {
+          class: S(["relative h-full-screen flex z-3", e.item.titleAlignment || "items-end"])
+        }, [e.item.title ? (u(), f("div", {
+          key: 0,
+          class: S(["site-max relative w-full flex flex-col gap-y-30 pb-64 overflow-hidden", ((y = e.item.titleAlignment) == null ? void 0 : y.includes("justify-center")) && "items-center text-center"])
+        }, [e.item.breadcrumb ? (u(), f("div", yi, [L(p, {
+          item: e.item.breadcrumb
+        }, null, 8, ["item"])])) : e.item.eyebrow ? (u(), f("div", {
+          key: 1,
+          class: "relative opacity-60",
+          innerHTML: r.$sanitize(e.item.eyebrow)
+        }, null, 8, gi)) : k("", !0), o("h1", {
+          class: S(["relative s:max-w-[110rem] z-2", e.item.titleSize || "h3"]),
+          innerHTML: r.$sanitize(e.item.title)
+        }, null, 10, bi)], 2)) : k("", !0), o("div", wi, [o("div", _i, [e.item.label && !((w = e.item.titleAlignment) != null && w.includes("items-end")) ? (u(), f("p", {
+          key: 0,
+          innerHTML: r.$sanitize(e.item.label)
+        }, null, 8, xi)) : k("", !0), l[0] || (l[0] = o("button", {
+          type: "button",
+          class: "mb-5 ml-auto",
+          "aria-label": "Scroll"
+        }, [o("svg", {
+          class: "h-15 w-auto",
+          viewBox: "0 0 14 14",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, [o("path", {
+          class: "fill-current",
+          d: "M13.1523 8.20561L6.65234 14L0.152344 8.20561L0.152344 5.3785L5.63834 10.3084L5.63834 0L7.66634 8.86466e-08L7.66634 10.3084L13.1523 5.37851V8.20561Z"
+        })])], -1))])])], 2), o("div", ki, [o("div", Ti, [o("div", {
+          class: S(["col-span-3 s:col-span-3 m:col-span-2", e.item.aligned && "s:col-start-10 m:col-start-11 s:order-2"])
+        }, [L(c, {
+          item: e.item.mediaSmall,
+          aspect: 56.25,
+          class: "radius-media"
+        }, null, 8, ["item"])], 2), U(o("h3", {
+          class: S(["col-span-6 s:col-span-7 h4", e.item.aligned ? "s:order-1" : "s:col-start-6 m:col-start-6"]),
+          innerHTML: r.$sanitize(e.item.text, ["em"], !1)
+        }, null, 10, $i), [
+          [m]
+        ])])])], 4)
+      }
+    }
+  },
+  Mi = {
+    class: "relative py-48"
+  },
+  Si = {
+    class: "site-max"
+  },
+  Ei = {
+    class: "relative radius-media"
+  },
+  Oi = {
+    key: 1,
+    class: "relative"
+  },
+  Ai = {
+    key: 2,
+    class: "flex items-center justify-between pt-36"
+  },
+  Hi = {
+    class: "flex flex-col items-start gap-y-20"
+  },
+  Ci = ["innerHTML"],
+  Ri = ["innerHTML"],
+  Bi = {
+    __name: "MediaFeatured",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = R(() => n != null && n.small && t.item.mediaMobile ? t.item.mediaMobile : t.item.media),
+        i = R(() => n != null && n.small ? t.item.aspect ? Number(t.item.aspect) : 130 : 56.25);
+      return (a, r) => {
+        var v;
+        const l = J,
+          c = Ee,
+          d = Re,
+          p = te,
+          m = ie("st-scale");
+        return u(), f("article", Mi, [o("div", Si, [e.item.cta || e.item.link ? (u(), I(d, {
+          key: 0,
+          item: ((v = e.item.cta) == null ? void 0 : v.link) || e.item.link,
+          class: "block w-full h-scale",
+          "data-c": e.item.cursorText || "Let's go"
+        }, {
+          default: G(() => [U((u(), f("div", Ei, [L(c, null, {
+            default: G(() => [L(l, {
+              item: $(s),
+              class: "h-scale__item",
+              aspect: $(i)
+            }, null, 8, ["item", "aspect"])]),
+            _: 1
+          })])), [
+            [m]
+          ])]),
+          _: 1
+        }, 8, ["item", "data-c"])) : (u(), f("div", Oi, [L(c, null, {
+          default: G(() => [U(L(l, {
+            item: $(s),
+            class: "radius-media",
+            aspect: $(i)
+          }, null, 8, ["item", "aspect"]), [
+            [m]
+          ])]),
+          _: 1
+        })])), e.item.title || e.item.text || e.item.cta ? (u(), f("div", Ai, [o("div", Hi, [e.item.title ? (u(), f("h2", {
+          key: 0,
+          class: S(e.item.condensed ? "h3-c uppercase" : "h5"),
+          innerHTML: a.$sanitize(e.item.title)
+        }, null, 10, Ci)) : k("", !0), e.item.text ? (u(), f("p", {
+          key: 1,
+          class: "body-normal opacity-60 w-full max-w-[30rem] s:max-w-[70rem]",
+          innerHTML: a.$sanitize(e.item.text)
+        }, null, 8, Ri)) : k("", !0), e.item.cta ? (u(), I(p, {
+          key: 2,
+          item: e.item.cta,
+          class: "mt-12"
+        }, null, 8, ["item"])) : k("", !0)])])) : k("", !0)])])
+      }
+    }
+  },
+  Ni = {
+    class: "relative py-48"
+  },
+  ji = {
+    class: "site-max flex flex-col s:flex-row site-gap gap-y-96 s:gap-y-64"
+  },
+  Fi = {
+    class: "relative radius-media"
+  },
+  zi = {
+    key: 1,
+    class: "relative w-full radius-media"
+  },
+  Ii = {
+    key: 2,
+    class: "flex flex-col items-start gap-y-16 mt-36"
+  },
+  qi = ["innerHTML"],
+  Di = ["innerHTML"],
+  Pi = {
+    __name: "MediaCols",
+    props: {
+      item: {
+        type: Object,
+        required: !0
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J,
+          i = Re,
+          a = te;
+        return u(), f("div", Ni, [o("div", ji, [(u(!0), f(K, null, X(e.item.items, r => {
+          var l;
+          return u(), f("div", {
+            key: e.item.id,
+            class: "flex-1"
+          }, [r.cta || r.link ? (u(), I(i, {
+            key: 0,
+            item: ((l = r.cta) == null ? void 0 : l.link) || r.link,
+            class: "block w-full h-scale",
+            "data-c": r.cursorText || "Let's go"
+          }, {
+            default: G(() => [o("div", Fi, [r.media ? (u(), I(s, {
+              key: 0,
+              item: r.media,
+              class: "h-scale__item"
+            }, null, 8, ["item"])) : k("", !0)])]),
+            _: 2
+          }, 1032, ["item", "data-c"])) : (u(), f("div", zi, [r.media ? (u(), I(s, {
+            key: 0,
+            item: r.media
+          }, null, 8, ["item"])) : k("", !0)])), r.title || r.text ? (u(), f("div", Ii, [r.title ? (u(), f("h3", {
+            key: 0,
+            class: S(["s:max-w-[40rem]", e.item.condensed ? "h3-c uppercase" : "h6"]),
+            innerHTML: t.$sanitize(r.title)
+          }, null, 10, qi)) : k("", !0), r.text ? (u(), f("p", {
+            key: 1,
+            class: "body-normal opacity-60 w-full s:max-w-[35.5rem]",
+            innerHTML: t.$sanitize(r.text)
+          }, null, 8, Di)) : k("", !0), r.cta ? (u(), I(a, {
+            key: 2,
+            item: r.cta,
+            class: "mt-16"
+          }, null, 8, ["item"])) : k("", !0)])) : k("", !0)])
+        }), 128))])])
+      }
+    }
+  },
+  Vi = {
+    class: "relative py-48"
+  },
+  Ui = {
+    class: "site-max site-grid items-start"
+  },
+  Ji = {
+    class: "s:col-start-8 col-span-5 s:order-2 flex flex-col items-start mt-100 s:mt-0"
+  },
+  Gi = ["innerHTML"],
+  Ki = ["innerHTML"],
+  Wi = ["innerHTML"],
+  Qi = {
+    __name: "OffsetCallout",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J,
+          i = te,
+          a = ie("st-scale");
+        return u(), f("section", Vi, [o("div", Ui, [U(L(s, {
+          item: e.item.media[1],
+          class: "col-start-4 s:col-start-10 col-span-3 radius-media s:-mt-40 m:-mt-200 s:order-3"
+        }, null, 8, ["item"]), [
+          [a]
+        ]), o("div", Ji, [e.item.eyebrow ? (u(), f("h2", {
+          key: 0,
+          class: "eyebrow mb-16 s:mb-24 opacity-60",
+          innerHTML: t.$sanitize(e.item.eyebrow)
+        }, null, 8, Gi)) : k("", !0), e.item.title ? (u(), f("h3", {
+          key: 1,
+          class: "h3",
+          innerHTML: t.$sanitize(e.item.title)
+        }, null, 8, Ki)) : k("", !0), e.item.text ? (u(), f("div", {
+          key: 2,
+          class: "txt body-large text-light mt-48 s:mt-60 s:max-w-[40rem]",
+          innerHTML: t.$sanitize(e.item.text, ["p"], !1)
+        }, null, 8, Wi)) : k("", !0), e.item.cta ? (u(), I(i, {
+          key: 3,
+          item: e.item.cta,
+          class: "mt-40"
+        }, null, 8, ["item"])) : k("", !0)]), U(L(s, {
+          item: e.item.media[0],
+          class: "col-span-5 s:col-span-6 radius-media s:order-1 mt-100 s:mt-0"
+        }, null, 8, ["item"]), [
+          [a]
+        ])])])
+      }
+    }
+  },
+  Xi = {
+    class: "relative py-48 overflow-hidden z-2"
+  },
+  Zi = ["innerHTML"],
+  Yi = ["innerHTML"],
+  er = ["innerHTML"],
+  tr = ["innerHTML"],
+  nr = {
+    __name: "Title",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = te,
+          i = ie("st-chars");
+        return u(), f("section", Xi, [o("div", {
+          class: S(["site-max", e.item.leftAligned ? "site-grid gap-y-40" : "flex flex-col items-center text-center gap-y-32 s:gap-y-40"])
+        }, [o("div", {
+          class: S(["flex flex-col gap-y-24 s:gap-y-30", e.item.leftAligned && "col-span-6 s:col-span-7 items-start"])
+        }, [e.item.eyebrow ? (u(), f("div", {
+          key: 0,
+          class: "body-large opacity-60",
+          innerHTML: t.$sanitize(e.item.eyebrow)
+        }, null, 8, Zi)) : k("", !0), e.item.title && !e.item.h1 ? U((u(), f("h2", {
+          key: 1,
+          class: S(["w-full s:max-w-[65rem] m:max-w-[118rem]", [e.item.titleSmall ? "h4" : "h3", e.item.titleCondensed && "font-condensed uppercase"]]),
+          innerHTML: t.$sanitize(e.item.title)
+        }, null, 10, Yi)), [
+          [i]
+        ]) : k("", !0), e.item.title && e.item.h1 ? U((u(), f("h1", {
+          key: 2,
+          class: S(["w-full s:max-w-[65rem] m:max-w-[118rem]", [e.item.titleSmall ? "h4" : "h3", e.item.titleCondensed && "font-condensed uppercase"]]),
+          innerHTML: t.$sanitize(e.item.title)
+        }, null, 10, er)), [
+          [i]
+        ]) : k("", !0)], 2), e.item.text ? (u(), f("div", {
+          key: 0,
+          class: S(["relative flex flex-col items-start gap-y-32 text-light", [e.item.leftAligned ? "col-span-5 s:col-span-4 m:col-start-10 m:col-span-3 s:justify-end s:before:absolute s:before:-left-16 m:s:before:-left-20 s:before:top-0 s:before:bottom-0 s:before:border-l s:before:border-current s:before:opacity-15" : "items-center"]])
+        }, [o("p", {
+          class: S(["body-medium", [e.item.leftAligned ? "s:max-w-[32.5rem]" : "max-w-[36rem] s:max-w-[55rem] m:max-w-[53rem]"]]),
+          innerHTML: t.$sanitize(e.item.text)
+        }, null, 10, tr), e.item.cta ? (u(), I(s, {
+          key: 0,
+          item: e.item.cta
+        }, null, 8, ["item"])) : k("", !0)], 2)) : k("", !0)], 2)])
+      }
+    }
+  },
+  sr = {
+    __name: "Space",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = R(() => {
+          switch (t.item.space) {
+            case "large":
+              return "space-large";
+            case "medium":
+              return "space-medium";
+            case "small":
+              return "space-small";
+            case "xs":
+              return "space-xs";
+            default:
+              return ""
+          }
+        });
+      return (s, i) => (u(), f("div", {
+        class: S(["relative", $(n)])
+      }, null, 2))
+    }
+  },
+  ir = {
+    class: "relative radius-media"
+  },
+  rr = {
+    key: 1,
+    class: "relative w-full radius-media"
+  },
+  ar = {
+    key: 2,
+    class: "flex flex-col items-start gap-y-16 mt-36"
+  },
+  lr = ["innerHTML"],
+  or = ["innerHTML"],
+  Qt = {
+    __name: "Card",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      },
+      condensed: {
+        type: Boolean,
+        required: !1,
+        default: !0
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        var l;
+        const s = J,
+          i = Re,
+          a = te,
+          r = ie("st-scale");
+        return u(), f("div", null, [e.item.media && (e.item.cta || e.item.link) ? (u(), I(i, {
+          key: 0,
+          item: ((l = e.item.cta) == null ? void 0 : l.link) || e.item.link,
+          class: "block w-full h-scale",
+          "data-c": e.item.cursorText || "Let's go"
+        }, {
+          default: G(() => [U((u(), f("div", ir, [n[0] || (n[0] = o("div", {
+            class: "pt-[130%]"
+          }, null, -1)), L(s, {
+            item: e.item.media,
+            aspect: !1,
+            class: "h-scale__item"
+          }, null, 8, ["item"])])), [
+            [r]
+          ])]),
+          _: 1
+        }, 8, ["item", "data-c"])) : e.item.media ? U((u(), f("div", rr, [n[1] || (n[1] = o("div", {
+          class: "pt-[130%]"
+        }, null, -1)), L(s, {
+          item: e.item.media,
+          aspect: !1
+        }, null, 8, ["item"])])), [
+          [r]
+        ]) : k("", !0), e.item.title || e.item.text ? (u(), f("div", ar, [e.item.title ? (u(), f("h3", {
+          key: 0,
+          class: S([e.condensed ? "h3-c" : "h5", "uppercase s:max-w-[37.5rem]"]),
+          innerHTML: t.$sanitize(e.item.title)
+        }, null, 10, lr)) : k("", !0), e.item.text ? (u(), f("p", {
+          key: 1,
+          class: "body-normal opacity-60 s:max-w-[37.5rem]",
+          innerHTML: t.$sanitize(e.item.text)
+        }, null, 8, or)) : k("", !0), e.item.cta ? (u(), I(a, {
+          key: 2,
+          item: e.item.cta,
+          class: "mt-16"
+        }, null, 8, ["item"])) : k("", !0)])) : k("", !0)])
+      }
+    }
+  },
+  cr = {
+    class: "relative py-48"
+  },
+  ur = {
+    class: "site-max site-grid gap-y-96"
+  },
+  dr = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = R(() => parseInt(t.item.layout));
+      return ee(() => {
+        console.log(t.item)
+      }), (s, i) => (u(), f("div", cr, [o("div", ur, [L(Qt, {
+        item: e.item.items[0],
+        class: S([$(n) === 1 && "col-span-6 s:col-span-5", $(n) === 2 && "col-span-6 s:col-span-4", $(n) === 3 && "col-span-6 s:col-span-6", $(n) === 4 && "col-span-6 s:col-span-5"])
+      }, null, 8, ["item", "class"]), L(Qt, {
+        item: e.item.items[1],
+        class: S([$(n) === 1 && "col-span-6 s:col-span-6 s:col-start-7 s:mt-[34rem] m:mt-[42.5rem]", $(n) === 2 && "col-span-6 s:col-span-6 s:col-start-7", $(n) === 3 && "col-span-6 s:col-span-5 s:col-start-8 s:mt-[50rem] m:mt-[60rem]", $(n) === 4 && "col-span-6 s:col-span-4 s:col-start-8"])
+      }, null, 8, ["item", "class"])])]))
+    }
+  },
+  mr = {
+    class: "relative py-48 overflow-hidden"
+  },
+  fr = {
+    key: 0,
+    class: "col-span-6 flex flex-col gap-y-24"
+  },
+  hr = ["innerHTML"],
+  pr = {
+    key: 1,
+    class: "flex flex-col items-start gap-y-4 opacity-60"
+  },
+  vr = ["innerHTML"],
+  yr = {
+    class: "s:col-start-7 col-span-6 s:col-span-5 flex flex-col gap-y-96 m:gap-y-120"
+  },
+  gr = {
+    class: "flex flex-col items-start gap-y-40 s:gap-y-48 m:gap-y-64"
+  },
+  br = ["innerHTML"],
+  wr = ["innerHTML"],
+  _r = {
+    key: 0,
+    class: "flex flex-col divide-y divide-theme-15 border-t border-theme-15"
+  },
+  xr = ["innerHTML"],
+  kr = {
+    class: "flex items-center justify-between flex-1"
+  },
+  Tr = ["innerHTML"],
+  $r = {
+    __name: "Text",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = te,
+          i = ie("st-fade"),
+          a = ie("st-words");
+        return u(), f("div", mr, [o("div", {
+          class: S(["site-max site-grid", e.item.list.length ? "gap-y-96" : "gap-y-28"])
+        }, [e.item.eyebrow || e.item.list.length ? (u(), f("div", fr, [e.item.eyebrow ? U((u(), f("h4", {
+          key: 0,
+          class: "eyebrow max-s:opacity-60",
+          innerHTML: t.$sanitize(e.item.eyebrow)
+        }, null, 8, hr)), [
+          [i]
+        ]) : k("", !0), e.item.list.length ? U((u(), f("ul", pr, [(u(!0), f(K, null, X(e.item.list, r => (u(), f("li", {
+          key: r.id,
+          innerHTML: t.$sanitize(r.text)
+        }, null, 8, vr))), 128))])), [
+          [i]
+        ]) : k("", !0)])) : k("", !0), o("div", yr, [o("div", gr, [e.item.title ? U((u(), f("h3", {
+          key: 0,
+          class: "h6 w-full",
+          innerHTML: t.$sanitize(e.item.title, ["a", "em"])
+        }, null, 8, br)), [
+          [a]
+        ]) : k("", !0), e.item.text ? U((u(), f("div", {
+          key: 1,
+          class: "txt body-large text-light w-full",
+          innerHTML: t.$sanitize(e.item.text, ["p", "a", "strong", "ul", "ol", "li", "em", "i"], !1)
+        }, null, 8, wr)), [
+          [i]
+        ]) : k("", !0), e.item.cta ? (u(), I(s, {
+          key: 2,
+          item: e.item.cta
+        }, null, 8, ["item"])) : k("", !0)]), e.item.stats.length ? (u(), f("ul", _r, [(u(!0), f(K, null, X(e.item.stats, r => (u(), f("li", {
+          key: r.id,
+          class: "flex items-center gap-x-16 w-full py-30 s:py-32 s:py-40"
+        }, [o("div", {
+          class: "relative h6 min-w-[12rem] max-w-[12rem] m:min-w-[13.1rem] m:max-w-[13.1rem]",
+          innerHTML: t.$sanitize(r.stat)
+        }, null, 8, xr), o("div", kr, [o("p", {
+          class: "opacity-60",
+          innerHTML: t.$sanitize(r.text)
+        }, null, 8, Tr), (u(), f("svg", {
+          class: S(["size-14", r.decrease && "scale-y-[-1]"]),
+          viewBox: "0 0 14 14",
+          fill: "none",
+          xmlns: "http://www.w3.org/2000/svg"
+        }, n[0] || (n[0] = [o("path", {
+          class: "fill-current",
+          d: "M13.4687 5.79439L6.96875 -9.53674e-07L0.46875 5.79439L0.46875 8.6215L5.95475 3.69159L5.95475 14L7.98275 14L7.98275 3.69159L13.4687 8.62149V5.79439Z"
+        }, null, -1)]), 2))])]))), 128))])) : k("", !0)])], 2)])
+      }
+    }
+  },
+  Lr = {
+    class: "relative py-48"
+  },
+  Mr = {
+    class: "site-max"
+  },
+  Sr = ["innerHTML"],
+  Er = {
+    class: ""
+  },
+  Or = {
+    class: "col-span-1"
+  },
+  Ar = ["innerHTML"],
+  Hr = {
+    __name: "List",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = ie("st-fade-up");
+        return u(), f("div", Lr, [o("div", Mr, [e.item.eyebrow ? (u(), f("h3", {
+          key: 0,
+          class: "eyebrow mb-64",
+          innerHTML: t.$sanitize(e.item.eyebrow)
+        }, null, 8, Sr)) : k("", !0), o("ul", Er, [(u(!0), f(K, null, X(e.item.items, (i, a) => U((u(), f("li", {
+          key: i.id,
+          class: "site-grid py-30 s:py-32 m:py-40 border-t border-theme-15"
+        }, [o("div", Or, "0" + Se(a + 1) + ".", 1), o("div", {
+          class: "col-span-5 s:col-start-7 h6",
+          innerHTML: t.$sanitize(i.text)
+        }, null, 8, Ar)])), [
+          [s]
+        ])), 128))])])])
+      }
+    }
+  },
+  Cr = {
+    class: "relative py-48"
+  },
+  Rr = {
+    class: "site-max"
+  },
+  Br = {
+    class: "relative"
+  },
+  Nr = {
+    __name: "MediaFull",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J,
+          i = ie("st-scale");
+        return u(), f("article", Cr, [o("div", Rr, [U((u(), f("div", Br, [n[0] || (n[0] = o("div", {
+          class: "pt-[130%] s:pt-[56.25%]"
+        }, null, -1)), L(s, {
+          item: e.item.media,
+          class: "radius-media",
+          aspect: !1
+        }, null, 8, ["item"])])), [
+          [i]
+        ])])])
+      }
+    }
+  },
+  jr = {
+    key: 0,
+    class: "absolute inset-0 bg-black/80 flex items-center justify-center z-2"
+  },
+  Fr = ["src", "alt"],
+  zr = {
+    key: 0,
+    class: "absolute inset-0 bg-black/80 flex items-center justify-center z-2"
+  },
+  Ir = ["src", "alt"],
+  qr = {
+    __name: "MediaFullscreen",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      },
+      fill: {
+        type: Boolean,
+        default: !1
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = T(null),
+        s = T(null);
+      let i;
+      return ee(async () => {
+        await Y(), t.item.parallax && !t.item.aspect && (i = V.fromTo(s.value.$el, {
+          yPercent: -100
+        }, {
+          yPercent: 100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: n.value,
+            scrub: !0
+          }
+        }))
+      }), he(() => {
+        i == null || i.kill()
+      }), (a, r) => {
+        const l = J;
+        return u(), f("div", {
+          ref_key: "el",
+          ref: n,
+          class: "overflow-hidden"
+        }, [e.item.link ? (u(), I(Re, {
+          key: 0,
+          item: e.item.link,
+          div: !0,
+          class: S(["block overflow-hidden", e.fill ? "absolute inset-0" : e.item.aspect ? "relative" : "relative h-full-screen"]),
+          "data-c": "Let’s Go"
+        }, {
+          default: G(() => [L(l, {
+            ref_key: "media",
+            ref: s,
+            item: e.item.media,
+            aspect: !!e.item.aspect
+          }, null, 8, ["item", "aspect"]), e.item.logo ? (u(), f("div", jr, [o("img", {
+            src: e.item.logo.url,
+            alt: e.item.title,
+            class: "h-120 w-auto"
+          }, null, 8, Fr)])) : k("", !0)]),
+          _: 1
+        }, 8, ["item", "class"])) : (u(), f("div", {
+          key: 1,
+          class: S(["overflow-hidden", e.fill ? "absolute inset-0" : e.item.aspect ? "relative" : "relative h-full-screen"])
+        }, [L(l, {
+          ref_key: "media",
+          ref: s,
+          item: e.item.media,
+          aspect: !!e.item.aspect
+        }, null, 8, ["item", "aspect"]), e.item.logo ? (u(), f("div", zr, [o("img", {
+          src: e.item.logo.url,
+          alt: e.item.title,
+          class: "h-120 w-auto"
+        }, null, 8, Ir)])) : k("", !0)], 2))], 512)
+      }
+    }
+  },
+  Dr = {
+    class: "overflow-hidden"
+  },
+  Pr = {
+    class: "flex js-slides"
+  },
+  Vr = {
+    class: "h3 max-s:!text-60 flex items-end gap-x-12 m:gap-x-16 relative z-2"
+  },
+  Ur = ["innerHTML"],
+  Jr = ["innerHTML"],
+  Gr = ["innerHTML"],
+  Kr = ["innerHTML"],
+  Wr = `<svg class="h-10 w-auto"viewBox="0 0 37 10"fill="none"xmlns="http://www.w3.org/2000/svg"><path class="fill-current"d="M4.8908 0.356934L0.751952 4.99979L4.8908 9.64265L6.91016 9.64265L3.3888 5.72408L10.752 5.72408V4.2755L3.3888 4.2755L6.91016 0.356934L4.8908 0.356934Z"/><path class="fill-current"d="M32.6131 0.356934L36.752 4.99979L32.6131 9.64265L30.5937 9.64265L34.1151 5.72408L26.752 5.72408V4.2755L34.1151 4.2755L30.5937 0.356934L32.6131 0.356934Z"/></svg>`,
+  Qr = {
+    __name: "StatsCarousel",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n,
+          $event: s
+        } = le(),
+        i = R(() => n == null ? void 0 : n.small),
+        a = R(() => t.item.items),
+        r = R(() => a.value.length > 3 || i.value),
+        l = T(null),
+        c = T(null),
+        d = m => {
+          const v = m.slice(-1),
+            g = /[^a-zA-Z0-9\s]/.test(v);
+          return {
+            big: g ? m.slice(0, -1).trim() : m,
+            small: g ? v : null
+          }
+        },
+        p = () => {
+          if (!c.value || !l.value) return;
+          const m = l.value,
+            v = Array.from(m).map(y => y.offsetHeight),
+            g = Math.max(...v);
+          c.value.style.setProperty("--height", `${g}px`)
+        };
+      return ee(async () => {
+        await Y(), p(), s.on("resize", p)
+      }), he(() => {
+        s.off("resize", p)
+      }), (m, v) => {
+        const g = Ee;
+        return u(), f("div", Dr, [L(g, null, {
+          default: G(() => [(u(), I(bn($(r) ? _n : "div"), {
+            class: "stats-carousel relative overflow-hidden py-48 js-carousel",
+            "data-c": $(r) ? Wr : null
+          }, {
+            default: G(() => [o("div", {
+              ref_key: "el",
+              ref: c,
+              class: "site-max"
+            }, [o("div", Pr, [(u(!0), f(K, null, X($(a), (y, w) => (u(), f("article", {
+              key: w,
+              class: "stats-carousel-slide flex flex-col justify-between relative radius-global pt-48 pb-40 px-32 min-w-[33rem] max-w-[33rem] s:min-w-[34.4rem] s:max-w-[34.4rem] m:min-w-[45rem] m:max-w-[45rem] min-h-[53.7rem] m:min-h-[64rem] mr-16 m:mr-20 js-slide"
+            }, [v[0] || (v[0] = o("div", {
+              class: "absolute inset-0 bg-theme-15 opacity-60 radius-global"
+            }, null, -1)), o("div", Vr, [o("div", {
+              class: "",
+              innerHTML: m.$sanitize(d(y.stat).big)
+            }, null, 8, Ur), d(y.stat).small ? (u(), f("div", {
+              key: 0,
+              class: "text-[.5em] translate-y-[-.175em]",
+              innerHTML: m.$sanitize(d(y.stat).small)
+            }, null, 8, Jr)) : k("", !0)]), o("div", {
+              ref_for: !0,
+              ref_key: "contents",
+              ref: l,
+              class: "stats-carousel__content flex flex-col gap-y-20 m:gap-y-24"
+            }, [o("h2", {
+              class: "body-large",
+              innerHTML: m.$sanitize(y.title)
+            }, null, 8, Gr), o("p", {
+              class: "body-normal opacity-60",
+              innerHTML: m.$sanitize(y.text)
+            }, null, 8, Kr)], 512)]))), 128))])], 512)]),
+            _: 1
+          }, 8, ["data-c"]))]),
+          _: 1
+        })])
+      }
+    }
+  },
+  Xr = {
+    class: "gallery-vertical relative"
+  },
+  Zr = {
+    class: "relative flex flex-col gap-y-[42rem] py-[42rem] portrait:gap-y-[60rem] portrait:py-[60rem] z-2"
+  },
+  Yr = {
+    class: "site-max site-grid"
+  },
+  ea = {
+    class: "s:col-start-9 s:col-span-3 flex flex-col items-start"
+  },
+  ta = {
+    key: 0,
+    class: "eyebrow opacity-60 mb-24"
+  },
+  na = ["innerHTML"],
+  sa = ["innerHTML"],
+  ia = {
+    __name: "Desktop",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = T(0),
+        n = T([]);
+      let s;
+      return ee(async () => {
+        await Y(), s = n.value.map((i, a) => qe.create({
+          trigger: i,
+          start: "top center",
+          end: "bottom center",
+          onToggle: r => {
+            r.isActive && (t.value = a)
+          }
+        }))
+      }), he(() => {
+        s.forEach(i => i == null ? void 0 : i.kill())
+      }), (i, a) => {
+        const r = J,
+          l = ie("st-words"),
+          c = ie("st-fade");
+        return u(), f("div", Xr, [o("div", {
+          class: S(["gallery-vertical__medias absolute inset-0", e.item.fullscreen ? "--fullscreen" : ""])
+        }, [o("div", {
+          class: S(["sticky top-0 left-0 w-full flex py-48", e.item.fullscreen ? "h-full-screen-e" : "h-full-screen"])
+        }, [o("div", {
+          class: S(e.item.fullscreen ? "absolute inset-0" : "site-max site-grid flex")
+        }, [o("div", {
+          class: S(e.item.fullscreen ? "absolute inset-0" : "s:col-span-7 relative stack")
+        }, [(u(!0), f(K, null, X(e.item.items, (d, p) => (u(), f("div", {
+          ref_for: !0,
+          ref: "item",
+          key: d.id,
+          class: S(e.item.fullscreen ? "absolute inset-0" : "relative overflow-hidden radius-media")
+        }, [L(Dt, {
+          name: "fade"
+        }, {
+          default: G(() => [U(L(r, {
+            item: d.media,
+            aspect: !1
+          }, null, 8, ["item"]), [
+            [qt, $(t) === p]
+          ])]),
+          _: 2
+        }, 1024)], 2))), 128))], 2)], 2)], 2)], 2), o("div", Zr, [(u(!0), f(K, null, X(e.item.items, (d, p) => (u(), f("div", {
+          ref_for: !0,
+          ref_key: "items",
+          ref: n,
+          key: d.id,
+          class: "relative z-2"
+        }, [o("div", Yr, [o("div", ea, [e.item.numbered ? (u(), f("div", ta, "0" + Se(p + 1), 1)) : k("", !0), d.title ? U((u(), f("h3", {
+          key: 1,
+          class: S(e.item.fontCondensed ? "h2-c uppercase" : "h4"),
+          innerHTML: i.$sanitize(d.title)
+        }, null, 10, na)), [
+          [l]
+        ]) : k("", !0), d.text ? U((u(), f("div", {
+          key: 2,
+          class: "body-normal txt text-light mt-40",
+          innerHTML: i.$sanitize(d.text, ["p", "ul", "li", "strong", "a"], !1)
+        }, null, 8, sa)), [
+          [c]
+        ]) : k("", !0)])])]))), 128))])])
+      }
+    }
+  },
+  ra = $e(ia, [
+    ["__scopeId", "data-v-f02b34cd"]
+  ]),
+  aa = {
+    class: "gallery-vertical relative flex flex-col"
+  },
+  la = {
+    class: "gallery-vertical__content inset-0"
+  },
+  oa = {
+    class: "absolute inset-0 bottom-1 z-2"
+  },
+  ca = {
+    class: "flex flex-col items-start site-max relative"
+  },
+  ua = {
+    key: 0,
+    class: "eyebrow opacity-60 mb-16"
+  },
+  da = ["innerHTML"],
+  ma = ["innerHTML"],
+  fa = {
+    __name: "Mobile",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const {
+        $resize: t
+      } = le(), n = R(() => t == null ? void 0 : t.small), s = T([]), i = T([]);
+      let a;
+      return ee(async () => {
+        await Y(), a = i.value.slice(0, i.value.length - 1).map((r, l) => V.timeline({
+          scrollTrigger: {
+            trigger: r,
+            start: "top top",
+            end: "bottom top",
+            scrub: !0
+          }
+        }).fromTo(s.value[l], {
+          alpha: 0
+        }, {
+          alpha: 1,
+          ease: "none"
+        }))
+      }), he(() => {
+        a == null || a.forEach(r => r == null ? void 0 : r.kill())
+      }), (r, l) => {
+        const c = J,
+          d = Ee;
+        return u(), f("div", aa, [(u(!0), f(K, null, X(e.item.items, (p, m) => (u(), f("div", {
+          key: p.id,
+          ref_for: !0,
+          ref_key: "items",
+          ref: i,
+          class: S(["w-full overflow-hidden sticky top-0 left-0 z-2", [m < e.item.items.length - 1 ? "h-full-screen-e" : "h-full-screen"]])
+        }, [o("div", {
+          ref_for: !0,
+          ref_key: "bgs",
+          ref: s,
+          class: "absolute inset-0 bottom-1 bg-black opacity-0 pointer-events-none z-3"
+        }, null, 512), o("div", la, [o("div", oa, [L(d, null, {
+          default: G(() => [L(c, {
+            item: p.mediaMobile && $(n) ? p.mediaMobile : p.media,
+            aspect: !1
+          }, null, 8, ["item"])]),
+          _: 2
+        }, 1024)]), o("div", {
+          class: S(["gallery-vertical__content-box absolute inset-0 flex items-end z-4 overflow-hidden", [m < e.item.items.length - 1 ? "pb-100 s:portrait:pb-300 has-hover:pb-50" : "pb-50"]])
+        }, [o("div", ca, [e.item.numbered ? (u(), f("div", ua, "0" + Se(m + 1), 1)) : k("", !0), p.title ? (u(), f("h3", {
+          key: 1,
+          class: S([e.item.fontCondensed ? "h2-c uppercase" : "h4", "max-w-[25rem] s:max-w-[35rem]"]),
+          innerHTML: r.$sanitize(p.title)
+        }, null, 10, da)) : k("", !0), p.text ? (u(), f("div", {
+          key: 2,
+          class: "text-light mt-24 body-normal max-w-[33.5rem] s:max-w-[45rem]",
+          innerHTML: r.$sanitize(p.text, ["p", "ul", "li", "strong", "a"], !1)
+        }, null, 8, ma)) : k("", !0)])], 2)])], 2))), 128))])
+      }
+    }
+  },
+  ha = $e(fa, [
+    ["__scopeId", "data-v-dc07a6e9"]
+  ]),
+  pa = {
+    class: "relative"
+  },
+  va = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = R(() => n == null ? void 0 : n.medium),
+        i = R(() => n == null ? void 0 : n.small),
+        a = R(() => t.item.fullscreen ? !i.value : !s.value);
+      return (r, l) => {
+        const c = Ee;
+        return u(), f("div", pa, [L(c, null, {
+          default: G(() => [$(a) ? (u(), I(ra, {
+            key: 0,
+            item: e.item
+          }, null, 8, ["item"])) : (u(), I(ha, {
+            key: 1,
+            item: e.item
+          }, null, 8, ["item"]))]),
+          _: 1
+        })])
+      }
+    }
+  },
+  ya = {
+    class: "absolute inset-0 pointer-events-none z-4"
+  },
+  ga = {
+    class: "relative w-full z-2"
+  },
+  ba = {
+    class: "site-max site-grid text-white relative z-2"
+  },
+  wa = {
+    class: "col-span-12"
+  },
+  _a = ["innerHTML"],
+  xa = {
+    class: "absolute top-0 left-0 w-full h-full-screen flex items-center landscape:items-start"
+  },
+  ka = {
+    class: "site-max landscape:py-48"
+  },
+  Ta = {
+    class: "gallery-grid__media relative"
+  },
+  $a = {
+    class: "gallery-grid__grid relative"
+  },
+  La = {
+    class: "gallery-grid__tiles grid grid-cols-3 gap-x-10 s:gap-x-20 overflow-hidden"
+  },
+  Ma = {
+    class: "flex flex-col gap-y-10 s:gap-y-20 relative z-2 -mx-40 s:-mx-40"
+  },
+  Sa = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = T(null),
+        n = T(null),
+        s = T(null),
+        i = T(null),
+        a = T(null),
+        r = T(null),
+        l = T(null),
+        c = T(null),
+        d = T(null),
+        p = T(null),
+        m = T(null);
+      T(null);
+      let v, g, y;
+      return ee(async () => {
+        await Y();
+        const w = We(i.value);
+        V.set(s.value, {
+          width: w.width
+        }), await Y();
+        const _ = ft.getState(n.value.$el);
+        s.value.appendChild(n.value.$el), v = V.timeline({
+          scrollTrigger: {
+            trigger: a.value,
+            endTrigger: a.value,
+            start: "top top",
+            end: "bottom bottom-=100%",
+            scrub: !0
+          }
+        }).add(ft.from(_, {
+          absolute: !0,
+          simple: !0,
+          ease: "none",
+          duration: 1
+        }), 0).fromTo([p.value, m.value], {
+          xPercent: V.utils.wrap([-75, 75])
+        }, {
+          xPercent: 0,
+          duration: .875,
+          ease: "none"
+        }, .125), g = V.timeline({
+          scrollTrigger: {
+            trigger: l.value,
+            start: "bottom bottom",
+            end: "bottom bottom-=25%",
+            scrub: !0
+          }
+        }).fromTo(l.value, {
+          alpha: 0
+        }, {
+          alpha: 1,
+          ease: "linear"
+        });
+        const M = new as(c.value, {
+          type: "lines, words"
+        });
+        y = V.timeline({
+          scrollTrigger: {
+            trigger: t.value,
+            endTrigger: l.value,
+            start: "top top",
+            end: "bottom bottom-=25%",
+            scrub: !0
+          },
+          defaults: {
+            duration: .25
+          }
+        }).fromTo(M.words, {
+          alpha: 0,
+          filter: "blur(10px)"
+        }, {
+          alpha: 1,
+          filter: "blur(0px)",
+          ease: "linear",
+          stagger: .025
+        }, .25).to(M.words, {
+          alpha: 0,
+          filter: "blur(10px)",
+          ease: "power2.in",
+          stagger: .0125
+        }, .75)
+      }), he(() => {
+        v == null || v.kill(), g == null || g.kill(), y == null || y.kill()
+      }), (w, _) => {
+        const M = J;
+        return u(), f("span", null, [o("div", {
+          ref_key: "el",
+          ref: t,
+          class: "gallery-grid relative pointer-events-none z-1"
+        }, [o("div", ya, [o("div", {
+          ref_key: "content",
+          ref: d,
+          class: "sticky top-0 left-0 w-full h-full-screen flex items-center justify-center z-4"
+        }, [_[0] || (_[0] = o("div", {
+          class: "grid-gradient absolute top-0 left-0 w-full h-full-screen-e"
+        }, null, -1)), o("div", ga, [o("div", ba, [o("div", wa, [o("h3", {
+          ref_key: "title",
+          ref: c,
+          class: "h4 s:max-w-[70rem] s:mx-auto pb-54 text-center",
+          innerHTML: w.$sanitize(e.item.title, ["em"])
+        }, null, 8, _a)])])])], 512)]), o("div", {
+          ref_key: "sticky",
+          ref: a,
+          class: "gallery-grid__sticky relative z-2"
+        }, [o("div", {
+          ref_key: "inner",
+          ref: r,
+          class: "gallery-grid__sticky-inner sticky top-0 left-0 w-full h-0"
+        }, [o("div", xa, [o("div", ka, [o("div", Ta, [L(M, {
+          item: e.item.bigMedia,
+          ref_key: "flip",
+          ref: n,
+          class: "radius-media will-change-transform",
+          aspect: !1
+        }, null, 8, ["item"])])]), o("div", {
+          ref_key: "target",
+          ref: s,
+          class: "gallery-grid__target absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
+        }, null, 512)])], 512)], 512), o("div", $a, [o("div", La, [o("div", {
+          ref_key: "left",
+          ref: p,
+          class: "flex flex-col gap-y-10 s:gap-y-20 relative overflow-hidden mt-100"
+        }, [(u(!0), f(K, null, X(e.item.col1, (O, N) => (u(), f("div", {
+          key: N,
+          class: "relative -translate-x-80 s:-translate-x-40 -mr-40 s:mr-0 ml-0"
+        }, [L(M, {
+          item: O,
+          class: "radius-media js-up"
+        }, null, 8, ["item"])]))), 128))], 512), o("div", Ma, [o("div", {
+          ref_key: "targetRef",
+          ref: i,
+          class: "gallery-grid__target relative z-3"
+        }, null, 512), (u(!0), f(K, null, X(e.item.col2, (O, N) => (u(), f("div", {
+          key: N,
+          class: "relative"
+        }, [L(M, {
+          item: O,
+          class: "radius-media js-up"
+        }, null, 8, ["item"])]))), 128))]), o("div", {
+          ref_key: "right",
+          ref: m,
+          class: "flex flex-col gap-y-10 s:gap-y-20 overflow-hidden mt-150"
+        }, [(u(!0), f(K, null, X(e.item.col3, (O, N) => (u(), f("div", {
+          key: N,
+          class: "relative translate-x-80 s:translate-x-40 -ml-40 s:ml-0 s:mr-0"
+        }, [L(M, {
+          item: O,
+          class: "radius-media js-up"
+        }, null, 8, ["item"])]))), 128))], 512)]), o("div", {
+          ref_key: "bg",
+          ref: l,
+          class: "absolute inset-0 opacity-0 bg-black pointer-events-none z-2"
+        }, null, 512)])], 512), _[1] || (_[1] = o("div", {
+          class: "gallery-grid__margin relative"
+        }, null, -1))])
+      }
+    }
+  },
+  Ea = $e(Sa, [
+    ["__scopeId", "data-v-1ee535d4"]
+  ]),
+  Oa = {
+    class: "relative"
+  },
+  Aa = {
+    class: "relative radius-media",
+    "data-c": "Explore"
+  },
+  Ha = {
+    class: "flex flex-col items-start gap-y-16 mt-36"
+  },
+  Ca = ["innerHTML"],
+  Ra = ["innerHTML"],
+  Xt = {
+    __name: "Card",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      },
+      condensed: {
+        type: Boolean,
+        required: !1,
+        default: !1
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J,
+          i = te,
+          a = Pe,
+          r = ie("st-scale");
+        return u(), f("article", Oa, [L(a, {
+          to: `/work/${e.item.case.slug}`,
+          class: "block h-scale"
+        }, {
+          default: G(() => [U((u(), f("div", Aa, [n[0] || (n[0] = o("div", {
+            class: "pt-[130%]"
+          }, null, -1)), L(s, {
+            item: e.item.media,
+            aspect: !1,
+            class: "h-scale__item"
+          }, null, 8, ["item"])])), [
+            [r]
+          ]), o("div", Ha, [e.item.subtitle ? (u(), f("p", {
+            key: 0,
+            class: "body-normal opacity-60 s:max-w-[35.5rem]",
+            innerHTML: t.$sanitize(e.item.subtitle)
+          }, null, 8, Ca)) : k("", !0), o("h3", {
+            class: S(e.condensed ? "h3-c uppercase" : "h5"),
+            innerHTML: t.$sanitize(e.item.case.title)
+          }, null, 10, Ra), L(i, {
+            label: "View",
+            icon: !0,
+            class: "mt-16"
+          })])]),
+          _: 1
+        }, 8, ["to"])])
+      }
+    }
+  },
+  Ba = {
+    class: "py-48"
+  },
+  Na = {
+    class: "site-max site-grid gap-y-96"
+  },
+  ja = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = R(() => parseInt(t.item.layout));
+      return ee(() => {
+        console.log(t.item)
+      }), (s, i) => (u(), f("div", Ba, [o("div", Na, [L(Xt, {
+        item: e.item.items[0],
+        condensed: e.item.condensed,
+        class: S([$(n) === 1 && "col-span-6 s:col-span-5", $(n) === 2 && "col-span-6 s:col-span-4", $(n) === 3 && "col-span-6 s:col-span-6", $(n) === 4 && "col-span-6 s:col-span-6"])
+      }, null, 8, ["item", "condensed", "class"]), L(Xt, {
+        item: e.item.items[1],
+        condensed: e.item.condensed,
+        class: S([$(n) === 1 && "col-span-6 s:col-span-6 s:col-start-7 s:mt-[34rem] m:mt-[42.5rem]", $(n) === 2 && "col-span-6 s:col-span-6 s:col-start-7", $(n) === 3 && "col-span-6 s:col-span-5 s:col-start-8 s:mt-[50rem] m:mt-[60rem]", $(n) === 4 && "col-span-6 s:col-span-4 s:col-start-9 s:mt-[60rem] m:mt-[78.2rem]"])
+      }, null, 8, ["item", "condensed", "class"])])]))
+    }
+  },
+  Fa = {
+    class: "relative py-48"
+  },
+  za = {
+    class: "site-max"
+  },
+  Ia = {
+    class: "relative h-scale",
+    "data-c": "Explore"
+  },
+  qa = {
+    class: "relative radius-media"
+  },
+  Da = {
+    class: "flex items-center justify-between pt-20"
+  },
+  Pa = {
+    class: "flex flex-col items-start gap-y-12"
+  },
+  Va = ["innerHTML"],
+  Ua = ["innerHTML"],
+  Ja = ["src"],
+  Ga = {
+    __name: "CaseFeatured",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = R(() => n != null && n.small && t.item.mediaMobile ? t.item.mediaMobile : t.item.media),
+        i = R(() => n != null && n.small ? !0 : 56.25);
+      return (a, r) => {
+        const l = J,
+          c = Ee,
+          d = te,
+          p = Pe,
+          m = ie("st-scale");
+        return u(), f("article", Fa, [o("div", za, [L(p, {
+          to: `/work/${e.item.case.slug}`,
+          class: "block"
+        }, {
+          default: G(() => [o("div", Ia, [U((u(), f("div", qa, [L(c, null, {
+            default: G(() => [$(s) ? (u(), I(l, {
+              key: 0,
+              item: $(s),
+              aspect: $(i),
+              class: "h-scale__item"
+            }, null, 8, ["item", "aspect"])) : k("", !0)]),
+            _: 1
+          })])), [
+            [m]
+          ])]), o("div", Da, [o("div", Pa, [e.item.case.title ? (u(), f("h2", {
+            key: 0,
+            class: S(e.item.condensed ? "h3-c uppercase" : "h4"),
+            innerHTML: a.$sanitize(e.item.case.title)
+          }, null, 10, Va)) : k("", !0), e.item.subtitle ? (u(), f("p", {
+            key: 1,
+            class: "body-normal opacity-60 w-full max-w-[30rem] s:max-w-[70rem]",
+            innerHTML: a.$sanitize(e.item.subtitle)
+          }, null, 8, Ua)) : k("", !0), L(d, {
+            icon: !0,
+            class: "mt-20"
+          })]), e.item.case.logo ? (u(), f("img", {
+            key: 0,
+            src: e.item.case.logo.url,
+            class: "h-60 w-auto hidden s:block"
+          }, null, 8, Ja)) : k("", !0)])]),
+          _: 1
+        }, 8, ["to"])])])
+      }
+    }
+  },
+  Ka = {},
+  Wa = {
+    class: "icon-toggle"
+  };
+
+function Qa(e, t) {
+  return u(), f("div", Wa)
+}
+const xn = $e(Ka, [
+    ["render", Qa]
+  ]),
+  Xa = {
+    class: "dd__content px-32 s:px-40 m:px-48 bg-white rounded-[2rem]"
+  },
+  Za = ["onClick"],
+  Ya = {
+    class: "col-span-6 s:col-span-8 flex justify-between items-center"
+  },
+  el = ["innerHTML"],
+  tl = {
+    class: "hidden s:block col-span-6 s:col-span-2"
+  },
+  nl = ["innerHTML"],
+  sl = {
+    class: "hidden s:block col-span-6 s:col-span-2"
+  },
+  il = {
+    class: "flex justify-between items-center"
+  },
+  rl = ["innerHTML"],
+  al = {
+    class: "relative overflow-hidden h-0 js-dd"
+  },
+  ll = {
+    class: "pb-32 s:pb-36 m:pb-40 pt-100 s:min-h-[30rem]"
+  },
+  ol = {
+    class: "flex flex-col items-start s:hidden text-light mb-40"
+  },
+  cl = ["innerHTML"],
+  ul = ["innerHTML"],
+  dl = {
+    class: "flex flex-col s:flex-row items-start s:items-end s:justify-between gap-y-40 w-full"
+  },
+  ml = ["innerHTML"],
+  fl = {
+    __name: "Dropdowns",
+    props: {
+      items: {
+        type: Array,
+        required: !0
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = T(null),
+        s = T(null),
+        i = T(null),
+        a = l => {
+          i.value = s.value, s.value = l;
+          const c = r[l],
+            d = r[i.value];
+          c && (c.active = !c.active, c.tl.clear().to(c.dd, {
+            height: c.active ? "auto" : 0
+          }).restart()), d && l !== i.value && (d.active = !1, d.tl.clear().to(d.dd, {
+            height: 0
+          }).restart()), l === i.value && (s.value = null)
+        };
+      let r;
+      return ee(async () => {
+        await Y();
+        const l = Me(".js-dd", n.value);
+        r = t.items.map((c, d) => {
+          const p = V.timeline({
+              paused: !0,
+              defaults: {
+                duration: .5,
+                ease: "snappy"
+              }
+            }),
+            m = l[d];
+          return {
+            tl: p,
+            dd: m,
+            active: !1
+          }
+        })
+      }), Pt(() => t.items, async () => {
+        await Y();
+        const l = Me(".js-dd", n.value);
+        console.log(l), r = t.items.map((c, d) => {
+          const p = V.timeline({
+              paused: !0,
+              defaults: {
+                duration: .5,
+                ease: "snappy"
+              }
+            }),
+            m = l[d];
+          return {
+            tl: p,
+            dd: m,
+            active: !1
+          }
+        })
+      }), he(() => {
+        r.forEach(l => {
+          var c;
+          return (c = l.tl) == null ? void 0 : c.kill()
+        }), r = null
+      }), (l, c) => {
+        const d = xn,
+          p = te;
+        return u(), f("div", {
+          ref_key: "el",
+          ref: n,
+          class: "flex flex-col gap-y-12"
+        }, [(u(!0), f(K, null, X(e.items, (m, v) => (u(), f("article", {
+          key: m.id,
+          class: S(["dd site-max js-item", $(s) === v && "is-active"])
+        }, [o("div", Xa, [o("button", {
+          type: "button",
+          onClick: () => a(v),
+          class: "site-grid items-center py-32 s:py-36 m:py-40 text-left w-full"
+        }, [o("div", Ya, [o("h2", {
+          class: "h3-c uppercase",
+          innerHTML: l.$sanitize(m.title)
+        }, null, 8, el), L(d, {
+          class: "s:hidden"
+        })]), o("div", tl, [o("div", {
+          class: "text-light",
+          innerHTML: m.employmentType
+        }, null, 8, nl)]), o("div", sl, [o("div", il, [o("div", {
+          innerHTML: m.location,
+          class: "text-light"
+        }, null, 8, rl), L(d, {
+          class: "hidden s:inline-flex"
+        })])])], 8, Za), o("div", al, [o("div", ll, [o("div", ol, [o("div", {
+          innerHTML: m.employmentType
+        }, null, 8, cl), o("div", {
+          innerHTML: m.location
+        }, null, 8, ul)]), o("div", dl, [o("div", {
+          class: "body-large txt text-light w-full s:max-w-[50rem]",
+          innerHTML: l.$sanitize(m.desc, ["p", "div", "i", "strong", "ul", "li"], !1)
+        }, null, 8, ml), m.url ? (u(), I(p, {
+          key: 0,
+          to: m.url,
+          label: "Apply Now",
+          icon: !0,
+          outline: !0,
+          light: !0
+        }, null, 8, ["to"])) : k("", !0)])])])])], 2))), 128))], 512)
+      }
+    }
+  },
+  hl = $e(fl, [
+    ["__scopeId", "data-v-ab720705"]
+  ]);
+
+function kn(e, t) {
+  return function() {
+    return e.apply(t, arguments)
+  }
+}
+const {
+  toString: pl
+} = Object.prototype, {
+  getPrototypeOf: Vt
+} = Object, yt = (e => t => {
+  const n = pl.call(t);
+  return e[n] || (e[n] = n.slice(8, -1).toLowerCase())
+})(Object.create(null)), Oe = e => (e = e.toLowerCase(), t => yt(t) === e), gt = e => t => typeof t === e, {
+  isArray: Ue
+} = Array, Xe = gt("undefined");
+
+function vl(e) {
+  return e !== null && !Xe(e) && e.constructor !== null && !Xe(e.constructor) && Te(e.constructor.isBuffer) && e.constructor.isBuffer(e)
+}
+const Tn = Oe("ArrayBuffer");
+
+function yl(e) {
+  let t;
+  return typeof ArrayBuffer < "u" && ArrayBuffer.isView ? t = ArrayBuffer.isView(e) : t = e && e.buffer && Tn(e.buffer), t
+}
+const gl = gt("string"),
+  Te = gt("function"),
+  $n = gt("number"),
+  bt = e => e !== null && typeof e == "object",
+  bl = e => e === !0 || e === !1,
+  ct = e => {
+    if (yt(e) !== "object") return !1;
+    const t = Vt(e);
+    return (t === null || t === Object.prototype || Object.getPrototypeOf(t) === null) && !(Symbol.toStringTag in e) && !(Symbol.iterator in e)
+  },
+  wl = Oe("Date"),
+  _l = Oe("File"),
+  xl = Oe("Blob"),
+  kl = Oe("FileList"),
+  Tl = e => bt(e) && Te(e.pipe),
+  $l = e => {
+    let t;
+    return e && (typeof FormData == "function" && e instanceof FormData || Te(e.append) && ((t = yt(e)) === "formdata" || t === "object" && Te(e.toString) && e.toString() === "[object FormData]"))
+  },
+  Ll = Oe("URLSearchParams"),
+  [Ml, Sl, El, Ol] = ["ReadableStream", "Request", "Response", "Headers"].map(Oe),
+  Al = e => e.trim ? e.trim() : e.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+
+function at(e, t, {
+  allOwnKeys: n = !1
+} = {}) {
+  if (e === null || typeof e > "u") return;
+  let s, i;
+  if (typeof e != "object" && (e = [e]), Ue(e))
+    for (s = 0, i = e.length; s < i; s++) t.call(null, e[s], s, e);
+  else {
+    const a = n ? Object.getOwnPropertyNames(e) : Object.keys(e),
+      r = a.length;
+    let l;
+    for (s = 0; s < r; s++) l = a[s], t.call(null, e[l], l, e)
+  }
+}
+
+function Ln(e, t) {
+  t = t.toLowerCase();
+  const n = Object.keys(e);
+  let s = n.length,
+    i;
+  for (; s-- > 0;)
+    if (i = n[s], t === i.toLowerCase()) return i;
+  return null
+}
+const Fe = typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : typeof window < "u" ? window : global,
+  Mn = e => !Xe(e) && e !== Fe;
+
+function Ct() {
+  const {
+    caseless: e
+  } = Mn(this) && this || {}, t = {}, n = (s, i) => {
+    const a = e && Ln(t, i) || i;
+    ct(t[a]) && ct(s) ? t[a] = Ct(t[a], s) : ct(s) ? t[a] = Ct({}, s) : Ue(s) ? t[a] = s.slice() : t[a] = s
+  };
+  for (let s = 0, i = arguments.length; s < i; s++) arguments[s] && at(arguments[s], n);
+  return t
+}
+const Hl = (e, t, n, {
+    allOwnKeys: s
+  } = {}) => (at(t, (i, a) => {
+    n && Te(i) ? e[a] = kn(i, n) : e[a] = i
+  }, {
+    allOwnKeys: s
+  }), e),
+  Cl = e => (e.charCodeAt(0) === 65279 && (e = e.slice(1)), e),
+  Rl = (e, t, n, s) => {
+    e.prototype = Object.create(t.prototype, s), e.prototype.constructor = e, Object.defineProperty(e, "super", {
+      value: t.prototype
+    }), n && Object.assign(e.prototype, n)
+  },
+  Bl = (e, t, n, s) => {
+    let i, a, r;
+    const l = {};
+    if (t = t || {}, e == null) return t;
+    do {
+      for (i = Object.getOwnPropertyNames(e), a = i.length; a-- > 0;) r = i[a], (!s || s(r, e, t)) && !l[r] && (t[r] = e[r], l[r] = !0);
+      e = n !== !1 && Vt(e)
+    } while (e && (!n || n(e, t)) && e !== Object.prototype);
+    return t
+  },
+  Nl = (e, t, n) => {
+    e = String(e), (n === void 0 || n > e.length) && (n = e.length), n -= t.length;
+    const s = e.indexOf(t, n);
+    return s !== -1 && s === n
+  },
+  jl = e => {
+    if (!e) return null;
+    if (Ue(e)) return e;
+    let t = e.length;
+    if (!$n(t)) return null;
+    const n = new Array(t);
+    for (; t-- > 0;) n[t] = e[t];
+    return n
+  },
+  Fl = (e => t => e && t instanceof e)(typeof Uint8Array < "u" && Vt(Uint8Array)),
+  zl = (e, t) => {
+    const s = (e && e[Symbol.iterator]).call(e);
+    let i;
+    for (;
+      (i = s.next()) && !i.done;) {
+      const a = i.value;
+      t.call(e, a[0], a[1])
+    }
+  },
+  Il = (e, t) => {
+    let n;
+    const s = [];
+    for (;
+      (n = e.exec(t)) !== null;) s.push(n);
+    return s
+  },
+  ql = Oe("HTMLFormElement"),
+  Dl = e => e.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g, function(n, s, i) {
+    return s.toUpperCase() + i
+  }),
+  Zt = (({
+    hasOwnProperty: e
+  }) => (t, n) => e.call(t, n))(Object.prototype),
+  Pl = Oe("RegExp"),
+  Sn = (e, t) => {
+    const n = Object.getOwnPropertyDescriptors(e),
+      s = {};
+    at(n, (i, a) => {
+      let r;
+      (r = t(i, a, e)) !== !1 && (s[a] = r || i)
+    }), Object.defineProperties(e, s)
+  },
+  Vl = e => {
+    Sn(e, (t, n) => {
+      if (Te(e) && ["arguments", "caller", "callee"].indexOf(n) !== -1) return !1;
+      const s = e[n];
+      if (Te(s)) {
+        if (t.enumerable = !1, "writable" in t) {
+          t.writable = !1;
+          return
+        }
+        t.set || (t.set = () => {
+          throw Error("Can not rewrite read-only method '" + n + "'")
+        })
+      }
+    })
+  },
+  Ul = (e, t) => {
+    const n = {},
+      s = i => {
+        i.forEach(a => {
+          n[a] = !0
+        })
+      };
+    return Ue(e) ? s(e) : s(String(e).split(t)), n
+  },
+  Jl = () => {},
+  Gl = (e, t) => e != null && Number.isFinite(e = +e) ? e : t;
+
+function Kl(e) {
+  return !!(e && Te(e.append) && e[Symbol.toStringTag] === "FormData" && e[Symbol.iterator])
+}
+const Wl = e => {
+    const t = new Array(10),
+      n = (s, i) => {
+        if (bt(s)) {
+          if (t.indexOf(s) >= 0) return;
+          if (!("toJSON" in s)) {
+            t[i] = s;
+            const a = Ue(s) ? [] : {};
+            return at(s, (r, l) => {
+              const c = n(r, i + 1);
+              !Xe(c) && (a[l] = c)
+            }), t[i] = void 0, a
+          }
+        }
+        return s
+      };
+    return n(e, 0)
+  },
+  Ql = Oe("AsyncFunction"),
+  Xl = e => e && (bt(e) || Te(e)) && Te(e.then) && Te(e.catch),
+  En = ((e, t) => e ? setImmediate : t ? ((n, s) => (Fe.addEventListener("message", ({
+    source: i,
+    data: a
+  }) => {
+    i === Fe && a === n && s.length && s.shift()()
+  }, !1), i => {
+    s.push(i), Fe.postMessage(n, "*")
+  }))(`axios@${Math.random()}`, []) : n => setTimeout(n))(typeof setImmediate == "function", Te(Fe.postMessage)),
+  Zl = typeof queueMicrotask < "u" ? queueMicrotask.bind(Fe) : typeof process < "u" && process.nextTick || En,
+  b = {
+    isArray: Ue,
+    isArrayBuffer: Tn,
+    isBuffer: vl,
+    isFormData: $l,
+    isArrayBufferView: yl,
+    isString: gl,
+    isNumber: $n,
+    isBoolean: bl,
+    isObject: bt,
+    isPlainObject: ct,
+    isReadableStream: Ml,
+    isRequest: Sl,
+    isResponse: El,
+    isHeaders: Ol,
+    isUndefined: Xe,
+    isDate: wl,
+    isFile: _l,
+    isBlob: xl,
+    isRegExp: Pl,
+    isFunction: Te,
+    isStream: Tl,
+    isURLSearchParams: Ll,
+    isTypedArray: Fl,
+    isFileList: kl,
+    forEach: at,
+    merge: Ct,
+    extend: Hl,
+    trim: Al,
+    stripBOM: Cl,
+    inherits: Rl,
+    toFlatObject: Bl,
+    kindOf: yt,
+    kindOfTest: Oe,
+    endsWith: Nl,
+    toArray: jl,
+    forEachEntry: zl,
+    matchAll: Il,
+    isHTMLForm: ql,
+    hasOwnProperty: Zt,
+    hasOwnProp: Zt,
+    reduceDescriptors: Sn,
+    freezeMethods: Vl,
+    toObjectSet: Ul,
+    toCamelCase: Dl,
+    noop: Jl,
+    toFiniteNumber: Gl,
+    findKey: Ln,
+    global: Fe,
+    isContextDefined: Mn,
+    isSpecCompliantForm: Kl,
+    toJSONObject: Wl,
+    isAsyncFn: Ql,
+    isThenable: Xl,
+    setImmediate: En,
+    asap: Zl
+  };
+
+function z(e, t, n, s, i) {
+  Error.call(this), Error.captureStackTrace ? Error.captureStackTrace(this, this.constructor) : this.stack = new Error().stack, this.message = e, this.name = "AxiosError", t && (this.code = t), n && (this.config = n), s && (this.request = s), i && (this.response = i, this.status = i.status ? i.status : null)
+}
+b.inherits(z, Error, {
+  toJSON: function() {
+    return {
+      message: this.message,
+      name: this.name,
+      description: this.description,
+      number: this.number,
+      fileName: this.fileName,
+      lineNumber: this.lineNumber,
+      columnNumber: this.columnNumber,
+      stack: this.stack,
+      config: b.toJSONObject(this.config),
+      code: this.code,
+      status: this.status
+    }
+  }
+});
+const On = z.prototype,
+  An = {};
+["ERR_BAD_OPTION_VALUE", "ERR_BAD_OPTION", "ECONNABORTED", "ETIMEDOUT", "ERR_NETWORK", "ERR_FR_TOO_MANY_REDIRECTS", "ERR_DEPRECATED", "ERR_BAD_RESPONSE", "ERR_BAD_REQUEST", "ERR_CANCELED", "ERR_NOT_SUPPORT", "ERR_INVALID_URL"].forEach(e => {
+  An[e] = {
+    value: e
+  }
+});
+Object.defineProperties(z, An);
+Object.defineProperty(On, "isAxiosError", {
+  value: !0
+});
+z.from = (e, t, n, s, i, a) => {
+  const r = Object.create(On);
+  return b.toFlatObject(e, r, function(c) {
+    return c !== Error.prototype
+  }, l => l !== "isAxiosError"), z.call(r, e.message, t, n, s, i), r.cause = e, r.name = e.name, a && Object.assign(r, a), r
+};
+const Yl = null;
+
+function Rt(e) {
+  return b.isPlainObject(e) || b.isArray(e)
+}
+
+function Hn(e) {
+  return b.endsWith(e, "[]") ? e.slice(0, -2) : e
+}
+
+function Yt(e, t, n) {
+  return e ? e.concat(t).map(function(i, a) {
+    return i = Hn(i), !n && a ? "[" + i + "]" : i
+  }).join(n ? "." : "") : t
+}
+
+function eo(e) {
+  return b.isArray(e) && !e.some(Rt)
+}
+const to = b.toFlatObject(b, {}, null, function(t) {
+  return /^is[A-Z]/.test(t)
+});
+
+function wt(e, t, n) {
+  if (!b.isObject(e)) throw new TypeError("target must be an object");
+  t = t || new FormData, n = b.toFlatObject(n, {
+    metaTokens: !0,
+    dots: !1,
+    indexes: !1
+  }, !1, function(w, _) {
+    return !b.isUndefined(_[w])
+  });
+  const s = n.metaTokens,
+    i = n.visitor || p,
+    a = n.dots,
+    r = n.indexes,
+    c = (n.Blob || typeof Blob < "u" && Blob) && b.isSpecCompliantForm(t);
+  if (!b.isFunction(i)) throw new TypeError("visitor must be a function");
+
+  function d(y) {
+    if (y === null) return "";
+    if (b.isDate(y)) return y.toISOString();
+    if (!c && b.isBlob(y)) throw new z("Blob is not supported. Use a Buffer instead.");
+    return b.isArrayBuffer(y) || b.isTypedArray(y) ? c && typeof Blob == "function" ? new Blob([y]) : Buffer.from(y) : y
+  }
+
+  function p(y, w, _) {
+    let M = y;
+    if (y && !_ && typeof y == "object") {
+      if (b.endsWith(w, "{}")) w = s ? w : w.slice(0, -2), y = JSON.stringify(y);
+      else if (b.isArray(y) && eo(y) || (b.isFileList(y) || b.endsWith(w, "[]")) && (M = b.toArray(y))) return w = Hn(w), M.forEach(function(N, B) {
+        !(b.isUndefined(N) || N === null) && t.append(r === !0 ? Yt([w], B, a) : r === null ? w : w + "[]", d(N))
+      }), !1
+    }
+    return Rt(y) ? !0 : (t.append(Yt(_, w, a), d(y)), !1)
+  }
+  const m = [],
+    v = Object.assign(to, {
+      defaultVisitor: p,
+      convertValue: d,
+      isVisitable: Rt
+    });
+
+  function g(y, w) {
+    if (!b.isUndefined(y)) {
+      if (m.indexOf(y) !== -1) throw Error("Circular reference detected in " + w.join("."));
+      m.push(y), b.forEach(y, function(M, O) {
+        (!(b.isUndefined(M) || M === null) && i.call(t, M, b.isString(O) ? O.trim() : O, w, v)) === !0 && g(M, w ? w.concat(O) : [O])
+      }), m.pop()
+    }
+  }
+  if (!b.isObject(e)) throw new TypeError("data must be an object");
+  return g(e), t
+}
+
+function en(e) {
+  const t = {
+    "!": "%21",
+    "'": "%27",
+    "(": "%28",
+    ")": "%29",
+    "~": "%7E",
+    "%20": "+",
+    "%00": "\0"
+  };
+  return encodeURIComponent(e).replace(/[!'()~]|%20|%00/g, function(s) {
+    return t[s]
+  })
+}
+
+function Ut(e, t) {
+  this._pairs = [], e && wt(e, this, t)
+}
+const Cn = Ut.prototype;
+Cn.append = function(t, n) {
+  this._pairs.push([t, n])
+};
+Cn.toString = function(t) {
+  const n = t ? function(s) {
+    return t.call(this, s, en)
+  } : en;
+  return this._pairs.map(function(i) {
+    return n(i[0]) + "=" + n(i[1])
+  }, "").join("&")
+};
+
+function no(e) {
+  return encodeURIComponent(e).replace(/%3A/gi, ":").replace(/%24/g, "$").replace(/%2C/gi, ",").replace(/%20/g, "+").replace(/%5B/gi, "[").replace(/%5D/gi, "]")
+}
+
+function Rn(e, t, n) {
+  if (!t) return e;
+  const s = n && n.encode || no;
+  b.isFunction(n) && (n = {
+    serialize: n
+  });
+  const i = n && n.serialize;
+  let a;
+  if (i ? a = i(t, n) : a = b.isURLSearchParams(t) ? t.toString() : new Ut(t, n).toString(s), a) {
+    const r = e.indexOf("#");
+    r !== -1 && (e = e.slice(0, r)), e += (e.indexOf("?") === -1 ? "?" : "&") + a
+  }
+  return e
+}
+class tn {
+  constructor() {
+    this.handlers = []
+  }
+  use(t, n, s) {
+    return this.handlers.push({
+      fulfilled: t,
+      rejected: n,
+      synchronous: s ? s.synchronous : !1,
+      runWhen: s ? s.runWhen : null
+    }), this.handlers.length - 1
+  }
+  eject(t) {
+    this.handlers[t] && (this.handlers[t] = null)
+  }
+  clear() {
+    this.handlers && (this.handlers = [])
+  }
+  forEach(t) {
+    b.forEach(this.handlers, function(s) {
+      s !== null && t(s)
+    })
+  }
+}
+const Bn = {
+    silentJSONParsing: !0,
+    forcedJSONParsing: !0,
+    clarifyTimeoutError: !1
+  },
+  so = typeof URLSearchParams < "u" ? URLSearchParams : Ut,
+  io = typeof FormData < "u" ? FormData : null,
+  ro = typeof Blob < "u" ? Blob : null,
+  ao = {
+    isBrowser: !0,
+    classes: {
+      URLSearchParams: so,
+      FormData: io,
+      Blob: ro
+    },
+    protocols: ["http", "https", "file", "blob", "url", "data"]
+  },
+  Jt = typeof window < "u" && typeof document < "u",
+  Bt = typeof navigator == "object" && navigator || void 0,
+  lo = Jt && (!Bt || ["ReactNative", "NativeScript", "NS"].indexOf(Bt.product) < 0),
+  oo = typeof WorkerGlobalScope < "u" && self instanceof WorkerGlobalScope && typeof self.importScripts == "function",
+  co = Jt && window.location.href || "http://localhost",
+  uo = Object.freeze(Object.defineProperty({
+    __proto__: null,
+    hasBrowserEnv: Jt,
+    hasStandardBrowserEnv: lo,
+    hasStandardBrowserWebWorkerEnv: oo,
+    navigator: Bt,
+    origin: co
+  }, Symbol.toStringTag, {
+    value: "Module"
+  })),
+  we = {
+    ...uo,
+    ...ao
+  };
+
+function mo(e, t) {
+  return wt(e, new we.classes.URLSearchParams, Object.assign({
+    visitor: function(n, s, i, a) {
+      return we.isNode && b.isBuffer(n) ? (this.append(s, n.toString("base64")), !1) : a.defaultVisitor.apply(this, arguments)
+    }
+  }, t))
+}
+
+function fo(e) {
+  return b.matchAll(/\w+|\[(\w*)]/g, e).map(t => t[0] === "[]" ? "" : t[1] || t[0])
+}
+
+function ho(e) {
+  const t = {},
+    n = Object.keys(e);
+  let s;
+  const i = n.length;
+  let a;
+  for (s = 0; s < i; s++) a = n[s], t[a] = e[a];
+  return t
+}
+
+function Nn(e) {
+  function t(n, s, i, a) {
+    let r = n[a++];
+    if (r === "__proto__") return !0;
+    const l = Number.isFinite(+r),
+      c = a >= n.length;
+    return r = !r && b.isArray(i) ? i.length : r, c ? (b.hasOwnProp(i, r) ? i[r] = [i[r], s] : i[r] = s, !l) : ((!i[r] || !b.isObject(i[r])) && (i[r] = []), t(n, s, i[r], a) && b.isArray(i[r]) && (i[r] = ho(i[r])), !l)
+  }
+  if (b.isFormData(e) && b.isFunction(e.entries)) {
+    const n = {};
+    return b.forEachEntry(e, (s, i) => {
+      t(fo(s), i, n, 0)
+    }), n
+  }
+  return null
+}
+
+function po(e, t, n) {
+  if (b.isString(e)) try {
+    return (t || JSON.parse)(e), b.trim(e)
+  } catch (s) {
+    if (s.name !== "SyntaxError") throw s
+  }
+  return (n || JSON.stringify)(e)
+}
+const lt = {
+  transitional: Bn,
+  adapter: ["xhr", "http", "fetch"],
+  transformRequest: [function(t, n) {
+    const s = n.getContentType() || "",
+      i = s.indexOf("application/json") > -1,
+      a = b.isObject(t);
+    if (a && b.isHTMLForm(t) && (t = new FormData(t)), b.isFormData(t)) return i ? JSON.stringify(Nn(t)) : t;
+    if (b.isArrayBuffer(t) || b.isBuffer(t) || b.isStream(t) || b.isFile(t) || b.isBlob(t) || b.isReadableStream(t)) return t;
+    if (b.isArrayBufferView(t)) return t.buffer;
+    if (b.isURLSearchParams(t)) return n.setContentType("application/x-www-form-urlencoded;charset=utf-8", !1), t.toString();
+    let l;
+    if (a) {
+      if (s.indexOf("application/x-www-form-urlencoded") > -1) return mo(t, this.formSerializer).toString();
+      if ((l = b.isFileList(t)) || s.indexOf("multipart/form-data") > -1) {
+        const c = this.env && this.env.FormData;
+        return wt(l ? {
+          "files[]": t
+        } : t, c && new c, this.formSerializer)
+      }
+    }
+    return a || i ? (n.setContentType("application/json", !1), po(t)) : t
+  }],
+  transformResponse: [function(t) {
+    const n = this.transitional || lt.transitional,
+      s = n && n.forcedJSONParsing,
+      i = this.responseType === "json";
+    if (b.isResponse(t) || b.isReadableStream(t)) return t;
+    if (t && b.isString(t) && (s && !this.responseType || i)) {
+      const r = !(n && n.silentJSONParsing) && i;
+      try {
+        return JSON.parse(t)
+      } catch (l) {
+        if (r) throw l.name === "SyntaxError" ? z.from(l, z.ERR_BAD_RESPONSE, this, null, this.response) : l
+      }
+    }
+    return t
+  }],
+  timeout: 0,
+  xsrfCookieName: "XSRF-TOKEN",
+  xsrfHeaderName: "X-XSRF-TOKEN",
+  maxContentLength: -1,
+  maxBodyLength: -1,
+  env: {
+    FormData: we.classes.FormData,
+    Blob: we.classes.Blob
+  },
+  validateStatus: function(t) {
+    return t >= 200 && t < 300
+  },
+  headers: {
+    common: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": void 0
+    }
+  }
+};
+b.forEach(["delete", "get", "head", "post", "put", "patch"], e => {
+  lt.headers[e] = {}
+});
+const vo = b.toObjectSet(["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"]),
+  yo = e => {
+    const t = {};
+    let n, s, i;
+    return e && e.split(``).forEach(function(r) {
+      i = r.indexOf(":"), n = r.substring(0, i).trim().toLowerCase(), s = r.substring(i + 1).trim(), !(!n || t[n] && vo[n]) && (n === "set-cookie" ? t[n] ? t[n].push(s) : t[n] = [s] : t[n] = t[n] ? t[n] + ", " + s : s)
+    }), t
+  },
+  nn = Symbol("internals");
+
+function Ge(e) {
+  return e && String(e).trim().toLowerCase()
+}
+
+function ut(e) {
+  return e === !1 || e == null ? e : b.isArray(e) ? e.map(ut) : String(e)
+}
+
+function go(e) {
+  const t = Object.create(null),
+    n = /([^\s,;=]+)\s*(?:=\s*([^,;]+))?/g;
+  let s;
+  for (; s = n.exec(e);) t[s[1]] = s[2];
+  return t
+}
+const bo = e => /^[-_a-zA-Z0-9^`|~,!#$%&'*+.]+$/.test(e.trim());
+
+function Et(e, t, n, s, i) {
+  if (b.isFunction(s)) return s.call(this, t, n);
+  if (i && (t = n), !!b.isString(t)) {
+    if (b.isString(s)) return t.indexOf(s) !== -1;
+    if (b.isRegExp(s)) return s.test(t)
+  }
+}
+
+function wo(e) {
+  return e.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (t, n, s) => n.toUpperCase() + s)
+}
+
+function _o(e, t) {
+  const n = b.toCamelCase(" " + t);
+  ["get", "set", "has"].forEach(s => {
+    Object.defineProperty(e, s + n, {
+      value: function(i, a, r) {
+        return this[s].call(this, t, i, a, r)
+      },
+      configurable: !0
+    })
+  })
+}
+let xe = class {
+  constructor(t) {
+    t && this.set(t)
+  }
+  set(t, n, s) {
+    const i = this;
+
+    function a(l, c, d) {
+      const p = Ge(c);
+      if (!p) throw new Error("header name must be a non-empty string");
+      const m = b.findKey(i, p);
+      (!m || i[m] === void 0 || d === !0 || d === void 0 && i[m] !== !1) && (i[m || c] = ut(l))
+    }
+    const r = (l, c) => b.forEach(l, (d, p) => a(d, p, c));
+    if (b.isPlainObject(t) || t instanceof this.constructor) r(t, n);
+    else if (b.isString(t) && (t = t.trim()) && !bo(t)) r(yo(t), n);
+    else if (b.isHeaders(t))
+      for (const [l, c] of t.entries()) a(c, l, s);
+    else t != null && a(n, t, s);
+    return this
+  }
+  get(t, n) {
+    if (t = Ge(t), t) {
+      const s = b.findKey(this, t);
+      if (s) {
+        const i = this[s];
+        if (!n) return i;
+        if (n === !0) return go(i);
+        if (b.isFunction(n)) return n.call(this, i, s);
+        if (b.isRegExp(n)) return n.exec(i);
+        throw new TypeError("parser must be boolean|regexp|function")
+      }
+    }
+  }
+  has(t, n) {
+    if (t = Ge(t), t) {
+      const s = b.findKey(this, t);
+      return !!(s && this[s] !== void 0 && (!n || Et(this, this[s], s, n)))
+    }
+    return !1
+  }
+  delete(t, n) {
+    const s = this;
+    let i = !1;
+
+    function a(r) {
+      if (r = Ge(r), r) {
+        const l = b.findKey(s, r);
+        l && (!n || Et(s, s[l], l, n)) && (delete s[l], i = !0)
+      }
+    }
+    return b.isArray(t) ? t.forEach(a) : a(t), i
+  }
+  clear(t) {
+    const n = Object.keys(this);
+    let s = n.length,
+      i = !1;
+    for (; s--;) {
+      const a = n[s];
+      (!t || Et(this, this[a], a, t, !0)) && (delete this[a], i = !0)
+    }
+    return i
+  }
+  normalize(t) {
+    const n = this,
+      s = {};
+    return b.forEach(this, (i, a) => {
+      const r = b.findKey(s, a);
+      if (r) {
+        n[r] = ut(i), delete n[a];
+        return
+      }
+      const l = t ? wo(a) : String(a).trim();
+      l !== a && delete n[a], n[l] = ut(i), s[l] = !0
+    }), this
+  }
+  concat(...t) {
+    return this.constructor.concat(this, ...t)
+  }
+  toJSON(t) {
+    const n = Object.create(null);
+    return b.forEach(this, (s, i) => {
+      s != null && s !== !1 && (n[i] = t && b.isArray(s) ? s.join(", ") : s)
+    }), n
+  } [Symbol.iterator]() {
+    return Object.entries(this.toJSON())[Symbol.iterator]()
+  }
+  toString() {
+    return Object.entries(this.toJSON()).map(([t, n]) => t + ": " + n).join(`
+`)
+  }
+  get[Symbol.toStringTag]() {
+    return "AxiosHeaders"
+  }
+  static from(t) {
+    return t instanceof this ? t : new this(t)
+  }
+  static concat(t, ...n) {
+    const s = new this(t);
+    return n.forEach(i => s.set(i)), s
+  }
+  static accessor(t) {
+    const s = (this[nn] = this[nn] = {
+        accessors: {}
+      }).accessors,
+      i = this.prototype;
+
+    function a(r) {
+      const l = Ge(r);
+      s[l] || (_o(i, r), s[l] = !0)
+    }
+    return b.isArray(t) ? t.forEach(a) : a(t), this
+  }
+};
+xe.accessor(["Content-Type", "Content-Length", "Accept", "Accept-Encoding", "User-Agent", "Authorization"]);
+b.reduceDescriptors(xe.prototype, ({
+  value: e
+}, t) => {
+  let n = t[0].toUpperCase() + t.slice(1);
+  return {
+    get: () => e,
+    set(s) {
+      this[n] = s
+    }
+  }
+});
+b.freezeMethods(xe);
+
+function Ot(e, t) {
+  const n = this || lt,
+    s = t || n,
+    i = xe.from(s.headers);
+  let a = s.data;
+  return b.forEach(e, function(l) {
+    a = l.call(n, a, i.normalize(), t ? t.status : void 0)
+  }), i.normalize(), a
+}
+
+function jn(e) {
+  return !!(e && e.__CANCEL__)
+}
+
+function Je(e, t, n) {
+  z.call(this, e ?? "canceled", z.ERR_CANCELED, t, n), this.name = "CanceledError"
+}
+b.inherits(Je, z, {
+  __CANCEL__: !0
+});
+
+function Fn(e, t, n) {
+  const s = n.config.validateStatus;
+  !n.status || !s || s(n.status) ? e(n) : t(new z("Request failed with status code " + n.status, [z.ERR_BAD_REQUEST, z.ERR_BAD_RESPONSE][Math.floor(n.status / 100) - 4], n.config, n.request, n))
+}
+
+function xo(e) {
+  const t = /^([-+\w]{1,25})(:?\/\/|:)/.exec(e);
+  return t && t[1] || ""
+}
+
+function ko(e, t) {
+  e = e || 10;
+  const n = new Array(e),
+    s = new Array(e);
+  let i = 0,
+    a = 0,
+    r;
+  return t = t !== void 0 ? t : 1e3,
+    function(c) {
+      const d = Date.now(),
+        p = s[a];
+      r || (r = d), n[i] = c, s[i] = d;
+      let m = a,
+        v = 0;
+      for (; m !== i;) v += n[m++], m = m % e;
+      if (i = (i + 1) % e, i === a && (a = (a + 1) % e), d - r < t) return;
+      const g = p && d - p;
+      return g ? Math.round(v * 1e3 / g) : void 0
+    }
+}
+
+function To(e, t) {
+  let n = 0,
+    s = 1e3 / t,
+    i, a;
+  const r = (d, p = Date.now()) => {
+    n = p, i = null, a && (clearTimeout(a), a = null), e.apply(null, d)
+  };
+  return [(...d) => {
+    const p = Date.now(),
+      m = p - n;
+    m >= s ? r(d, p) : (i = d, a || (a = setTimeout(() => {
+      a = null, r(i)
+    }, s - m)))
+  }, () => i && r(i)]
+}
+const ht = (e, t, n = 3) => {
+    let s = 0;
+    const i = ko(50, 250);
+    return To(a => {
+      const r = a.loaded,
+        l = a.lengthComputable ? a.total : void 0,
+        c = r - s,
+        d = i(c),
+        p = r <= l;
+      s = r;
+      const m = {
+        loaded: r,
+        total: l,
+        progress: l ? r / l : void 0,
+        bytes: c,
+        rate: d || void 0,
+        estimated: d && l && p ? (l - r) / d : void 0,
+        event: a,
+        lengthComputable: l != null,
+        [t ? "download" : "upload"]: !0
+      };
+      e(m)
+    }, n)
+  },
+  sn = (e, t) => {
+    const n = e != null;
+    return [s => t[0]({
+      lengthComputable: n,
+      total: e,
+      loaded: s
+    }), t[1]]
+  },
+  rn = e => (...t) => b.asap(() => e(...t)),
+  $o = we.hasStandardBrowserEnv ? ((e, t) => n => (n = new URL(n, we.origin), e.protocol === n.protocol && e.host === n.host && (t || e.port === n.port)))(new URL(we.origin), we.navigator && /(msie|trident)/i.test(we.navigator.userAgent)) : () => !0,
+  Lo = we.hasStandardBrowserEnv ? {
+    write(e, t, n, s, i, a) {
+      const r = [e + "=" + encodeURIComponent(t)];
+      b.isNumber(n) && r.push("expires=" + new Date(n).toGMTString()), b.isString(s) && r.push("path=" + s), b.isString(i) && r.push("domain=" + i), a === !0 && r.push("secure"), document.cookie = r.join("; ")
+    },
+    read(e) {
+      const t = document.cookie.match(new RegExp("(^|;\\s*)(" + e + ")=([^;]*)"));
+      return t ? decodeURIComponent(t[3]) : null
+    },
+    remove(e) {
+      this.write(e, "", Date.now() - 864e5)
+    }
+  } : {
+    write() {},
+    read() {
+      return null
+    },
+    remove() {}
+  };
+
+function Mo(e) {
+  return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(e)
+}
+
+function So(e, t) {
+  return t ? e.replace(/\/?\/$/, "") + "/" + t.replace(/^\/+/, "") : e
+}
+
+function zn(e, t, n) {
+  let s = !Mo(t);
+  return e && (s || n == !1) ? So(e, t) : t
+}
+const an = e => e instanceof xe ? {
+  ...e
+} : e;
+
+function De(e, t) {
+  t = t || {};
+  const n = {};
+
+  function s(d, p, m, v) {
+    return b.isPlainObject(d) && b.isPlainObject(p) ? b.merge.call({
+      caseless: v
+    }, d, p) : b.isPlainObject(p) ? b.merge({}, p) : b.isArray(p) ? p.slice() : p
+  }
+
+  function i(d, p, m, v) {
+    if (b.isUndefined(p)) {
+      if (!b.isUndefined(d)) return s(void 0, d, m, v)
+    } else return s(d, p, m, v)
+  }
+
+  function a(d, p) {
+    if (!b.isUndefined(p)) return s(void 0, p)
+  }
+
+  function r(d, p) {
+    if (b.isUndefined(p)) {
+      if (!b.isUndefined(d)) return s(void 0, d)
+    } else return s(void 0, p)
+  }
+
+  function l(d, p, m) {
+    if (m in t) return s(d, p);
+    if (m in e) return s(void 0, d)
+  }
+  const c = {
+    url: a,
+    method: a,
+    data: a,
+    baseURL: r,
+    transformRequest: r,
+    transformResponse: r,
+    paramsSerializer: r,
+    timeout: r,
+    timeoutMessage: r,
+    withCredentials: r,
+    withXSRFToken: r,
+    adapter: r,
+    responseType: r,
+    xsrfCookieName: r,
+    xsrfHeaderName: r,
+    onUploadProgress: r,
+    onDownloadProgress: r,
+    decompress: r,
+    maxContentLength: r,
+    maxBodyLength: r,
+    beforeRedirect: r,
+    transport: r,
+    httpAgent: r,
+    httpsAgent: r,
+    cancelToken: r,
+    socketPath: r,
+    responseEncoding: r,
+    validateStatus: l,
+    headers: (d, p, m) => i(an(d), an(p), m, !0)
+  };
+  return b.forEach(Object.keys(Object.assign({}, e, t)), function(p) {
+    const m = c[p] || i,
+      v = m(e[p], t[p], p);
+    b.isUndefined(v) && m !== l || (n[p] = v)
+  }), n
+}
+const In = e => {
+    const t = De({}, e);
+    let {
+      data: n,
+      withXSRFToken: s,
+      xsrfHeaderName: i,
+      xsrfCookieName: a,
+      headers: r,
+      auth: l
+    } = t;
+    t.headers = r = xe.from(r), t.url = Rn(zn(t.baseURL, t.url, t.allowAbsoluteUrls), e.params, e.paramsSerializer), l && r.set("Authorization", "Basic " + btoa((l.username || "") + ":" + (l.password ? unescape(encodeURIComponent(l.password)) : "")));
+    let c;
+    if (b.isFormData(n)) {
+      if (we.hasStandardBrowserEnv || we.hasStandardBrowserWebWorkerEnv) r.setContentType(void 0);
+      else if ((c = r.getContentType()) !== !1) {
+        const [d, ...p] = c ? c.split(";").map(m => m.trim()).filter(Boolean) : [];
+        r.setContentType([d || "multipart/form-data", ...p].join("; "))
+      }
+    }
+    if (we.hasStandardBrowserEnv && (s && b.isFunction(s) && (s = s(t)), s || s !== !1 && $o(t.url))) {
+      const d = i && a && Lo.read(a);
+      d && r.set(i, d)
+    }
+    return t
+  },
+  Eo = typeof XMLHttpRequest < "u",
+  Oo = Eo && function(e) {
+    return new Promise(function(n, s) {
+      const i = In(e);
+      let a = i.data;
+      const r = xe.from(i.headers).normalize();
+      let {
+        responseType: l,
+        onUploadProgress: c,
+        onDownloadProgress: d
+      } = i, p, m, v, g, y;
+
+      function w() {
+        g && g(), y && y(), i.cancelToken && i.cancelToken.unsubscribe(p), i.signal && i.signal.removeEventListener("abort", p)
+      }
+      let _ = new XMLHttpRequest;
+      _.open(i.method.toUpperCase(), i.url, !0), _.timeout = i.timeout;
+
+      function M() {
+        if (!_) return;
+        const N = xe.from("getAllResponseHeaders" in _ && _.getAllResponseHeaders()),
+          H = {
+            data: !l || l === "text" || l === "json" ? _.responseText : _.response,
+            status: _.status,
+            statusText: _.statusText,
+            headers: N,
+            config: e,
+            request: _
+          };
+        Fn(function(oe) {
+          n(oe), w()
+        }, function(oe) {
+          s(oe), w()
+        }, H), _ = null
+      }
+      "onloadend" in _ ? _.onloadend = M : _.onreadystatechange = function() {
+        !_ || _.readyState !== 4 || _.status === 0 && !(_.responseURL && _.responseURL.indexOf("file:") === 0) || setTimeout(M)
+      }, _.onabort = function() {
+        _ && (s(new z("Request aborted", z.ECONNABORTED, e, _)), _ = null)
+      }, _.onerror = function() {
+        s(new z("Network Error", z.ERR_NETWORK, e, _)), _ = null
+      }, _.ontimeout = function() {
+        let B = i.timeout ? "timeout of " + i.timeout + "ms exceeded" : "timeout exceeded";
+        const H = i.transitional || Bn;
+        i.timeoutErrorMessage && (B = i.timeoutErrorMessage), s(new z(B, H.clarifyTimeoutError ? z.ETIMEDOUT : z.ECONNABORTED, e, _)), _ = null
+      }, a === void 0 && r.setContentType(null), "setRequestHeader" in _ && b.forEach(r.toJSON(), function(B, H) {
+        _.setRequestHeader(H, B)
+      }), b.isUndefined(i.withCredentials) || (_.withCredentials = !!i.withCredentials), l && l !== "json" && (_.responseType = i.responseType), d && ([v, y] = ht(d, !0), _.addEventListener("progress", v)), c && _.upload && ([m, g] = ht(c), _.upload.addEventListener("progress", m), _.upload.addEventListener("loadend", g)), (i.cancelToken || i.signal) && (p = N => {
+        _ && (s(!N || N.type ? new Je(null, e, _) : N), _.abort(), _ = null)
+      }, i.cancelToken && i.cancelToken.subscribe(p), i.signal && (i.signal.aborted ? p() : i.signal.addEventListener("abort", p)));
+      const O = xo(i.url);
+      if (O && we.protocols.indexOf(O) === -1) {
+        s(new z("Unsupported protocol " + O + ":", z.ERR_BAD_REQUEST, e));
+        return
+      }
+      _.send(a || null)
+    })
+  },
+  Ao = (e, t) => {
+    const {
+      length: n
+    } = e = e ? e.filter(Boolean) : [];
+    if (t || n) {
+      let s = new AbortController,
+        i;
+      const a = function(d) {
+        if (!i) {
+          i = !0, l();
+          const p = d instanceof Error ? d : this.reason;
+          s.abort(p instanceof z ? p : new Je(p instanceof Error ? p.message : p))
+        }
+      };
+      let r = t && setTimeout(() => {
+        r = null, a(new z(`timeout ${t} of ms exceeded`, z.ETIMEDOUT))
+      }, t);
+      const l = () => {
+        e && (r && clearTimeout(r), r = null, e.forEach(d => {
+          d.unsubscribe ? d.unsubscribe(a) : d.removeEventListener("abort", a)
+        }), e = null)
+      };
+      e.forEach(d => d.addEventListener("abort", a));
+      const {
+        signal: c
+      } = s;
+      return c.unsubscribe = () => b.asap(l), c
+    }
+  },
+  Ho = function*(e, t) {
+    let n = e.byteLength;
+    if (n < t) {
+      yield e;
+      return
+    }
+    let s = 0,
+      i;
+    for (; s < n;) i = s + t, yield e.slice(s, i), s = i
+  },
+  Co = async function*(e, t) {
+    for await (const n of Ro(e)) yield* Ho(n, t)
+  }, Ro = async function*(e) {
+    if (e[Symbol.asyncIterator]) {
+      yield* e;
+      return
+    }
+    const t = e.getReader();
+    try {
+      for (;;) {
+        const {
+          done: n,
+          value: s
+        } = await t.read();
+        if (n) break;
+        yield s
+      }
+    } finally {
+      await t.cancel()
+    }
+  }, ln = (e, t, n, s) => {
+    const i = Co(e, t);
+    let a = 0,
+      r, l = c => {
+        r || (r = !0, s && s(c))
+      };
+    return new ReadableStream({
+      async pull(c) {
+        try {
+          const {
+            done: d,
+            value: p
+          } = await i.next();
+          if (d) {
+            l(), c.close();
+            return
+          }
+          let m = p.byteLength;
+          if (n) {
+            let v = a += m;
+            n(v)
+          }
+          c.enqueue(new Uint8Array(p))
+        } catch (d) {
+          throw l(d), d
+        }
+      },
+      cancel(c) {
+        return l(c), i.return()
+      }
+    }, {
+      highWaterMark: 2
+    })
+  }, _t = typeof fetch == "function" && typeof Request == "function" && typeof Response == "function", qn = _t && typeof ReadableStream == "function", Bo = _t && (typeof TextEncoder == "function" ? (e => t => e.encode(t))(new TextEncoder) : async e => new Uint8Array(await new Response(e).arrayBuffer())), Dn = (e, ...t) => {
+    try {
+      return !!e(...t)
+    } catch {
+      return !1
+    }
+  }, No = qn && Dn(() => {
+    let e = !1;
+    const t = new Request(we.origin, {
+      body: new ReadableStream,
+      method: "POST",
+      get duplex() {
+        return e = !0, "half"
+      }
+    }).headers.has("Content-Type");
+    return e && !t
+  }), on = 64 * 1024, Nt = qn && Dn(() => b.isReadableStream(new Response("").body)), pt = {
+    stream: Nt && (e => e.body)
+  };
+_t && (e => {
+  ["text", "arrayBuffer", "blob", "formData", "stream"].forEach(t => {
+    !pt[t] && (pt[t] = b.isFunction(e[t]) ? n => n[t]() : (n, s) => {
+      throw new z(`Response type '${t}' is not supported`, z.ERR_NOT_SUPPORT, s)
+    })
+  })
+})(new Response);
+const jo = async e => {
+  if (e == null) return 0;
+  if (b.isBlob(e)) return e.size;
+  if (b.isSpecCompliantForm(e)) return (await new Request(we.origin, {
+    method: "POST",
+    body: e
+  }).arrayBuffer()).byteLength;
+  if (b.isArrayBufferView(e) || b.isArrayBuffer(e)) return e.byteLength;
+  if (b.isURLSearchParams(e) && (e = e + ""), b.isString(e)) return (await Bo(e)).byteLength
+}, Fo = async (e, t) => {
+  const n = b.toFiniteNumber(e.getContentLength());
+  return n ?? jo(t)
+}, zo = _t && (async e => {
+  let {
+    url: t,
+    method: n,
+    data: s,
+    signal: i,
+    cancelToken: a,
+    timeout: r,
+    onDownloadProgress: l,
+    onUploadProgress: c,
+    responseType: d,
+    headers: p,
+    withCredentials: m = "same-origin",
+    fetchOptions: v
+  } = In(e);
+  d = d ? (d + "").toLowerCase() : "text";
+  let g = Ao([i, a && a.toAbortSignal()], r),
+    y;
+  const w = g && g.unsubscribe && (() => {
+    g.unsubscribe()
+  });
+  let _;
+  try {
+    if (c && No && n !== "get" && n !== "head" && (_ = await Fo(p, s)) !== 0) {
+      let H = new Request(t, {
+          method: "POST",
+          body: s,
+          duplex: "half"
+        }),
+        q;
+      if (b.isFormData(s) && (q = H.headers.get("content-type")) && p.setContentType(q), H.body) {
+        const [oe, me] = sn(_, ht(rn(c)));
+        s = ln(H.body, on, oe, me)
+      }
+    }
+    b.isString(m) || (m = m ? "include" : "omit");
+    const M = "credentials" in Request.prototype;
+    y = new Request(t, {
+      ...v,
+      signal: g,
+      method: n.toUpperCase(),
+      headers: p.normalize().toJSON(),
+      body: s,
+      duplex: "half",
+      credentials: M ? m : void 0
+    });
+    let O = await fetch(y);
+    const N = Nt && (d === "stream" || d === "response");
+    if (Nt && (l || N && w)) {
+      const H = {};
+      ["status", "statusText", "headers"].forEach(ne => {
+        H[ne] = O[ne]
+      });
+      const q = b.toFiniteNumber(O.headers.get("content-length")),
+        [oe, me] = l && sn(q, ht(rn(l), !0)) || [];
+      O = new Response(ln(O.body, on, oe, () => {
+        me && me(), w && w()
+      }), H)
+    }
+    d = d || "text";
+    let B = await pt[b.findKey(pt, d) || "text"](O, e);
+    return !N && w && w(), await new Promise((H, q) => {
+      Fn(H, q, {
+        data: B,
+        headers: xe.from(O.headers),
+        status: O.status,
+        statusText: O.statusText,
+        config: e,
+        request: y
+      })
+    })
+  } catch (M) {
+    throw w && w(), M && M.name === "TypeError" && /fetch/i.test(M.message) ? Object.assign(new z("Network Error", z.ERR_NETWORK, e, y), {
+      cause: M.cause || M
+    }) : z.from(M, M && M.code, e, y)
+  }
+}), jt = {
+  http: Yl,
+  xhr: Oo,
+  fetch: zo
+};
+b.forEach(jt, (e, t) => {
+  if (e) {
+    try {
+      Object.defineProperty(e, "name", {
+        value: t
+      })
+    } catch {}
+    Object.defineProperty(e, "adapterName", {
+      value: t
+    })
+  }
+});
+const cn = e => `- ${e}`,
+  Io = e => b.isFunction(e) || e === null || e === !1,
+  Pn = {
+    getAdapter: e => {
+      e = b.isArray(e) ? e : [e];
+      const {
+        length: t
+      } = e;
+      let n, s;
+      const i = {};
+      for (let a = 0; a < t; a++) {
+        n = e[a];
+        let r;
+        if (s = n, !Io(n) && (s = jt[(r = String(n)).toLowerCase()], s === void 0)) throw new z(`Unknown adapter '${r}'`);
+        if (s) break;
+        i[r || "#" + a] = s
+      }
+      if (!s) {
+        const a = Object.entries(i).map(([l, c]) => `adapter ${l} ` + (c === !1 ? "is not supported by the environment" : "is not available in the build"));
+        let r = t ? a.length > 1 ? `since :
+` + a.map(cn).join(`
+`) : " " + cn(a[0]) : "as no adapter specified";
+        throw new z("There is no suitable adapter to dispatch the request " + r, "ERR_NOT_SUPPORT")
+      }
+      return s
+    },
+    adapters: jt
+  };
+
+function At(e) {
+  if (e.cancelToken && e.cancelToken.throwIfRequested(), e.signal && e.signal.aborted) throw new Je(null, e)
+}
+
+function un(e) {
+  return At(e), e.headers = xe.from(e.headers), e.data = Ot.call(e, e.transformRequest), ["post", "put", "patch"].indexOf(e.method) !== -1 && e.headers.setContentType("application/x-www-form-urlencoded", !1), Pn.getAdapter(e.adapter || lt.adapter)(e).then(function(s) {
+    return At(e), s.data = Ot.call(e, e.transformResponse, s), s.headers = xe.from(s.headers), s
+  }, function(s) {
+    return jn(s) || (At(e), s && s.response && (s.response.data = Ot.call(e, e.transformResponse, s.response), s.response.headers = xe.from(s.response.headers))), Promise.reject(s)
+  })
+}
+const Vn = "1.8.4",
+  xt = {};
+["object", "boolean", "number", "function", "string", "symbol"].forEach((e, t) => {
+  xt[e] = function(s) {
+    return typeof s === e || "a" + (t < 1 ? "n " : " ") + e
+  }
+});
+const dn = {};
+xt.transitional = function(t, n, s) {
+  function i(a, r) {
+    return "[Axios v" + Vn + "] Transitional option '" + a + "'" + r + (s ? ". " + s : "")
+  }
+  return (a, r, l) => {
+    if (t === !1) throw new z(i(r, " has been removed" + (n ? " in " + n : "")), z.ERR_DEPRECATED);
+    return n && !dn[r] && (dn[r] = !0, console.warn(i(r, " has been deprecated since v" + n + " and will be removed in the near future"))), t ? t(a, r, l) : !0
+  }
+};
+xt.spelling = function(t) {
+  return (n, s) => (console.warn(`${s} is likely a misspelling of ${t}`), !0)
+};
+
+function qo(e, t, n) {
+  if (typeof e != "object") throw new z("options must be an object", z.ERR_BAD_OPTION_VALUE);
+  const s = Object.keys(e);
+  let i = s.length;
+  for (; i-- > 0;) {
+    const a = s[i],
+      r = t[a];
+    if (r) {
+      const l = e[a],
+        c = l === void 0 || r(l, a, e);
+      if (c !== !0) throw new z("option " + a + " must be " + c, z.ERR_BAD_OPTION_VALUE);
+      continue
+    }
+    if (n !== !0) throw new z("Unknown option " + a, z.ERR_BAD_OPTION)
+  }
+}
+const dt = {
+    assertOptions: qo,
+    validators: xt
+  },
+  He = dt.validators;
+let Ie = class {
+  constructor(t) {
+    this.defaults = t, this.interceptors = {
+      request: new tn,
+      response: new tn
+    }
+  }
+  async request(t, n) {
+    try {
+      return await this._request(t, n)
+    } catch (s) {
+      if (s instanceof Error) {
+        let i = {};
+        Error.captureStackTrace ? Error.captureStackTrace(i) : i = new Error;
+        const a = i.stack ? i.stack.replace(/^.+\n/, "") : "";
+        try {
+          s.stack ? a && !String(s.stack).endsWith(a.replace(/^.+\n.+\n/, "")) && (s.stack += `
+` + a) : s.stack = a
+        } catch {}
+      }
+      throw s
+    }
+  }
+  _request(t, n) {
+    typeof t == "string" ? (n = n || {}, n.url = t) : n = t || {}, n = De(this.defaults, n);
+    const {
+      transitional: s,
+      paramsSerializer: i,
+      headers: a
+    } = n;
+    s !== void 0 && dt.assertOptions(s, {
+      silentJSONParsing: He.transitional(He.boolean),
+      forcedJSONParsing: He.transitional(He.boolean),
+      clarifyTimeoutError: He.transitional(He.boolean)
+    }, !1), i != null && (b.isFunction(i) ? n.paramsSerializer = {
+      serialize: i
+    } : dt.assertOptions(i, {
+      encode: He.function,
+      serialize: He.function
+    }, !0)), n.allowAbsoluteUrls !== void 0 || (this.defaults.allowAbsoluteUrls !== void 0 ? n.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls : n.allowAbsoluteUrls = !0), dt.assertOptions(n, {
+      baseUrl: He.spelling("baseURL"),
+      withXsrfToken: He.spelling("withXSRFToken")
+    }, !0), n.method = (n.method || this.defaults.method || "get").toLowerCase();
+    let r = a && b.merge(a.common, a[n.method]);
+    a && b.forEach(["delete", "get", "head", "post", "put", "patch", "common"], y => {
+      delete a[y]
+    }), n.headers = xe.concat(r, a);
+    const l = [];
+    let c = !0;
+    this.interceptors.request.forEach(function(w) {
+      typeof w.runWhen == "function" && w.runWhen(n) === !1 || (c = c && w.synchronous, l.unshift(w.fulfilled, w.rejected))
+    });
+    const d = [];
+    this.interceptors.response.forEach(function(w) {
+      d.push(w.fulfilled, w.rejected)
+    });
+    let p, m = 0,
+      v;
+    if (!c) {
+      const y = [un.bind(this), void 0];
+      for (y.unshift.apply(y, l), y.push.apply(y, d), v = y.length, p = Promise.resolve(n); m < v;) p = p.then(y[m++], y[m++]);
+      return p
+    }
+    v = l.length;
+    let g = n;
+    for (m = 0; m < v;) {
+      const y = l[m++],
+        w = l[m++];
+      try {
+        g = y(g)
+      } catch (_) {
+        w.call(this, _);
+        break
+      }
+    }
+    try {
+      p = un.call(this, g)
+    } catch (y) {
+      return Promise.reject(y)
+    }
+    for (m = 0, v = d.length; m < v;) p = p.then(d[m++], d[m++]);
+    return p
+  }
+  getUri(t) {
+    t = De(this.defaults, t);
+    const n = zn(t.baseURL, t.url, t.allowAbsoluteUrls);
+    return Rn(n, t.params, t.paramsSerializer)
+  }
+};
+b.forEach(["delete", "get", "head", "options"], function(t) {
+  Ie.prototype[t] = function(n, s) {
+    return this.request(De(s || {}, {
+      method: t,
+      url: n,
+      data: (s || {}).data
+    }))
+  }
+});
+b.forEach(["post", "put", "patch"], function(t) {
+  function n(s) {
+    return function(a, r, l) {
+      return this.request(De(l || {}, {
+        method: t,
+        headers: s ? {
+          "Content-Type": "multipart/form-data"
+        } : {},
+        url: a,
+        data: r
+      }))
+    }
+  }
+  Ie.prototype[t] = n(), Ie.prototype[t + "Form"] = n(!0)
+});
+let Do = class Un {
+  constructor(t) {
+    if (typeof t != "function") throw new TypeError("executor must be a function.");
+    let n;
+    this.promise = new Promise(function(a) {
+      n = a
+    });
+    const s = this;
+    this.promise.then(i => {
+      if (!s._listeners) return;
+      let a = s._listeners.length;
+      for (; a-- > 0;) s._listeners[a](i);
+      s._listeners = null
+    }), this.promise.then = i => {
+      let a;
+      const r = new Promise(l => {
+        s.subscribe(l), a = l
+      }).then(i);
+      return r.cancel = function() {
+        s.unsubscribe(a)
+      }, r
+    }, t(function(a, r, l) {
+      s.reason || (s.reason = new Je(a, r, l), n(s.reason))
+    })
+  }
+  throwIfRequested() {
+    if (this.reason) throw this.reason
+  }
+  subscribe(t) {
+    if (this.reason) {
+      t(this.reason);
+      return
+    }
+    this._listeners ? this._listeners.push(t) : this._listeners = [t]
+  }
+  unsubscribe(t) {
+    if (!this._listeners) return;
+    const n = this._listeners.indexOf(t);
+    n !== -1 && this._listeners.splice(n, 1)
+  }
+  toAbortSignal() {
+    const t = new AbortController,
+      n = s => {
+        t.abort(s)
+      };
+    return this.subscribe(n), t.signal.unsubscribe = () => this.unsubscribe(n), t.signal
+  }
+  static source() {
+    let t;
+    return {
+      token: new Un(function(i) {
+        t = i
+      }),
+      cancel: t
+    }
+  }
+};
+
+function Po(e) {
+  return function(n) {
+    return e.apply(null, n)
+  }
+}
+
+function Vo(e) {
+  return b.isObject(e) && e.isAxiosError === !0
+}
+const Ft = {
+  Continue: 100,
+  SwitchingProtocols: 101,
+  Processing: 102,
+  EarlyHints: 103,
+  Ok: 200,
+  Created: 201,
+  Accepted: 202,
+  NonAuthoritativeInformation: 203,
+  NoContent: 204,
+  ResetContent: 205,
+  PartialContent: 206,
+  MultiStatus: 207,
+  AlreadyReported: 208,
+  ImUsed: 226,
+  MultipleChoices: 300,
+  MovedPermanently: 301,
+  Found: 302,
+  SeeOther: 303,
+  NotModified: 304,
+  UseProxy: 305,
+  Unused: 306,
+  TemporaryRedirect: 307,
+  PermanentRedirect: 308,
+  BadRequest: 400,
+  Unauthorized: 401,
+  PaymentRequired: 402,
+  Forbidden: 403,
+  NotFound: 404,
+  MethodNotAllowed: 405,
+  NotAcceptable: 406,
+  ProxyAuthenticationRequired: 407,
+  RequestTimeout: 408,
+  Conflict: 409,
+  Gone: 410,
+  LengthRequired: 411,
+  PreconditionFailed: 412,
+  PayloadTooLarge: 413,
+  UriTooLong: 414,
+  UnsupportedMediaType: 415,
+  RangeNotSatisfiable: 416,
+  ExpectationFailed: 417,
+  ImATeapot: 418,
+  MisdirectedRequest: 421,
+  UnprocessableEntity: 422,
+  Locked: 423,
+  FailedDependency: 424,
+  TooEarly: 425,
+  UpgradeRequired: 426,
+  PreconditionRequired: 428,
+  TooManyRequests: 429,
+  RequestHeaderFieldsTooLarge: 431,
+  UnavailableForLegalReasons: 451,
+  InternalServerError: 500,
+  NotImplemented: 501,
+  BadGateway: 502,
+  ServiceUnavailable: 503,
+  GatewayTimeout: 504,
+  HttpVersionNotSupported: 505,
+  VariantAlsoNegotiates: 506,
+  InsufficientStorage: 507,
+  LoopDetected: 508,
+  NotExtended: 510,
+  NetworkAuthenticationRequired: 511
+};
+Object.entries(Ft).forEach(([e, t]) => {
+  Ft[t] = e
+});
+
+function Jn(e) {
+  const t = new Ie(e),
+    n = kn(Ie.prototype.request, t);
+  return b.extend(n, Ie.prototype, t, {
+    allOwnKeys: !0
+  }), b.extend(n, t, null, {
+    allOwnKeys: !0
+  }), n.create = function(i) {
+    return Jn(De(e, i))
+  }, n
+}
+const re = Jn(lt);
+re.Axios = Ie;
+re.CanceledError = Je;
+re.CancelToken = Do;
+re.isCancel = jn;
+re.VERSION = Vn;
+re.toFormData = wt;
+re.AxiosError = z;
+re.Cancel = re.CanceledError;
+re.all = function(t) {
+  return Promise.all(t)
+};
+re.spread = Po;
+re.isAxiosError = Vo;
+re.mergeConfig = De;
+re.AxiosHeaders = xe;
+re.formToJSON = e => Nn(b.isHTMLForm(e) ? new FormData(e) : e);
+re.getAdapter = Pn.getAdapter;
+re.HttpStatusCode = Ft;
+re.default = re;
+const {
+  Axios: km,
+  AxiosError: Tm,
+  CanceledError: $m,
+  isCancel: Lm,
+  CancelToken: Mm,
+  VERSION: Sm,
+  all: Em,
+  Cancel: Om,
+  isAxiosError: Am,
+  spread: Hm,
+  toFormData: Cm,
+  AxiosHeaders: Rm,
+  HttpStatusCode: Bm,
+  formToJSON: Nm,
+  getAdapter: jm,
+  mergeConfig: Fm
+} = re, Uo = {
+  class: "relative stack"
+}, Jo = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    const t = T(null),
+      n = T(null),
+      s = T([]);
+    ee(async () => {
+      try {
+        const {
+          data: a
+        } = await re.get("/.netlify/functions/lever");
+        s.value = a.map(r => {
+          var l, c;
+          return {
+            id: r.id,
+            title: r.text,
+            employmentType: ((l = r.categories) == null ? void 0 : l.commitment) || "",
+            location: ((c = r.categories) == null ? void 0 : c.location) || "",
+            desc: r.descriptionBody || r.description,
+            url: r.applyUrl
+          }
+        })
+      } catch (a) {
+        console.error("Failed to fetch Lever postings", a)
+      }
+    });
+    const i = R(() => s.value);
+    return R(() => i.value), R(() => i.value ? (Array.isArray(i.value) ? i.value : Object.values(i.value)).reduce((r, l) => {
+      var c;
+      return (c = l.categories) != null && c.length && l.categories.forEach(d => {
+        r.some(p => p.slug === d.slug) || r.push({
+          title: d.title,
+          slug: d.slug
+        })
+      }), r
+    }, []) : []), (a, r) => (u(), f("section", {
+      ref_key: "el",
+      ref: n,
+      class: "py-48 flex flex-col gap-y-80 relative text-black z-2"
+    }, [o("div", Uo, [(u(), I(hl, {
+      items: $(i),
+      key: $(t)
+    }, null, 8, ["items"]))])], 512))
+  }
+}, Go = () => {
+  const e = T(null),
+    t = T(null);
+  let n = [];
+  const s = ({
+      currentTarget: l
+    }) => {
+      const c = n.findIndex(m => m.t === l);
+      t.value = e.value, e.value = c;
+      const d = n[e.value],
+        p = n[t.value];
+      d && (d.active = !d.active, d.active ? (d.t.classList.add("is-active"), d.t.classList.remove("is-instant")) : d.t.classList.remove("is-active"), d.tl.clear().to(d.dd, {
+        height: d.active ? "auto" : 0
+      }).restart()), p && e.value !== t.value && (p.active = !1, p.t.classList.remove("is-active", "is-instant"), p.tl.clear().to(p.dd, {
+        height: 0
+      }).restart()), e.value === t.value && (e.value = null)
+    },
+    i = (l, c = !0) => {
+      if (!l) return;
+      const d = Me(".js-dd-t", l);
+      n = Me(".js-dd", l).map((p, m) => {
+        const v = d[m];
+        if (!v) return;
+        const g = V.timeline({
+          paused: !0,
+          defaults: {
+            duration: .5,
+            ease: "snappy"
+          }
+        });
+        return v.addEventListener("click", s), {
+          tl: g,
+          t: v,
+          dd: p,
+          active: !1
+        }
+      }), c && (e.value = 0, a())
+    },
+    a = () => {
+      const l = n[e.value];
+      l.active = !0, l.t.classList.add("is-active", "is-instant"), V.set(l.dd, {
+        height: "auto"
+      })
+    };
+  return {
+    current: e,
+    last: t,
+    init: i,
+    cleanup: () => {
+      n.forEach(l => {
+        l.t.removeEventListener("click", s), l.tl.kill()
+      }), n = null
+    },
+    instant: a
+  }
+}, Ko = {
+  class: "site-max site-grid items-start gap-y-64"
+}, Wo = {
+  class: "s:col-start-7 col-span-6 s:order-2 flex flex-col gap-y-8"
+}, Qo = {
+  class: "dd__content px-32 s:px-40 m:px-48 bg-white/60 text-black rounded-[2rem]"
+}, Xo = {
+  type: "button",
+  class: "flex items-center justify-between py-32 s:py-36 m:py-40 text-left w-full js-dd-t"
+}, Zo = ["innerHTML"], Yo = {
+  class: "relative overflow-hidden h-0 js-dd"
+}, ec = {
+  class: "pb-32 s:pb-36 m:pb-40 pt-20 s:pt-60"
+}, tc = {
+  class: "flex flex-col s:flex-row s:items-start s:items-end s:justify-between gap-y-12 gap-x-30 w-full"
+}, nc = ["src", "alt"], sc = ["innerHTML"], ic = {
+  __name: "ImageAccordion",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    const {
+      init: t,
+      cleanup: n,
+      current: s
+    } = Go(), i = T(null);
+    return ee(async () => {
+      await Y(), t(i.value)
+    }), he(() => {
+      n()
+    }), (a, r) => {
+      const l = xn,
+        c = J;
+      return u(), f("div", {
+        ref_key: "el",
+        ref: i,
+        class: "py-48 relative z-2"
+      }, [o("div", Ko, [o("div", Wo, [(u(!0), f(K, null, X(e.item.items, (d, p) => (u(), f("div", {
+        key: d.id,
+        class: S(["dd site-max text-black js-item", $(s) === p && "is-active"])
+      }, [o("div", Qo, [o("button", Xo, [o("h2", {
+        class: "h3-c uppercase",
+        innerHTML: a.$sanitize(d.title)
+      }, null, 8, Zo), L(l)]), o("div", Yo, [o("div", ec, [o("div", tc, [d.icon ? (u(), f("img", {
+        key: 0,
+        src: d.icon.url,
+        alt: d.icon.alt,
+        class: "relative size-64 object-contain object-bottom-left s:object-bottom-right s:order-2"
+      }, null, 8, nc)) : k("", !0), o("div", {
+        class: "body-large txt text-light w-full s:max-w-[50rem] s:order-1",
+        innerHTML: a.$sanitize(d.text, ["p"], !1)
+      }, null, 8, sc)])])])])], 2))), 128))]), L(c, {
+        item: e.item.media,
+        aspect: 130,
+        class: "col-span-6 s:col-span-5 s:order-1 radius-media"
+      }, null, 8, ["item"])])], 512)
+    }
+  }
+}, rc = $e(ic, [
+  ["__scopeId", "data-v-2c3f04b1"]
+]), ac = {
+  class: "relative py-48"
+}, lc = {
+  class: "site-max site-grid gap-y-80"
+}, oc = ["innerHTML"], cc = ["innerHTML"], uc = ["innerHTML"], dc = {
+  __name: "MediaText",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    return (t, n) => {
+      const s = J;
+      return u(), f("section", ac, [o("div", lc, [o("div", {
+        class: S(["col-span-6", e.item.reverse ? "s:col-start-7 s:col-span-6 s:order-2" : "s:col-span-5"])
+      }, [L(s, {
+        class: "radius-media",
+        aspect: 130,
+        item: e.item.media
+      }, null, 8, ["item"]), e.item.caption ? (u(), f("caption", {
+        key: 0,
+        class: "block text-left body-normal opacity-60 mt-24 w-full max-w-[35.2rem]",
+        innerHTML: t.$sanitize(e.item.caption)
+      }, null, 8, oc)) : k("", !0)], 2), o("div", {
+        class: S(["col-span-6 s:col-span-5 flex flex-col justify-center gap-y-40 s:gap-y-64", e.item.reverse ? "s:order-1" : "s:col-start-7"])
+      }, [o("h2", {
+        class: "h6",
+        innerHTML: t.$sanitize(e.item.title, ["br", "em"])
+      }, null, 8, cc), o("div", {
+        class: "body-normal text-light links-underline",
+        innerHTML: t.$sanitize(e.item.text, ["p", "a"])
+      }, null, 8, uc)], 2)])])
+    }
+  }
+}, mc = {
+  class: "py-48 relative"
+}, fc = {
+  class: "site-max site-grid"
+}, hc = {
+  class: "col-span-6 s:col-span-9 m:col-span-8"
+}, pc = {
+  key: 0,
+  class: "h-32 w-auto opacity-60 mb-64",
+  viewBox: "0 0 39 32",
+  fill: "none",
+  xmlns: "http://www.w3.org/2000/svg"
+}, vc = ["innerHTML"], yc = ["innerHTML"], gc = {
+  __name: "Quote",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    return (t, n) => (u(), f("div", mc, [o("div", fc, [o("div", hc, [e.item.icon ? (u(), f("svg", pc, n[0] || (n[0] = [o("path", {
+      class: "fill-current",
+      d: "M38.6 0L30.4 16.4H37.4V31.8H21.2V15.4L29.6 0H38.6ZM17.4 0L9.2 16.4H16.2V31.8H0V15.4L8.4 0H17.4Z"
+    }, null, -1)]))) : k("", !0), o("blockquote", {
+      innerHTML: t.$sanitize(e.item.quote),
+      class: "h4"
+    }, null, 8, vc), e.item.cite ? (u(), f("cite", {
+      key: 1,
+      innerHTML: t.$sanitize(e.item.cite),
+      class: "block h4 mt-20 opacity-60 not-italic"
+    }, null, 8, yc)) : k("", !0)])])]))
+  }
+}, bc = {
+  class: "relative py-48"
+}, wc = {
+  class: "site-max"
+}, _c = {
+  class: "relative radius-media h-scale",
+  "data-c": "Explore"
+}, xc = {
+  class: "absolute inset-0 radius-media"
+}, kc = {
+  class: "flex items-center justify-between pt-20"
+}, Tc = {
+  class: "flex flex-col items-start gap-y-12"
+}, $c = ["innerHTML"], Lc = ["innerHTML"], Mc = {
+  __name: "ArticleFeatured",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    const t = e,
+      {
+        $resize: n
+      } = le(),
+      s = R(() => n != null && n.small && t.item.mediaMobile ? t.item.mediaMobile : t.item.media);
+    return (i, a) => {
+      var m, v;
+      const r = J,
+        l = Ee,
+        c = te,
+        d = Pe,
+        p = ie("st-scale");
+      return u(), f("article", bc, [o("div", wc, [L(d, {
+        to: (m = e.item.post) != null && m.external ? e.item.post.external : `/latest/${e.item.post.slug}`,
+        target: (v = e.item.post) != null && v.external ? "_blank" : void 0,
+        class: "block"
+      }, {
+        default: G(() => [o("div", _c, [a[0] || (a[0] = o("div", {
+          class: "pt-[130%] s:pt-[56.25%]"
+        }, null, -1)), U((u(), f("div", xc, [L(l, null, {
+          default: G(() => [L(r, {
+            item: $(s),
+            class: "h-scale__item",
+            aspect: i.aspect
+          }, null, 8, ["item", "aspect"])]),
+          _: 1
+        })])), [
+          [p]
+        ])]), o("div", kc, [o("div", Tc, [o("p", {
+          class: "body-normal opacity-60 w-full max-w-[30rem] s:max-w-[70rem]",
+          innerHTML: i.$sanitize(e.item.subtitle)
+        }, null, 8, $c), o("h2", {
+          class: S(e.item.condensed ? "h3-c uppercase" : "h4"),
+          innerHTML: i.$sanitize(e.item.post.title)
+        }, null, 10, Lc), L(c, {
+          icon: !0,
+          class: "mt-20"
+        })])])]),
+        _: 1
+      }, 8, ["to", "target"])])])
+    }
+  }
+}, Sc = {
+  class: "relative"
+}, Ec = {
+  class: "relative radius-media"
+}, Oc = {
+  class: "flex flex-col items-start gap-y-16 mt-36"
+}, Ac = ["innerHTML"], Hc = ["innerHTML"], mn = {
+  __name: "Card",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    },
+    condensed: {
+      type: Boolean,
+      required: !1,
+      default: !1
+    }
+  },
+  setup(e) {
+    return (t, n) => {
+      const s = J,
+        i = te,
+        a = Pe,
+        r = ie("st-scale");
+      return u(), f("article", Sc, [L(a, {
+        to: e.item.external ? e.item.external : `/latest/${e.item.slug}`,
+        target: e.item.external ? "_blank" : void 0,
+        class: "block h-scale"
+      }, {
+        default: G(() => [U((u(), f("div", Ec, [n[0] || (n[0] = o("div", {
+          class: "pt-[130%]"
+        }, null, -1)), L(s, {
+          item: e.item.media,
+          aspect: !1,
+          class: "h-scale__item"
+        }, null, 8, ["item"])])), [
+          [r]
+        ]), o("div", Oc, [e.item.subtitle ? (u(), f("p", {
+          key: 0,
+          class: "body-normal opacity-60 s:max-w-[35.5rem]",
+          innerHTML: t.$sanitize(e.item.subtitle)
+        }, null, 8, Ac)) : k("", !0), o("h3", {
+          class: S(e.condensed ? "h3-c uppercase" : "h5"),
+          innerHTML: t.$sanitize(e.item.post.title)
+        }, null, 10, Hc), L(i, {
+          label: "View",
+          icon: !0,
+          class: "mt-20"
+        })])]),
+        _: 1
+      }, 8, ["to", "target"])])
+    }
+  }
+}, Cc = {
+  class: "py-48"
+}, Rc = {
+  class: "site-max site-grid gap-y-96"
+}, Bc = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    const t = e,
+      n = R(() => parseInt(t.item.layout));
+    return (s, i) => (u(), f("div", Cc, [o("div", Rc, [L(mn, {
+      item: e.item.items[0],
+      condensed: e.item.condensed,
+      class: S([$(n) === 1 && "col-span-6 s:col-span-5", $(n) === 2 && "col-span-6 s:col-span-4", $(n) === 3 && "col-span-6 s:col-span-6", $(n) === 4 && "col-span-6 s:col-span-6"])
+    }, null, 8, ["item", "condensed", "class"]), L(mn, {
+      item: e.item.items[1],
+      condensed: e.item.condensed,
+      class: S([$(n) === 1 && "col-span-6 s:col-span-6 s:col-start-7 s:mt-[34rem] m:mt-[42.5rem]", $(n) === 2 && "col-span-6 s:col-span-6 s:col-start-7", $(n) === 3 && "col-span-6 s:col-span-5 s:col-start-8 s:mt-[50rem] m:mt-[60rem]", $(n) === 4 && "col-span-6 s:col-span-4 s:col-start-9 s:mt-[60rem] m:mt-[78.2rem]"])
+    }, null, 8, ["item", "condensed", "class"])])]))
+  }
+}, Nc = {
+  class: "article-list-item relative"
+}, jc = {
+  key: 0,
+  class: "relative w-full border-current opacity-10"
+}, Fc = {
+  class: "relative site-max py-48 flex flex-col s:flex-row s:justify-between gap-y-24 z-2"
+}, zc = {
+  class: "relative w-full s:min-w-[46.3rem] s:max-w-[46.3rem] m:min-w-[52.2rem] m:max-w-[52.2rem] radius-media s:order-2"
+}, Ic = {
+  class: "flex flex-col justify-between s:order-1"
+}, qc = ["innerHTML"], Dc = {
+  class: "flex flex-col items-start mt-72 s:mt-0"
+}, Pc = {
+  class: "relative"
+}, Vc = {
+  key: 0,
+  class: "body-large"
+}, Uc = {
+  key: 0,
+  class: "opacity-60"
+}, Jc = {
+  __name: "Card",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    },
+    first: {
+      type: Boolean,
+      required: !1
+    }
+  },
+  setup(e) {
+    const t = e,
+      n = R(() => {
+        if (t.item.external) {
+          const a = t.item.title.trim().split(" "),
+            r = a.pop();
+          return `${a.join(" ")} <span style="white-space:nowrap">${r}<svg class="inline size-[.5em] ml-[.25em]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.95859 0.480469H23.4386V18.0005H19.3586V7.64047L3.51859 23.3605L0.558594 20.4405L16.2786 4.60047H5.95859V0.480469Z" class="fill-current"/></svg></span>`
+        } else return t.item.title
+      }),
+      s = R(() => {
+        if (!t.item.date) return;
+        const a = new Date(t.item.date),
+          r = (a.getMonth() + 1).toString().padStart(2, "0"),
+          l = a.getDate().toString().padStart(2, "0"),
+          c = a.getFullYear();
+        return `${r}.${l}.${c}`
+      }),
+      i = R(() => t.item.categories.map(a => a.title).join(", "));
+    return (a, r) => {
+      const l = J,
+        c = Pe;
+      return u(), f("article", Nc, [L(c, {
+        to: e.item.external ? e.item.external : `/latest/${e.item.slug}`,
+        target: e.item.external ? "_blank" : void 0,
+        class: "block h-scale group"
+      }, {
+        default: G(() => [r[1] || (r[1] = o("div", {
+          class: "article-list-item__highlight absolute inset-0 opacity-0 transition-opacity duration-500 ease-out has-hover:group-hover:opacity-15"
+        }, null, -1)), e.first ? (u(), f("hr", jc)) : k("", !0), o("div", Fc, [o("div", zc, [r[0] || (r[0] = o("div", {
+          class: "pt-[56.25%]"
+        }, null, -1)), L(l, {
+          item: e.item.featuredMedia,
+          aspect: !1,
+          class: "h-scale__item"
+        }, null, 8, ["item"])]), o("div", Ic, [o("h2", {
+          class: "h5 s:max-w-[37.5rem] m:max-w-[52.5rem]",
+          innerHTML: a.$sanitize($(n), ["svg", "path", "span"])
+        }, null, 8, qc), o("div", Dc, [o("div", Pc, [$(i) ? (u(), f("div", Vc, Se($(i)), 1)) : k("", !0)]), e.item.date ? (u(), f("div", Uc, Se($(s)), 1)) : k("", !0)])])]), r[2] || (r[2] = o("hr", {
+          class: "relative w-full border-current opacity-10"
+        }, null, -1))]),
+        _: 1
+      }, 8, ["to", "target"])])
+    }
+  }
+}, Gc = $e(Jc, [
+  ["__scopeId", "data-v-43486909"]
+]), Kc = {
+  key: 0,
+  class: "site-max flex justify-center mt-120"
+}, Wc = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !1
+    },
+    items: {
+      type: Array,
+      required: !1
+    }
+  },
+  setup(e) {
+    var d;
+    const t = e,
+      n = rt(),
+      s = R(() => n.articles || []),
+      i = R(() => {
+        var p;
+        return (p = t.item) != null && p.items ? t.item.items : s.value
+      }),
+      a = T(((d = t.item) == null ? void 0 : d.initial) || 5),
+      r = R(() => i.value.slice(0, a.value)),
+      l = R(() => a.value < i.value.length),
+      c = () => {
+        a.value += t.item.loadMore
+      };
+    return (p, m) => {
+      var g;
+      const v = te;
+      return u(), f("div", {
+        class: "article-list relative",
+        style: it((g = e.item.highlight) != null && g.hex ? `--highlight: ${e.item.highlight.hex};` : "")
+      }, [(u(!0), f(K, null, X($(r), (y, w) => (u(), I(Gc, {
+        key: y.id,
+        item: y,
+        first: w === 0
+      }, null, 8, ["item", "first"]))), 128)), $(l) ? (u(), f("div", Kc, [L(v, {
+        onClick: c,
+        label: "Load more"
+      })])) : k("", !0)], 4)
+    }
+  }
+}, Qc = $e(Wc, [
+  ["__scopeId", "data-v-e8bc8e76"]
+]), Xc = {
+  class: "site-max overflow-hidden"
+}, Zc = {
+  class: "site-grid items-start"
+}, Yc = {
+  class: "mt-140 s:mt-170 text-center flex flex-col items-center gap-y-40"
+}, eu = ["innerHTML"], tu = ["innerHTML"], nu = {
+  class: "site-max flex justify-center items-start"
+}, su = {
+  class: "storytelling__flip relative w-full max-w-[20rem] s:max-w-[35rem] m:max-w-[50rem]"
+}, iu = {
+  __name: "Storytelling",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    const {
+      $resize: t
+    } = le(), n = T(null);
+    T(null);
+    const s = T(null),
+      i = T(null),
+      a = T(null);
+    return ee(async () => {
+      await Y();
+      const r = ft.getState(s.value);
+      i.value.appendChild(s.value), V.timeline({
+        scrollTrigger: {
+          trigger: a.value,
+          start: "top bottom",
+          end: "bottom bottom",
+          scrub: !0
+        }
+      }).add(ft.from(r, {
+        duration: 1,
+        absolute: !0,
+        simple: !0,
+        ease: "none"
+      })).fromTo(s.value, {
+        clipPath: "inset(0 0 0 0 round 1rem)"
+      }, {
+        clipPath: "inset(0 0 0 0 round 0rem)",
+        ease: "none"
+      }, 0)
+    }), (r, l) => {
+      const c = J,
+        d = te,
+        p = ie("st-scale"),
+        m = ie("st-words");
+      return u(), f("section", {
+        ref_key: "el",
+        ref: n,
+        class: "storytelling relative pt-30 s:pt-48 m:pt-68"
+      }, [o("div", Xc, [o("div", Zc, [e.item.media1 ? U((u(), I(c, {
+        key: 0,
+        item: e.item.media1,
+        aspect: 56.25,
+        class: "col-span-4 s:col-span-5 radius-media"
+      }, null, 8, ["item"])), [
+        [p]
+      ]) : k("", !0), e.item.media2 ? U((u(), I(c, {
+        key: 1,
+        item: e.item.media2,
+        aspect: 130,
+        class: "col-start-3 s:col-start-9 col-span-4 mt-120 s:mt-95 radius-media"
+      }, null, 8, ["item"])), [
+        [p]
+      ]) : k("", !0)]), o("div", Yc, [e.item.title ? U((u(), f("h2", {
+        key: 0,
+        class: S(["storytelling__title text-center w-full", e.item.titleSize || "h3"]),
+        innerHTML: r.$sanitize(e.item.title)
+      }, null, 10, eu)), [
+        [m]
+      ]) : k("", !0), e.item.text ? U((u(), f("p", {
+        key: 1,
+        class: "relative body-large opacity-60 w-full s:max-w-[100rem]",
+        innerHTML: r.$sanitize(e.item.text)
+      }, null, 8, tu)), [
+        [m]
+      ]) : k("", !0), e.item.cta ? (u(), I(d, {
+        key: 2,
+        item: e.item.cta
+      }, null, 8, ["item"])) : k("", !0)])]), o("div", {
+        ref_key: "sticky",
+        ref: a,
+        class: "storytelling__sticky relative mt-90 s:mt-150 m:mt-175"
+      }, [o("div", {
+        ref_key: "target",
+        ref: i,
+        class: "relative h-full-screen flex overflow-hidden"
+      }, [o("div", nu, [o("div", su, [l[0] || (l[0] = o("div", {
+        class: "pt-[135%]"
+      }, null, -1)), o("div", {
+        ref_key: "flip",
+        ref: s,
+        class: "absolute inset-0 radius-fix"
+      }, [e.item.media3 ? (u(), I(c, {
+        key: 0,
+        item: e.item.media3,
+        aspect: !1
+      }, null, 8, ["item"])) : k("", !0)], 512)])])], 512)], 512)], 512)
+    }
+  }
+}, ru = {
+  class: "relative w-full overflow-hidden"
+}, au = {
+  class: "site-max site-grid"
+}, lu = {
+  key: 0,
+  class: "body-normal font-medium opacity-60 mb-24"
+}, ou = ["innerHTML"], cu = ["innerHTML"], uu = {
+  __name: "Card",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    },
+    index: {
+      type: Number,
+      required: !0,
+      default: 1
+    },
+    last: {
+      type: Boolean,
+      required: !0,
+      default: !1
+    },
+    numbered: {
+      type: Boolean,
+      required: !0,
+      default: !1
+    }
+  },
+  setup(e) {
+    const t = e,
+      n = T(null),
+      s = T(null),
+      i = T(null),
+      a = T(null);
+    let r, l;
+    return ee(async () => {
+      await Y(), t.last || (r = V.timeline({
+        scrollTrigger: {
+          trigger: n.value,
+          start: "top top",
+          end: "bottom top",
+          scrub: !0
+        },
+        defaults: {
+          duration: 1,
+          ease: "none"
+        }
+      }).fromTo(i.value, {
+        alpha: 0
+      }, {
+        alpha: 1
+      }, 0)), l = V.fromTo(a.value, {
+        alpha: 0
+      }, {
+        alpha: 1,
+        duration: .5,
+        ease: "linear",
+        scrollTrigger: {
+          trigger: n.value,
+          start: "top center",
+          end: "top top",
+          scrub: !0
+        }
+      })
+    }), he(() => {
+      r == null || r.kill(), l == null || l.kill()
+    }), (c, d) => {
+      const p = J;
+      return u(), f("section", {
+        ref_key: "el",
+        ref: n,
+        class: "stacking-media-card sticky top-0 left-0"
+      }, [o("div", ru, [o("div", {
+        ref_key: "content",
+        ref: s,
+        class: "h-full-screen-e overflow-hidden"
+      }, [L(p, {
+        item: e.item.media,
+        aspect: !1
+      }, null, 8, ["item"]), o("div", {
+        class: S(["absolute inset-0 flex items-end s:pb-44 m:pb-56 z-2", e.last ? "pb-24" : "pb-130"])
+      }, [o("div", au, [o("div", {
+        ref_key: "box",
+        ref: a,
+        class: "col-span-6 m:col-span-4 bg-black text-white radius-global px-32 py-48 flex flex-col items-start"
+      }, [e.numbered ? (u(), f("div", lu, "0" + Se(e.index + 1), 1)) : k("", !0), o("h2", {
+        class: S(["s:pr-50", e.item.condensed ? "h2-c uppercase" : "h5"]),
+        innerHTML: c.$sanitize(e.item.title)
+      }, null, 10, ou), o("div", {
+        class: "mt-40 body-normal font-medium opacity-60",
+        innerHTML: c.$sanitize(e.item.text)
+      }, null, 8, cu)], 512)])], 2), o("div", {
+        ref_key: "bg",
+        ref: i,
+        class: "absolute inset-0 bg-black/90 opacity-0 z-3"
+      }, null, 512)], 512)])], 512)
+    }
+  }
+}, du = {
+  class: "relative"
+}, mu = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    return (t, n) => (u(), f("div", du, [(u(!0), f(K, null, X(e.item.items, (s, i) => (u(), I(uu, {
+      key: s.id,
+      item: s,
+      index: i,
+      last: i === e.item.items.length - 1,
+      numbered: e.item.numbered
+    }, null, 8, ["item", "index", "last", "numbered"]))), 128))]))
+  }
+}, fu = {
+  class: "absolute inset-0 flex items-center bg-black/40 z-2"
+}, hu = {
+  class: "site-max flex flex-col gap-y-30 items-center text-center text-white"
+}, pu = ["innerHTML"], vu = ["innerHTML"], yu = {
+  __name: "ParallaxMedia",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    const {
+      $resize: t
+    } = le(), n = R(() => t == null ? void 0 : t.mouse), s = T(null), i = T(null), a = T(null), r = T(null);
+    let l;
+    return ee(async () => {
+      await Y(), l = V.timeline({
+        scrollTrigger: {
+          trigger: s.value,
+          scrub: !0
+        }
+      }).chars(r.value, .125), l.fromTo(i.value, {
+        yPercent: () => n.value ? -100 : -50
+      }, {
+        yPercent: () => n.value ? 100 : 50,
+        ease: "none",
+        duration: l.duration() * 2
+      }, 0)
+    }), he(() => {
+      l == null || l.kill()
+    }), (c, d) => {
+      const p = J;
+      return u(), f("section", {
+        ref_key: "el",
+        ref: s,
+        class: "relative overflow-hidden h-full-screen-e"
+      }, [o("div", {
+        ref_key: "content",
+        ref: i,
+        class: "absolute inset-0"
+      }, [L(p, {
+        item: e.item.media,
+        aspect: !1
+      }, null, 8, ["item"]), o("div", fu, [o("div", hu, [e.item.eyebrow ? (u(), f("div", {
+        key: 0,
+        ref_key: "eyebrow",
+        ref: a,
+        class: "h4-c uppercase",
+        innerHTML: c.$sanitize(e.item.eyebrow)
+      }, null, 8, pu)) : k("", !0), e.item.title ? (u(), f("h2", {
+        key: 1,
+        ref_key: "title",
+        ref: r,
+        class: S(e.item.condensed ? "h1-c uppercase" : "h2-alt"),
+        innerHTML: c.$sanitize(e.item.title)
+      }, null, 10, vu)) : k("", !0)])])], 512)], 512)
+    }
+  }
+}, gu = {
+  key: 0,
+  class: "site-max relative flex justify-between items-end w-full pb-64"
+}, bu = ["innerHTML"], wu = {
+  __name: "GlHero",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    const t = e,
+      {
+        $gl: n,
+        $resize: s,
+        $event: i
+      } = le(),
+      a = T(null),
+      r = T(null),
+      l = T(null),
+      c = () => {
+        var p;
+        (p = n.instance) == null || p.resize(s.ww, s.wh)
+      },
+      d = async () => {
+        n.video || (console.log(t.item.video), n.video = document.createElement("video"), n.video.src = t.item.video.video.mp4medium || "/gl/input.mp4", n.video.crossOrigin = "anonymous", n.video.autoplay = !0, n.video.playsInline = !0, n.video.loop = !0, n.video.muted = !0, n.video.style.position = "fixed", n.video.style.width = "50px", n.video.style.height = "50px", n.video.style.opacity = "0", n.video.style.pointerEvents = "none", document.body.appendChild(n.video)), await n.init(r.value, n.video)
+      };
+    return ee(async () => {
+      var v;
+      await d(), await Y(), (v = n.video) == null || v.play(), n.instance.setState(ls.INTRO), n.instance.start(), n.instance.play(), c(), i.on("resize", c), await Y();
+      const p = mt(".js-case-list"),
+        m = mt(".js-case-list-first", p);
+      V.timeline({
+        scrollTrigger: {
+          trigger: l.value,
+          start: "top top",
+          end: "bottom top-=50%",
+          scrub: !0
+        },
+        defaults: {
+          duration: .5,
+          ease: "none"
+        }
+      }).fromTo(n.instance, {
+        scroll: 0
+      }, {
+        scroll: 1,
+        immediateRender: !1
+      }).fromTo(p, {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1
+      }).fromTo(m, {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: "power1.inOut"
+      }, "-=.5")
+    }), gn(() => {
+      var p, m;
+      i.off("resize", c), (p = n.instance) == null || p.pause(), (m = n.video) == null || m.pause()
+    }), (p, m) => (u(), f("div", {
+      ref_key: "el",
+      ref: a,
+      class: "absolute top-0 left-0 w-full h-[300svh] pointer-events-none"
+    }, [o("div", {
+      ref_key: "content",
+      ref: r,
+      class: "sticky top-0 left-0 w-full h-full-screen has-hover:pointer-events-auto z-4"
+    }, null, 512), o("div", {
+      ref_key: "t",
+      ref: l,
+      class: "absolute top-0 left-0 w-full h-full-screen flex items-end overflow-hidden pointer-events-none z-6"
+    }, [e.item.title ? (u(), f("div", gu, [o("h1", {
+      class: "relative s:max-w-[75rem] h1",
+      innerHTML: p.$sanitize(e.item.title)
+    }, null, 8, bu), m[0] || (m[0] = o("button", {
+      type: "button",
+      class: "ml-auto hidden s:block",
+      "aria-label": "Scroll"
+    }, [o("svg", {
+      class: "h-15 w-auto",
+      viewBox: "0 0 14 14",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }, [o("path", {
+      class: "fill-current",
+      d: "M13.1523 8.20561L6.65234 14L0.152344 8.20561L0.152344 5.3785L5.63834 10.3084L5.63834 0L7.66634 8.86466e-08L7.66634 10.3084L13.1523 5.37851V8.20561Z"
+    })])], -1))])) : k("", !0)], 512)], 512))
+  }
+}, _u = {
+  class: "relative flex items-end"
+}, xu = {
+  class: "site-max flex flex-col items-start"
+}, ku = {
+  class: "relative flex flex-col gap-y-12"
+}, Tu = ["innerHTML"], $u = ["innerHTML"], Lu = {
+  __name: "Card",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    },
+    i: {
+      type: Number,
+      default: 0
+    }
+  },
+  setup(e) {
+    const t = T(null),
+      n = T(null),
+      s = T(null),
+      i = T(null);
+    let a;
+    return ee(async () => {
+      await Y();
+      const r = n.value ? [n.value, s.value] : [s.value];
+      a = V.timeline({
+        scrollTrigger: {
+          trigger: s.value,
+          scrub: !0
+        }
+      }).charsInOut(r)
+    }), he(() => {
+      a == null || a.kill()
+    }), (r, l) => (u(), f("section", {
+      ref_key: "el",
+      ref: t,
+      class: "relative text-white"
+    }, [o("div", _u, [o("div", xu, [o("div", ku, [e.item.eyebrow ? (u(), f("div", {
+      key: 0,
+      ref_key: "eyebrow",
+      ref: n,
+      class: "body-large opacity-60",
+      innerHTML: r.$sanitize(e.item.eyebrow)
+    }, null, 8, Tu)) : k("", !0), e.item.title ? (u(), f("h2", {
+      key: 1,
+      ref_key: "title",
+      ref: s,
+      class: "h2-alt js-t",
+      innerHTML: r.$sanitize(e.item.title)
+    }, null, 8, $u)) : k("", !0), o("div", {
+      ref_key: "t",
+      ref: i,
+      class: "absolute bottom-0 left-0 w-full h-[17.5rem] s:h-[12.5rem] m:h-[17.5rem] pointer-events-none js-t-t"
+    }, null, 512)])])])], 512))
+  }
+}, Mu = {
+  class: "absolute inset-0"
+}, Su = {
+  class: "case-list__content absolute top-0 left-0 w-full h-full-screen-e flex items-end z-3"
+}, Eu = {
+  class: "site-max flex flex-col items-start gap-y-32 js-texts"
+}, Ou = ["innerHTML"], Au = {
+  class: "case-list__cards relative flex flex-col pointer-events-none overflow-hidden"
+}, Hu = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    const t = os(),
+      {
+        $resize: n
+      } = le();
+    R(() => n == null ? void 0 : n.small);
+    const s = T(null),
+      i = T(null),
+      a = T(null),
+      r = T(0);
+    let l, c;
+    const d = m => m.mediaMobile && (n != null && n.small) ? m.mediaMobile : m.media,
+      p = m => {
+        if (!m) return {
+          "--gradient": "0, 0, 0"
+        };
+        const v = parseInt(m.slice(1, 3), 16),
+          g = parseInt(m.slice(3, 5), 16),
+          y = parseInt(m.slice(5, 7), 16);
+        return {
+          "--gradient": `${v}, ${g}, ${y}`
+        }
+      };
+    return ee(async () => {
+      await Y(), t.name === "expertise" && s.value.classList.add("invisible");
+      const m = Me(".js-t", s.value),
+        v = Me(".js-t-t", s.value),
+        g = Me(".js-texts", s.value);
+      l = m.map((y, w) => qe.create({
+        trigger: y,
+        onToggle: _ => {
+          _.isActive && (r.value = w)
+        }
+      })), c = v.map((y, w) => V.timeline({
+        scrollTrigger: {
+          trigger: y,
+          start: "bottom+=100% bottom",
+          end: "bottom+=200% bottom",
+          scrub: !0
+        }
+      }).fromTo(g[w], {
+        alpha: 0
+      }, {
+        alpha: 1,
+        duration: .5,
+        ease: "linear"
+      }))
+    }), he(() => {
+      l.forEach(m => m == null ? void 0 : m.kill()), c.forEach(m => m == null ? void 0 : m.kill())
+    }), (m, v) => {
+      const g = J,
+        y = te,
+        w = Re,
+        _ = Ee;
+      return u(), f("div", {
+        ref_key: "el",
+        ref: s,
+        class: S(["case-list relative z-5 js-case-list", e.item.light && "text-white"]),
+        "data-c": "View"
+      }, [o("div", Mu, [o("div", {
+        ref_key: "media",
+        ref: i,
+        class: "sticky top-0 left-0 h-full-screen-e w-full overflow-hidden"
+      }, [o("div", {
+        ref_key: "medias",
+        ref: a,
+        class: "absolute inset-0"
+      }, [L(_, null, {
+        default: G(() => [(u(!0), f(K, null, X(e.item.items, (M, O) => (u(), f("div", {
+          key: e.item.id,
+          class: "absolute inset-0 overflow-hidden"
+        }, [L(Dt, {
+          name: "fade"
+        }, {
+          default: G(() => [U(L(w, {
+            item: M.link,
+            class: "block absolute inset-0"
+          }, {
+            default: G(() => {
+              var N;
+              return [o("div", {
+                class: "case-list__media absolute inset-0 overflow-hidden z-1",
+                style: it(p((N = M.gradient) == null ? void 0 : N.hex))
+              }, [L(g, {
+                item: d(M),
+                aspect: !1,
+                class: S(["z-1", O === 0 && "js-case-list-first"])
+              }, null, 8, ["item", "class"])], 4), o("div", Su, [o("div", Eu, [M.subtitle ? (u(), f("div", {
+                key: 0,
+                class: "text-left body-large opacity-60 max-w-[33.5rem] s:max-w-[40rem]",
+                innerHTML: m.$sanitize(M.subtitle)
+              }, null, 8, Ou)) : k("", !0), M.link ? (u(), I(y, {
+                key: 1,
+                label: M.link.label || "View",
+                icon: !0,
+                blurred: !0,
+                light: e.item.light || !0
+              }, null, 8, ["label", "light"])) : k("", !0)])])]
+            }),
+            _: 2
+          }, 1032, ["item"]), [
+            [qt, $(r) === O]
+          ])]),
+          _: 2
+        }, 1024)]))), 128))]),
+        _: 1
+      })], 512)], 512)]), o("div", Au, [(u(!0), f(K, null, X(e.item.items, (M, O) => (u(), I(Lu, {
+        key: M.id,
+        item: M,
+        i: O,
+        class: "relative z-2"
+      }, null, 8, ["item", "i"]))), 128))])], 2)
+    }
+  }
+}, Cu = $e(Hu, [
+  ["__scopeId", "data-v-245261f7"]
+]), Ru = {
+  type: "button",
+  class: "video-list-item block w-full text-left group h-scale"
+}, Bu = {
+  class: "relative site-max py-48 flex flex-col s:flex-row s:justify-between gap-y-48 z-2"
+}, Nu = {
+  class: "relative radius-media w-full s:min-w-[46.3rem] s:max-w-[46.3rem] m:min-w-[52.2rem] m:max-w-[52.2rem] s:order-2"
+}, ju = {
+  class: "flex-1 flex flex-col justify-between s:order-1"
+}, Fu = {
+  class: "relative flex flex-col items-start gap-y-20"
+}, zu = {
+  class: "relative text-15 uppercase px-15 py-5 overflow-hidden rounded-[.5rem]"
+}, Iu = ["innerHTML"], qu = {
+  class: "flex flex-col items-start mt-40 s:mt-0"
+}, Du = ["innerHTML"], Pu = {
+  key: 1,
+  class: "opacity-60"
+}, Vu = {
+  __name: "Card",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    },
+    i: {
+      type: Number,
+      required: !0
+    }
+  },
+  setup(e) {
+    const t = e,
+      n = rt(),
+      s = () => {
+        n.setEpisode({
+          active: !0,
+          post: t.item
+        })
+      },
+      i = R(() => {
+        var c;
+        const a = (c = t.item.video) == null ? void 0 : c.video;
+        if (!a) return;
+        if (a.duration < 60) return `${a.duration} sec`;
+        const r = Math.floor(a.duration / 60),
+          l = (a.duration % 60).toString().padStart(2, "0");
+        return `${r}:${l}min`
+      });
+    return (a, r) => {
+      const l = J;
+      return u(), f("article", {
+        class: "relative",
+        onClick: s
+      }, [o("button", Ru, [r[2] || (r[2] = o("div", {
+        class: "video-list-item__highlight absolute inset-0 opacity-0 transition-opacity duration-500 ease-out has-hover:group-hover:opacity-15"
+      }, null, -1)), o("div", Bu, [o("div", Nu, [r[0] || (r[0] = o("div", {
+        class: "pt-[56.25%]"
+      }, null, -1)), L(l, {
+        item: e.item.thumbnail,
+        aspect: !1,
+        class: "h-scale__item"
+      }, null, 8, ["item"])]), o("div", ju, [o("div", Fu, [o("div", zu, [r[1] || (r[1] = o("div", {
+        class: "absolute bg-current backdrop-blur-md opacity-20 inset-0"
+      }, null, -1)), cs(" EP" + Se(e.i + 1), 1)]), o("h2", {
+        class: "h5 s:max-w-[37.5rem] m:max-w-[52.5rem]",
+        innerHTML: a.$sanitize(e.item.title)
+      }, null, 8, Iu)]), o("div", qu, [e.item.desc ? (u(), f("div", {
+        key: 0,
+        class: "body-large s:max-w-[53.5rem]",
+        innerHTML: a.$sanitize(e.item.desc)
+      }, null, 8, Du)) : k("", !0), e.item.video ? (u(), f("div", Pu, Se($(i)), 1)) : k("", !0)])])]), r[3] || (r[3] = o("hr", {
+        class: "relative w-full border-current opacity-10"
+      }, null, -1))])])
+    }
+  }
+}, Uu = $e(Vu, [
+  ["__scopeId", "data-v-68e9d738"]
+]), Ju = {
+  class: "site-max flex flex-col gap-y-48"
+}, Gu = ["innerHTML"], Ku = {
+  class: "flex flex-col"
+}, Wu = {
+  key: 0,
+  class: "site-max flex justify-center mt-120"
+}, Qu = {
+  __name: "index",
+  props: {
+    item: {
+      type: Object,
+      required: !1
+    },
+    items: {
+      type: Array,
+      required: !1
+    }
+  },
+  setup(e) {
+    var d;
+    const t = e,
+      n = rt(),
+      s = R(() => n.episodes || []),
+      i = R(() => t.items ? t.items : s.value),
+      a = T(((d = t.item) == null ? void 0 : d.initial) || 5),
+      r = R(() => i.value.slice(0, a.value)),
+      l = R(() => a.value < i.value.length),
+      c = () => {
+        a.value += t.item.loadMore
+      };
+    return (p, m) => {
+      var g;
+      const v = te;
+      return u(), f("section", {
+        class: "video-list relative flex flex-col py-48",
+        style: it(`--highlight: ${(g=e.item.highlight)==null?void 0:g.hex};`)
+      }, [o("div", Ju, [o("h2", {
+        class: "eyebrow",
+        innerHTML: p.$sanitize(e.item.title)
+      }, null, 8, Gu), m[0] || (m[0] = o("hr", {
+        class: "relative w-full border-current opacity-10"
+      }, null, -1))]), o("div", Ku, [(u(!0), f(K, null, X($(r), (y, w) => (u(), I(Uu, {
+        key: y.id,
+        item: y,
+        i: w
+      }, null, 8, ["item", "i"]))), 128))]), $(l) ? (u(), f("div", Wu, [L(v, {
+        onClick: c,
+        label: "Load more"
+      })])) : k("", !0)], 4)
+    }
+  }
+}, Xu = $e(Qu, [
+  ["__scopeId", "data-v-4be4576e"]
+]), Zu = {
+  class: "relative py-48"
+}, Yu = ["innerHTML"], ed = ["innerHTML"], td = ["innerHTML"], nd = {
+  __name: "Intro",
+  props: {
+    item: {
+      type: Object,
+      required: !0,
+      default: () => ({})
+    }
+  },
+  setup(e) {
+    return (t, n) => {
+      const s = te,
+        i = ie("st-chars");
+      return u(), f("section", Zu, [o("div", {
+        class: S(["site-max", e.item.leftAligned ? "site-grid" : "flex flex-col items-center text-center"])
+      }, [o("div", {
+        class: S(["flex flex-col gap-y-24 s:gap-y-30", e.item.leftAligned && "col-span-6 s:col-span-5 items-start"])
+      }, [e.item.eyebrow ? (u(), f("h3", {
+        key: 0,
+        class: "body-large",
+        innerHTML: t.$sanitize(e.item.eyebrow)
+      }, null, 8, Yu)) : k("", !0), e.item.title ? U((u(), f("h2", {
+        key: 1,
+        class: S(["s:max-w-[65rem] m:max-w-[118rem]", [e.item.titleSmall ? "h4" : "h3", e.item.titleCondensed && "font-condensed uppercase"]]),
+        innerHTML: t.$sanitize(e.item.title)
+      }, null, 10, ed)), [
+        [i]
+      ]) : k("", !0)], 2), o("div", {
+        class: S(["relative flex flex-col gap-y-32 text-light", [e.item.leftAligned ? "col-span-6 s:col-span-5 s:col-start-8 s:justify-end items-start" : "items-center"]])
+      }, [e.item.text ? (u(), f("p", {
+        key: 0,
+        class: S(["body-medium mt-32 s:mt-0", [e.item.leftAligned ? "s:max-w-[52.5rem]" : "max-w-[36rem] s:max-w-[55rem] m:max-w-[53rem]"]]),
+        innerHTML: t.$sanitize(e.item.text)
+      }, null, 10, td)) : k("", !0), e.item.cta ? (u(), I(s, {
+        key: 1,
+        item: e.item.cta
+      }, null, 8, ["item"])) : k("", !0)], 2)], 2)])
+    }
+  }
+}, sd = {
+  class: "relative pt-[31.3rem] m:pt-[36.1rem] pb-48"
+}, id = {
+  class: "site-max flex flex-col s:flex-row s:items-end gap-y-32"
+}, rd = {
+  class: "flex flex-col items-start gap-y-12 s:gap-y-16 m:gap-y-20 s:max-w-[135rem]"
+}, ad = {
+  key: 0,
+  class: "relative opacity-60"
+}, ld = ["innerHTML"], od = ["innerHTML"], cd = {
+  key: 0,
+  class: "flex max-s:justify-between items-end gap-x-32 s:mb-[.75rem] s:ml-auto"
+}, ud = ["innerHTML"], dd = {
+  __name: "TextHeader",
+  props: {
+    item: {
+      type: Object,
+      required: !0
+    }
+  },
+  setup(e) {
+    return (t, n) => {
+      const s = Re;
+      return u(), f("div", sd, [o("div", id, [o("div", rd, [e.item.breadcrumb ? (u(), f("div", ad, [L(s, {
+        item: e.item.breadcrumb
+      }, null, 8, ["item"])])) : e.item.eyebrow ? (u(), f("div", {
+        key: 1,
+        class: "relative opacity-60",
+        innerHTML: t.$sanitize(e.item.eyebrow)
+      }, null, 8, ld)) : k("", !0), o("h1", {
+        class: "h2-alt",
+        innerHTML: t.$sanitize(e.item.title)
+      }, null, 8, od)]), e.item.subtitle ? (u(), f("div", cd, [o("div", {
+        class: "s:text-right",
+        innerHTML: t.$sanitize(e.item.subtitle, ["em"])
+      }, null, 8, ud), n[0] || (n[0] = o("svg", {
+        class: "h-20 w-auto",
+        viewBox: "0 0 14 21",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, [o("path", {
+        class: "fill-current",
+        d: "M13.1523 8.20561L6.65234 14L0.152344 8.20561L0.152344 5.3785L5.63834 10.3084L5.63834 0L7.66634 8.86466e-08L7.66634 10.3084L13.1523 5.37851V8.20561Z"
+      })], -1))])) : k("", !0)])])
+    }
+  }
+}, md = {}, fd = {
+  class: "icon-toggle-v2"
+};
+
+function hd(e, t) {
+  return u(), f("div", fd)
+}
+const Gn = $e(md, [
+  ["render", hd]
+]);
+var ge, be, Ze = "blockquote",
+  Ye = "block",
+  kt = "inlineBlock",
+  et = "code",
+  tt = "heading",
+  Tt = "inlineItem",
+  $t = "itemLink",
+  Lt = "link",
+  nt = "listItem",
+  Ve = "list",
+  ze = "paragraph",
+  Mt = "root",
+  St = "span",
+  st = "thematicBreak",
+  pd = [Ze, Ye, kt, et, tt, Tt, $t, Lt, nt, Ve, ze, Mt, St, st];
+ge = {}, ge[Ze] = [ze], ge[Ye] = [], ge[kt] = [], ge[et] = [], ge[tt] = "inlineNodes", ge[Tt] = [], ge[$t] = "inlineNodes", ge[Lt] = "inlineNodes", ge[nt] = [ze, Ve], ge[Ve] = [nt], ge[ze] = "inlineNodes", ge[Mt] = [Ze, et, Ve, ze, tt, Ye, st], ge[St] = [], ge[st] = [];
+be = {}, be[Ze] = ["children", "attribution"], be[Ye] = ["item"], be[kt] = ["item"], be[et] = ["language", "highlight", "code"], be[tt] = ["level", "children", "style"], be[Tt] = ["item"], be[$t] = ["item", "children", "meta"], be[Lt] = ["url", "children", "meta"], be[nt] = ["children"], be[Ve] = ["style", "children"], be[ze] = ["children", "style"], be[Mt] = ["children"], be[St] = ["value", "marks"], be[st] = [];
+
+function vd(e) {
+  return "children" in e
+}
+
+function yd(e) {
+  return e.type === tt
+}
+
+function gd(e) {
+  return e.type === St
+}
+
+function Kn(e) {
+  return e.type === Mt
+}
+
+function bd(e) {
+  return e.type === ze
+}
+
+function wd(e) {
+  return e.type === Ve
+}
+
+function _d(e) {
+  return e.type === nt
+}
+
+function xd(e) {
+  return e.type === Ze
+}
+
+function kd(e) {
+  return e.type === Ye
+}
+
+function Td(e) {
+  return e.type === kt
+}
+
+function $d(e) {
+  return e.type === et
+}
+
+function Ld(e) {
+  return e.type === Lt
+}
+
+function Md(e) {
+  return e.type === $t
+}
+
+function Sd(e) {
+  return e.type === Tt
+}
+
+function Ed(e) {
+  return e.type === st
+}
+
+function Gt(e) {
+  return !!(typeof e == "object" && e)
+}
+
+function Od(e) {
+  return pd.includes(e)
+}
+
+function Ad(e) {
+  return !!(Gt(e) && "type" in e && typeof e.type == "string" && Od(e.type))
+}
+
+function Ke(e) {
+  return !!(Gt(e) && "value" in e && zt(e.value))
+}
+
+function zt(e) {
+  return !!(Gt(e) && "schema" in e && "document" in e && e.schema === "dast")
+}
+
+function Hd(e) {
+  var t = [];
+  return Wn(e, t), t
+}
+
+function Wn(e, t) {
+  for (var n = 0; n < e.length; n++) {
+    var s = e[n];
+    Array.isArray(s) ? Wn(s, t) : t.push(s)
+  }
+}
+var Cd = function() {
+    var e = function(t, n) {
+      return e = Object.setPrototypeOf || {
+        __proto__: []
+      }
+      instanceof Array && function(s, i) {
+        s.__proto__ = i
+      } || function(s, i) {
+        for (var a in i) Object.prototype.hasOwnProperty.call(i, a) && (s[a] = i[a])
+      }, e(t, n)
+    };
+    return function(t, n) {
+      e(t, n);
+
+      function s() {
+        this.constructor = t
+      }
+      t.prototype = n === null ? Object.create(n) : (s.prototype = n.prototype, new s)
+    }
+  }(),
+  Rd = function() {
+    for (var e = 0, t = 0, n = arguments.length; t < n; t++) e += arguments[t].length;
+    for (var s = Array(e), i = 0, t = 0; t < n; t++)
+      for (var a = arguments[t], r = 0, l = a.length; r < l; r++, i++) s[i] = a[r];
+    return s
+  },
+  ke = function(e) {
+    Cd(t, e);
+
+    function t(n, s) {
+      var i = e.call(this, n) || this;
+      return i.node = s, Object.setPrototypeOf(i, t.prototype), i
+    }
+    return t
+  }(Error),
+  _e = function(e, t) {
+    return {
+      appliable: e,
+      apply: function(n) {
+        return t(n)
+      }
+    }
+  };
+
+function Qn(e, t, n, s, i) {
+  var a = vd(t) ? Hd(t.children.map(function(l, c) {
+      return Qn(e, l, "t-" + c, Rd([t], s), i)
+    }).filter(function(l) {
+      return !!l
+    })) : void 0,
+    r = i.find(function(l) {
+      return l.appliable(t)
+    });
+  if (r) return r.apply({
+    adapter: e,
+    node: t,
+    children: a,
+    key: n,
+    ancestors: s
+  });
+  throw new ke(`Don't know how to render a node with type "` + t.type + '". Please specify a custom renderRule for it!', t)
+}
+
+function Bd(e, t, n) {
+  if (!t) return null;
+  var s = Ke(t) && zt(t.value) ? t.value.document : zt(t) ? t.document : Ad(t) ? t : void 0;
+  if (!s) throw new Error("Passed object is neither null, a Structured Text value, a DAST document or a DAST node");
+  var i = Qn(e, s, "t-0", [], n);
+  return i
+}
+var vt = function() {
+    return vt = Object.assign || function(e) {
+      for (var t, n = 1, s = arguments.length; n < s; n++) {
+        t = arguments[n];
+        for (var i in t) Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i])
+      }
+      return e
+    }, vt.apply(this, arguments)
+  },
+  fn = function() {
+    for (var e = 0, t = 0, n = arguments.length; t < n; t++) e += arguments[t].length;
+    for (var s = Array(e), i = 0, t = 0; t < n; t++)
+      for (var a = arguments[t], r = 0, l = a.length; r < l; r++, i++) s[i] = a[r];
+    return s
+  };
+
+function Nd(e) {
+  switch (e) {
+    case "emphasis":
+      return "em";
+    case "underline":
+      return "u";
+    case "strikethrough":
+      return "s";
+    case "highlight":
+      return "mark";
+    default:
+      return e
+  }
+}
+
+function jd(e) {
+  var t = e.node,
+    n = e.key,
+    s = e.adapter,
+    i = s.renderNode,
+    a = s.renderText,
+    r = s.renderFragment,
+    l = t.value.split(/\n/);
+  return l.length === 0 ? a(t.value, n) : r(l.slice(1).reduce(function(c, d, p) {
+    return c.concat([i("br", {
+      key: n + "-br-" + p
+    }), a(d, n + "-line-" + p)])
+  }, [a(l[0], n + "-line-first")]), n)
+}
+
+function Fd(e) {
+  var t = e.customMarkRules;
+  return _e(gd, function(n) {
+    var s = n.adapter,
+      i = n.key,
+      a = n.node;
+    return (a.marks || []).reduce(function(r, l) {
+      if (r) {
+        var c = t.find(function(d) {
+          return d.appliable(l)
+        });
+        return c ? c.apply({
+          adapter: s,
+          key: i,
+          mark: l,
+          children: r
+        }) : s.renderNode(Nd(l), {
+          key: i
+        }, r)
+      }
+    }, jd(n))
+  })
+}
+var Xn = function(e) {
+  var t = e.meta,
+    n = {};
+  return t.forEach(function(s) {
+    ["target", "title", "rel"].includes(s.id) && (n[s.id] = s.value)
+  }), n
+};
+
+function zd(e, t) {
+  var n = t.metaTransformer || Xn;
+  return Bd(t.adapter, e, fn(t.customNodeRules || [], [_e(Kn, function(s) {
+    var i = s.adapter.renderFragment,
+      a = s.key,
+      r = s.children;
+    return i(r, a)
+  }), _e(bd, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.key,
+      r = s.children;
+    return i("p", {
+      key: a
+    }, r)
+  }), _e(wd, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.node,
+      r = s.key,
+      l = s.children;
+    return i(a.style === "bulleted" ? "ul" : "ol", {
+      key: r
+    }, l)
+  }), _e(_d, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.key,
+      r = s.children;
+    return i("li", {
+      key: a
+    }, r)
+  }), _e(xd, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.key,
+      r = s.node,
+      l = s.children,
+      c = r.attribution ? fn(l || [], [i("footer", {
+        key: "footer"
+      }, r.attribution)]) : l;
+    return i("blockquote", {
+      key: a
+    }, c)
+  }), _e($d, function(s) {
+    var i = s.adapter,
+      a = i.renderNode,
+      r = i.renderText,
+      l = s.key,
+      c = s.node;
+    return a("pre", {
+      key: l,
+      "data-language": c.language
+    }, a("code", null, r(c.code)))
+  }), _e(Ld, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.key,
+      r = s.children,
+      l = s.node,
+      c = l.meta ? n({
+        node: l,
+        meta: l.meta
+      }) : {};
+    return i("a", vt(vt({}, c || {}), {
+      key: a,
+      href: l.url
+    }), r)
+  }), _e(Ed, function(s) {
+    var i = s.adapter.renderNode,
+      a = s.key;
+    return i("hr", {
+      key: a
+    })
+  }), _e(yd, function(s) {
+    var i = s.node,
+      a = s.adapter.renderNode,
+      r = s.children,
+      l = s.key;
+    return a("h" + i.level, {
+      key: l
+    }, r)
+  }), Fd({
+    customMarkRules: t.customMarkRules || []
+  })]))
+}
+var je = {},
+  de = {},
+  fe = {},
+  hn;
+
+function Id() {
+  if (hn) return fe;
+  hn = 1, Object.defineProperty(fe, "__esModule", {
+    value: !0
+  });
+  class e extends Error {
+    constructor(x, E, F, P, Z, j, D) {
+      super(x), this.name = "GraphQLError", this.message = x, Z && (this.path = Z), E && (this.nodes = Array.isArray(E) ? E : [E]), F && (this.source = F), P && (this.positions = P), j && (this.originalError = j);
+      var ce = D;
+      if (!ce && j) {
+        var ae = j.extensions;
+        ae && typeof ae == "object" && (ce = ae)
+      }
+      this.extensions = ce || {}
+    }
+    toJSON() {
+      return {
+        ...this,
+        message: this.message
+      }
+    }
+    toString() {
+      return this.message
+    }
+    get[Symbol.toStringTag]() {
+      return "GraphQLError"
+    }
+  }
+  var t, n;
+
+  function s(h) {
+    return new e(`Syntax Error: Unexpected token at ${n} in ${h}`)
+  }
+
+  function i(h) {
+    if (h.lastIndex = n, h.test(t)) return t.slice(n, n = h.lastIndex)
+  }
+  var a = / +(?=[^\s])/y;
+
+  function r(h) {
+    for (var x = h.split(`
+`), E = "", F = 0, P = 0, Z = x.length - 1, j = 0; j < x.length; j++) a.lastIndex = 0, a.test(x[j]) && (j && (!F || a.lastIndex < F) && (F = a.lastIndex), P = P || j, Z = j);
+    for (var D = P; D <= Z; D++) D !== P && (E += `
+`), E += x[D].slice(F).replace(/\\"""/g, '"""');
+    return E
+  }
+
+  function l() {
+    for (var h = 0 | t.charCodeAt(n++); h === 9 || h === 10 || h === 13 || h === 32 || h === 35 || h === 44 || h === 65279; h = 0 | t.charCodeAt(n++))
+      if (h === 35)
+        for (;
+          (h = t.charCodeAt(n++)) !== 10 && h !== 13;);
+    n--
+  }
+
+  function c() {
+    for (var h = n, x = 0 | t.charCodeAt(n++); x >= 48 && x <= 57 || x >= 65 && x <= 90 || x === 95 || x >= 97 && x <= 122; x = 0 | t.charCodeAt(n++));
+    if (h === n - 1) throw s("Name");
+    var E = t.slice(h, --n);
+    return l(), E
+  }
+
+  function d() {
+    return {
+      kind: "Name",
+      value: c()
+    }
+  }
+  var p = /(?:"""|(?:[\s\S]*?[^\\])""")/y,
+    m = /(?:(?:\.\d+)?[eE][+-]?\d+|\.\d+)/y;
+
+  function v(h) {
+    var x;
+    switch (t.charCodeAt(n)) {
+      case 91:
+        n++, l();
+        for (var E = []; t.charCodeAt(n) !== 93;) E.push(v(h));
+        return n++, l(), {
+          kind: "ListValue",
+          values: E
+        };
+      case 123:
+        n++, l();
+        for (var F = []; t.charCodeAt(n) !== 125;) {
+          var P = d();
+          if (t.charCodeAt(n++) !== 58) throw s("ObjectField");
+          l(), F.push({
+            kind: "ObjectField",
+            name: P,
+            value: v(h)
+          })
+        }
+        return n++, l(), {
+          kind: "ObjectValue",
+          fields: F
+        };
+      case 36:
+        if (h) throw s("Variable");
+        return n++, {
+          kind: "Variable",
+          name: d()
+        };
+      case 34:
+        if (t.charCodeAt(n + 1) === 34 && t.charCodeAt(n + 2) === 34) {
+          if (n += 3, (x = i(p)) == null) throw s("StringValue");
+          return l(), {
+            kind: "StringValue",
+            value: r(x.slice(0, -3)),
+            block: !0
+          }
+        } else {
+          var Z = n,
+            j;
+          n++;
+          var D = !1;
+          for (j = 0 | t.charCodeAt(n++); j === 92 && (n++, D = !0) || j !== 10 && j !== 13 && j !== 34 && j; j = 0 | t.charCodeAt(n++));
+          if (j !== 34) throw s("StringValue");
+          return x = t.slice(Z, n), l(), {
+            kind: "StringValue",
+            value: D ? JSON.parse(x) : x.slice(1, -1),
+            block: !1
+          }
+        }
+      case 45:
+      case 48:
+      case 49:
+      case 50:
+      case 51:
+      case 52:
+      case 53:
+      case 54:
+      case 55:
+      case 56:
+      case 57:
+        for (var ce = n++, ae;
+          (ae = 0 | t.charCodeAt(n++)) >= 48 && ae <= 57;);
+        var ve = t.slice(ce, --n);
+        if ((ae = t.charCodeAt(n)) === 46 || ae === 69 || ae === 101) {
+          if ((x = i(m)) == null) throw s("FloatValue");
+          return l(), {
+            kind: "FloatValue",
+            value: ve + x
+          }
+        } else return l(), {
+          kind: "IntValue",
+          value: ve
+        };
+      case 110:
+        if (t.charCodeAt(n + 1) === 117 && t.charCodeAt(n + 2) === 108 && t.charCodeAt(n + 3) === 108) return n += 4, l(), {
+          kind: "NullValue"
+        };
+        break;
+      case 116:
+        if (t.charCodeAt(n + 1) === 114 && t.charCodeAt(n + 2) === 117 && t.charCodeAt(n + 3) === 101) return n += 4, l(), {
+          kind: "BooleanValue",
+          value: !0
+        };
+        break;
+      case 102:
+        if (t.charCodeAt(n + 1) === 97 && t.charCodeAt(n + 2) === 108 && t.charCodeAt(n + 3) === 115 && t.charCodeAt(n + 4) === 101) return n += 5, l(), {
+          kind: "BooleanValue",
+          value: !1
+        };
+        break
+    }
+    return {
+      kind: "EnumValue",
+      value: c()
+    }
+  }
+
+  function g(h) {
+    if (t.charCodeAt(n) === 40) {
+      var x = [];
+      n++, l();
+      do {
+        var E = d();
+        if (t.charCodeAt(n++) !== 58) throw s("Argument");
+        l(), x.push({
+          kind: "Argument",
+          name: E,
+          value: v(h)
+        })
+      } while (t.charCodeAt(n) !== 41);
+      return n++, l(), x
+    }
+  }
+
+  function y(h) {
+    if (t.charCodeAt(n) === 64) {
+      var x = [];
+      do n++, x.push({
+        kind: "Directive",
+        name: d(),
+        arguments: g(h)
+      }); while (t.charCodeAt(n) === 64);
+      return x
+    }
+  }
+
+  function w() {
+    for (var h = 0; t.charCodeAt(n) === 91;) h++, n++, l();
+    var x = {
+      kind: "NamedType",
+      name: d()
+    };
+    do
+      if (t.charCodeAt(n) === 33 && (n++, l(), x = {
+          kind: "NonNullType",
+          type: x
+        }), h) {
+        if (t.charCodeAt(n++) !== 93) throw s("NamedType");
+        l(), x = {
+          kind: "ListType",
+          type: x
+        }
+      } while (h--);
+    return x
+  }
+
+  function _() {
+    if (t.charCodeAt(n++) !== 123) throw s("SelectionSet");
+    return l(), M()
+  }
+
+  function M() {
+    var h = [];
+    do
+      if (t.charCodeAt(n) === 46) {
+        if (t.charCodeAt(++n) !== 46 || t.charCodeAt(++n) !== 46) throw s("SelectionSet");
+        switch (n++, l(), t.charCodeAt(n)) {
+          case 64:
+            h.push({
+              kind: "InlineFragment",
+              typeCondition: void 0,
+              directives: y(!1),
+              selectionSet: _()
+            });
+            break;
+          case 111:
+            t.charCodeAt(n + 1) === 110 ? (n += 2, l(), h.push({
+              kind: "InlineFragment",
+              typeCondition: {
+                kind: "NamedType",
+                name: d()
+              },
+              directives: y(!1),
+              selectionSet: _()
+            })) : h.push({
+              kind: "FragmentSpread",
+              name: d(),
+              directives: y(!1)
+            });
+            break;
+          case 123:
+            n++, l(), h.push({
+              kind: "InlineFragment",
+              typeCondition: void 0,
+              directives: void 0,
+              selectionSet: M()
+            });
+            break;
+          default:
+            h.push({
+              kind: "FragmentSpread",
+              name: d(),
+              directives: y(!1)
+            })
+        }
+      } else {
+        var x = d(),
+          E = void 0;
+        t.charCodeAt(n) === 58 && (n++, l(), E = x, x = d());
+        var F = g(!1),
+          P = y(!1),
+          Z = void 0;
+        t.charCodeAt(n) === 123 && (n++, l(), Z = M()), h.push({
+          kind: "Field",
+          alias: E,
+          name: x,
+          arguments: F,
+          directives: P,
+          selectionSet: Z
+        })
+      } while (t.charCodeAt(n) !== 125);
+    return n++, l(), {
+      kind: "SelectionSet",
+      selections: h
+    }
+  }
+
+  function O() {
+    if (l(), t.charCodeAt(n) === 40) {
+      var h = [];
+      n++, l();
+      do {
+        if (t.charCodeAt(n++) !== 36) throw s("Variable");
+        var x = d();
+        if (t.charCodeAt(n++) !== 58) throw s("VariableDefinition");
+        l();
+        var E = w(),
+          F = void 0;
+        t.charCodeAt(n) === 61 && (n++, l(), F = v(!0)), l(), h.push({
+          kind: "VariableDefinition",
+          variable: {
+            kind: "Variable",
+            name: x
+          },
+          type: E,
+          defaultValue: F,
+          directives: y(!0)
+        })
+      } while (t.charCodeAt(n) !== 41);
+      return n++, l(), h
+    }
+  }
+
+  function N() {
+    var h = d();
+    if (t.charCodeAt(n++) !== 111 || t.charCodeAt(n++) !== 110) throw s("FragmentDefinition");
+    return l(), {
+      kind: "FragmentDefinition",
+      name: h,
+      typeCondition: {
+        kind: "NamedType",
+        name: d()
+      },
+      directives: y(!1),
+      selectionSet: _()
+    }
+  }
+
+  function B() {
+    var h = [];
+    do
+      if (t.charCodeAt(n) === 123) n++, l(), h.push({
+        kind: "OperationDefinition",
+        operation: "query",
+        name: void 0,
+        variableDefinitions: void 0,
+        directives: void 0,
+        selectionSet: M()
+      });
+      else {
+        var x = c();
+        switch (x) {
+          case "fragment":
+            h.push(N());
+            break;
+          case "query":
+          case "mutation":
+          case "subscription":
+            var E, F = void 0;
+            (E = t.charCodeAt(n)) !== 40 && E !== 64 && E !== 123 && (F = d()), h.push({
+              kind: "OperationDefinition",
+              operation: x,
+              name: F,
+              variableDefinitions: O(),
+              directives: y(!1),
+              selectionSet: _()
+            });
+            break;
+          default:
+            throw s("Document")
+        }
+      } while (n < t.length);
+    return h
+  }
+  var H = {};
+
+  function q(h, x, E) {
+    for (var F = "", P = 0; P < h.length; P++) P && (F += x), F += E(h[P]);
+    return F
+  }
+
+  function oe(h) {
+    return JSON.stringify(h)
+  }
+
+  function me(h) {
+    return `"""
+` + h.replace(/"""/g, '\\"""') + `
+"""`
+  }
+  var ne = `
+`,
+    W = {
+      OperationDefinition(h) {
+        var x = h.operation;
+        return h.name && (x += " " + h.name.value), h.variableDefinitions && h.variableDefinitions.length && (h.name || (x += " "), x += "(" + q(h.variableDefinitions, ", ", W.VariableDefinition) + ")"), h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), x !== "query" ? x + " " + W.SelectionSet(h.selectionSet) : W.SelectionSet(h.selectionSet)
+      },
+      VariableDefinition(h) {
+        var x = W.Variable(h.variable) + ": " + pe(h.type);
+        return h.defaultValue && (x += " = " + pe(h.defaultValue)), h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), x
+      },
+      Field(h) {
+        var x = h.alias ? h.alias.value + ": " + h.name.value : h.name.value;
+        if (h.arguments && h.arguments.length) {
+          var E = q(h.arguments, ", ", W.Argument);
+          x.length + E.length + 2 > 80 ? x += "(" + (ne += "  ") + q(h.arguments, ne, W.Argument) + (ne = ne.slice(0, -2)) + ")" : x += "(" + E + ")"
+        }
+        return h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), h.selectionSet && h.selectionSet.selections.length && (x += " " + W.SelectionSet(h.selectionSet)), x
+      },
+      StringValue(h) {
+        return h.block ? me(h.value).replace(/\n/g, ne) : oe(h.value)
+      },
+      BooleanValue: h => "" + h.value,
+      NullValue: h => "null",
+      IntValue: h => h.value,
+      FloatValue: h => h.value,
+      EnumValue: h => h.value,
+      Name: h => h.value,
+      Variable: h => "$" + h.name.value,
+      ListValue: h => "[" + q(h.values, ", ", pe) + "]",
+      ObjectValue: h => "{" + q(h.fields, ", ", W.ObjectField) + "}",
+      ObjectField: h => h.name.value + ": " + pe(h.value),
+      Document(h) {
+        return !h.definitions || !h.definitions.length ? "" : q(h.definitions, `
+
+`, pe)
+      },
+      SelectionSet: h => "{" + (ne += "  ") + q(h.selections, ne, pe) + (ne = ne.slice(0, -2)) + "}",
+      Argument: h => h.name.value + ": " + pe(h.value),
+      FragmentSpread(h) {
+        var x = "..." + h.name.value;
+        return h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), x
+      },
+      InlineFragment(h) {
+        var x = "...";
+        return h.typeCondition && (x += " on " + h.typeCondition.name.value), h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), x += " " + W.SelectionSet(h.selectionSet)
+      },
+      FragmentDefinition(h) {
+        var x = "fragment " + h.name.value;
+        return x += " on " + h.typeCondition.name.value, h.directives && h.directives.length && (x += " " + q(h.directives, " ", W.Directive)), x + " " + W.SelectionSet(h.selectionSet)
+      },
+      Directive(h) {
+        var x = "@" + h.name.value;
+        return h.arguments && h.arguments.length && (x += "(" + q(h.arguments, ", ", W.Argument) + ")"), x
+      },
+      NamedType: h => h.name.value,
+      ListType: h => "[" + pe(h.type) + "]",
+      NonNullType: h => pe(h.type) + "!"
+    },
+    pe = h => W[h.kind](h);
+
+  function Ae(h, x) {
+    switch (h.kind) {
+      case "NullValue":
+        return null;
+      case "IntValue":
+        return parseInt(h.value, 10);
+      case "FloatValue":
+        return parseFloat(h.value);
+      case "StringValue":
+      case "EnumValue":
+      case "BooleanValue":
+        return h.value;
+      case "ListValue":
+        for (var E = [], F = 0, P = h.values.length; F < P; F++) E.push(Ae(h.values[F], x));
+        return E;
+      case "ObjectValue":
+        for (var Z = Object.create(null), j = 0, D = h.fields.length; j < D; j++) {
+          var ce = h.fields[j];
+          Z[ce.name.value] = Ae(ce.value, x)
+        }
+        return Z;
+      case "Variable":
+        return x && x[h.name.value]
+    }
+  }
+  return fe.BREAK = H, fe.GraphQLError = e, fe.Kind = {
+    NAME: "Name",
+    DOCUMENT: "Document",
+    OPERATION_DEFINITION: "OperationDefinition",
+    VARIABLE_DEFINITION: "VariableDefinition",
+    SELECTION_SET: "SelectionSet",
+    FIELD: "Field",
+    ARGUMENT: "Argument",
+    FRAGMENT_SPREAD: "FragmentSpread",
+    INLINE_FRAGMENT: "InlineFragment",
+    FRAGMENT_DEFINITION: "FragmentDefinition",
+    VARIABLE: "Variable",
+    INT: "IntValue",
+    FLOAT: "FloatValue",
+    STRING: "StringValue",
+    BOOLEAN: "BooleanValue",
+    NULL: "NullValue",
+    ENUM: "EnumValue",
+    LIST: "ListValue",
+    OBJECT: "ObjectValue",
+    OBJECT_FIELD: "ObjectField",
+    DIRECTIVE: "Directive",
+    NAMED_TYPE: "NamedType",
+    LIST_TYPE: "ListType",
+    NON_NULL_TYPE: "NonNullType"
+  }, fe.OperationTypeNode = {
+    QUERY: "query",
+    MUTATION: "mutation",
+    SUBSCRIPTION: "subscription"
+  }, fe.Source = function(x, E, F) {
+    return {
+      body: x,
+      name: E,
+      locationOffset: F || {
+        line: 1,
+        column: 1
+      }
+    }
+  }, fe.isSelectionNode = function(x) {
+    return x.kind === "Field" || x.kind === "FragmentSpread" || x.kind === "InlineFragment"
+  }, fe.parse = function(x, E) {
+    return t = x.body ? x.body : x, n = 0, l(), E && E.noLocation ? {
+      kind: "Document",
+      definitions: B()
+    } : {
+      kind: "Document",
+      definitions: B(),
+      loc: {
+        start: 0,
+        end: t.length,
+        startToken: void 0,
+        endToken: void 0,
+        source: {
+          body: t,
+          name: "graphql.web",
+          locationOffset: {
+            line: 1,
+            column: 1
+          }
+        }
+      }
+    }
+  }, fe.parseType = function(x, E) {
+    return t = x.body ? x.body : x, n = 0, w()
+  }, fe.parseValue = function(x, E) {
+    return t = x.body ? x.body : x, n = 0, l(), v(!1)
+  }, fe.print = function(x) {
+    return ne = `
+`, W[x.kind] ? W[x.kind](x) : ""
+  }, fe.printBlockString = me, fe.printString = oe, fe.valueFromASTUntyped = Ae, fe.valueFromTypeNode = function h(x, E, F) {
+    if (x.kind === "Variable") return F ? h(F[x.name.value], E, F) : void 0;
+    if (E.kind === "NonNullType") return x.kind !== "NullValue" ? h(x, E, F) : void 0;
+    if (x.kind === "NullValue") return null;
+    if (E.kind === "ListType") {
+      if (x.kind === "ListValue") {
+        for (var P = [], Z = 0, j = x.values.length; Z < j; Z++) {
+          var D = h(x.values[Z], E.type, F);
+          if (D === void 0) return;
+          P.push(D)
+        }
+        return P
+      }
+    } else if (E.kind === "NamedType") switch (E.name.value) {
+      case "Int":
+      case "Float":
+      case "String":
+      case "Bool":
+        return E.name.value + "Value" === x.kind ? Ae(x, F) : void 0;
+      default:
+        return Ae(x, F)
+    }
+  }, fe.visit = function(x, E) {
+    var F = [],
+      P = [];
+    try {
+      var Z = function j(D, ce, ae) {
+        var ve = !1,
+          Le = E[D.kind] && E[D.kind].enter || E[D.kind] || E.enter,
+          ye = Le && Le.call(E, D, ce, ae, P, F);
+        if (ye === !1) return D;
+        if (ye === null) return null;
+        if (ye === H) throw H;
+        ye && typeof ye.kind == "string" && (ve = ye !== D, D = ye), ae && F.push(ae);
+        var se, Ce = {
+          ...D
+        };
+        for (var A in D) {
+          P.push(A);
+          var C = D[A];
+          if (Array.isArray(C)) {
+            for (var Q = [], ue = 0; ue < C.length; ue++) C[ue] != null && typeof C[ue].kind == "string" && (F.push(D), P.push(ue), se = j(C[ue], ue, C), P.pop(), F.pop(), se == null ? ve = !0 : (ve = ve || se !== C[ue], Q.push(se)));
+            C = Q
+          } else C != null && typeof C.kind == "string" && (se = j(C, A, D)) !== void 0 && (ve = ve || C !== se, C = se);
+          P.pop(), ve && (Ce[A] = C)
+        }
+        ae && F.pop();
+        var Ne = E[D.kind] && E[D.kind].leave || E.leave,
+          Be = Ne && Ne.call(E, D, ce, ae, P, F);
+        if (Be === H) throw H;
+        return Be !== void 0 ? Be : ye !== void 0 ? ve ? Ce : ye : ve ? Ce : D
+      }(x);
+      return Z !== void 0 && Z !== !1 ? Z : x
+    } catch (j) {
+      if (j !== H) throw j;
+      return x
+    }
+  }, fe
+}
+var pn;
+
+function qd() {
+  if (pn) return de;
+  pn = 1;
+  var e = de && de.__extends || function() {
+      var m = function(v, g) {
+        return m = Object.setPrototypeOf || {
+          __proto__: []
+        }
+        instanceof Array && function(y, w) {
+          y.__proto__ = w
+        } || function(y, w) {
+          for (var _ in w) Object.prototype.hasOwnProperty.call(w, _) && (y[_] = w[_])
+        }, m(v, g)
+      };
+      return function(v, g) {
+        if (typeof g != "function" && g !== null) throw new TypeError("Class extends value " + String(g) + " is not a constructor or null");
+        m(v, g);
+
+        function y() {
+          this.constructor = v
+        }
+        v.prototype = g === null ? Object.create(g) : (y.prototype = g.prototype, new y)
+      }
+    }(),
+    t = de && de.__assign || function() {
+      return t = Object.assign || function(m) {
+        for (var v, g = 1, y = arguments.length; g < y; g++) {
+          v = arguments[g];
+          for (var w in v) Object.prototype.hasOwnProperty.call(v, w) && (m[w] = v[w])
+        }
+        return m
+      }, t.apply(this, arguments)
+    },
+    n = de && de.__awaiter || function(m, v, g, y) {
+      function w(_) {
+        return _ instanceof g ? _ : new g(function(M) {
+          M(_)
+        })
+      }
+      return new(g || (g = Promise))(function(_, M) {
+        function O(H) {
+          try {
+            B(y.next(H))
+          } catch (q) {
+            M(q)
+          }
+        }
+
+        function N(H) {
+          try {
+            B(y.throw(H))
+          } catch (q) {
+            M(q)
+          }
+        }
+
+        function B(H) {
+          H.done ? _(H.value) : w(H.value).then(O, N)
+        }
+        B((y = y.apply(m, v || [])).next())
+      })
+    },
+    s = de && de.__generator || function(m, v) {
+      var g = {
+          label: 0,
+          sent: function() {
+            if (_[0] & 1) throw _[1];
+            return _[1]
+          },
+          trys: [],
+          ops: []
+        },
+        y, w, _, M;
+      return M = {
+        next: O(0),
+        throw: O(1),
+        return: O(2)
+      }, typeof Symbol == "function" && (M[Symbol.iterator] = function() {
+        return this
+      }), M;
+
+      function O(B) {
+        return function(H) {
+          return N([B, H])
+        }
+      }
+
+      function N(B) {
+        if (y) throw new TypeError("Generator is already executing.");
+        for (; g;) try {
+          if (y = 1, w && (_ = B[0] & 2 ? w.return : B[0] ? w.throw || ((_ = w.return) && _.call(w), 0) : w.next) && !(_ = _.call(w, B[1])).done) return _;
+          switch (w = 0, _ && (B = [B[0] & 2, _.value]), B[0]) {
+            case 0:
+            case 1:
+              _ = B;
+              break;
+            case 4:
+              return g.label++, {
+                value: B[1],
+                done: !1
+              };
+            case 5:
+              g.label++, w = B[1], B = [0];
+              continue;
+            case 7:
+              B = g.ops.pop(), g.trys.pop();
+              continue;
+            default:
+              if (_ = g.trys, !(_ = _.length > 0 && _[_.length - 1]) && (B[0] === 6 || B[0] === 2)) {
+                g = 0;
+                continue
+              }
+              if (B[0] === 3 && (!_ || B[1] > _[0] && B[1] < _[3])) {
+                g.label = B[1];
+                break
+              }
+              if (B[0] === 6 && g.label < _[1]) {
+                g.label = _[1], _ = B;
+                break
+              }
+              if (_ && g.label < _[2]) {
+                g.label = _[2], g.ops.push(B);
+                break
+              }
+              _[2] && g.ops.pop(), g.trys.pop();
+              continue
+          }
+          B = v.call(m, g)
+        } catch (H) {
+          B = [6, H], w = 0
+        } finally {
+          y = _ = 0
+        }
+        if (B[0] & 5) throw B[1];
+        return {
+          value: B[0] ? B[1] : void 0,
+          done: !0
+        }
+      }
+    };
+  de.__esModule = !0, de.subscribeToQuery = de.InvalidResponseError = de.Response400Error = de.Response500Error = void 0;
+  var i = Id(),
+    a = function() {
+      function m(v, g) {
+        this.type = v, this.data = g == null ? void 0 : g.data
+      }
+      return m
+    }(),
+    r = typeof MessageEvent < "u" ? MessageEvent : a,
+    l = function(m) {
+      e(v, m);
+
+      function v(g, y) {
+        var w = m.call(this, g) || this;
+        return Object.setPrototypeOf(w, v.prototype), w.response = y, w
+      }
+      return v
+    }(Error);
+  de.Response500Error = l;
+  var c = function(m) {
+    e(v, m);
+
+    function v(g, y) {
+      var w = m.call(this, g) || this;
+      return Object.setPrototypeOf(w, v.prototype), w.response = y, w
+    }
+    return v
+  }(Error);
+  de.Response400Error = c;
+  var d = function(m) {
+    e(v, m);
+
+    function v(g, y) {
+      var w = m.call(this, g) || this;
+      return Object.setPrototypeOf(w, v.prototype), w.response = y, w
+    }
+    return v
+  }(Error);
+  de.InvalidResponseError = d;
+
+  function p(m) {
+    return n(this, void 0, void 0, function() {
+      var v, g, y, w, _, M, O, N, B, H, q, oe, me, ne, W, pe, Ae, h, x, E, F, P, Z, j, D, ce, ae, ve = this;
+      return s(this, function(Le) {
+        switch (Le.label) {
+          case 0:
+            v = m.query, g = m.token, y = m.variables, w = m.preview, _ = m.includeDrafts, M = m.excludeInvalid, O = m.environment, N = m.fetcher, B = m.eventSourceClass, H = m.onStatusChange, q = m.onUpdate, oe = m.onChannelError, me = m.onError, ne = m.onEvent, W = m.reconnectionPeriod, pe = m.baseUrl, Ae = N || window.fetch, h = B || window.EventSource, x = Math.min(W || 1e3, 2e4), E = pe || "https://graphql-listen.datocms.com", F = function() {
+              return n(ve, void 0, void 0, function() {
+                return s(this, function(ye) {
+                  switch (ye.label) {
+                    case 0:
+                      return [4, new Promise(function(se) {
+                        return setTimeout(se, x)
+                      })];
+                    case 1:
+                      return ye.sent(), [2, p(t(t({}, m), {
+                        reconnectionPeriod: x * 2 * (1 + (Math.random() * .2 - .1))
+                      }))]
+                  }
+                })
+              })
+            }, H && H("connecting"), Le.label = 1;
+          case 1:
+            return Le.trys.push([1, 4, , 5]), Z = typeof v == "string" ? v : (0, i.print)(v), [4, Ae(E, {
+              headers: t(t(t({
+                Authorization: "Bearer ".concat(g),
+                Accept: "application/json"
+              }, O ? {
+                "X-Environment": O
+              } : {}), _ || w ? {
+                "X-Include-Drafts": "true"
+              } : {}), M ? {
+                "X-Exclude-Invalid": "true"
+              } : {}),
+              method: "POST",
+              body: JSON.stringify({
+                query: Z,
+                variables: y
+              })
+            })];
+          case 2:
+            if (j = Le.sent(), j.status >= 300 && j.status < 500) throw new c("Invalid status code: ".concat(j.status, " ").concat(j.statusText), j);
+            if (j.status >= 500) throw new l("Invalid status code: ".concat(j.status, " ").concat(j.statusText), j);
+            if (j.headers.get("Content-Type") !== "application/json") throw new d("Invalid content type: ".concat(j.headers.get("Content-Type")), j);
+            return [4, j.json()];
+          case 3:
+            return D = Le.sent(), P = D.url, ne && ne({
+              status: "connecting",
+              channelUrl: P,
+              message: "Received channel URL",
+              response: j
+            }), [3, 5];
+          case 4:
+            if (ce = Le.sent(), me && (ae = new r("FetchError", {
+                data: ce
+              }), me(ae)), ce instanceof c) throw ce;
+            return H && H("closed"), [2, F()];
+          case 5:
+            return [2, new Promise(function(ye) {
+              var se = new h(P),
+                Ce = !1,
+                A = function() {
+                  se.readyState !== 2 && (Ce = !0, se.close())
+                };
+              se.addEventListener("open", function() {
+                H && H("connected"), ye(A)
+              });
+              var C = setInterval(function() {
+                se.readyState === 2 && (clearInterval(C), H && H("closed"), Ce || F())
+              }, 300);
+              se.addEventListener("update", function(Q) {
+                var ue = JSON.parse(Q.data);
+                q(ue)
+              }), se.addEventListener("channelError", function(Q) {
+                var ue = JSON.parse(Q.data);
+                ue.fatal && (Ce = !0), oe && oe(ue), se.close()
+              }), se.addEventListener("onerror", function(Q) {
+                var ue = Q;
+                me && me(ue), se.close()
+              })
+            })]
+        }
+      })
+    })
+  }
+  return de.subscribeToQuery = p, de
+}
+var vn;
+
+function Dd() {
+  return vn || (vn = 1, function(e) {
+    var t = je && je.__createBinding || (Object.create ? function(s, i, a, r) {
+        r === void 0 && (r = a);
+        var l = Object.getOwnPropertyDescriptor(i, a);
+        (!l || ("get" in l ? !i.__esModule : l.writable || l.configurable)) && (l = {
+          enumerable: !0,
+          get: function() {
+            return i[a]
+          }
+        }), Object.defineProperty(s, r, l)
+      } : function(s, i, a, r) {
+        r === void 0 && (r = a), s[r] = i[a]
+      }),
+      n = je && je.__exportStar || function(s, i) {
+        for (var a in s) a !== "default" && !Object.prototype.hasOwnProperty.call(i, a) && t(i, s, a)
+      };
+    e.__esModule = !0, n(qd(), e)
+  }(je)), je
+}
+Dd();
+const Ht = {
+  renderNode: Qe,
+  renderFragment: (e, t) => e,
+  renderText: (e, t) => e
+};
+
+function ot(e, t) {
+  return e !== null && typeof e != "string" && e.key === null && (e.key = t), e
+}
+const It = us({
+    name: "DatocmsStructuredText",
+    props: {
+      data: {
+        type: Object
+      },
+      customRules: {
+        type: Array
+      },
+      customNodeRules: {
+        type: Array
+      },
+      customMarkRules: {
+        type: Array
+      },
+      renderInlineRecord: {
+        type: Function
+      },
+      renderLinkToRecord: {
+        type: Function
+      },
+      renderBlock: {
+        type: Function
+      },
+      renderInlineBlock: {
+        type: Function
+      },
+      metaTransformer: {
+        type: Function
+      },
+      renderText: {
+        type: Function
+      },
+      renderNode: {
+        type: Function
+      },
+      renderFragment: {
+        type: Function
+      }
+    },
+    setup(e) {
+      return () => zd(e.data, {
+        adapter: {
+          renderText: e.renderText || Ht.renderText,
+          renderNode: e.renderNode || Ht.renderNode,
+          renderFragment: e.renderFragment || Ht.renderFragment
+        },
+        metaTransformer: e.metaTransformer,
+        customMarkRules: e.customMarkRules,
+        customNodeRules: [_e(Kn, ({
+          adapter: {
+            renderNode: t
+          },
+          key: n,
+          children: s
+        }) => t("div", {
+          key: n
+        }, s)), _e(Sd, ({
+          node: t,
+          key: n
+        }) => {
+          if (!e.renderInlineRecord) throw new ke("The Structured Text document contains an 'inlineItem' node, but no 'renderInlineRecord' prop is specified!", t);
+          if (!Ke(e.data) || !e.data.links) throw new ke("The Structured Text document contains an 'inlineItem' node, but .links is not present!", t);
+          const s = e.data.links.find(i => i.id === t.item);
+          if (!s) throw new ke(`The Structured Text document contains an 'inlineItem' node, but cannot find a record with ID ${t.item} inside .links!`, t);
+          return ot(e.renderInlineRecord({
+            record: s
+          }), n)
+        }), _e(Md, ({
+          node: t,
+          key: n,
+          children: s
+        }) => {
+          if (!e.renderLinkToRecord) throw new ke("The Structured Text document contains an 'itemLink' node, but no 'renderLinkToRecord' prop is specified!", t);
+          if (!Ke(e.data) || !e.data.links) throw new ke("The Structured Text document contains an 'itemLink' node, but .links is not present!", t);
+          const i = e.data.links.find(a => a.id === t.item);
+          if (!i) throw new ke(`The Structured Text document contains an 'itemLink' node, but cannot find a record with ID ${t.item} inside .links!`, t);
+          return ot(e.renderLinkToRecord({
+            record: i,
+            children: s,
+            transformedMeta: t.meta ? (e.metaTransformer || Xn)({
+              node: t,
+              meta: t.meta
+            }) : null
+          }), n)
+        }), _e(kd, ({
+          node: t,
+          key: n
+        }) => {
+          if (!e.renderBlock) throw new ke("The Structured Text document contains a 'block' node, but no 'renderBlock' prop is specified!", t);
+          if (!Ke(e.data) || !e.data.blocks) throw new ke("The Structured Text document contains a 'block' node, but .blocks is not present!", t);
+          const s = e.data.blocks.find(i => i.id === t.item);
+          if (!s) throw new ke(`The Structured Text document contains a 'block' node, but cannot find a record with ID ${t.item} inside .blocks!`, t);
+          return ot(e.renderBlock({
+            record: s
+          }), n)
+        }), _e(Td, ({
+          node: t,
+          key: n
+        }) => {
+          if (!e.renderInlineBlock) throw new ke("The Structured Text document contains an 'inlineBlock' node, but no 'renderInlineBlock' prop is specified!", t);
+          if (!Ke(e.data) || !e.data.blocks) throw new ke("The Structured Text document contains an 'inlineBlock' node, but .blocks is not present!", t);
+          const s = e.data.blocks.find(i => i.id === t.item);
+          if (!s) throw new ke(`The Structured Text document contains a 'block' node, but cannot find a record with ID ${t.item} inside .blocks!`, t);
+          return ot(e.renderInlineBlock({
+            record: s
+          }), n)
+        }), ...e.customNodeRules || e.customRules || []]
+      })
+    }
+  }),
+  Pd = {
+    __name: "Media",
+    props: {
+      items: {
+        type: Array,
+        required: !0
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J;
+        return u(), f("div", {
+          class: S(["txt-media py-25 first:pt-0 last:pb-0", e.items.length > 1 ? "grid grid-cols-1 s:grid-cols-2 gap-20" : ""])
+        }, [(u(!0), f(K, null, X(e.items, i => (u(), I(s, {
+          key: i.id,
+          item: i,
+          class: "radius-media"
+        }, null, 8, ["item"]))), 128))], 2)
+      }
+    }
+  },
+  Vd = {
+    key: 0,
+    class: "eyebrow mb-32 s:mb-48"
+  },
+  Ud = {
+    key: 1,
+    class: "eyebrow col-span-5 mb-32 s:mb-0"
+  },
+  Jd = ["onClick"],
+  Gd = ["innerHTML"],
+  Kd = ["onClick"],
+  Wd = {
+    class: "hidden s:block s:col-span-2 body-normal opacity-60"
+  },
+  Qd = ["innerHTML"],
+  Xd = {
+    class: "col-span-1 flex justify-end"
+  },
+  Zd = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = {
+          duration: .5,
+          ease: "snappy"
+        },
+        s = T(-1),
+        i = T([]),
+        a = c => {
+          s.value = s.value === c ? -1 : c
+        };
+      Pt(s, (c, d) => {
+        d !== -1 && i.value[d] && V.to(i.value[d], {
+          height: 0,
+          ...n
+        }), c !== -1 && i.value[c] && V.to(i.value[c], {
+          height: "auto",
+          ...n
+        })
+      });
+      const r = ({
+          record: c,
+          key: d
+        }) => {
+          switch (c.type) {
+            case "faq_media_block":
+              return Qe(Pd, {
+                key: d,
+                items: c.media
+              });
+            case "link_item":
+              return Qe(te, {
+                key: d,
+                item: c,
+                outline: !0
+              });
+            default:
+              return null
+          }
+        },
+        l = c => {
+          var v;
+          const d = ((v = c == null ? void 0 : c.value) == null ? void 0 : v.document) ?? (c == null ? void 0 : c.document);
+          if (!d) return "";
+          const p = new Set(["paragraph", "heading", "list", "listItem", "blockquote", "code"]),
+            m = g => {
+              if (g.type === "span") return g.value || "";
+              if (g.children) {
+                const y = g.children.map(m).join("");
+                return p.has(g.type) ? y + " " : y
+              }
+              return ""
+            };
+          return m(d).replace(/\s+/g, " ").trim()
+        };
+      return wn(() => ({
+        script: [{
+          key: "schema-faq",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: t.item.items.map(c => ({
+              "@type": "Question",
+              name: c.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: l(c.answer)
+              }
+            }))
+          })
+        }]
+      })), (c, d) => {
+        const p = Gn;
+        return u(), f("div", {
+          class: S(["relative z-2", e.item.aligned ? "py-48 s:pb-96" : "py-48 s:py-96"])
+        }, [o("div", {
+          class: S(["site-max", e.item.aligned && "site-grid"])
+        }, [e.item.aligned ? (u(), f("p", Ud, "Frequently asked questions")) : (u(), f("p", Vd, "Frequently asked questions")), o("ul", {
+          class: S(["border-b border-theme-15", e.item.aligned ? "col-span-12 s:col-span-7 s:col-start-7" : "w-full"])
+        }, [(u(!0), f(K, null, X(e.item.items, (m, v) => (u(), f("li", {
+          key: m.id,
+          class: S(["border-t border-theme-15", $(s) === v && "is-active"])
+        }, [e.item.aligned ? (u(), f("button", {
+          key: 0,
+          type: "button",
+          class: "flex items-center justify-between w-full py-24 s:py-32 text-left",
+          onClick: g => a(v)
+        }, [o("span", {
+          class: "h5",
+          innerHTML: c.$sanitize(m.question)
+        }, null, 8, Gd), L(p)], 8, Jd)) : (u(), f("button", {
+          key: 1,
+          type: "button",
+          class: "site-grid w-full py-24 s:py-32 text-left items-center",
+          onClick: g => a(v)
+        }, [o("span", Wd, "0" + Se(v + 1) + ".", 1), o("span", {
+          class: "col-span-5 s:col-span-9 h5",
+          innerHTML: c.$sanitize(m.question)
+        }, null, 8, Qd), o("span", Xd, [L(p)])], 8, Kd)), o("div", {
+          ref_for: !0,
+          ref: g => $(i)[v] = g,
+          class: "overflow-hidden h-0"
+        }, [o("div", {
+          class: S(["pb-40 s:pb-50", !e.item.aligned && "site-grid"])
+        }, [o("div", {
+          class: S(["body-large", e.item.aligned ? "s:pr-135" : "col-span-6 s:col-start-3 s:col-span-7"])
+        }, [L($(It), {
+          data: m.answer,
+          "render-block": r,
+          class: "txt text-light"
+        }, null, 8, ["data"])], 2)], 2)], 512)], 2))), 128))], 2)], 2)], 2)
+      }
+    }
+  },
+  Yd = {
+    __name: "Media",
+    props: {
+      items: {
+        type: Array,
+        required: !0
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = J;
+        return u(), f("div", {
+          class: S(["txt-media py-25 first:pt-0 last:pb-0", e.items.length > 1 ? "grid grid-cols-1 s:grid-cols-2 gap-20" : ""])
+        }, [(u(!0), f(K, null, X(e.items, i => (u(), I(s, {
+          key: i.id,
+          item: i,
+          class: "radius-media"
+        }, null, 8, ["item"]))), 128))], 2)
+      }
+    }
+  },
+  em = {
+    class: "relative z-2 py-48 s:py-96"
+  },
+  tm = {
+    class: "site-max site-grid"
+  },
+  nm = {
+    class: "col-span-12 s:col-span-7 s:col-start-7 border-b border-theme-15"
+  },
+  sm = ["onClick"],
+  im = ["innerHTML"],
+  rm = {
+    class: "pb-40 s:pb-50 body-large"
+  },
+  am = {
+    key: 1,
+    class: "pb-40 s:pb-50 pt-30 s:pt-40"
+  },
+  lm = ["innerHTML"],
+  om = {
+    class: "body-large mt-18"
+  },
+  cm = {
+    __name: "index",
+    props: {
+      item: {
+        type: Object,
+        required: !0,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        n = {
+          duration: .5,
+          ease: "snappy"
+        },
+        s = T(-1),
+        i = T([]),
+        a = c => {
+          s.value = s.value === c ? -1 : c
+        };
+      Pt(s, (c, d) => {
+        d !== -1 && i.value[d] && V.to(i.value[d], {
+          height: 0,
+          ...n
+        }), c !== -1 && i.value[c] && V.to(i.value[c], {
+          height: "auto",
+          ...n
+        })
+      });
+      const r = ({
+          record: c,
+          key: d
+        }) => {
+          switch (c.type) {
+            case "how_to_media_block":
+              return Qe(Yd, {
+                key: d,
+                items: c.media
+              });
+            case "link_item":
+              return Qe(te, {
+                key: d,
+                item: c,
+                outline: !0
+              });
+            default:
+              return null
+          }
+        },
+        l = c => {
+          var v;
+          const d = ((v = c == null ? void 0 : c.value) == null ? void 0 : v.document) ?? (c == null ? void 0 : c.document);
+          if (!d) return "";
+          const p = new Set(["paragraph", "heading", "list", "listItem", "blockquote", "code"]),
+            m = g => {
+              if (g.type === "span") return g.value || "";
+              if (g.children) {
+                const y = g.children.map(m).join("");
+                return p.has(g.type) ? y + " " : y
+              }
+              return ""
+            };
+          return m(d).replace(/\s+/g, " ").trim()
+        };
+      return wn(() => ({
+        script: [{
+          key: "schema-howto",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            step: t.item.items.map((c, d) => ({
+              "@type": "HowToStep",
+              position: d + 1,
+              name: c.title,
+              text: l(c.content)
+            }))
+          })
+        }]
+      })), (c, d) => {
+        const p = Gn;
+        return u(), f("div", em, [o("div", tm, [d[0] || (d[0] = o("p", {
+          class: "eyebrow col-span-5 mb-32 s:mb-0"
+        }, "How to guide", -1)), o("ol", nm, [(u(!0), f(K, null, X(e.item.items, (m, v) => (u(), f("li", {
+          key: m.id,
+          class: S(["border-t border-theme-15", e.item.collapsed && $(s) === v && "is-active"])
+        }, [e.item.collapsed ? (u(), f(K, {
+          key: 0
+        }, [o("button", {
+          type: "button",
+          class: "flex items-center justify-between w-full py-24 s:py-32 text-left",
+          onClick: g => a(v)
+        }, [o("h3", {
+          class: "h5",
+          innerHTML: c.$sanitize(m.title)
+        }, null, 8, im), L(p)], 8, sm), o("div", {
+          ref_for: !0,
+          ref: g => $(i)[v] = g,
+          class: "overflow-hidden h-0"
+        }, [o("div", rm, [L($(It), {
+          data: m.content,
+          "render-block": r,
+          class: "txt text-light"
+        }, null, 8, ["data"])])], 512)], 64)) : (u(), f("div", am, [o("h3", {
+          class: "h5",
+          innerHTML: c.$sanitize(m.title)
+        }, null, 8, lm), o("div", om, [L($(It), {
+          data: m.content,
+          "render-block": r,
+          class: "txt text-light"
+        }, null, 8, ["data"])])]))], 2))), 128))])])])
+      }
+    }
+  },
+  yn = "is-text-dark";
+
+function um(e, t, n = !1, s, i) {
+  const {
+    $resize: a
+  } = le(), r = rt(), l = R(() => r.theme.defaults), c = R(() => a == null ? void 0 : a.medium);
+  let d, p, m;
+  const v = () => c.value && s ? s : t || l.value,
+    g = async () => {
+      var _, M, O;
+      if (await Y(), !e || !(e != null && e.value)) return;
+      let w;
+      if (((M = (_ = e.value) == null ? void 0 : _.$el) == null ? void 0 : M.nodeType) === 1) w = e.value.$el;
+      else if (((O = e.value) == null ? void 0 : O.nodeType) === 1) w = e.value;
+      else {
+        console.warn("No valid DOM element found for theme scroll");
+        return
+      }!t && !s && i && (p = qe.create({
+        trigger: w,
+        start: "clamp(top top)",
+        end: "clamp(bottom top)",
+        onToggle: N => {
+          r.setFlag("light", N.isActive)
+        }
+      })), (t || s) && (d = qe.create({
+        trigger: w,
+        start: i ? "clamp(top top)" : "clamp(top center)",
+        end: i ? "clamp(bottom top)" : "clamp(bottom center)",
+        onToggle: N => {
+          N.isActive && y()
+        }
+      }))
+    }, y = () => {
+      var N;
+      const w = v(),
+        {
+          text: _,
+          ...M
+        } = w,
+        O = ((N = M.background) == null ? void 0 : N.hex) || M.background;
+      r.setTheme({
+        background: O,
+        text: _
+      }), O && V.set(m, {
+        "--theme-background": O
+      }), _ ? m.classList.add(yn) : m.classList.remove(yn)
+    };
+  return ee(async () => {
+    await Y(), m = document.documentElement, n && y(), g()
+  }), he(() => {
+    d == null || d.kill(), p == null || p.kill()
+  }), {
+    st: R(() => d),
+    set: y
+  }
+}
+const dm = {
+    __name: "Block",
+    props: {
+      item: {
+        type: Object,
+        required: !0
+      },
+      first: {
+        type: Boolean,
+        default: !1
+      },
+      last: {
+        type: Boolean,
+        default: !1
+      }
+    },
+    setup(e) {
+      const t = {
+          HeadlineBlock: Ps,
+          HeadlineIntroBlock: Gs,
+          MediaCarouselBlock: si,
+          MediaHeroBlock: vi,
+          MediaHeroExpandedBlock: Li,
+          MediaFeaturedBlock: Bi,
+          MediaColsBlock: Pi,
+          OffsetCalloutBlock: Qi,
+          TitleBlock: nr,
+          SpaceBlock: sr,
+          MediaOffsetBlock: dr,
+          TextBlock: $r,
+          ListBlock: Hr,
+          MediaFullBlock: Nr,
+          MediaFullscreenBlock: qr,
+          StatsCarouselBlock: Qr,
+          GalleryVerticalBlock: va,
+          CaseBlock: gs,
+          CaseOffsetBlock: ja,
+          CaseFeaturedBlock: Ga,
+          RolesBlock: Jo,
+          ImageAccordionBlock: rc,
+          MediaTextBlock: dc,
+          QuoteBlock: gc,
+          ArticleFeaturedBlock: Mc,
+          ArticleOffsetBlock: Bc,
+          ArticleListBlock: Qc,
+          GalleryGridBlock: Ea,
+          StorytellingBlock: iu,
+          CaseListBlock: As,
+          StackingMediaBlock: mu,
+          ParallaxMediaBlock: yu,
+          GlHeroBlock: wu,
+          LinkListBlock: Cu,
+          VideoListBlock: Xu,
+          IntroBlock: nd,
+          TextHeaderBlock: dd,
+          FaqBlock: Zd,
+          HowToBlock: cm
+        },
+        n = e,
+        s = T(null),
+        i = R(() => {
+          var l, c;
+          return (c = (l = n.item) == null ? void 0 : l.type) == null ? void 0 : c.split(/[-_]/).map(d => d.charAt(0).toUpperCase() + d.slice(1).toLowerCase()).join("")
+        }),
+        a = R(() => t[i.value]),
+        r = R(() => {
+          switch (i.value) {
+            case "LinkListBlock":
+            case "CaseListBlock":
+            case "MediaFullscreenBlock":
+            case "ParallaxMediaBlock":
+              return !0;
+            default:
+              return !1
+          }
+        });
+      return um(s, n.item.theme, n.first, n.item.themeMobile, r.value), (l, c) => (u(), I(bn($(a)), {
+        ref_key: "el",
+        ref: s,
+        class: "w-full",
+        item: e.item
+      }, null, 8, ["item"]))
+    }
+  },
+  zm = {
+    __name: "Blocks",
+    props: {
+      items: {
+        type: [Array, Object],
+        required: !0
+      }
+    },
+    setup(e) {
+      return (t, n) => {
+        const s = dm;
+        return u(!0), f(K, null, X(e.items, (i, a) => (u(), I(s, {
+          key: `block-${i.id}`,
+          item: i,
+          first: a === 0,
+          last: a === e.items.length - 1
+        }, null, 8, ["item", "first", "last"]))), 128)
+      }
+    }
+  },
+  mm = {
+    class: "site-max flex flex-col items-start relative z-3"
+  },
+  fm = {
+    class: "flex flex-col items-start gap-y-32 w-full pt-300 s:pt-185 m:pt-270 pb-40 s:pb-48"
+  },
+  hm = ["innerHTML"],
+  pm = {
+    class: "flex items-center justify-between w-full py-24 body-small text-light"
+  },
+  vm = {
+    class: ""
+  },
+  ym = {
+    class: "flex gap-x-12"
+  },
+  Im = {
+    __name: "SiteFoot",
+    props: {
+      rounded: {
+        type: Boolean,
+        default: !0
+      },
+      item: {
+        type: Object,
+        default: () => ({})
+      }
+    },
+    setup(e) {
+      const t = e,
+        {
+          $resize: n
+        } = le(),
+        s = rt(),
+        i = R(() => s.global),
+        a = R(() => n == null ? void 0 : n.small),
+        r = R(() => n == null ? void 0 : n.mouse),
+        l = R(() => {
+          var w;
+          return (w = t.item) == null ? void 0 : w.light
+        }),
+        c = R(() => {
+          var w, _, M;
+          return a.value && ((w = t.item) != null && w.backgroundMobile) ? (_ = t.item) == null ? void 0 : _.backgroundMobile : (M = t.item) == null ? void 0 : M.background
+        }),
+        d = new Date().getFullYear(),
+        p = T(null),
+        m = T(null),
+        v = T(null);
+      let g, y;
+      return ee(async () => {
+        await Y(), g = V.timeline({
+          scrollTrigger: {
+            trigger: p.value,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: !0
+          },
+          defaults: {
+            ease: "none"
+          }
+        }).fromTo(v.value, {
+          alpha: 1
+        }, {
+          alpha: 0,
+          duration: .4
+        }).fromTo(m.value, {
+          yPercent: () => r.value ? -100 : -50
+        }, {
+          yPercent: 0,
+          duration: .5
+        }, 0), y = qe.create({
+          trigger: p.value,
+          start: "top top+=20",
+          onToggle: w => {
+            console.log(w.isActive), s.setFlag("light", w.isActive)
+          }
+        })
+      }), he(() => {
+        g == null || g.kill(), y == null || y.kill()
+      }), (w, _) => {
+        const M = J,
+          O = te,
+          N = Re;
+        return u(), f("footer", {
+          ref_key: "el",
+          ref: p,
+          class: "sf relative overflow-hidden"
+        }, [o("div", {
+          ref_key: "bg",
+          ref: v,
+          class: "absolute inset-0 bg-black/90 pointer-events-none z-2"
+        }, null, 512), o("div", {
+          ref_key: "content",
+          ref: m,
+          class: S(["relative pt-40 s:pt-56 z-1", [$(l) ? "bg-white text-black" : "bg-black-off-1 text-white", $(c) && "min-h-full-screen-e flex items-end sf__gradient"]])
+        }, [$(c) ? (u(), I(M, {
+          key: 0,
+          item: $(c),
+          aspect: !1,
+          class: "z-1"
+        }, null, 8, ["item"])) : k("", !0), o("div", mm, [o("div", fm, [o("h2", {
+          class: "h4",
+          innerHTML: w.$sanitize($(i).footerText, ["em"])
+        }, null, 8, hm), L(O, {
+          item: $(i).footerCta,
+          blurred: !0,
+          light: !$(l),
+          foot: !0
+        }, null, 8, ["item", "light"])]), o("hr", {
+          class: S(["w-full", [$(l) ? "border-black/10" : "border-white/15"]])
+        }, null, 2), o("div", pm, [o("div", vm, "© " + Se($(d)) + " Fantasy", 1), o("ul", null, [o("ul", ym, [(u(!0), f(K, null, X($(i).footerLinks, (B, H) => (u(), f("li", {
+          key: B.id,
+          class: S([H !== $(i).footerLinks.length - 1 && "pr-12 relative after:absolute after:top-1/2 after:right-0 after:-translate-y-1/2 after:translate-x-1/2 after:size-[.35em] after:rounded-full after:bg-current"])
+        }, [L(N, {
+          item: B
+        }, null, 8, ["item"])], 2))), 128))])])])])], 2)], 512)
+      }
+    }
+  };
+export {
+  zm as _, Im as a, sr as b, nr as c, qr as d, um as u
+};

@@ -1,0 +1,84 @@
+import {
+  u as d,
+  _ as g
+} from "/assets/js/DP4i5pug.js";
+import {
+  _ as h,
+  a as w
+} from "/assets/js/BUD1cr-Q.js";
+import {
+  u as y,
+  a as k,
+  w as x,
+  b,
+  o as v,
+  n as M,
+  c as S,
+  d as a,
+  e as n,
+  f as m,
+  g as $
+} from "/assets/js/CZZ0Kowu.js";
+import "/assets/js/BMrMtYDV.js";
+import "/assets/js/CeXuehBR.js";
+const P = {
+  __name: "index",
+  async setup(A) {
+    let s, c;
+    const _ = y(),
+      {
+        $dato: i
+      } = k(),
+      {
+        data: t
+      } = ([s, c] = x(async () => d("home", async () => {
+        try {
+          const {
+            page: e
+          } = await i.page({
+            slug: "home",
+            preview: _.query.preview
+          });
+          if (!e) throw m({
+            statusCode: 404,
+            statusMessage: "Page not found"
+          });
+          return {
+            ...e
+          }
+        } catch (e) {
+          throw console.error(e), m({
+            statusCode: 404,
+            statusMessage: "Page not found"
+          })
+        }
+      })), s = await s, c(), s),
+      r = b();
+    return v(async () => {
+      var e, o;
+      await M(), (e = t.value) != null && e.menu && r.setMenuSec({
+        menu: (o = t.value) == null ? void 0 : o.menu
+      }), r.setThemeDefaults({
+        background: "#000",
+        text: !1
+      })
+    }), (e, o) => {
+      var u;
+      const l = g,
+        p = h,
+        f = w;
+      return $(), S("article", null, [a(l, {
+        seo: n(t).seo,
+        type: "home"
+      }, null, 8, ["seo"]), a(p, {
+        items: (u = n(t).blocks) == null ? void 0 : u.blocks
+      }, null, 8, ["items"]), a(f, {
+        item: n(t).foot
+      }, null, 8, ["item"])])
+    }
+  }
+};
+export {
+  P as
+  default
+};

@@ -1,0 +1,755 @@
+{
+  "generated_at": "2026-05-29T01:26:18.645746",
+  "stages": [
+    {
+      "name": "01_raw",
+      "description": "Cópia fiel antes de qualquer limpeza",
+      "timestamp": "2026-05-29T01:24:01.170967",
+      "files": 49,
+      "bytes": 3052523
+    },
+    {
+      "name": "02_after_html_clean",
+      "description": "Após remoção de tracking e limpeza HTML",
+      "timestamp": "2026-05-29T01:24:01.258585",
+      "files": 87,
+      "bytes": 3044969
+    },
+    {
+      "name": "03_after_css_clean",
+      "description": "Após desminificação e limpeza CSS",
+      "timestamp": "2026-05-29T01:24:01.841718",
+      "files": 87,
+      "bytes": 3082944
+    },
+    {
+      "name": "04_after_js_clean",
+      "description": "Após desminificação e limpeza JS",
+      "timestamp": "2026-05-29T01:24:13.075764",
+      "files": 87,
+      "bytes": 4250502
+    },
+    {
+      "name": "05_after_reorganization",
+      "description": "Assets movidos para subpastas por tipo",
+      "timestamp": "2026-05-29T01:24:13.282248",
+      "files": 87,
+      "bytes": 4250502
+    },
+    {
+      "name": "06_after_path_correction",
+      "description": "Referências de paths atualizadas",
+      "timestamp": "2026-05-29T01:24:13.801059",
+      "files": 87,
+      "bytes": 4224166
+    },
+    {
+      "name": "07_after_file_reduction",
+      "description": "Quantidade de arquivos CSS/JS reduzida antes do reparo das referências",
+      "timestamp": "2026-05-29T01:24:14.051823",
+      "files": 77,
+      "bytes": 4190679
+    },
+    {
+      "name": "08_after_bundle_reference_repair",
+      "description": "Referências HTML/CSS/JS reparadas após consolidação de CSS e JS",
+      "timestamp": "2026-05-29T01:24:14.568586",
+      "files": 77,
+      "bytes": 4192500
+    },
+    {
+      "name": "09_after_data_pruning",
+      "description": "Arquivos órfãos em assets/data removidos do clean/",
+      "timestamp": "2026-05-29T01:24:14.621327",
+      "files": 77,
+      "bytes": 4192500
+    },
+    {
+      "name": "10_after_text_normalization",
+      "description": "Texto normalizado com espaços e terminadores de linha consistentes",
+      "timestamp": "2026-05-29T01:26:18.455458",
+      "files": 78,
+      "bytes": 4201739
+    },
+    {
+      "name": "11_final",
+      "description": "Estado final do clean/",
+      "timestamp": "2026-05-29T01:26:18.541822",
+      "files": 78,
+      "bytes": 4201739
+    }
+  ],
+  "comparisons": [
+    {
+      "from": "01_raw",
+      "to": "02_after_html_clean",
+      "files_added": 38,
+      "files_removed": 0,
+      "files_changed": 2,
+      "bytes_before": 3052523,
+      "bytes_after": 3044969,
+      "bytes_saved": 7554,
+      "pct_reduction": 0.2,
+      "added": [
+        "assets/resource_ef42701acb09_script_1.js",
+        "assets/resource_ef42701acb09_script_2.js",
+        "assets/resource_ef42701acb09_script_3.js",
+        "assets/resource_ef42701acb09_script_4.js",
+        "assets/resource_ef42701acb09_style_1.css",
+        "assets/resource_ef42701acb09_style_10.css",
+        "assets/resource_ef42701acb09_style_11.css",
+        "assets/resource_ef42701acb09_style_12.css",
+        "assets/resource_ef42701acb09_style_13.css",
+        "assets/resource_ef42701acb09_style_14.css",
+        "assets/resource_ef42701acb09_style_2.css",
+        "assets/resource_ef42701acb09_style_3.css",
+        "assets/resource_ef42701acb09_style_4.css",
+        "assets/resource_ef42701acb09_style_5.css",
+        "assets/resource_ef42701acb09_style_6.css",
+        "assets/resource_ef42701acb09_style_7.css",
+        "assets/resource_ef42701acb09_style_8.css",
+        "assets/resource_ef42701acb09_style_9.css",
+        "index_script_1.js",
+        "index_script_2.js"
+      ],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "index.html",
+          "before": 234144,
+          "after": 95066,
+          "diff": -139078
+        },
+        {
+          "file": "assets/resource_ef42701acb09.html",
+          "before": 165254,
+          "after": 90078,
+          "diff": -75176
+        }
+      ]
+    },
+    {
+      "from": "02_after_html_clean",
+      "to": "03_after_css_clean",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 35,
+      "bytes_before": 3044969,
+      "bytes_after": 3082944,
+      "bytes_saved": -37975,
+      "pct_reduction": -1.2,
+      "added": [],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/resource_ef42701acb09_style_2.css",
+          "before": 36818,
+          "after": 46231,
+          "diff": 9413
+        },
+        {
+          "file": "index_style_2.css",
+          "before": 36826,
+          "after": 46239,
+          "diff": 9413
+        },
+        {
+          "file": "assets/resource_ef42701acb09_style_1.css",
+          "before": 24841,
+          "after": 31497,
+          "diff": 6656
+        },
+        {
+          "file": "index_style_1.css",
+          "before": 24841,
+          "after": 31497,
+          "diff": 6656
+        },
+        {
+          "file": "assets/nuxt/SiteFoot.BhqzWa6f.css",
+          "before": 8678,
+          "after": 10096,
+          "diff": 1418
+        },
+        {
+          "file": "assets/nuxt/entry.Cqb0HUwZ.css",
+          "before": 4820,
+          "after": 5738,
+          "diff": 918
+        },
+        {
+          "file": "assets/resource_ef42701acb09_style_6.css",
+          "before": 2143,
+          "after": 2543,
+          "diff": 400
+        },
+        {
+          "file": "index_style_6.css",
+          "before": 2143,
+          "after": 2543,
+          "diff": 400
+        },
+        {
+          "file": "assets/resource_ef42701acb09_style_4.css",
+          "before": 1173,
+          "after": 1429,
+          "diff": 256
+        },
+        {
+          "file": "index_style_4.css",
+          "before": 1173,
+          "after": 1429,
+          "diff": 256
+        },
+        {
+          "file": "assets/nuxt/Dynamic.BXrJvJUw.css",
+          "before": 1377,
+          "after": 1629,
+          "diff": 252
+        },
+        {
+          "file": "assets/resource_ef42701acb09_style_11.css",
+          "before": 1624,
+          "after": 1837,
+          "diff": 213
+        },
+        {
+          "file": "index_style_11.css",
+          "before": 1624,
+          "after": 1837,
+          "diff": 213
+        },
+        {
+          "file": "assets/resource_ef42701acb09_style_10.css",
+          "before": 1272,
+          "after": 1475,
+          "diff": 203
+        },
+        {
+          "file": "index_style_10.css",
+          "before": 1272,
+          "after": 1475,
+          "diff": 203
+        }
+      ]
+    },
+    {
+      "from": "03_after_css_clean",
+      "to": "04_after_js_clean",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 43,
+      "bytes_before": 3082944,
+      "bytes_after": 4250502,
+      "bytes_saved": -1167558,
+      "pct_reduction": -37.9,
+      "added": [],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/nuxt/CZZ0Kowu.js",
+          "before": 1255467,
+          "after": 1796744,
+          "diff": 541277
+        },
+        {
+          "file": "assets/js_7e90cbb4ff65.js",
+          "before": 477827,
+          "after": 752185,
+          "diff": 274358
+        },
+        {
+          "file": "assets/nuxt/BUD1cr-Q.js",
+          "before": 151826,
+          "after": 223130,
+          "diff": 71304
+        },
+        {
+          "file": "assets/analytics/1780017600000/50165660.js",
+          "before": 109608,
+          "after": 157489,
+          "diff": 47881
+        },
+        {
+          "file": "assets/js.hscollectedforms.net/collectedforms.js",
+          "before": 77994,
+          "after": 121780,
+          "diff": 43786
+        },
+        {
+          "file": "assets/nuxt/B-mnuttP.js",
+          "before": 168101,
+          "after": 206096,
+          "diff": 37995
+        },
+        {
+          "file": "assets/li.lms-analytics/insight.beta.min.js",
+          "before": 57956,
+          "after": 86596,
+          "diff": 28640
+        },
+        {
+          "file": "assets/v2/50165660/banner.js",
+          "before": 68941,
+          "after": 97517,
+          "diff": 28576
+        },
+        {
+          "file": "assets/li.lms-analytics/insight.old.min.js",
+          "before": 53634,
+          "after": 80359,
+          "diff": 26725
+        },
+        {
+          "file": "assets/sc.lfeeder.com/lftracker_v1_JMvZ8gbpjLza2pOd.js",
+          "before": 32888,
+          "after": 48031,
+          "diff": 15143
+        },
+        {
+          "file": "assets/client_data/ced343fcba4c8ee12f420d15/script.js",
+          "before": 24563,
+          "after": 38422,
+          "diff": 13859
+        },
+        {
+          "file": "assets/client_data/ced343fcba4c8ee12f420d15/banner.js",
+          "before": 26282,
+          "after": 34262,
+          "diff": 7980
+        },
+        {
+          "file": "assets/nuxt/Dv2Gy9oE.js",
+          "before": 14187,
+          "after": 19854,
+          "diff": 5667
+        },
+        {
+          "file": "index_script_1.js",
+          "before": 61359,
+          "after": 56039,
+          "diff": -5320
+        },
+        {
+          "file": "assets/nuxt/B6w0fxYU.js",
+          "before": 7038,
+          "after": 11368,
+          "diff": 4330
+        }
+      ]
+    },
+    {
+      "from": "04_after_js_clean",
+      "to": "05_after_reorganization",
+      "files_added": 84,
+      "files_removed": 84,
+      "files_changed": 0,
+      "bytes_before": 4250502,
+      "bytes_after": 4250502,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [
+        "assets/css/Dynamic.BXrJvJUw.css",
+        "assets/css/SiteFoot.BhqzWa6f.css",
+        "assets/css/contact.BvuB8OIF.css",
+        "assets/css/default.Dj6eVVKc.css",
+        "assets/css/entry.Cqb0HUwZ.css",
+        "assets/css/index_style_1.css",
+        "assets/css/index_style_10.css",
+        "assets/css/index_style_11.css",
+        "assets/css/index_style_12.css",
+        "assets/css/index_style_13.css",
+        "assets/css/index_style_14.css",
+        "assets/css/index_style_2.css",
+        "assets/css/index_style_3.css",
+        "assets/css/index_style_4.css",
+        "assets/css/index_style_5.css",
+        "assets/css/index_style_6.css",
+        "assets/css/index_style_7.css",
+        "assets/css/index_style_8.css",
+        "assets/css/index_style_9.css",
+        "assets/css/slug_.DlYDvuav.css"
+      ],
+      "removed": [
+        "assets/157026/1751297566-fantasy-favicon.svg",
+        "assets/46c7122f-0e08-4d74-8033-23b1562f4427_1c0b336e29a7.json",
+        "assets/Lq512RCf_2c1e79df5ea0.json",
+        "assets/alttextai-ujs_802dfd30e4e4.js",
+        "assets/analytics/1780017600000/50165660.js",
+        "assets/client_data/ced343fcba4c8ee12f420d15/banner.js",
+        "assets/client_data/ced343fcba4c8ee12f420d15/script.js",
+        "assets/js-na1.hs-scripts.com/50165660.js",
+        "assets/js.hs-scripts.com/50165660.js",
+        "assets/js.hscollectedforms.net/collectedforms.js",
+        "assets/js_7e90cbb4ff65.js",
+        "assets/json_630443faa3b9.json",
+        "assets/li.lms-analytics/insight.beta.min.js",
+        "assets/li.lms-analytics/insight.min.js",
+        "assets/li.lms-analytics/insight.old.min.js",
+        "assets/nuxt/B-mnuttP.js",
+        "assets/nuxt/B6w0fxYU.js",
+        "assets/nuxt/BMrMtYDV.js",
+        "assets/nuxt/BUD1cr-Q.js",
+        "assets/nuxt/BjDqbC8f.js"
+      ],
+      "top_changes": []
+    },
+    {
+      "from": "05_after_reorganization",
+      "to": "06_after_path_correction",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 36,
+      "bytes_before": 4250502,
+      "bytes_after": 4224166,
+      "bytes_saved": 26336,
+      "pct_reduction": 0.6,
+      "added": [],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/js/index_script_1.js",
+          "before": 56039,
+          "after": 43665,
+          "diff": -12374
+        },
+        {
+          "file": "assets/data/data_005.json",
+          "before": 26163,
+          "after": 18087,
+          "diff": -8076
+        },
+        {
+          "file": "assets/resource-map.json",
+          "before": 30443,
+          "after": 25950,
+          "diff": -4493
+        },
+        {
+          "file": "assets/resource_ef42701acb09.html",
+          "before": 90078,
+          "after": 89212,
+          "diff": -866
+        },
+        {
+          "file": "index.html",
+          "before": 95066,
+          "after": 94305,
+          "diff": -761
+        },
+        {
+          "file": "assets/data/data_001.json",
+          "before": 2446,
+          "after": 2156,
+          "diff": -290
+        },
+        {
+          "file": "assets/js/CZZ0Kowu.js",
+          "before": 1796744,
+          "after": 1796970,
+          "diff": 226
+        },
+        {
+          "file": "assets/data/data_002.json",
+          "before": 3399,
+          "after": 3494,
+          "diff": 95
+        },
+        {
+          "file": "assets/js/script_003.js",
+          "before": 1943,
+          "after": 1859,
+          "diff": -84
+        },
+        {
+          "file": "assets/js/script_004.js",
+          "before": 1943,
+          "after": 1859,
+          "diff": -84
+        },
+        {
+          "file": "assets/js/banner.js",
+          "before": 34262,
+          "after": 34187,
+          "diff": -75
+        },
+        {
+          "file": "assets/js/insight.min.js",
+          "before": 2248,
+          "after": 2190,
+          "diff": -58
+        },
+        {
+          "file": "assets/js/B6w0fxYU.js",
+          "before": 11368,
+          "after": 11422,
+          "diff": 54
+        },
+        {
+          "file": "assets/js/D0Qfn0uS.js",
+          "before": 11185,
+          "after": 11239,
+          "diff": 54
+        },
+        {
+          "file": "assets/js/BjDqbC8f.js",
+          "before": 1548,
+          "after": 1593,
+          "diff": 45
+        }
+      ]
+    },
+    {
+      "from": "06_after_path_correction",
+      "to": "07_after_file_reduction",
+      "files_added": 18,
+      "files_removed": 28,
+      "files_changed": 0,
+      "bytes_before": 4224166,
+      "bytes_after": 4190679,
+      "bytes_saved": 33487,
+      "pct_reduction": 0.8,
+      "added": [
+        "assets/css/base.css",
+        "assets/css/fonts.css",
+        "assets/css/globals.css",
+        "assets/css/important.css",
+        "assets/css/medias/base_medias.css",
+        "assets/css/medias/media_001.css",
+        "assets/css/medias/media_002.css",
+        "assets/css/selectors.css",
+        "assets/css/styles.css",
+        "assets/css/styles_002.css",
+        "assets/css/styles_003.css",
+        "assets/js/utils.js",
+        "assets/js/utils_002.js",
+        "assets/js/utils_003.js",
+        "assets/js/utils_004.js",
+        "assets/js/utils_005.js",
+        "assets/js/utils_008.js",
+        "assets/js/utils_009.js"
+      ],
+      "removed": [
+        "assets/css/Dynamic.BXrJvJUw.css",
+        "assets/css/SiteFoot.BhqzWa6f.css",
+        "assets/css/entry.Cqb0HUwZ.css",
+        "assets/css/index_style_1.css",
+        "assets/css/index_style_10.css",
+        "assets/css/index_style_11.css",
+        "assets/css/index_style_12.css",
+        "assets/css/index_style_13.css",
+        "assets/css/index_style_14.css",
+        "assets/css/index_style_2.css",
+        "assets/css/index_style_3.css",
+        "assets/css/index_style_4.css",
+        "assets/css/index_style_5.css",
+        "assets/css/index_style_6.css",
+        "assets/css/index_style_7.css",
+        "assets/css/index_style_8.css",
+        "assets/css/index_style_9.css",
+        "assets/js/index_script_2.js",
+        "assets/js/index_script_3.js",
+        "assets/js/index_script_4.js"
+      ],
+      "top_changes": []
+    },
+    {
+      "from": "07_after_file_reduction",
+      "to": "08_after_bundle_reference_repair",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 8,
+      "bytes_before": 4190679,
+      "bytes_after": 4192500,
+      "bytes_saved": -1821,
+      "pct_reduction": -0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/resource_ef42701acb09.html",
+          "before": 89212,
+          "after": 90517,
+          "diff": 1305
+        },
+        {
+          "file": "index.html",
+          "before": 94305,
+          "after": 95191,
+          "diff": 886
+        },
+        {
+          "file": "assets/css/fonts.css",
+          "before": 1210,
+          "after": 1087,
+          "diff": -123
+        },
+        {
+          "file": "assets/css/style_007.css",
+          "before": 46214,
+          "after": 46091,
+          "diff": -123
+        },
+        {
+          "file": "assets/js/index_script_1.js",
+          "before": 43665,
+          "after": 43602,
+          "diff": -63
+        },
+        {
+          "file": "assets/resource-map.json",
+          "before": 25950,
+          "after": 25915,
+          "diff": -35
+        },
+        {
+          "file": "assets/js/CZZ0Kowu.js",
+          "before": 1796970,
+          "after": 1796949,
+          "diff": -21
+        },
+        {
+          "file": "assets/js/script_002.js",
+          "before": 157472,
+          "after": 157467,
+          "diff": -5
+        }
+      ]
+    },
+    {
+      "from": "08_after_bundle_reference_repair",
+      "to": "09_after_data_pruning",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 4192500,
+      "bytes_after": 4192500,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "09_after_data_pruning",
+      "to": "10_after_text_normalization",
+      "files_added": 1,
+      "files_removed": 0,
+      "files_changed": 28,
+      "bytes_before": 4192500,
+      "bytes_after": 4201739,
+      "bytes_saved": -9239,
+      "pct_reduction": -0.2,
+      "added": [
+        "_ai_context.md"
+      ],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/js/CZZ0Kowu.js",
+          "before": 1796949,
+          "after": 1801939,
+          "diff": 4990
+        },
+        {
+          "file": "assets/js/B-mnuttP.js",
+          "before": 206096,
+          "after": 206143,
+          "diff": 47
+        },
+        {
+          "file": "assets/data/data_001.json",
+          "before": 2156,
+          "after": 2157,
+          "diff": 1
+        },
+        {
+          "file": "assets/data/data_002.json",
+          "before": 3494,
+          "after": 3495,
+          "diff": 1
+        },
+        {
+          "file": "assets/data/data_003.json",
+          "before": 144,
+          "after": 145,
+          "diff": 1
+        },
+        {
+          "file": "assets/data/data_004.json",
+          "before": 172,
+          "after": 173,
+          "diff": 1
+        },
+        {
+          "file": "assets/data/data_005.json",
+          "before": 18087,
+          "after": 18088,
+          "diff": 1
+        },
+        {
+          "file": "assets/icons/fantasy-favicon.svg",
+          "before": 741,
+          "after": 742,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/BMrMtYDV.js",
+          "before": 1126,
+          "after": 1127,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/BUD1cr-Q.js",
+          "before": 223157,
+          "after": 223158,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/CeXuehBR.js",
+          "before": 493,
+          "after": 494,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/D0Qfn0uS.js",
+          "before": 11239,
+          "after": 11240,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/DP4i5pug.js",
+          "before": 10501,
+          "after": 10502,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/banner_2.js",
+          "before": 97517,
+          "after": 97518,
+          "diff": 1
+        },
+        {
+          "file": "assets/js/collectedforms.js",
+          "before": 121780,
+          "after": 121781,
+          "diff": 1
+        }
+      ]
+    },
+    {
+      "from": "10_after_text_normalization",
+      "to": "11_final",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 4201739,
+      "bytes_after": 4201739,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    }
+  ]
+}

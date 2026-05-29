@@ -1,0 +1,83 @@
+.sh-logo {
+  --l-delay: 25ms
+}
+
+.sh-logo__text {
+  color: #fff
+}
+
+.text-black:not(.is-form) .sh-logo__text {
+  color: #000
+}
+
+.sh-logo__l {
+  opacity: 1;
+  transform: translate(0);
+  transition: all .35s ease-out
+}
+
+.is-collapsed .sh-logo__l,
+.is-initial .sh-logo__l {
+  opacity: 0;
+  transform: translate(-.5rem)
+}
+
+.sh-logo__l:nth-child(7) {
+  transition-delay: var(--l-delay)
+}
+
+.sh-logo__l:nth-child(6) {
+  transition-delay: calc(var(--l-delay)*2)
+}
+
+.sh-logo__l:nth-child(5) {
+  transition-delay: calc(var(--l-delay)*3)
+}
+
+.sh-logo__l:nth-child(4) {
+  transition-delay: calc(var(--l-delay)*4)
+}
+
+.sh-logo__l:nth-child(3) {
+  transition-delay: calc(var(--l-delay)*5)
+}
+
+.sh-logo__l:nth-child(2) {
+  transition-delay: calc(var(--l-delay)*6)
+}
+
+.sh-logo__l:first-child {
+  transition-delay: calc(var(--l-delay)*7)
+}
+
+.sh-logo-mark {
+  transition: transform .75s cubic-bezier(.19, 1, .22, 1)
+}
+
+.sh-logo-mark__fill {
+  transition: fill .3s ease-out;
+  fill: #fff
+}
+
+.text-black:not(.is-form) .sh-logo-mark__fill {
+  fill: red
+}
+
+@media (max-width:649px) {
+  .is-form .sh-logo-mark__fill {
+    fill: #000
+  }
+}
+
+.is-collapsed .sh-logo-mark {
+  transform: scale(1.1)
+}
+
+.sh-logo-mark-wrap {
+  perspective: 100vw;
+  transition: transform 1s cubic-bezier(.19, 1, .22, 1)
+}
+
+.is-initial .sh-logo-mark-wrap {
+  transform: rotateY(-90deg)
+}
