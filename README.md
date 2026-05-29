@@ -1,4 +1,4 @@
-# 🎨 design-bank
+# Design Bank
 
 Banco pessoal de sites capturados para estudo de design, UI e interfaces web.  
 Cada pasta é um site ou componente que chamou atenção — seja pela estética, pelo layout ou pela técnica.
