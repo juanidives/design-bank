@@ -1,0 +1,384 @@
+/* === DS Portal — Base Reset ============================================
+   Overrides the 62.5% html font-size set by base.css for this document only.
+   The iframe (preview.html) is isolated and unaffected. */
+html{font-size:100%!important}
+*,::before,::after{box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;background-color:#f5f3ef;color:#1c2230;margin:0;padding:0}
+
+/* === Visibility toggle (replaces Tailwind's hidden which breaks flex-1) */
+.ds-hidden{display:none!important}
+
+/* === Top Tab Bar ===================================================== */
+.ds-top-tab{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  color:rgba(255,255,255,0.5);
+  background:transparent;
+  border:none;
+  border-radius:10px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:all .22s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;
+}
+.ds-top-tab:hover{color:rgba(255,255,255,0.85)}
+.ds-top-tab.active{
+  background:#8b3322;
+  color:#fff;
+  box-shadow:0 3px 12px rgba(139,51,34,0.45);
+}
+
+/* === Sidebar ========================================================= */
+.ds-sidebar{
+  background:#1c2230;
+  color:#f0ebe2;
+  border-right:1px solid rgba(196,155,74,0.15);
+}
+.ds-sidebar::-webkit-scrollbar{width:4px}
+.ds-sidebar::-webkit-scrollbar-track{background:transparent}
+.ds-sidebar::-webkit-scrollbar-thumb{background:rgba(196,155,74,0.25);border-radius:2px}
+.ds-nav-link{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-left:2px solid transparent;
+  border-radius:8px;
+  padding:10px 14px;
+  font-size:12px;
+  font-weight:700;
+  color:rgba(240,235,226,0.55);
+  text-decoration:none;
+  transition:all .22s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;
+}
+.ds-nav-link:hover{
+  color:#c49b4a;
+  background:rgba(255,255,255,0.05);
+  border-left-color:rgba(196,155,74,0.45);
+  padding-left:18px;
+}
+.ds-nav-link.active{
+  color:#c49b4a;
+  background:rgba(196,155,74,0.08);
+  border-left-color:#c49b4a;
+  padding-left:18px;
+}
+
+/* === Cards =========================================================== */
+.ds-card{
+  background:#fcfcfa;
+  border:1px solid rgba(196,155,74,0.14);
+  box-shadow:0 4px 20px rgba(28,34,48,0.04);
+  border-radius:16px;
+  padding:24px;
+  transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s cubic-bezier(.4,0,.2,1);
+}
+.ds-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 36px rgba(28,34,48,0.09);
+}
+
+/* === Rail spacing bars =============================================== */
+.ds-rail{
+  height:6px;
+  background:#c49b4a;
+  border-radius:3px;
+  position:relative;
+  transition:width .4s cubic-bezier(.4,0,.2,1);
+}
+.ds-rail::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  top:-3px;
+  height:12px;
+  background:repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    rgba(139,51,34,0.35) 10px,
+    rgba(139,51,34,0.35) 12px
+  );
+  border-radius:3px;
+}
+
+/* === Code blocks ===================================================== */
+.ds-code-block{
+  background:#0e131f;
+  border:1px solid rgba(196,155,74,0.14);
+  border-radius:12px;
+  padding:20px 24px;
+  font-family:'Courier New',Courier,monospace;
+  font-size:12px;
+  color:#a9b1d6;
+  overflow-x:auto;
+  white-space:pre-wrap;
+  line-height:1.7;
+  margin:0;
+  tab-size:2;
+}
+
+/* === Copy buttons ==================================================== */
+.ds-copy-btn{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:8px;
+  cursor:pointer;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  font-size:11px;
+  font-weight:700;
+  color:#1c2230;
+  transition:background .2s,box-shadow .2s,transform .15s;
+}
+.ds-copy-btn:hover{
+  background:#f5f0e8;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  transform:translateY(-1px);
+}
+.ds-copy-btn:active{transform:translateY(0)}
+
+/* === Play buttons ==================================================== */
+.ds-play-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:100%;
+  height:36px;
+  border-radius:8px;
+  border:none;
+  background:#8b3322;
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.ds-play-btn:hover{
+  background:#a03c28;
+  box-shadow:0 4px 12px rgba(139,51,34,0.35);
+  transform:translateY(-1px);
+}
+.ds-play-btn:active{transform:translateY(0);box-shadow:none}
+
+/* === Component playground tab buttons ================================ */
+.ds-tab-btn{
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:13px;
+  letter-spacing:0.04em;
+  padding:4px 0;
+  border:none;
+  border-bottom:2px solid transparent;
+  background:transparent;
+  cursor:pointer;
+  transition:color .2s,border-color .2s;
+  color:rgba(28,34,48,0.4);
+}
+.ds-tab-btn.active{color:#8b3322;border-bottom-color:#8b3322}
+.ds-tab-btn:hover:not(.active){color:rgba(28,34,48,0.7)}
+
+/* === Toast =========================================================== */
+.ds-toast{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  z-index:9999;
+  background:#1c2230;
+  border:1px solid rgba(196,155,74,0.5);
+  color:#f0ebe2;
+  padding:12px 22px;
+  border-radius:10px;
+  box-shadow:0 12px 36px rgba(0,0,0,0.3);
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:14px;
+  letter-spacing:0.02em;
+  opacity:0;
+  transform:translateY(16px) scale(.96);
+  pointer-events:none;
+  transition:opacity .3s cubic-bezier(.175,.885,.32,1.275),transform .3s cubic-bezier(.175,.885,.32,1.275);
+}
+.ds-toast.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+/* === Departure dot preview =========================================== */
+.departure-dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#c49b4a;
+  flex-shrink:0;
+  animation:dep-pulse 2.4s ease-in-out infinite;
+}
+@keyframes dep-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(196,155,74,.6)}
+  55%{box-shadow:0 0 0 8px rgba(196,155,74,0)}
+}
+
+/* === Animation sandbox CSS fallback ==================================
+   Used when GSAP is unavailable. Target is .ds-anim-sandbox-element
+   with data-css-anim attribute set by JS. */
+[data-css-anim="hfade"].css-anim-active{animation:css-hfade .85s ease forwards}
+[data-css-anim="blind-out"].css-anim-active{animation:css-blind-out 1.4s ease forwards}
+[data-css-anim="scale-out2"].css-anim-active{animation:css-scale-in 1.8s ease forwards}
+[data-css-anim="dep-pulse"].css-anim-active{animation:css-pulse-out .9s ease 3}
+@keyframes css-hfade{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes css-blind-out{from{transform:scaleY(1);transform-origin:top}to{transform:scaleY(0);transform-origin:top}}
+@keyframes css-scale-in{from{transform:scale(1.25);opacity:0.4}to{transform:scale(1);opacity:1}}
+@keyframes css-pulse-out{0%{transform:scale(1);opacity:1}100%{transform:scale(2.2);opacity:0}}
+
+/* === Button component previews =======================================
+   Self-contained: copied from the source's component CSS so previews
+   work without loading the landing page's own stylesheet. */
+
+/* Rotate button — dark background */
+.c-button__rotate--en{
+  position:relative;
+  display:flex;
+  background:#222;
+  padding:13px 36px;
+  border-radius:32px;
+  overflow:hidden;
+  min-width:210px;
+  width:260px;
+  text-decoration:none;
+}
+.c-button__rotate--en>span{overflow:hidden;width:100%}
+.c-button__rotate--en .label{
+  display:block;
+  position:relative;
+  color:#fff;
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:14px;
+  line-height:22px;
+  height:22px;
+  text-align:center;
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+  transform-style:preserve-3d;
+}
+.c-button__rotate--en .label::before{
+  content:attr(data-hover);
+  position:absolute;
+  top:100%;left:0;
+  width:100%;height:100%;
+  color:#fff;
+  text-align:center;
+  font-family:'DM Sans',sans-serif;
+}
+.c-button__rotate--en:hover .label{transform:translateY(-100%)}
+
+/* Rotate button — white background */
+.c-button__rotate--en--white{
+  position:relative;
+  display:flex;
+  background:#fff;
+  padding:13px 36px;
+  border-radius:32px;
+  overflow:hidden;
+  min-width:210px;
+  width:260px;
+  text-decoration:none;
+}
+.c-button__rotate--en--white>span{overflow:hidden;width:100%}
+.c-button__rotate--en--white .label{
+  display:block;
+  position:relative;
+  color:#222;
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:14px;
+  line-height:22px;
+  height:22px;
+  text-align:center;
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+  transform-style:preserve-3d;
+}
+.c-button__rotate--en--white .label::before{
+  content:attr(data-hover);
+  position:absolute;
+  top:100%;left:0;
+  width:100%;height:100%;
+  color:#222;
+  text-align:center;
+  font-family:'DM Sans',sans-serif;
+}
+.c-button__rotate--en--white:hover .label{transform:translateY(-100%)}
+
+/* Circle button — dark */
+.c-button__circle--black{
+  position:relative;
+  display:flex;
+  align-items:center;
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:14px;
+  font-weight:400;
+  letter-spacing:.04em;
+  overflow:hidden;
+  width:200px;
+  text-decoration:none;
+  color:#222;
+  padding:8px 0;
+}
+.c-button__circle--black .label{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transform:translateX(-18px);
+  transition:transform .32s cubic-bezier(0,.55,.45,1);
+}
+.c-button__circle--black .label::before{
+  content:"";
+  display:block;
+  width:13px;
+  height:11px;
+  flex-shrink:0;
+  background-color:#222;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg width='13' height='11' viewBox='0 0 13 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.67 10.86L12.47 6.03L7.67 1.2C7.62 1.14 7.57 1.09 7.5 1.06 7.44 1.03 7.37 1.01 7.3 1.0 7.23.997 7.16 1.007 7.09 1.033 7.02 1.058 6.96 1.098 6.91 1.149 6.86 1.2 6.82 1.261 6.8 1.328 6.77 1.396 6.76 1.468 6.77 1.539 6.78 1.61 6.8 1.68 6.83 1.742 6.87 1.805 6.91 1.86 6.97 1.902L10.57 5.527L1.0 5.527C.867 5.527.74 5.58.647 5.673.553 5.767.5 5.894.5 6.027.5 6.16.553 6.287.647 6.38.74 6.474.867 6.527 1.0 6.527L10.57 6.527 6.97 10.152C6.88 10.246 6.82 10.374 6.83 10.506 6.83 10.639 6.88 10.766 6.97 10.86 7.07 10.953 7.2 11.005 7.33 11.005 7.46 11.004 7.59 10.951 7.68 10.86H7.67Z' fill='currentColor'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg width='13' height='11' viewBox='0 0 13 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.67 10.86L12.47 6.03L7.67 1.2C7.62 1.14 7.57 1.09 7.5 1.06 7.44 1.03 7.37 1.01 7.3 1.0 7.23.997 7.16 1.007 7.09 1.033 7.02 1.058 6.96 1.098 6.91 1.149 6.86 1.2 6.82 1.261 6.8 1.328 6.77 1.396 6.76 1.468 6.77 1.539 6.78 1.61 6.8 1.68 6.83 1.742 6.87 1.805 6.91 1.86 6.97 1.902L10.57 5.527L1.0 5.527C.867 5.527.74 5.58.647 5.673.553 5.767.5 5.894.5 6.027.5 6.16.553 6.287.647 6.38.74 6.474.867 6.527 1.0 6.527L10.57 6.527 6.97 10.152C6.88 10.246 6.82 10.374 6.83 10.506 6.83 10.639 6.88 10.766 6.97 10.86 7.07 10.953 7.2 11.005 7.33 11.005 7.46 11.004 7.59 10.951 7.68 10.86H7.67Z' fill='currentColor'/%3E%3C/svg%3E");
+  -webkit-mask-size:contain;
+  mask-size:contain;
+  -webkit-mask-repeat:no-repeat;
+  mask-repeat:no-repeat;
+}
+.c-button__circle--black::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;
+  width:100%;height:1px;
+  background:rgba(28,34,48,0.15);
+}
+.c-button__circle--black::before{
+  content:"";
+  position:absolute;
+  right:0;
+  width:16px;height:16px;
+  border-radius:50%;
+  background:#222;
+  transform:scale(.25);
+  transition:transform .32s cubic-bezier(0,.55,.45,1);
+}
+@media(hover:hover){
+  .c-button__circle--black:hover .label{transform:translateX(0)}
+  .c-button__circle--black:hover::before{transform:scale(1)}
+}
+
+/* === Screen-reader only ============================================== */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border-width:0;
+}

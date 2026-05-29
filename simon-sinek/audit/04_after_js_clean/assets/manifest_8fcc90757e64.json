@@ -1,0 +1,25 @@
+{
+  "short_name": "Optimism at Work",
+  "name": "Simon Sinek | The Optimism Company",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/assets/resource_e6fde0a83406.html",
+  "display": "standalone",
+  "theme_color": "#2a1e2a",
+  "background_color": "#f7fffc"
+}

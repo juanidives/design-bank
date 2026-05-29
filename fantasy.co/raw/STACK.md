@@ -1,0 +1,3 @@
+- **Tailwind CSS** — utility-first CSS framework used for layout and basic styling
+- **Nuxt.js** — Vue-based framework used for static site generation and page hydration
+- **Lucide Icons** — icon runtime script library linked for page interactive components

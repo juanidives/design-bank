@@ -1,0 +1,1 @@
+.media-hero-exp{--background:inherit;background-color:var(--background)}.media-hero-exp__content:after{background:linear-gradient(to bottom,transparent 0,var(--background) 50%);bottom:0;content:"";height:100%;left:0;position:absolute;width:100%;z-index:1}

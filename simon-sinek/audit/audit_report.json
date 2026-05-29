@@ -1,0 +1,448 @@
+{
+  "generated_at": "2026-05-29T03:22:27.717752",
+  "stages": [
+    {
+      "name": "01_raw",
+      "description": "Cópia fiel antes de qualquer limpeza",
+      "timestamp": "2026-05-29T03:22:00.790205",
+      "files": 116,
+      "bytes": 9631467
+    },
+    {
+      "name": "02_after_html_clean",
+      "description": "Após remoção de tracking e limpeza HTML",
+      "timestamp": "2026-05-29T03:22:00.827223",
+      "files": 116,
+      "bytes": 9631467
+    },
+    {
+      "name": "03_after_css_clean",
+      "description": "Após desminificação e limpeza CSS",
+      "timestamp": "2026-05-29T03:22:00.927246",
+      "files": 116,
+      "bytes": 9631467
+    },
+    {
+      "name": "04_after_js_clean",
+      "description": "Após desminificação e limpeza JS",
+      "timestamp": "2026-05-29T03:22:00.965971",
+      "files": 116,
+      "bytes": 9631467
+    },
+    {
+      "name": "05_after_reorganization",
+      "description": "Assets movidos para subpastas por tipo",
+      "timestamp": "2026-05-29T03:22:01.083959",
+      "files": 116,
+      "bytes": 9631467
+    },
+    {
+      "name": "06_after_path_correction",
+      "description": "Referências de paths atualizadas",
+      "timestamp": "2026-05-29T03:22:01.848314",
+      "files": 116,
+      "bytes": 9616022
+    },
+    {
+      "name": "07_after_file_reduction",
+      "description": "Quantidade de arquivos CSS/JS reduzida antes do reparo das referências",
+      "timestamp": "2026-05-29T03:22:01.885368",
+      "files": 116,
+      "bytes": 9616022
+    },
+    {
+      "name": "08_after_bundle_reference_repair",
+      "description": "Referências HTML/CSS/JS reparadas após consolidação de CSS e JS",
+      "timestamp": "2026-05-29T03:22:02.406199",
+      "files": 118,
+      "bytes": 9616291
+    },
+    {
+      "name": "09_after_data_pruning",
+      "description": "Arquivos órfãos em assets/data removidos do clean/",
+      "timestamp": "2026-05-29T03:22:02.535311",
+      "files": 118,
+      "bytes": 9616291
+    },
+    {
+      "name": "10_after_text_normalization",
+      "description": "Texto normalizado com espaços e terminadores de linha consistentes",
+      "timestamp": "2026-05-29T03:22:27.501720",
+      "files": 119,
+      "bytes": 9619018
+    },
+    {
+      "name": "11_final",
+      "description": "Estado final do clean/",
+      "timestamp": "2026-05-29T03:22:27.577681",
+      "files": 119,
+      "bytes": 9619018
+    }
+  ],
+  "comparisons": [
+    {
+      "from": "01_raw",
+      "to": "02_after_html_clean",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9631467,
+      "bytes_after": 9631467,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "02_after_html_clean",
+      "to": "03_after_css_clean",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9631467,
+      "bytes_after": 9631467,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "03_after_css_clean",
+      "to": "04_after_js_clean",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9631467,
+      "bytes_after": 9631467,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "04_after_js_clean",
+      "to": "05_after_reorganization",
+      "files_added": 113,
+      "files_removed": 113,
+      "files_changed": 0,
+      "bytes_before": 9631467,
+      "bytes_after": 9631467,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [
+        "assets/css/style_001.css",
+        "assets/data/data_001.json",
+        "assets/data/data_002.json",
+        "assets/data/data_003.json",
+        "assets/data/data_004.json",
+        "assets/data/data_005.json",
+        "assets/js/cast_framework.js",
+        "assets/js/cast_sender.js",
+        "assets/js/clerk.browser.js",
+        "assets/js/clerk.browser_2.js",
+        "assets/js/config.js",
+        "assets/js/eb.js",
+        "assets/js/events.js",
+        "assets/js/fbevents.js",
+        "assets/js/main.MWFmMzU5MmI0MQ.js",
+        "assets/js/script_001.js",
+        "assets/js/script_002.js",
+        "assets/js/script_003.js",
+        "assets/js/script_004.js",
+        "assets/js/script_005.js"
+      ],
+      "removed": [
+        "assets/books_b61c704e36a6.txt",
+        "assets/business_b1cbb735d5b1.txt",
+        "assets/cast/sdk/libs/sender/1.0/cast_framework.js",
+        "assets/cast_sender_1920c37b8972.js",
+        "assets/client_396fa89e8000.json",
+        "assets/contact-us_3f2209b264ea.txt",
+        "assets/contact-us_c6009a1fa60e.txt",
+        "assets/custom_bedb382a718a.json",
+        "assets/en_US/fbevents.js",
+        "assets/envelope_436c03c33689.json",
+        "assets/environment_eda8abfedafd.json",
+        "assets/eureka/clank/cast_sender.js",
+        "assets/events_00b8c74e4fa6.js",
+        "assets/golden-circle_6a90130a3a17.txt",
+        "assets/how-to-end-an-argument-that-r_30a7e9a5d3_13a7cbad3011.txt",
+        "assets/how-to-stop-being-socially-aw_727606c89d_a2f80d3af8ba.txt",
+        "assets/i18n/pixel/config.js",
+        "assets/i18n/pixel/eb.js",
+        "assets/i18n/pixel/events.js",
+        "assets/i18n/pixel/static/identify_5cff1caf.js"
+      ],
+      "top_changes": []
+    },
+    {
+      "from": "05_after_reorganization",
+      "to": "06_after_path_correction",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 12,
+      "bytes_before": 9631467,
+      "bytes_after": 9616022,
+      "bytes_saved": 15445,
+      "pct_reduction": 0.2,
+      "added": [],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "index.html",
+          "before": 163484,
+          "after": 155009,
+          "diff": -8475
+        },
+        {
+          "file": "assets/resource-map.json",
+          "before": 19349,
+          "after": 16368,
+          "diff": -2981
+        },
+        {
+          "file": "assets/data/data_004.json",
+          "before": 12536,
+          "after": 9756,
+          "diff": -2780
+        },
+        {
+          "file": "assets/resource_e6fde0a83406.html",
+          "before": 91782,
+          "after": 90619,
+          "diff": -1163
+        },
+        {
+          "file": "assets/data/data_005.json",
+          "before": 530,
+          "after": 440,
+          "diff": -90
+        },
+        {
+          "file": "assets/js/eb.js",
+          "before": 1853759,
+          "after": 1853693,
+          "diff": -66
+        },
+        {
+          "file": "assets/data/data_001.json",
+          "before": 309,
+          "after": 359,
+          "diff": 50
+        },
+        {
+          "file": "assets/js/clerk.browser.js",
+          "before": 273446,
+          "after": 273496,
+          "diff": 50
+        },
+        {
+          "file": "assets/js/clerk.browser_2.js",
+          "before": 273446,
+          "after": 273496,
+          "diff": 50
+        },
+        {
+          "file": "assets/js/script_060.js",
+          "before": 20416,
+          "after": 20394,
+          "diff": -22
+        },
+        {
+          "file": "assets/js/script_061.js",
+          "before": 20416,
+          "after": 20394,
+          "diff": -22
+        },
+        {
+          "file": "assets/css/style_001.css",
+          "before": 96652,
+          "after": 96656,
+          "diff": 4
+        }
+      ]
+    },
+    {
+      "from": "06_after_path_correction",
+      "to": "07_after_file_reduction",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9616022,
+      "bytes_after": 9616022,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "07_after_file_reduction",
+      "to": "08_after_bundle_reference_repair",
+      "files_added": 2,
+      "files_removed": 0,
+      "files_changed": 2,
+      "bytes_before": 9616022,
+      "bytes_after": 9616291,
+      "bytes_saved": -269,
+      "pct_reduction": -0.0,
+      "added": [
+        "assets/client_396fa89e8000.json",
+        "assets/custom_bedb382a718a.json"
+      ],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/resource_e6fde0a83406.html",
+          "before": 90619,
+          "after": 90554,
+          "diff": -65
+        },
+        {
+          "file": "assets/css/style_001.css",
+          "before": 96656,
+          "after": 96609,
+          "diff": -47
+        }
+      ]
+    },
+    {
+      "from": "08_after_bundle_reference_repair",
+      "to": "09_after_data_pruning",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9616291,
+      "bytes_after": 9616291,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    },
+    {
+      "from": "09_after_data_pruning",
+      "to": "10_after_text_normalization",
+      "files_added": 1,
+      "files_removed": 0,
+      "files_changed": 77,
+      "bytes_before": 9616291,
+      "bytes_after": 9619018,
+      "bytes_saved": -2727,
+      "pct_reduction": -0.0,
+      "added": [
+        "_ai_context.md"
+      ],
+      "removed": [],
+      "top_changes": [
+        {
+          "file": "assets/js/clerk.browser_2.js",
+          "before": 273496,
+          "after": 273498,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/fbevents.js",
+          "before": 378648,
+          "after": 378650,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/main.MWFmMzU5MmI0MQ.js",
+          "before": 481841,
+          "after": 481843,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_003.js",
+          "before": 155651,
+          "after": 155653,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_004.js",
+          "before": 11665,
+          "after": 11667,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_005.js",
+          "before": 28768,
+          "after": 28770,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_006.js",
+          "before": 20000,
+          "after": 20002,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_007.js",
+          "before": 9203,
+          "after": 9205,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_008.js",
+          "before": 4328,
+          "after": 4330,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_009.js",
+          "before": 28539,
+          "after": 28541,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_010.js",
+          "before": 17329,
+          "after": 17331,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_011.js",
+          "before": 23934,
+          "after": 23936,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_012.js",
+          "before": 16788,
+          "after": 16790,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_013.js",
+          "before": 15246,
+          "after": 15248,
+          "diff": 2
+        },
+        {
+          "file": "assets/js/script_014.js",
+          "before": 26928,
+          "after": 26930,
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "from": "10_after_text_normalization",
+      "to": "11_final",
+      "files_added": 0,
+      "files_removed": 0,
+      "files_changed": 0,
+      "bytes_before": 9619018,
+      "bytes_after": 9619018,
+      "bytes_saved": 0,
+      "pct_reduction": 0.0,
+      "added": [],
+      "removed": [],
+      "top_changes": []
+    }
+  ]
+}

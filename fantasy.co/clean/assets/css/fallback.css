@@ -1,0 +1,4 @@
+/* Fallback: hide loader overlay to show page content immediately */
+.bg-black.z-\[9999\] {
+  display: none !important;
+}

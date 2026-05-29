@@ -1,0 +1,6 @@
+- **Next.js** — React-based web framework used to structure and render the application
+- **Tailwind CSS** — utility-first CSS framework used for all layout and styling
+- **Radix UI** — accessible primitive components used for navigation triggers and dropdown slots
+- **Lucide** — icon library used for modern vector indicators across components
+- **Clerk** — authentication platform integrated into the user account buttons
+- **DeepMirror** — local server utility for local offline asset mapping and request intercepting

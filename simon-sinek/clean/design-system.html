@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- fonts -->
+  <link as="font" crossorigin="anonymous" href="assets/fonts/GartonPro-Regular_2.woff2" rel="preload" type="font/woff2"/>
+  <link as="font" crossorigin="anonymous" href="assets/fonts/GartonPro-Bold_2.woff2" rel="preload" type="font/woff2"/>
+  <!-- preloads -->
+  <link as="image" href="assets/images/spark-sm_2.webp" rel="preload"/>
+  <link as="image" fetchpriority="high" href="assets/images/imac-24-iphone-17.webp" rel="preload"/>
+  <link as="image" href="assets/images/spark-orange_2.webp" rel="preload"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Simon Sinek | Design System & Guia de Estilos</title>
+  <meta content="Guia do Design System e documentação de componentes do Simon Sinek." name="description"/>
+  <meta content="#2a1e2a" name="theme-color"/>
+  <!-- css -->
+  <!-- Estilos compilados principais da página -->
+  <link rel="stylesheet" href="assets/css/style_001.css"/>
+  <!-- Correções de rolagem e exibição -->
+  <link rel="stylesheet" href="assets/css/scroll-fixes.css"/>
+  <!-- head-only js (e.g. Tailwind runtime, must stay in head) -->
+  <!-- Resolve URLs de recursos locais offline -->
+  <script src="assets/js/url-resolver.js"></script>
+  <!-- Fornece compatibilidade de redirecionamento em navegadores antigos -->
+  <script src="assets/js/runtime-compat-shim.js"></script>
+</head>
+<body class="min-h-screen bg-light text-shadow flex flex-col">
+  <!-- sticky-control-panel -->
+  <div class="sticky top-0 z-[100] w-full border-b border-shadow/10 bg-light/95 backdrop-blur-md px-4 py-3 shadow-md">
+    <div class="mx-auto max-w-6xl flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img alt="" aria-hidden="true" class="size-7" src="assets/images/spark-sm_2.webp"/>
+        <div>
+          <span class="font-primary text-sm font-bold block leading-none">Simon Sinek</span>
+          <span class="font-body text-xs text-shadow/50 mt-1 block">Design System & Guia de Componentes</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-1.5 bg-shadow/5 p-1 rounded-lg">
+        <button data-tab-target="design-system-tab" class="flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-xs font-semibold font-primary transition-all bg-optimism text-light shadow-sm">
+          <i data-lucide="palette" class="size-3.5"></i> Estilos e Componentes
+        </button>
+        <button data-tab-target="landing-page-tab" class="flex items-center gap-1.5 rounded-md px-3.5 py-1.5 text-xs font-semibold font-primary transition-all text-shadow/60 hover:text-shadow">
+          <i data-lucide="layout-template" class="size-3.5"></i> Página Principal
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- design-system-tab -->
+  <div id="design-system-tab" data-tab-content class="block flex-1">
+    <!-- intro -->
+    <section class="bg-shadow py-16 text-light border-b border-shadow/20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 class="font-primary font-bold text-4xl md:text-5xl mb-4">Guia de Design System</h1>
+        <p class="font-body text-light/70 text-lg max-w-3xl leading-relaxed">Este portal reúne as definições visuais extraídas do projeto da Optimism Company do Simon Sinek. Explore os tokens de cores, regras de tipografia, componentes de UI, padrões de layouts, espaçamentos e efeitos de movimento documentados diretamente das folhas de estilo e computações originais do navegador.</p>
+      </div>
+    </section>
+    <!-- colors-surfaces -->
+    <section class="py-16 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Cores e Superfícies (Colors & Surfaces)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Paleta cromática oficial e superfícies utilizadas para compor a estética premium e aconchegante da marca.</p>
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          <div class="flex flex-col border border-shadow/10 rounded-xl overflow-hidden shadow-sm bg-light">
+            <div class="h-28 bg-[#2a1e2a]" style="background-color: rgb(42, 30, 42);"></div>
+            <div class="p-4 flex flex-col flex-1">
+              <span class="font-primary text-sm font-bold">Dark Primary (bg-shadow)</span>
+              <span class="font-body text-xs text-shadow/50 mt-1">rgb(42, 30, 42) | #2a1e2a</span>
+              <button data-copy-text="rgb(42, 30, 42)" class="mt-auto flex items-center justify-center gap-1.5 h-8 w-full rounded-md border border-shadow/10 text-xs font-semibold hover:bg-shadow/5 transition-all"><i data-lucide="copy" class="size-3.5"></i> Copiar Cor</button>
+            </div>
+          </div>
+          <div class="flex flex-col border border-shadow/10 rounded-xl overflow-hidden shadow-sm bg-light">
+            <div class="h-28 bg-[#e05a2b]" style="background-color: #e05a2b;"></div>
+            <div class="p-4 flex flex-col flex-1">
+              <span class="font-primary text-sm font-bold">Optimism Orange (bg-optimism)</span>
+              <span class="font-body text-xs text-shadow/50 mt-1">#e05a2b | bg-optimism</span>
+              <button data-copy-text="#e05a2b" class="mt-auto flex items-center justify-center gap-1.5 h-8 w-full rounded-md border border-shadow/10 text-xs font-semibold hover:bg-shadow/5 transition-all"><i data-lucide="copy" class="size-3.5"></i> Copiar Cor</button>
+            </div>
+          </div>
+          <div class="flex flex-col border border-shadow/10 rounded-xl overflow-hidden shadow-sm bg-light">
+            <div class="h-28 bg-[#f7fffc]" style="background-color: rgb(247, 255, 252);"></div>
+            <div class="p-4 flex flex-col flex-1">
+              <span class="font-primary text-sm font-bold">Light Accent (text-light)</span>
+              <span class="font-body text-xs text-shadow/50 mt-1">rgb(247, 255, 252) | #f7fffc</span>
+              <button data-copy-text="rgb(247, 255, 252)" class="mt-auto flex items-center justify-center gap-1.5 h-8 w-full rounded-md border border-shadow/10 text-xs font-semibold hover:bg-shadow/5 transition-all"><i data-lucide="copy" class="size-3.5"></i> Copiar Cor</button>
+            </div>
+          </div>
+          <div class="flex flex-col border border-shadow/10 rounded-xl overflow-hidden shadow-sm bg-light">
+            <div class="h-28 bg-[#ebebeb]" style="background-color: oklch(0.922 0 0);"></div>
+            <div class="p-4 flex flex-col flex-1">
+              <span class="font-primary text-sm font-bold">Body BG (bg-light)</span>
+              <span class="font-body text-xs text-shadow/50 mt-1">oklch(0.922 0 0) | #ebebeb</span>
+              <button data-copy-text="oklch(0.922 0 0)" class="mt-auto flex items-center justify-center gap-1.5 h-8 w-full rounded-md border border-shadow/10 text-xs font-semibold hover:bg-shadow/5 transition-all"><i data-lucide="copy" class="size-3.5"></i> Copiar Cor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- typography -->
+    <section class="py-16 bg-shadow/5 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Tipografia Computada (Typography)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">A tipografia combina a elegante fonte serifada Garton Pro para títulos com a Union (sans-serif) para corpos de texto legíveis.</p>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="space-y-6">
+            <div class="border border-shadow/10 p-6 rounded-xl bg-light">
+              <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Cabeçalho Principal (H1) - 54px</span>
+              <h1 class="font-primary font-bold text-4xl md:text-5xl text-shadow leading-tight">Seja o líder que você gostaria de ter</h1>
+            </div>
+            <div class="border border-shadow/10 p-6 rounded-xl bg-light">
+              <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Cabeçalho Secundário (H2) - 33.75px</span>
+              <h2 class="font-primary font-bold text-2xl md:text-3xl text-shadow">Três Maneiras de Dar Vida ao Nosso Propósito</h2>
+            </div>
+            <div class="border border-shadow/10 p-6 rounded-xl bg-light">
+              <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Parágrafos (P) - 20.25px</span>
+              <p class="font-body text-shadow/70 text-lg leading-relaxed">Leaderful é um aplicativo desenvolvido do zero para ajudar a formar o tipo de líderes que o mundo mais precisa.</p>
+            </div>
+          </div>
+          <div class="overflow-x-auto border border-shadow/10 rounded-xl bg-light p-4">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-shadow/10 text-xs font-semibold text-shadow/60">
+                  <th class="py-3 px-2">Seletor</th>
+                  <th class="py-3 px-2">Fonte</th>
+                  <th class="py-3 px-2">Tamanho</th>
+                  <th class="py-3 px-2">Peso</th>
+                  <th class="py-3 px-2">Altura Linha</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="border-b border-shadow/5">
+                  <td class="py-3 px-2 font-mono text-xs">h1</td>
+                  <td class="py-3 px-2">Garton Pro</td>
+                  <td class="py-3 px-2">54px</td>
+                  <td class="py-3 px-2">700</td>
+                  <td class="py-3 px-2">54px</td>
+                </tr>
+                <tr class="border-b border-shadow/5">
+                  <td class="py-3 px-2 font-mono text-xs">h2</td>
+                  <td class="py-3 px-2">Garton Pro</td>
+                  <td class="py-3 px-2">33.75px</td>
+                  <td class="py-3 px-2">700</td>
+                  <td class="py-3 px-2">40.5px</td>
+                </tr>
+                <tr class="border-b border-shadow/5">
+                  <td class="py-3 px-2 font-mono text-xs">h3</td>
+                  <td class="py-3 px-2">Garton Pro</td>
+                  <td class="py-3 px-2">27px</td>
+                  <td class="py-3 px-2">700</td>
+                  <td class="py-3 px-2">36px</td>
+                </tr>
+                <tr class="border-b border-shadow/5">
+                  <td class="py-3 px-2 font-mono text-xs">p</td>
+                  <td class="py-3 px-2">Union (Sans)</td>
+                  <td class="py-3 px-2">20.25px</td>
+                  <td class="py-3 px-2">400</td>
+                  <td class="py-3 px-2">31.5px</td>
+                </tr>
+                <tr class="border-b border-shadow/5">
+                  <td class="py-3 px-2 font-mono text-xs">button</td>
+                  <td class="py-3 px-2">Garton Pro</td>
+                  <td class="py-3 px-2">15.75px</td>
+                  <td class="py-3 px-2">500</td>
+                  <td class="py-3 px-2">22.5px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- borders-dividers -->
+    <section class="py-16 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Bordas e Divisores (Borders & Dividers)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Detalhamento dos estilos de bordas utilizados para segmentar seções e realçar cartões interativos.</p>
+        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          <div class="border-shadow/5 border p-6 rounded-xl bg-light shadow-sm text-center">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-3">Borda Sutil (border-shadow/5)</span>
+            <div class="h-0.5 bg-shadow/5 w-full"></div>
+          </div>
+          <div class="border-t-4 border-t-optimism p-6 border rounded-b-xl border-shadow/10 bg-light shadow-sm text-center">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Borda de Destaque Laranja</span>
+            <span class="font-primary text-sm font-bold text-optimism">border-t-optimism</span>
+          </div>
+          <div class="border-t-4 border-t-ember p-6 border rounded-b-xl border-shadow/10 bg-light shadow-sm text-center">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Borda de Destaque Vermelha</span>
+            <span class="font-primary text-sm font-bold text-ember">border-t-ember</span>
+          </div>
+          <div class="border-t-4 border-t-sunshine p-6 border rounded-b-xl border-shadow/10 bg-light shadow-sm text-center">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-2">Borda de Destaque Amarela</span>
+            <span class="font-primary text-sm font-bold text-sunshine">border-t-sunshine</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ui-components -->
+    <section class="py-16 bg-shadow/5 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Componentes de UI (UI Components)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Bandeiras, botões, campos de entrada de formulários e estados interativos padronizados.</p>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <!-- buttons -->
+          <div class="border border-shadow/10 p-6 rounded-xl bg-light space-y-6">
+            <h3 class="font-primary font-bold text-lg border-b pb-3">Botões (Buttons)</h3>
+            <div class="flex flex-wrap gap-4 items-center">
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-semibold text-shadow/40">Destaque Laranja (Optimism)</span>
+                <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all bg-optimism text-light hover:bg-optimism/90 h-12 rounded-md px-8 text-base no-underline" href="#">Saiba Mais</a>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-semibold text-shadow/40">Botão Escuro (Primary)</span>
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 h-12 rounded-md px-8 text-base">Enviar</button>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-semibold text-shadow/40">Trigger de Dropdown</span>
+                <button class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground bg-transparent border border-shadow/10">Sobre o Simon <i data-lucide="chevron-down" class="ml-1 size-3"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- inputs-controls -->
+          <div class="border border-shadow/10 p-6 rounded-xl bg-light space-y-6">
+            <h3 class="font-primary font-bold text-lg border-b pb-3">Inputs & Controles (Inputs & Form Controls)</h3>
+            <div class="space-y-4">
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-semibold text-shadow/40">Campo de Formulário (Text Input)</span>
+                <input class="font-body w-full max-w-sm rounded-md border bg-shadow/[0.04] border-shadow/10 text-shadow placeholder:text-shadow/40 transition-colors focus:border-optimism focus:bg-light focus:outline-none h-12 px-4 text-base" placeholder="Digite seu e-mail aqui*"/>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <span class="text-[10px] font-semibold text-shadow/40">Controles de Seleção (Checkboxes)</span>
+                <div class="flex items-center gap-2.5">
+                  <input checked class="size-4 shrink-0 accent-optimism" type="checkbox" id="demo-check-1"/>
+                  <label class="font-body text-sm text-shadow" for="demo-check-1">Mantenha-me conectado e atualizado diariamente.</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cards-layouts -->
+    <section class="py-16 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Cartões & Layouts (Cards & Layouts)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Módulos de visualização de conteúdo estruturados em malhas responsivas de 3 colunas e 2 colunas.</p>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- card-three-ways -->
+          <div class="group flex flex-col border border-shadow/10 border-t-4 border-t-optimism bg-light p-6 rounded-b-xl shadow-sm">
+            <h3 class="font-primary font-bold text-xl mb-2">Cartão de Destaque</h3>
+            <p class="font-body mb-6 text-sm text-shadow/60 flex-1">Exemplo de bloco interativo de três colunas para expor os caminhos e produtos da empresa.</p>
+            <span class="font-primary text-optimism group-hover:text-burnt-orange inline-flex items-center gap-1 text-sm transition-colors font-semibold">Saiba Mais <i data-lucide="arrow-right" class="size-3.5"></i></span>
+          </div>
+          <!-- card-podcast -->
+          <div class="border border-shadow/10 p-4 bg-light rounded-xl flex gap-4 shadow-sm hover:border-optimism transition-colors col-span-2">
+            <div class="size-20 bg-shadow/10 rounded-md shrink-0 flex items-center justify-center"><i data-lucide="podcast" class="size-8 text-shadow/30"></i></div>
+            <div class="flex flex-col justify-between flex-1">
+              <p class="font-body text-sm font-semibold text-shadow leading-snug line-clamp-2">Exemplo de Cartão de Podcast Horizontal com layout em linha flexível</p>
+              <div class="flex items-center gap-1 pt-1">
+                <span class="font-primary text-optimism text-xs font-semibold">Ouvir</span>
+                <i data-lucide="arrow-right" class="size-3 text-optimism"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- motion-interaction -->
+    <section class="py-16 bg-shadow/5 border-b border-shadow/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Movimentos & Efeitos (Motion & Interactions)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Detalhes de animações de zoom, transições de preenchimento de cor em botões e menus dinâmicos com suavidade espacial.</p>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="border border-shadow/10 p-6 rounded-xl bg-light text-center shadow-sm">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-3">Zoom no Hover da Imagem (Card Blog)</span>
+            <div class="overflow-hidden rounded-lg aspect-[4/3] bg-shadow/10 group">
+              <div class="w-full h-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style="background-image: url('assets/images/img_005.jpg');"></div>
+            </div>
+          </div>
+          <div class="border border-shadow/10 p-6 rounded-xl bg-light text-center shadow-sm">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-3">Interação do Trigger (Chevron Rotate)</span>
+            <button class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium hover:bg-accent border border-shadow/10" id="demo-chevron-trigger">
+              Passe o Mouse <i data-lucide="chevron-down" class="ml-1 size-3 transition duration-300 group-hover:rotate-180"></i>
+            </button>
+          </div>
+          <div class="border border-shadow/10 p-6 rounded-xl bg-light text-center shadow-sm flex flex-col justify-center">
+            <span class="font-body text-xs font-semibold text-shadow/50 block mb-3">Efeito Pulse de Carregamento (Skeleton)</span>
+            <div class="animate-pulse rounded-md bg-accent h-9 w-24 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- icons-directory -->
+    <section class="py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Biblioteca de Ícones & Vetores (Icons)</h2>
+        <p class="font-body text-shadow/60 mb-8 max-w-2xl">Mapeamento dos ícones Lucide estruturados com marcas vetoriais semânticas e componentes sociais (currentColor).</p>
+        <div class="grid gap-4 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 text-center">
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="chevron-down" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">chevron-down</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="menu" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">menu</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="arrow-right" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">arrow-right</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="x" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">x</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="user" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">user</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="lightbulb" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">lightbulb</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="quote" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">quote</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="target" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">target</span>
+          </div>
+          <div class="border border-shadow/5 p-4 rounded-lg bg-light flex flex-col items-center justify-center gap-2">
+            <i data-lucide="circle-play" class="size-6 text-shadow/70"></i>
+            <span class="font-mono text-xs text-shadow/50">circle-play</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- landing-page-tab -->
+  <div id="landing-page-tab" data-tab-content class="hidden flex-1">
+    <!-- landing-page-header -->
+    <header class="bg-light border-shadow/5 sticky top-[57px] z-50 border-b transform-gpu">
+      <div class="bg-shadow/5 min-h-8"></div>
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl flex h-16 items-center justify-between">
+        <a aria-label="Simon Sinek's Optimism Company" class="flex items-center gap-2.5 font-primary text-shadow no-underline" href="#">
+          <img alt="" aria-hidden="true" class="size-9" height="36" src="assets/images/spark-sm_2.webp" width="36"/>
+          <div class="flex flex-col leading-[1.2]">
+            <span class="text-sm">Empresa de Otimismo</span>
+            <span class="text-sm text-optimism">do Simon Sinek</span>
+          </div>
+        </a>
+        <div class="flex items-center gap-1">
+          <nav aria-label="Main" class="group/navigation-menu relative max-w-max flex-1 items-center justify-center hidden lg:flex" data-orientation="horizontal" data-slot="navigation-menu" data-viewport="false" dir="ltr">
+            <div style="position: relative;">
+              <ul class="group flex flex-1 list-none items-center justify-center gap-1" data-orientation="horizontal" data-slot="navigation-menu-list" dir="ltr">
+                <li class="relative" data-slot="navigation-menu-item">
+                  <a class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 font-primary hover:text-optimism px-3 py-2 text-sm transition-colors" href="#">Cursos</a>
+                </li>
+                <li class="relative" data-slot="navigation-menu-item">
+                  <a class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 font-primary hover:text-optimism px-3 py-2 text-sm transition-colors" href="#">Leaderful</a>
+                </li>
+                <li class="relative" data-slot="navigation-menu-item">
+                  <a class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 font-primary hover:text-optimism px-3 py-2 text-sm transition-colors" href="#">Negócios</a>
+                </li>
+                <li class="relative" data-slot="navigation-menu-item">
+                  <button id="about-simon-trigger" aria-expanded="false" class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 group font-primary bg-transparent" data-state="closed">Sobre o Simon <i data-lucide="chevron-down" class="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"></i></button>
+                  <div id="about-simon-dropdown" class="absolute left-1/2 z-50 mt-2 w-[320px] -translate-x-1/2 rounded-lg border border-shadow/10 bg-light p-4 shadow-lg transition-all duration-200 opacity-0 invisible scale-95 origin-top transform">
+                    <div class="grid gap-2">
+                      <a href="#" class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent text-shadow no-underline">
+                        <i data-lucide="user" class="size-5 shrink-0 text-shadow/30 mt-0.5"></i>
+                        <div class="flex flex-col">
+                          <span class="font-primary text-sm font-medium">Biografia</span>
+                          <span class="font-body text-xs text-shadow/60 mt-0.5">Saiba mais sobre a jornada e a missão de Simon.</span>
+                        </div>
+                      </a>
+                      <a href="#" class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent text-shadow no-underline">
+                        <i data-lucide="lightbulb" class="size-5 shrink-0 text-shadow/30 mt-0.5"></i>
+                        <div class="flex flex-col">
+                          <span class="font-primary text-sm font-medium">Nosso Porquê</span>
+                          <span class="font-body text-xs text-shadow/60 mt-0.5">Descubra o propósito que move Simon e a The Optimism Company.</span>
+                        </div>
+                      </a>
+                      <a href="#" class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent text-shadow no-underline">
+                        <i data-lucide="quote" class="size-5 shrink-0 text-shadow/30 mt-0.5"></i>
+                        <div class="flex flex-col">
+                          <span class="font-primary text-sm font-medium">Frases</span>
+                          <span class="font-body text-xs text-shadow/60 mt-0.5">Explore as frases mais inspiradoras de Simon sobre liderança e comunicação.</span>
+                        </div>
+                      </a>
+                      <a href="#" class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent text-shadow no-underline">
+                        <i data-lucide="target" class="size-5 shrink-0 text-shadow/30 mt-0.5"></i>
+                        <div class="flex flex-col">
+                          <span class="font-primary text-sm font-medium">O Círculo Dourado</span>
+                          <span class="font-body text-xs text-shadow/60 mt-0.5">Descubra os princípios fundamentais da filosofia de Simon sobre liderança.</span>
+                        </div>
+                      </a>
+                      <a href="#" class="flex items-start gap-3 rounded-md p-2 transition-colors hover:bg-accent text-shadow no-underline">
+                        <i data-lucide="circle-play" class="size-5 shrink-0 text-shadow/30 mt-0.5"></i>
+                        <div class="flex flex-col">
+                          <span class="font-primary text-sm font-medium">Vídeos</span>
+                          <span class="font-body text-xs text-shadow/60 mt-0.5">Assista às palestras e entrevistas de Simon sobre liderança e comunicação.</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative" data-slot="navigation-menu-item">
+                  <a class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 font-primary hover:text-optimism px-3 py-2 text-sm transition-colors" href="#">Blog</a>
+                </li>
+                <li class="relative" data-slot="navigation-menu-item">
+                  <a class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 font-primary hover:text-optimism px-3 py-2 text-sm transition-colors" href="#">Podcast</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <a href="#" class="inline-flex h-9 items-center justify-center rounded-md bg-optimism text-light px-4 py-2 text-sm font-medium hover:bg-optimism/90 transition-colors no-underline font-primary">Entrar</a>
+          <button id="mobile-menu-trigger" aria-expanded="false" aria-label="Open navigation menu" class="lg:hidden flex items-center justify-center size-11 text-shadow bg-transparent border-none" type="button"><i data-lucide="menu" class="size-6"></i></button>
+        </div>
+      </div>
+    </header>
+    <!-- hero -->
+    <section class="bg-shadow py-12 md:py-16">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="flex flex-col gap-10 md:flex-row-reverse md:items-center md:gap-16">
+          <div class="flex w-full items-center justify-center md:w-1/2">
+            <a href="https://leaderful.simonsinek.com">
+              <img alt="Aplicativo Leaderful exibido em uma tela de iMac, mostrando um curso com Simon Sinek" class="w-64 md:w-full" fetchpriority="high" height="1721" src="assets/images/imac-24-iphone-17.webp" width="1920"/>
+            </a>
+          </div>
+          <div class="w-full md:w-1/2">
+            <h1 class="font-primary font-bold text-4xl md:text-5xl text-light mb-6">Seja o líder que você gostaria de ter</h1>
+            <p class="font-body text-light/70 mb-4 text-lg">O Leaderful é um aplicativo desenvolvido do zero para ajudar a formar o tipo de líderes que o mundo mais precisa.</p>
+            <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-optimism text-light hover:bg-optimism/90 h-12 rounded-md px-8 text-base has-[>svg]:px-6" data-size="xl" data-slot="button" data-variant="optimism" href="#">Saiba Mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- our-why -->
+    <section class="py-10 md:py-14">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="md:flex md:items-center md:gap-8">
+          <div class="font-primary text-base leading-[1.3] md:text-xl lg:text-2xl">
+            <span class="text-shadow block">Nosso Porquê:</span>
+            <span class="text-optimism mt-2 block">Inspirar pessoas</span>
+            <div class="ml-8 flex flex-col md:ml-16 md:flex-row">
+              <span class="">a fazer as coisas</span>
+              <span class="hidden md:inline-block">&nbsp;</span>
+              <span class="ml-4 md:ml-0">que as inspiram,</span>
+            </div>
+            <span class="ml-4 block md:ml-10">para que, juntas,</span>
+            <div class="ml-16 flex flex-col md:ml-24 md:flex-row">
+              <span class="">cada uma de nós possa mudar</span>
+              <span class="hidden md:inline-block">&nbsp;</span>
+              <span class="ml-4 md:ml-0">o nosso mundo para melhor.</span>
+            </div>
+          </div>
+          <div class="hidden flex-1 justify-center md:flex">
+            <img alt="Faísca" class="max-h-40 lg:max-h-52" src="assets/images/spark-orange_2.webp"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- three-ways -->
+    <section class="py-16 bg-shadow/5">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="mb-10">
+          <h2 class="font-primary font-bold text-2xl md:text-3xl">Três Maneiras de Dar Vida ao Nosso Propósito</h2>
+          <p class="font-body mt-3 max-w-lg text-shadow/60">Por meio de aprendizado, experiências e treinamento.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <a class="group flex flex-col border-t-4 bg-light p-8 transition-transform hover:-translate-y-0.5 border-t-optimism no-underline text-shadow" href="#">
+            <h3 class="font-primary font-bold text-xl md:text-2xl mb-3">Leaderful</h3>
+            <p class="font-body mb-8 flex-1 text-sm text-shadow/60">Um aplicativo de liderança com lições rápidas de Simon e dos Instrutores Otimistas. Ferramentas práticas para liderar, se comunicar e construir confiança - onde quer que você esteja.</p>
+            <span class="font-primary text-optimism group-hover:text-burnt-orange inline-flex items-center gap-1 text-sm transition-colors">Explorar o Leaderful <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i></span>
+          </a>
+          <a class="group flex flex-col border-t-4 bg-light p-8 transition-transform hover:-translate-y-0.5 border-t-ember no-underline text-shadow" href="#">
+            <h3 class="font-primary font-bold text-xl md:text-2xl mb-3">Experiências ao Vivo</h3>
+            <p class="font-body mb-8 flex-1 text-sm text-shadow/60">Palestras, workshops e aulas particulares que levam Habilidades Humanas para equipes e organizações de todos os tamanhos. Presencial e online.</p>
+            <span class="font-primary text-optimism group-hover:text-burnt-orange inline-flex items-center gap-1 text-sm transition-colors">Explorar Experiências <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i></span>
+          </a>
+          <a class="group flex flex-col border-t-4 bg-light p-8 transition-transform hover:-translate-y-0.5 border-t-sunshine no-underline text-shadow" href="#">
+            <h3 class="font-primary font-bold text-xl md:text-2xl mb-3">Escola do PORQUÊ</h3>
+            <p class="font-body mb-8 flex-1 text-sm text-shadow/60">Um programa de treinamento para mentores que desejam ajudar pessoas e organizações a descobrir seu PORQUÊ. Aprenda a facilitar o processo de Descoberta do PORQUÊ.</p>
+            <span class="font-primary text-optimism group-hover:text-burnt-orange inline-flex items-center gap-1 text-sm transition-colors">Saiba Mais sobre a Escola do PORQUÊ <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- stay-inspired -->
+    <section class="py-16">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="flex flex-col gap-12 md:flex-row md:gap-16">
+          <div class="md:w-1/2">
+            <h2 class="font-primary font-bold text-2xl md:text-3xl mb-3">Mantenha-se Inspirado</h2>
+            <p class="font-body mb-8 text-shadow/60">Receba insights semanais sobre liderança, otimismo e como construir um mundo melhor para todos.</p>
+            <form aria-label="Inscrição de E-mail" class="space-y-4">
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <div class="flex-1">
+                  <label class="sr-only" for="email-input-2">Endereço de e-mail</label>
+                  <input aria-required="true" class="font-body w-full rounded-md border bg-shadow/[0.04] border-shadow/10 text-shadow placeholder:text-shadow/40 transition-colors focus:border-optimism focus:bg-light focus:outline-none focus-visible:outline-none disabled:opacity-60 disabled:cursor-not-allowed h-12 px-4 text-base" id="email-input-2" placeholder="Digite seu e-mail aqui*" required="" type="email" value=""/>
+                </div>
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-12 rounded-md px-8 text-base has-[>svg]:px-6 shrink-0" data-size="xl" data-slot="button" data-variant="default" type="submit">Enviar</button>
+              </div>
+              <fieldset class="space-y-2 border-none p-0">
+                <legend class="sr-only">Preferências de e-mail</legend>
+                <div class="flex items-start gap-2.5">
+                  <input checked="" class="mt-0.5 size-4 shrink-0 accent-optimism" id="offers-checkbox-2" type="checkbox"/>
+                  <label class="font-body text-sm text-shadow" for="offers-checkbox-2">Receba ofertas exclusivas, conteúdo inspirador e muito mais. (Sem spam, apenas otimismo!)</label>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <input checked="" class="mt-0.5 size-4 shrink-0 accent-optimism" id="inspiration-checkbox-2" type="checkbox"/>
+                  <label class="font-body text-sm text-shadow" for="inspiration-checkbox-2">Receba uma dose de inspiração em sua caixa de entrada todas as manhãs de dias úteis.</label>
+                </div>
+              </fieldset>
+              <p class="font-body text-xs text-shadow/60">Ao inserir seu e-mail, você concorda em receber ofertas exclusivas, promoções e um conteúdo altamente inspirador. Você também concorda com nossos <a class="underline" href="#">Termos de Serviço</a> e <a class="underline" href="#">Política de Privacidade</a>. Sem pressão — você pode cancelar a inscrição a qualquer momento!</p>
+            </form>
+          </div>
+          <div class="flex flex-col justify-center md:w-1/2">
+            <blockquote class="font-primary text-xl leading-[1.3] md:text-2xl lg:text-3xl">“Trabalhar duro por algo de que não gostamos se chama estresse. Trabalhar duro por algo que amamos se chama paixão.”</blockquote>
+            <p aria-hidden="true" class="font-primary mt-6 text-sm text-shadow/40">- - - - - - - -</p>
+            <p class="font-body mt-2 text-sm text-shadow/50">Simon Sinek</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- podcast -->
+    <section class="py-16 bg-shadow/5">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="mb-8 flex items-end justify-between">
+          <div>
+            <span class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-shadow/50 mb-2 block">O Podcast Semanal do Simon</span>
+            <h2 class="font-primary font-bold text-2xl md:text-3xl">Um Pouco de Otimismo</h2>
+          </div>
+          <a class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[>svg]:px-4 hidden md:inline-flex no-underline" data-size="lg" data-slot="button" data-variant="default" href="#">Ver Todos os Episódios</a>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <a class="border-shadow/10 hover:border-optimism group flex gap-4 border p-4 transition-colors no-underline text-shadow" href="#">
+            <img alt="Como Deixar de Ser Socialmente Estranho (Segundo a Ciência) com a Cientista Comportamental Vanessa Van Edwards" class="h-24 w-24 shrink-0 object-cover md:h-28 md:w-28" loading="lazy" src="assets/images/img_003.jpg"/>
+            <div class="flex min-w-0 flex-1 flex-col">
+              <p class="font-body text-shadow mb-2 text-sm font-semibold leading-snug md:text-base">Como Deixar de Ser Socialmente Estranho (Segundo a Ciência) com a Cientista Comportamental Vanessa Van Edwards</p>
+              <div class="mt-auto flex items-center gap-1 pt-2">
+                <span class="font-primary text-optimism group-hover:text-burnt-orange text-xs transition-colors">Ouvir</span>
+                <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i>
+              </div>
+            </div>
+          </a>
+          <a class="border-shadow/10 hover:border-optimism group flex gap-4 border p-4 transition-colors no-underline text-shadow" href="#">
+            <img alt="Pare de Dizer que Tudo Acontece por uma Razão com Tom Nash" class="h-24 w-24 shrink-0 object-cover md:h-28 md:w-28" loading="lazy" src="assets/images/Tom_Nash-headshot.jpg"/>
+            <div class="flex min-w-0 flex-1 flex-col">
+              <p class="font-body text-shadow mb-2 text-sm font-semibold leading-snug md:text-base">Pare de Dizer que Tudo Acontece por uma Razão com Tom Nash</p>
+              <div class="mt-auto flex items-center gap-1 pt-2">
+                <span class="font-primary text-optimism group-hover:text-burnt-orange text-xs transition-colors">Ouvir</span>
+                <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i>
+              </div>
+            </div>
+          </a>
+          <a class="border-shadow/10 hover:border-optimism group flex gap-4 border p-4 transition-colors no-underline text-shadow" href="#">
+            <img alt="A Real Razão pela qual Você se Sente Vazio (Mesmo quando a Vida Parece Ótima) com o Músico Mike Posner" class="h-24 w-24 shrink-0 object-cover md:h-28 md:w-28" loading="lazy" src="assets/images/Mike_Posner-headshot.jpg"/>
+            <div class="flex min-w-0 flex-1 flex-col">
+              <p class="font-body text-shadow mb-2 text-sm font-semibold leading-snug md:text-base">A Real Razão pela qual Você se Sente Vazio (Mesmo quando a Vida Parece Ótima) com o Músico Mike Posner</p>
+              <div class="mt-auto flex items-center gap-1 pt-2">
+                <span class="font-primary text-optimism group-hover:text-burnt-orange text-xs transition-colors">Ouvir</span>
+                <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i>
+              </div>
+            </div>
+          </a>
+          <a class="border-shadow/10 hover:border-optimism group flex gap-4 border p-4 transition-colors no-underline text-shadow" href="#">
+            <img alt="Por que os Jovens Não Têm 'Fome' de Trabalho (E o que os Líderes Precisam Ouvir) com a Especialista em Gerações Dra. Eliza Filby" class="h-24 w-24 shrink-0 object-cover md:h-28 md:w-28" loading="lazy" src="assets/images/Dr_Eliza_Filby-headshot.jpg"/>
+            <div class="flex min-w-0 flex-1 flex-col">
+              <p class="font-body text-shadow mb-2 text-sm font-semibold leading-snug md:text-base">Por que os Jovens Não Têm 'Fome' de Trabalho (E o que os Líderes Precisam Ouvir) com a Especialista em Gerações Dra. Eliza Filby</p>
+              <div class="mt-auto flex items-center gap-1 pt-2">
+                <span class="font-primary text-optimism group-hover:text-burnt-orange text-xs transition-colors">Ouvir</span>
+                <i data-lucide="arrow-right" class="text-optimism group-hover:text-burnt-orange transition-colors"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="mt-8 text-center md:hidden">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[>svg]:px-4" data-size="lg" data-slot="button" data-variant="default" href="#">Ver Todos os Episódios</a>
+        </div>
+      </div>
+    </section>
+    <!-- blog -->
+    <section class="py-16">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="mb-8 flex items-end justify-between">
+          <h2 class="font-primary font-bold text-2xl md:text-3xl">Nosso Blog</h2>
+          <a class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[>svg]:px-4 hidden md:inline-flex" data-size="lg" data-slot="button" data-variant="default" href="#">Ler Todas as Histórias</a>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          <a class="group focus-visible:outline-optimism focus-visible:outline focus-visible:outline-2 border-shadow/10 border-b pb-8 md:border-b-0 md:pb-0 no-underline text-shadow" href="#">
+            <img alt="Blocos de madeira em forma de degraus gráficos e estrelas de madeira representando o processo de crescimento empresarial, startup, gestão de metas de negócios e plano financeiro sustentável. Conceitos de plano de ação, lucro e melhoria econômica." class="aspect-[4/3] w-full object-cover" loading="lazy" src="assets/images/img_005.jpg"/>
+            <p class="font-body text-shadow/70 mt-4 text-xs">7 de maio de 2026</p>
+            <h3 class="font-body text-shadow group-hover:text-optimism mt-1.5 line-clamp-2 text-base leading-snug font-bold transition-colors">As Três Palavras que Fazem o Reconhecimento Realmente Funcionar</h3>
+            <p class="font-body text-shadow/70 mt-2 line-clamp-2 text-sm leading-relaxed">Elogios vagos não ensinam nada a ninguém. E ainda nos perguntamos por que o reconhecimento nunca parece surtir o efeito esperado.</p>
+          </a>
+          <a class="group focus-visible:outline-optimism focus-visible:outline focus-visible:outline-2 border-shadow/10 border-b pb-8 md:border-b-0 md:pb-0 no-underline text-shadow" href="#">
+            <img alt="Como Acabar com uma Discussão que Não Tem Fim" class="aspect-[4/3] w-full object-cover" loading="lazy" src="assets/images/img_006.jpg"/>
+            <p class="font-body text-shadow/70 mt-4 text-xs">6 de maio de 2026</p>
+            <h3 class="font-body text-shadow group-hover:text-optimism mt-1.5 line-clamp-2 text-base leading-snug font-bold transition-colors">Como Acabar com uma Discussão que Não Tem Fim</h3>
+            <p class="font-body text-shadow/70 mt-2 line-clamp-2 text-sm leading-relaxed">A maioria dos debates que andam em círculos não é sobre as opções em si. É sobre a ausência de um critério compartilhado.</p>
+          </a>
+          <a class="group focus-visible:outline-optimism focus-visible:outline focus-visible:outline-2 no-underline text-shadow" href="#">
+            <img alt="Boneco de madeira com ícone de cérebro. Profissional, estudante ou líder aprimorando habilidades. Ideia de aprendizado e sucesso na educação corporativa. Conceito de visão de liderança." class="aspect-[4/3] w-full object-cover" loading="lazy" src="assets/images/img_004.jpg"/>
+            <p class="font-body text-shadow/70 mt-4 text-xs">6 de maio de 2026</p>
+            <h3 class="font-body text-shadow group-hover:text-optimism mt-1.5 line-clamp-2 text-base leading-snug font-bold transition-colors">A Coisa Mais Difícil que um Líder Pode Fazer é Nada</h3>
+            <p class="font-body text-shadow/70 mt-2 line-clamp-2 text-sm leading-relaxed">Quanto mais autoridade carregamos, mais pesado é o impacto de nossas palavras. E, às vezes, a coisa mais generosa que podemos oferecer é deixar esse peso de lado e apenas estar presentes.</p>
+          </a>
+        </div>
+        <div class="mt-8 text-center md:hidden">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[>svg]:px-4" data-size="lg" data-slot="button" data-variant="default" href="#">Ler Todas as Histórias</a>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-shadow pt-16 pb-8">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div class="flex flex-col gap-12 md:flex-row md:gap-8">
+          <div class="md:w-1/3">
+            <a aria-label="Simon Sinek's Optimism Company" class="flex items-center gap-2.5 font-primary no-underline text-light [&_span]:text-light [&_.text-optimism]:text-optimism" href="#">
+              <img alt="" aria-hidden="true" class="size-9" height="36" src="assets/images/spark-sm_2.webp" width="36"/>
+              <div class="flex flex-col leading-[1.2]">
+                <span class="text-sm">Empresa de Otimismo</span>
+                <span class="text-sm text-optimism">do Simon Sinek</span>
+              </div>
+            </a>
+            <p class="font-body text-light/50 mt-4 max-w-xs text-sm">Inspirando pessoas a fazer as coisas que as inspiram para que, juntas, possamos mudar o nosso mundo para melhor.</p>
+          </div>
+          <nav class="grid flex-1 grid-cols-2 gap-8 md:grid-cols-3">
+            <div>
+              <p class="font-primary text-light/70 mb-4 text-sm">Explorar</p>
+              <ul class="space-y-3 p-0 list-none">
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Aplicativo Leaderful</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">A Arte de Apresentar</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Escola do PORQUÊ</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Podcast</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Histórias</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-primary text-light/70 mb-4 text-sm">Para Empresas</p>
+              <ul class="space-y-3 p-0 list-none">
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Palestras</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Workshops</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Aulas Particulares</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Pacotes</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Contato Comercial</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="font-primary text-light/70 mb-4 text-sm">Empresa</p>
+              <ul class="space-y-3 p-0 list-none">
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Sobre Simon</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Nosso PORQUÊ</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Equipe</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Perguntas Frequentes</a></li>
+                <li><a class="font-body text-light/50 hover:text-optimism text-sm transition-colors no-underline" href="#">Contato</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="mt-12 flex gap-5">
+          <a aria-label="LinkedIn" class="text-light/40 hover:text-optimism transition-colors" href="https://www.linkedin.com/in/simonsinek/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect height="12" width="4" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a aria-label="YouTube" class="text-light/40 hover:text-optimism transition-colors" href="https://www.youtube.com/simonsinek" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+          <a aria-label="Instagram" class="text-light/40 hover:text-optimism transition-colors" href="https://www.instagram.com/simonsinek/" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+          <a aria-label="X" class="text-light/40 hover:text-optimism transition-colors" href="https://x.com/simonsinek" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M4 4l11.733 16h4.267l-11.733-16z"></path><path d="M4 20l6.768-6.768M20 4l-6.768 6.768"></path></svg></a>
+          <a aria-label="TikTok" class="text-light/40 hover:text-optimism transition-colors" href="https://www.tiktok.com/@simonsinek" rel="noopener noreferrer" target="_blank"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg></a>
+        </div>
+        <div class="border-light/10 mt-8 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between">
+          <p class="font-body text-light/30 text-xs">© 2026 The Optimism Company. Todos os direitos reservados.</p>
+          <div class="flex gap-6">
+            <a class="font-body text-light/30 hover:text-light/60 text-xs transition-colors no-underline" href="#">Política de Privacidade</a>
+            <a class="font-body text-light/30 hover:text-light/60 text-xs transition-colors no-underline" href="#">Termos de Serviço</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- mobile-menu-overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm opacity-0 invisible transition-all duration-300">
+    <div class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-light p-6 shadow-lg transition-transform duration-300 translate-x-full flex flex-col justify-between">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between border-b pb-4">
+          <a aria-label="Simon Sinek's Optimism Company" class="flex items-center gap-2 font-primary text-shadow no-underline" href="#">
+            <img alt="" aria-hidden="true" class="size-8" height="32" src="assets/images/spark-sm_2.webp" width="32"/>
+            <span class="text-sm font-semibold text-shadow">Optimism Company</span>
+          </a>
+          <button id="mobile-menu-close" aria-label="Close navigation menu" class="flex items-center justify-center size-9 text-shadow bg-transparent border-none"><i data-lucide="x" class="size-6"></i></button>
+        </div>
+        <nav class="flex flex-col gap-4">
+          <a href="#" class="font-primary text-base hover:text-optimism py-2 no-underline text-shadow">Cursos</a>
+          <a href="#" class="font-primary text-base hover:text-optimism py-2 no-underline text-shadow">Leaderful</a>
+          <a href="#" class="font-primary text-base hover:text-optimism py-2 no-underline text-shadow">Negócios</a>
+          <div class="flex flex-col gap-2">
+            <button id="mobile-about-simon-trigger" class="flex items-center justify-between font-primary text-base hover:text-optimism py-2 text-shadow bg-transparent border-none text-left w-full">Sobre o Simon <i data-lucide="chevron-down" class="size-4 transition-transform duration-200"></i></button>
+            <div id="mobile-about-simon-submenu" class="hidden flex-col gap-3 pl-4 border-l border-shadow/10 mt-1">
+              <a href="#" class="font-primary text-sm hover:text-optimism py-1 no-underline text-shadow">Biografia</a>
+              <a href="#" class="font-primary text-sm hover:text-optimism py-1 no-underline text-shadow">Nosso Porquê</a>
+              <a href="#" class="font-primary text-sm hover:text-optimism py-1 no-underline text-shadow">Frases</a>
+              <a href="#" class="font-primary text-sm hover:text-optimism py-1 no-underline text-shadow">O Círculo Dourado</a>
+              <a href="#" class="font-primary text-sm hover:text-optimism py-1 no-underline text-shadow">Vídeos</a>
+            </div>
+          </div>
+          <a href="#" class="font-primary text-base hover:text-optimism py-2 no-underline text-shadow">Blog</a>
+          <a href="#" class="font-primary text-base hover:text-optimism py-2 no-underline text-shadow">Podcast</a>
+        </nav>
+      </div>
+      <div class="pt-4 border-t">
+        <a href="#" class="flex h-10 w-full items-center justify-center rounded-md bg-optimism text-light font-primary text-sm font-medium no-underline hover:bg-optimism/90">Entrar</a>
+      </div>
+    </div>
+  </div>
+  <!-- js -->
+  <!-- Biblioteca de ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lógica de interações da página e inicialização de ícones -->
+  <script src="assets/js/interactions.js"></script>
+</body>
+</html>

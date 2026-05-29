@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="text-[#f0f0f0] antialiased selection:bg-[#C2A878] selection:text-[#0f0f10]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARES Protocol - Design System Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <style>
+/* CSS EXTRAÍDO DA APLICAÇÃO ORIGINAL */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Syne:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C2A878; border-radius: 2px; }
+html, body { background-color: #0f0f10; }
+body { font-family: 'Syne', sans-serif; }
+.font-display { font-family: 'Abril Fatface', serif; }
+.font-mono { font-family: 'Space Mono', monospace; }
+.grain::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E"); }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.checkbox-custom input:checked + div { background-color: #C2A878; border-color: #C2A878; }
+.checkbox-custom input:checked + div iconify-icon { opacity: 1; }
+.hover-lift { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s; }
+.hover-lift:hover { transform: translateY(-4px); border-color: rgba(194,168,120,0.3); }
+.shimmer { background: linear-gradient(90deg, transparent, rgba(194,168,120,0.1), transparent); background-size: 200% 100%; animation: shimmer 3s linear infinite; }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.marquee-track { animation: marquee 40s linear infinite; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.aura-word{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(20px);will-change:opacity,filter,transform;}
+.aura-fade-el{opacity:0;filter:blur(10px);transform:translateY(24px);will-change:opacity,filter,transform;}
+input[type=range].ares-slider { -webkit-appearance:none; background:transparent; }
+input[type=range].ares-slider::-webkit-slider-thumb { -webkit-appearance:none; height:12px; width:12px; border-radius:50%; background:#C2A878; cursor:pointer; margin-top:-5px; box-shadow:0 0 0 2px #0f0f10, 0 0 12px rgba(194,168,120,0.6); }
+input[type=range].ares-slider::-webkit-slider-runnable-track { height:2px; background:rgba(255,255,255,0.1); border-radius:1px; }
+input[type=range].ares-slider:focus { outline:none; }
+
+/* ESTILOS CUSTOMIZADOS DO DESIGN SYSTEM (DOCUMENTATION) */
+.ds-wrapper { position: relative; z-index: 100; padding: 40px 0; background: #0f0f10; }
+.ds-container { max-width: 1400px; margin: 0 auto; padding: 80px 20px; }
+.ds-section { margin-bottom: 120px; }
+.ds-header { margin-bottom: 50px; border-bottom: 2px solid #C2A878; padding-bottom: 16px; display:flex; align-items:flex-end; gap:20px; }
+.ds-title { font-family: 'Abril Fatface', serif; font-size: 4rem; color: #fff; line-height:1; }
+.ds-title-sub { font-family: 'Space Mono', monospace; color: #C2A878; letter-spacing: 0.3em; text-transform: uppercase; font-size: 1rem; margin-bottom:8px; }
+.ds-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+
+/* Type System Docs */
+.ds-type-table { width: 100%; border-collapse: collapse; background: #1a1a1c; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+.ds-type-table th { background: rgba(0,0,0,0.4); color: #C2A878; font-weight: 500; padding: 20px; text-align: left; font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em; }
+.ds-type-table td { padding: 30px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.ds-type-table tr:last-child td { border-bottom: none; }
+
+/* Colors */
+.ds-color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 30px; }
+.ds-color-card { display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; background: #1a1a1c; border: 1px solid rgba(255,255,255,0.05); }
+.ds-color-swatch { height: 120px; width: 100%; }
+.ds-color-info { padding: 20px; }
+.ds-color-name { font-weight: 600; font-size: 1.1rem; color: #fff; margin-bottom: 8px; font-family:'Syne', sans-serif;}
+.ds-color-hex { font-family: 'Space Mono', monospace; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    </style>
+</head>
+<body class="text-[#f0f0f0] antialiased selection:bg-[#C2A878] selection:text-[#0f0f10] grain">
+
+<!-- GLOBAL NAV (GLASSMORPHISM) -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-5 flex justify-between items-center backdrop-blur-md bg-[#0f0f10]/60 border-b border-white/5">
+    <div class="flex items-center gap-3">
+        <div class="w-2 h-2 rounded-full bg-[#C2A878] shadow-[0_0_10px_#C2A878] animate-pulse"></div>
+        <span class="font-semibold text-xs tracking-[0.3em] uppercase">ARES</span>
+    </div>
+    <div class="hidden md:flex gap-10 text-xs uppercase tracking-[0.25em] text-white/50 font-medium">
+        <a href="#" class="hover:text-white transition-colors">Missão</a>
+        <a href="#journey" class="hover:text-white transition-colors">Jornada</a>
+        <a href="#" class="hover:text-white transition-colors">Origem</a>
+        <a href="#" class="hover:text-white transition-colors">Equipe</a>
+    </div>
+    <button class="px-5 py-2.5 rounded-full bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.25em] hover:bg-[#d8c8b8] transition-colors">
+        Reservar Assento
+    </button>
+</nav>
+
+<!-- HERÓI ORIGINAL - IMPORTADO COM 100% FIDELIDADE FUNCIONAL -->
+
+
+<section class="relative h-screen w-full flex flex-col lg:flex-row overflow-hidden">
+    <!-- 3D Canvas -->
+    <div id="canvas-container" class="relative w-full h-[55vh] lg:h-screen lg:flex-1 order-1 overflow-hidden">
+    <video src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/generated-videos/9109ecbb-cdc4-4815-981e-2ea83be13765/1779103093167-2fab1ce2-440f-451f-8a34-8d953500119f.mp4" poster="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0421a7d1-35d9-4506-ac90-8934f53c608b_1600w.png" data-aura-generated-video="true" data-aura-video-preset="loop-in-view" muted="" playsinline="" preload="metadata" loop="" aria-label="Superfície de Marte" class="absolute inset-0 w-full h-full object-cover"></video>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f0f10]/40 via-transparent to-[#0f0f10]/30"></div>
+    <div class="absolute top-24 left-8 lg:left-12 z-10 flex items-center gap-3">
+        <iconify-icon icon="solar:monitor-camera-linear" stroke-width="1.5" class="text-xl text-[#C2A878]"></iconify-icon>
+        <div class="flex flex-col">
+        <span class="font-mono text-[10px] tracking-[0.3em] uppercase text-white/40">Transmissão Visual</span>
+        <span class="font-mono text-[10px] tracking-[0.3em] uppercase">Orbitador-09 // Ao vivo</span>
+        </div>
+    </div>
+    <div class="absolute bottom-8 left-8 lg:left-12 z-10 font-mono text-[10px] tracking-[0.3em] uppercase text-white/60 space-y-1">
+        <div>LAT 14.5684° S</div>
+        <div>LON 175.4726° E</div>
+        <div>ALT 12,400 KM</div>
+    </div>
+    <div class="absolute bottom-8 right-8 lg:right-12 z-10 font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878]">
+        [ TRANSMISSÃO ABERTA ]
+    </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="w-full lg:w-[480px] lg:h-screen bg-[#0f0f10] lg:border-l border-white/5 flex flex-col z-20 order-2 relative pt-20 lg:pt-24">
+    <div class="px-8 pb-6 flex flex-col gap-6 border-b border-white/5">
+        <div class="flex justify-between items-start">
+        <div class="inline-flex items-center gap-3 bg-[#1a1a1c] px-4 py-2 rounded-full border border-white/5">
+            <div class="w-1.5 h-1.5 rounded-full bg-[#C2A878] shadow-[0_0_10px_#C2A878] animate-pulse"></div>
+            <span class="font-semibold text-[10px] tracking-[0.3em] uppercase text-white/90">Missão 2034 // T-12A</span>
+        </div>
+        </div>
+    </div>
+
+    <div class="flex-1 overflow-y-auto px-8 py-8 space-y-8">
+        <div class="space-y-5" data-hero-stagger="">
+        <span class="font-mono text-[10px] tracking-[0.4em] uppercase text-[#C2A878]">Uma Nova Terra Aguarda</span>
+        <h1 class="font-display text-7xl lg:text-8xl leading-[0.9] tracking-tight" data-aura-split="1">
+            MARTE
+            <br>
+            <span class="text-[#C2A878]">Chama.</span>
+        </h1>
+        <p class="text-sm text-white/60 leading-relaxed max-w-sm aura-fade-el" data-aura-fade="1">
+            O Protocolo ARES abre um corredor permanente entre a Terra e o
+            planeta vermelho. Projetado para a primeira geração de cidadãos
+            interplanetários.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2">
+            <button class="px-6 py-4 bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-[#d8c8b8] transition-transform hover:scale-[1.02] aura-fade-el" data-aura-fade="1">
+            Iniciar Manifesto
+            </button>
+            <button class="px-6 py-4 border border-white/10 text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-white/5 transition-colors flex items-center gap-2 aura-fade-el" data-aura-fade="1">
+            <iconify-icon icon="solar:play-linear" stroke-width="1.5"></iconify-icon>
+            Ver Resumo
+            </button>
+        </div>
+        </div>
+
+        <div class="bg-[#151516] p-6 rounded-[24px] border border-white/5 space-y-5" data-hero-stagger="">
+        <div class="flex items-center gap-3">
+            <iconify-icon icon="solar:tuning-linear" stroke-width="1.5" class="text-[#888] text-lg"></iconify-icon>
+            <span class="text-[10px] text-[#888] font-mono uppercase tracking-[0.3em]">Simulador Atmosférico</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex justify-between text-[10px] uppercase tracking-[0.25em] text-white/60">
+            <span>Rotação</span>
+            <span id="val-rot" class="font-mono text-[#C2A878]">0.4x</span>
+            </div>
+            <input type="range" min="0" max="100" value="20" class="w-full ares-slider" id="slider-rot">
+        </div>
+        <div class="space-y-2">
+            <div class="flex justify-between text-[10px] uppercase tracking-[0.25em] text-white/60">
+            <span>Densidade Poeira</span>
+            <span id="val-dust" class="font-mono text-[#C2A878]">ALTA</span>
+            </div>
+            <input type="range" min="0" max="100" value="80" class="w-full ares-slider" id="slider-dust">
+        </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3" data-hero-stagger="">
+        <div class="bg-[#151516] p-5 rounded-2xl border border-white/5">
+            <div class="text-[10px] text-[#888] font-mono uppercase tracking-[0.25em] mb-2">Gravidade</div>
+            <div class="font-mono text-sm">3.721 m/s²</div>
+        </div>
+        <div class="bg-[#151516] p-5 rounded-2xl border border-white/5">
+            <div class="text-[10px] text-[#888] font-mono uppercase tracking-[0.25em] mb-2">Temp. Média</div>
+            <div class="font-mono text-sm">-63°C</div>
+        </div>
+        </div>
+    </div>
+    </aside>
+</section>
+
+<div class="ds-wrapper">
+    <div class="ds-container">
+        <!-- Typography -->
+        <div class="ds-header">
+            <div>
+                <div class="ds-title-sub">DS / 02</div>
+                <h2 class="ds-title">Typography System</h2>
+            </div>
+        </div>
+        
+        <table class="ds-type-table mb-16">
+            <thead>
+                <tr>
+                    <th>Example</th>
+                    <th>Font Family</th>
+                    <th>Use Case</th>
+                    <th>Classes Tailwind</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div style="font-family: 'Abril Fatface', serif; font-size: 3rem; color: #C2A878;">Abril Fatface</div></td>
+                    <td>Abril Fatface, Serif</td>
+                    <td>Headings, Titles, Hero Text</td>
+                    <td><code class="text-[#C2A878] font-mono">font-display</code></td>
+                </tr>
+                <tr>
+                    <td><div style="font-family: 'Syne', sans-serif; font-size: 2rem;">Syne</div></td>
+                    <td>Syne, Sans-Serif</td>
+                    <td>Body, Paragraphs, Buttons</td>
+                    <td><code class="text-[#C2A878] font-mono">font-sans</code> (Default)</td>
+                </tr>
+                <tr>
+                    <td><div style="font-family: 'Space Mono', monospace; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.3em;">Space Mono</div></td>
+                    <td>Space Mono, Monospace</td>
+                    <td>Labels, Data, Overlays, Captions</td>
+                    <td><code class="text-[#C2A878] font-mono">font-mono</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Color Palette -->
+        <div class="ds-header mt-24">
+            <div>
+                <div class="ds-title-sub">DS / 03</div>
+                <h2 class="ds-title">Color Palette</h2>
+            </div>
+        </div>
+        
+        <div class="ds-color-grid mb-16">
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-[#C2A878]"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Ares Gold</div>
+                    <div class="ds-color-hex">#C2A878</div>
+                </div>
+            </div>
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-[#0f0f10]"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Deep Space</div>
+                    <div class="ds-color-hex">#0f0f10</div>
+                </div>
+            </div>
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-[#1a1a1c]"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Card Surface</div>
+                    <div class="ds-color-hex">#1a1a1c</div>
+                </div>
+            </div>
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-[#151516]"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Panel Dark</div>
+                    <div class="ds-color-hex">#151516</div>
+                </div>
+            </div>
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-white"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Starlight</div>
+                    <div class="ds-color-hex">#ffffff</div>
+                </div>
+            </div>
+            <div class="ds-color-card">
+                <div class="ds-color-swatch bg-[#a0875d]"></div>
+                <div class="ds-color-info">
+                    <div class="ds-color-name">Gold Gradient End</div>
+                    <div class="ds-color-hex">#a0875d</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Components -->
+        <div class="ds-header mt-24">
+            <div>
+                <div class="ds-title-sub">DS / 04</div>
+                <h2 class="ds-title">Components</h2>
+            </div>
+        </div>
+        
+        <div class="space-y-16">
+            <!-- Nav / Menu Demo -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Top Navigation / App Bar</h3>
+                <nav class="relative px-6 py-5 flex justify-between items-center backdrop-blur-md bg-[#0f0f10]/60 border-b border-white/5 w-full rounded-[24px] overflow-hidden">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-[#C2A878] shadow-[0_0_10px_#C2A878] animate-pulse"></div>
+                        <span class="font-semibold text-xs tracking-[0.3em] uppercase">ARES</span>
+                    </div>
+                    <div class="hidden md:flex gap-10 text-xs uppercase tracking-[0.25em] text-white/50 font-medium">
+                        <a href="#" class="hover:text-white transition-colors">Missão</a>
+                        <a href="#" class="hover:text-white transition-colors">Jornada</a>
+                        <a href="#" class="hover:text-white transition-colors">Origem</a>
+                        <a href="#" class="hover:text-white transition-colors">Equipe</a>
+                    </div>
+                    <button class="px-5 py-2.5 rounded-full bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.25em] hover:bg-[#d8c8b8] transition-colors">
+                        Reservar Assento
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Buttons -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Buttons & Actions</h3>
+                <div class="flex flex-wrap gap-6 items-center p-8 bg-[#1a1a1c] border border-white/5 rounded-[24px]">
+                    <button class="px-6 py-4 bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-[#d8c8b8] transition-transform hover:scale-[1.02]">
+                        Ação Primária
+                    </button>
+                    <button class="px-6 py-4 border border-white/10 text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-white/5 transition-colors flex items-center gap-2">
+                        <iconify-icon icon="solar:play-linear" stroke-width="1.5"></iconify-icon>
+                        Ação Secundária com Ícone
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive States -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Estados Interativos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+                    <!-- Hover Lift -->
+                    <div class="bg-[#1a1a1c] p-8 rounded-[24px] border border-white/5 hover-lift flex flex-col items-center justify-center min-h-[200px] text-center cursor-pointer group">
+                        <iconify-icon class="text-[#C2A878] text-3xl mb-4 group-hover:-translate-y-1 transition-transform" icon="solar:mouse-circle-linear" stroke-width="1.5"></iconify-icon>
+                        <div class="font-mono text-xs uppercase tracking-[0.2em] text-white/80 mb-2">.hover-lift</div>
+                        <div class="text-[10px] text-white/40">translateY(-4px)<br>border: rgba(194,168,120,0.3)</div>
+                    </div>
+                    
+                    <!-- Hover Scale -->
+                    <div class="bg-[#1a1a1c] p-8 rounded-[24px] border border-white/5 flex flex-col items-center justify-center min-h-[200px] text-center">
+                        <button class="px-6 py-4 bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-[#d8c8b8] transition-transform hover:scale-[1.02] mb-4 w-full max-w-[200px]">
+                            Hover Me
+                        </button>
+                        <div class="font-mono text-xs uppercase tracking-[0.2em] text-white/80 mb-2">.hover:scale-[1.02]</div>
+                        <div class="text-[10px] text-white/40">Scale (1.02x)<br>Botão Primário</div>
+                    </div>
+
+                    <!-- Hover Ghost -->
+                    <div class="bg-[#1a1a1c] p-8 rounded-[24px] border border-white/5 flex flex-col items-center justify-center min-h-[200px] text-center">
+                        <button class="px-6 py-4 border border-white/10 text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-white/5 transition-colors flex items-center justify-center gap-2 mb-4 w-full max-w-[200px]">
+                            Hover Me
+                        </button>
+                        <div class="font-mono text-xs uppercase tracking-[0.2em] text-white/80 mb-2">.hover:bg-white/5</div>
+                        <div class="text-[10px] text-white/40">Fundo Sutil (White/5%)<br>Botão Secundário</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Feature Cards</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Feature card 1 -->
+                    <div class="bg-[#1a1a1c] p-8 rounded-[24px] border border-white/5 hover-lift flex flex-col gap-6 min-h-[320px]">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] text-[#888] font-mono uppercase tracking-[0.3em]">01 / Propulsão</span>
+                            <iconify-icon class="text-[#C2A878] text-2xl" icon="solar:rocket-linear" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="font-display text-3xl leading-tight mt-auto">Motor Híbrido<br>Íon-Fusão</h3>
+                        <p class="text-sm text-white/50 leading-relaxed">Reduz o tempo de trânsito para 90 dias através da aceleração contínua de empuxo.</p>
+                    </div>
+
+                    <!-- Highlight Feature card -->
+                    <div class="bg-gradient-to-br from-[#C2A878] to-[#a0875d] text-[#0f0f10] p-8 rounded-[24px] hover-lift flex flex-col gap-6 min-h-[320px]">
+                        <div class="flex justify-between items-start">
+                            <span class="text-[10px] font-mono uppercase tracking-[0.3em] opacity-70">05 / Navegação</span>
+                            <iconify-icon class="text-2xl" icon="solar:compass-linear" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="font-display text-3xl leading-tight mt-auto">IA de Trajetória<br>Autônoma</h3>
+                        <p class="text-sm opacity-70 leading-relaxed">Ajustes orbitais em tempo real calculados 10.000× por segundo em 1.400 variáveis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Testimonial Cards</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="bg-[#1a1a1c] p-8 rounded-[24px] border border-white/5 flex flex-col gap-8 min-h-[340px]">
+                        <iconify-icon class="text-[#C2A878] text-3xl" icon="solar:quote-up-linear" stroke-width="1.5"></iconify-icon>
+                        <p class="text-base leading-relaxed text-white/80">"O Protocolo ARES não é uma missão. É uma revolução silenciosa naquilo que os humanos se permitem tentar."</p>
+                        <div class="mt-auto flex items-center gap-3 pt-6 border-t border-white/5">
+                            <div class="w-10 h-10 rounded-full overflow-hidden">
+                                <img alt="Dra. Lena Vasquez" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&amp;q=80" />
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Dra. Lena Vasquez</div>
+                                <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Astrofísica, MIT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Infinite Marquee</h3>
+                <section class="border-y border-white/5 py-6 overflow-hidden bg-[#0f0f10] relative">
+                    <div class="flex marquee-track whitespace-nowrap font-display text-3xl lg:text-5xl">
+                        <span class="px-8 text-white/90">Ad Astra</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/40">Per Aspera</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/90">A Fronteira Vermelha</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/40\">Além da Terra</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/90">Ad Astra</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/40">Per Aspera</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/90">A Fronteira Vermelha</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                        <span class="px-8 text-white/40\">Além da Terra</span>
+                        <span class="px-8 text-[#C2A878]">✦</span>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Crew Cards -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Crew / Architect Cards</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+                    <div class="bg-[#1a1a1c] rounded-[24px] border border-white/5 overflow-hidden hover-lift">
+                        <div class="aspect-[4/5] relative overflow-hidden">
+                            <img alt="Eira Solberg" class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f2989d46-5bb5-49c0-95f6-502d081b0851_3840w.png" />
+                            <div class="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/80">01</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm font-semibold mb-1">Eira Solberg</div>
+                            <div class="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">Arquiteta Chefe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">CTA Section</h3>
+                <div class="mt-8 bg-[#1a1a1c] rounded-[32px] border border-white/5 p-10 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C2A878]/10 blur-3xl"></div>
+                    <div class="relative max-w-2xl">
+                        <div class="font-mono text-[10px] tracking-[0.4em] uppercase text-[#C2A878] mb-4">Manifesto encerra T3 2025</div>
+                        <h3 class="font-display text-4xl lg:text-6xl leading-[0.95] tracking-tight" data-aura-split="1">
+                            <span class="aura-word">Seu</span> <span class="aura-word">assento</span> <span class="aura-word">não</span>
+                            <br>
+                            <span class="aura-word">vai</span> <span class="aura-word">esperar</span> <span class="aura-word">para sempre.</span>
+                        </h3>
+                    </div>
+                    <div class="relative flex flex-col sm:flex-row gap-3">
+                        <button class="px-8 py-5 bg-[#C2A878] text-[#0f0f10] text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-[#d8c8b8] transition-transform hover:scale-[1.02] whitespace-nowrap aura-fade-el" data-aura-fade="1">Reservar Agora</button>
+                        <button class="px-8 py-5 border border-white/10 text-[10px] font-semibold uppercase tracking-[0.3em] rounded-2xl hover:bg-white/5 transition-colors whitespace-nowrap aura-fade-el" data-aura-fade="1">Agendar Briefing</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- JOURNEY (Sticky scroll storytelling) -->
+<div class="ds-wrapper" style="padding-top: 0; padding-bottom: 0;">
+    <div class="ds-container">
+        <div class="ds-header mt-10">
+            <div>
+                <div class="ds-title-sub">DS / 05</div>
+                <h2 class="ds-title">Motion</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="journey" class="relative">
+    <div class="relative lg:flex lg:gap-16 max-w-7xl mx-auto px-6 lg:px-12 pb-32">
+        <!-- Sticky visual -->
+        <div class="lg:w-1/2 lg:sticky lg:top-24 h-[60vh] lg:h-[80vh] flex items-center justify-center" id="journey-sticky">
+            <div class="relative w-full h-full flex items-center justify-center overflow-hidden rounded-[24px]">
+                <video src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/generated-videos/9109ecbb-cdc4-4815-981e-2ea83be13765/1779103173159-d119f402-29d2-4df4-a1cc-c560d67441c2.mp4" poster="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/15c69e03-3e71-496c-bc46-0ef7d5e83dc7_1600w.png" data-aura-generated-video="true" data-aura-video-preset="loop-in-view" muted playsinline preload="metadata" loop aria-label="Mars planet" class="absolute inset-0 w-full h-full object-cover"></video>
+                <div class="absolute inset-0 bg-gradient-to-b from-[#0f0f10]/30 via-transparent to-[#0f0f10]/60"></div>
+                <div class="absolute top-8 left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+                    <div>FASE</div>
+                    <div id="phase-num" class="font-display text-7xl lg:text-9xl text-[#C2A878] mt-2">01</div>
+                </div>
+                <div class="absolute bottom-8 right-8 text-right">
+                    <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50 mb-2">Estágio Atual</div>
+                    <div id="phase-title" class="font-display text-2xl lg:text-3xl">Pré-Voo</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scrolling phases -->
+        <div class="lg:w-1/2 space-y-32 lg:space-y-48 lg:pt-32" id="journey-phases">
+            <div class="journey-phase" data-num="01" data-title="Pré-Voo">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878] mb-4">T-Menos 14 Dias</div>
+                <h3 class="font-display text-4xl lg:text-5xl mb-4 tracking-tight">Quarentena e Condicionamento</h3>
+                <p class="text-sm text-white/60 leading-relaxed max-w-md">A equipe entra em isolamento selado. Exames médicos finais. Calibração de reflexos na centrífuga.</p>
+            </div>
+            <div class="journey-phase" data-num="02" data-title="Lançamento">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878] mb-4">Dia 0</div>
+                <h3 class="font-display text-4xl lg:text-5xl mb-4 tracking-tight">Ascensão à Órbita</h3>
+                <p class="text-sm text-white/60 leading-relaxed max-w-md">O estágio de propulsão entrega a nave ARES à órbita baixa da Terra em 11 minutos após a ignição.</p>
+            </div>
+            <div class="journey-phase" data-num="03" data-title="Transferência">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878] mb-4">Dia 3 → 90</div>
+                <h3 class="font-display text-4xl lg:text-5xl mb-4 tracking-tight">Cruzeiro Interplanetário</h3>
+                <p class="text-sm text-white/60 leading-relaxed max-w-md">Trajetória de propulsão contínua. A equipe se adapta a 0,4G simulado através do anel centrífugo.</p>
+            </div>
+            <div class="journey-phase" data-num="04" data-title="Aproximação">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878] mb-4">Dia 91</div>
+                <h3 class="font-display text-4xl lg:text-5xl mb-4 tracking-tight">Inserção Orbital em Marte</h3>
+                <p class="text-sm text-white/60 leading-relaxed max-w-md">Manobra de aerofrenagem. A equipe entra na órbita de estacionamento acima da zona de pouso de Valles Marineris.</p>
+            </div>
+            <div class="journey-phase" data-num="05" data-title="Descida">
+                <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-[#C2A878] mb-4">Dia 94</div>
+                <h3 class="font-display text-4xl lg:text-5xl mb-4 tracking-tight">Pouso na Superfície</h3>
+                <p class="text-sm text-white/60 leading-relaxed max-w-md">Retropropulsão supersônica guia o veículo de descida a menos de 30 metros da base pré-posicionada.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EFEITOS -->
+<div class="ds-wrapper" style="padding-top: 0; padding-bottom: 0;">
+    <div class="ds-container">
+        <div class="ds-header mt-10">
+            <div>
+                <div class="ds-title-sub">DS / 06</div>
+                <h2 class="ds-title">Efeitos</h2>
+            </div>
+        </div>
+        
+        <div class="space-y-16 mt-16">
+            <!-- Marca d'água Tipográfica -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Marca D'Água Tipográfica — Efeito ARES</h3>
+                <div class="bg-[#0f0f10] rounded-[24px] border border-white/5 overflow-hidden p-10 flex items-center justify-center relative min-h-[300px]">
+                    <!-- Nota: Retirado o mix-blend-overlay pois sobre o fundo #0f0f10 ele apagava o texto completamente (a cor multiplicava com o preto). O original também usa opacidade nativa. -->
+                    <div class="font-display text-[16vw] leading-none tracking-tight text-[#C2A878]/10 select-none">
+                        ARES
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gradient Blur -->
+            <div>
+                <h3 class="font-mono text-[#C2A878] uppercase tracking-[0.2em] mb-6 text-sm">Gradient Blur — navbar fade progressivo com backdrop-filter em camadas</h3>
+                <div class="bg-[#1a1a1c] rounded-[24px] border border-white/5 overflow-hidden relative h-[400px]">
+                    <!-- Background content to show blur -->
+                    <div class="absolute inset-0 p-8 text-white/20 text-xs font-mono space-y-4">
+                        <p>O Gradient Blur cria uma transição natural e suave entre o fundo da página e uma barra fixa (como navegação), sem uma linha dura de corte.</p>
+                        <p>Usando múltiplas camadas de backdrop-filter: blur() com opacidades ou máscaras gradientes progressivas, garantimos que o desfoque intensifique suavemente de baixo para cima.</p>
+                        <p>O conteúdo de trás desaparece gradativamente, criando o efeito característico de vidro jateado (frosted glass) super polido.</p>
+                    </div>
+                    
+                    <!-- The Gradient Blur Demo -->
+                    <div class="absolute top-0 left-0 right-0 h-[200px] z-30 pointer-events-none flex flex-col">
+                        <div class="absolute inset-0 z-0 h-[200px]" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);"></div>
+                        <div class="absolute inset-0 z-0 h-[150px]" style="backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);"></div>
+                        <div class="absolute inset-0 z-0 h-[100px]" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);"></div>
+                        <div class="absolute inset-0 z-0 h-[50px]" style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%); border-bottom: 1px solid rgba(255,255,255,0.05);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2, infinite: false });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // Custom Sliders Update
+        const setupSliders = () => {
+            const sliderRot = document.getElementById('slider-rot');
+            const valRot = document.getElementById('val-rot');
+            if (sliderRot && valRot) {
+                sliderRot.addEventListener('input', (e) => {
+                    const val = parseFloat(e.target.value);
+                    valRot.textContent = (0.2 + (val / 100) * 0.8).toFixed(1) + 'x';
+                });
+            }
+
+            const sliderDust = document.getElementById('slider-dust');
+            const valDust = document.getElementById('val-dust');
+            if (sliderDust && valDust) {
+                sliderDust.addEventListener('input', (e) => {
+                    const val = parseInt(e.target.value);
+                    let label = 'BAIXA';
+                    if (val > 33) label = 'MÉDIA';
+                    if (val > 66) label = 'ALTA';
+                    if (val > 90) label = 'CRÍTICA';
+                    valDust.textContent = label;
+                });
+            }
+        };
+
+        const splitWords = (el) => {
+            if (el.dataset.auraSplit === '1') return;
+            const nodes = Array.from(el.childNodes);
+            const frag = document.createDocumentFragment();
+            nodes.forEach(node => {
+                if (node.nodeType === 3) {
+                    const text = node.textContent;
+                    const parts = text.split(/(\s+)/);
+                    parts.forEach(p => {
+                        if (p.trim() === '') {
+                            frag.appendChild(document.createTextNode(p));
+                        } else {
+                            const span = document.createElement('span');
+                            span.className = 'aura-word';
+                            span.textContent = p;
+                            frag.appendChild(span);
+                        }
+                    });
+                } else {
+                    frag.appendChild(node);
+                }
+            });
+            el.innerHTML = '';
+            el.appendChild(frag);
+            el.dataset.auraSplit = '1';
+        };
+
+        const setupVideos = () => {
+            document.querySelectorAll('video[data-aura-generated-video]').forEach(v => {
+                const playFn = () => v.play().catch(()=>{});
+                ScrollTrigger.create({ trigger: v, start: "top bottom", end: "bottom top", onEnter: playFn, onEnterBack: playFn, onLeave: () => v.pause(), onLeaveBack: () => v.pause() });
+            });
+        };
+
+        const initAnimations = () => {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+                setTimeout(initAnimations, 100);
+                return;
+            }
+            gsap.registerPlugin(ScrollTrigger);
+            
+            document.querySelectorAll('.ds-title, .font-display').forEach(h => {
+                splitWords(h);
+                const words = h.querySelectorAll('.aura-word');
+                if (words.length) {
+                    gsap.to(words, { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06, scrollTrigger: { trigger: h, start: 'top 88%', once: true } });
+                }
+            });
+
+            document.querySelectorAll('p, li, .font-mono, button, a, .aura-fade-el').forEach(el => {
+                if (el.closest('nav') || el.dataset.auraFade === '1') return;
+                el.dataset.auraFade = '1';
+                el.classList.add('aura-fade-el');
+                gsap.to(el, { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
+            });
+
+            setupSliders();
+            setupVideos();
+
+            // Journey sticky phases
+            const phases = gsap.utils.toArray('.journey-phase');
+            phases.forEach(p => {
+                ScrollTrigger.create({
+                    trigger: p,
+                    start: 'top 60%',
+                    end: 'bottom 40%',
+                    onEnter: () => updatePhase(p),
+                    onEnterBack: () => updatePhase(p)
+                });
+                gsap.from(p, { scrollTrigger: {trigger: p, start: 'top 80%'}, y: 60, opacity: 0, duration: 1.2, ease: 'power3.out' });
+            });
+            function updatePhase(el){
+                const numEl = document.getElementById('phase-num');
+                const titleEl = document.getElementById('phase-title');
+                if (numEl && titleEl) {
+                    numEl.textContent = el.dataset.num;
+                    titleEl.textContent = el.dataset.title;
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', initAnimations);
+    })();
+</script>
+</body>
+</html>

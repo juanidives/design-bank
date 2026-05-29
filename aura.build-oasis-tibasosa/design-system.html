@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Oasis Tibasosa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#E3E1DC',
+                        dark: '#121212',
+                        accent: '#374336'
+                    },
+                    fontFamily: {
+                        display: ['Syncopate', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --c-bg: #E3E1DC;
+            --c-dark: #121212;
+            --c-accent: #374336;
+            --font-display: 'Syncopate', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-dark);
+            font-family: var(--font-body);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .display {
+            font-family: var(--font-display);
+        }
+
+        .wrapper {
+            position: relative;
+            z-index: 10;
+            background-color: var(--c-bg);
+            margin-bottom: 100vh;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+        }
+
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9000;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+        }
+
+        /* Preloader */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        .loader.hidden {
+            transform: translateY(-100%);
+        }
+
+        .loader-text {
+            font-family: var(--font-display);
+            font-size: 5vw;
+            font-weight: 700;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .loader-text.fade-out {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+
+        .loader-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #fff;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Text Reveal Utils */
+        .word-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            padding-bottom: 0.1em;
+        }
+
+        .word-inner {
+            display: inline-block;
+            transform: translateY(110%);
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .word-inner.revealed {
+            transform: translateY(0);
+        }
+
+        /* Stack Section */
+        .stack-section {
+            padding: 10vh 0;
+            background: var(--c-dark);
+            color: #E3E1DC;
+            position: relative;
+        }
+
+        .stack-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 10vh;
+        }
+
+        .card-item {
+            position: sticky;
+            top: 10vh;
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5vh;
+        }
+
+        .card-inner {
+            width: 90%;
+            height: 100%;
+            background: #1a1a1a;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            transform-origin: center top;
+            will-change: transform, opacity;
+        }
+
+        .card-content {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.5s ease;
+        }
+
+        .card-inner:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .card-inner { grid-template-columns: 1fr; }
+            .card-item { top: 5vh; height: 85vh; }
+            .card-img-wrap { height: 50%; order: -1; }
+            .card-content { padding: 2rem; }
+        }
+
+        /* Footer Reveal */
+        .footer-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            background: #111;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Final Section Animation */
+        @keyframes smoothEntrance {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes buttonFadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Adicionando estado inicial para componentes revelados no JS */
+        #app-content {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        #app-content.loaded {
+            opacity: 1;
+        }
+
+        .hero-text-line {
+            transform: translateY(100%);
+            transition: transform 1s ease-out;
+        }
+        .hero-text-line.revealed {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Preloader -->
+    <div class="loader" id="loader">
+        <div class="loader-text" id="loader-text">AURUM</div>
+        <div class="loader-bar" id="loader-bar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="app-content">
+        
+        <!-- Navbar -->
+        <nav class="fixed flex z-50 text-white mix-blend-difference w-full pt-8 pr-8 pb-8 pl-8 top-0 items-center justify-between pointer-events-none">
+            <div class="display text-xl font-bold tracking-tighter pointer-events-auto">OASIS</div>
+        </nav>
+
+        <div class="wrapper" id="wrapper">
+            
+            <!-- COMPONENT: HERO -->
+            <section class="h-screen relative flex items-center justify-center overflow-hidden w-full">
+                <img 
+                    id="hero-img"
+                    src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1e402578-4bd1-4d4c-b72a-1a12734e5249_1600w.png" 
+                    class="hero-img w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0 brightness-75" 
+                    alt="Hero" 
+                />
+                <div class="text-white text-center mix-blend-difference relative">
+                    <h1 class="display text-[12vw] leading-none overflow-hidden">
+                        <span class="hero-text-line block">OASIS</span>
+                    </h1>
+                    <h1 class="display text-[12vw] leading-none overflow-hidden">
+                        <span class="hero-text-line block delay-100">TIBASOSA</span>
+                    </h1>
+                </div>
+            </section>
+
+            <!-- DESIGN SYSTEM HEADER -->
+            <div class="pt-32 pb-16 px-10 max-w-[1400px] mx-auto border-b border-black/10">
+                <div class="text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em] opacity-60 mb-2">Design System</div>
+                <h1 class="display text-6xl mb-4">Oasis Tibasosa</h1>
+                <p class="text-xl font-light text-gray-600">Matéria-prima de alta fidelidade baseada em Parallax, Stacking Cards e Glass Interactions.</p>
+            </div>
+
+            <!-- DESIGN TOKENS -->
+            <section class="py-16 px-10 max-w-[1400px] mx-auto border-b border-black/10">
+                <h2 class="display text-3xl mb-12">1. Cores (Color Palette)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-6">Cores Base (Theme)</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#E3E1DC] border border-black/10 shadow-sm"></div><div><div class="font-bold">Bege Principal</div><div class="text-xs text-gray-500">#E3E1DC / var(--c-bg)</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#121212] shadow-sm"></div><div><div class="font-bold">Dark Escuro</div><div class="text-xs text-gray-500">#121212 / var(--c-dark)</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#374336] shadow-sm"></div><div><div class="font-bold">Verde Musgo Accent</div><div class="text-xs text-gray-500">#374336 / var(--c-accent)</div></div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-6">Superfícies (Surfaces)</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#1A1A1A] border border-white/10 shadow-sm"></div><div><div class="font-bold text-gray-800">Card Inner</div><div class="text-xs text-gray-500">#1A1A1A</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-[#111111] shadow-sm"></div><div><div class="font-bold text-gray-800">Footer Base</div><div class="text-xs text-gray-500">#111111</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-white border border-black/10 shadow-sm"></div><div><div class="font-bold text-gray-800">White (Overlay)</div><div class="text-xs text-gray-500">#FFFFFF</div></div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs uppercase tracking-widest text-gray-500 mb-6">Hovers Interativos</h3>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-orange-200 shadow-sm"></div><div><div class="font-bold">Orange 200</div><div class="text-xs text-gray-500">Tailwind: orange-200</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-sky-200 shadow-sm"></div><div><div class="font-bold">Sky 200</div><div class="text-xs text-gray-500">Tailwind: sky-200</div></div></div>
+                            <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-yellow-200 shadow-sm"></div><div><div class="font-bold">Yellow 200</div><div class="text-xs text-gray-500">Tailwind: yellow-200</div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="display text-3xl mb-12 mt-20">2. Tipografia (Typography)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+                    <div>
+                        <div class="border-l-4 border-black/20 pl-6 mb-8">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-2">Display (Syncopate)</div>
+                            <div class="display text-5xl mb-4">OASIS</div>
+                            <div class="text-sm font-light text-gray-500">Usada primariamente em títulos colossais da Hero e Cabeçalhos principais. Mix-blend-mode é aplicado ativamente nela.</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div><div class="display text-7xl text-gray-400">PROJETO</div><div class="text-[10px] text-gray-500 mt-2">Section Title (text-7xl)</div></div>
+                            <div><div class="display text-3xl">TÍTULO SEÇÃO</div><div class="text-[10px] text-gray-500 mt-2">Medium Header (text-3xl)</div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="border-l-4 border-black/20 pl-6 mb-8">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-2">Corpo (Manrope)</div>
+                            <div class="font-body text-3xl font-bold mb-4">A excelência no detalhe</div>
+                            <div class="text-sm font-light text-gray-500">Usada para títulos de cards, parágrafos densos e UI elements menores (labels, botões).</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div><div class="font-body text-xl font-bold text-gray-800">Card Heading</div><div class="text-[10px] text-gray-500 mt-2">Card Title (text-xl font-bold)</div></div>
+                            <div><div class="font-body text-sm font-light text-gray-600 leading-relaxed max-w-sm">Este é um exemplo de parágrafo descritivo. Desenhado para quem busca exclusividade e amplitude, com alto contraste e legibilidade.</div><div class="text-[10px] text-gray-500 mt-2">Paragraph (text-sm font-light leading-relaxed)</div></div>
+                            <div><div class="font-body text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em]">Micro Label</div><div class="text-[10px] text-gray-500 mt-2">Eyebrow / Label (text-[10px] uppercase tracking-[0.3em])</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="display text-3xl mb-12 mt-20">3. Ícones (Iconography)</h2>
+                <div class="flex gap-10 mb-16">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-16 h-16 border border-black/10 rounded-xl flex items-center justify-center bg-white shadow-sm"><i data-lucide="layout-grid" class="w-6 h-6 text-black"></i></div>
+                        <div class="text-[10px] uppercase text-gray-500 tracking-wider">layout-grid</div>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-16 h-16 border border-black/10 rounded-xl flex items-center justify-center bg-white shadow-sm"><i data-lucide="chevron-right" class="w-6 h-6 text-black"></i></div>
+                        <div class="text-[10px] uppercase text-gray-500 tracking-wider">chevron-right</div>
+                    </div>
+                </div>
+
+                <h2 class="display text-3xl mb-12 mt-20">4. Botões (UI Interfaces)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 bg-white p-12 border border-black/10 rounded-3xl">
+                    
+                    <!-- Botão 1: Link Interativo com Hover Magnético -->
+                    <div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-6">A. Ícone Magnético (Radial Hover)</div>
+                        <a href="#" class="inline-flex items-center gap-6 no-underline transition-all duration-500 group">
+                            <div class="relative flex items-center justify-center w-14 h-14 rounded-full border border-black/10 transition-all duration-700 group-hover:bg-[#121212] group-hover:border-[#121212] group-hover:rotate-[360deg] overflow-hidden">
+                                <i data-lucide="layout-grid" class="w-5 h-5 text-[#121212] transition-colors duration-700 group-hover:text-[#E3E1DC] z-10 relative"></i>
+                                <div class="transition-all duration-700 group-hover:scale-100 group-hover:opacity-100 bg-orange-200 opacity-0 rounded-full absolute inset-0 scale-150 z-0"></div>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em] opacity-60 mb-1">Informações</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="uppercase transition-all duration-500 group-hover:border-black group-hover:tracking-[0.2em] text-sm font-medium tracking-[0.15em] border-black/10 border-b pb-1">Brochura</span>
+                                    <i data-lucide="chevron-right" class="w-3 h-3 translate-y-[-2px] transition-transform duration-500 group-hover:translate-x-2"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Botão 2: CTA Solid Sweep -->
+                    <div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-6">B. CTA Solid (Sweep Y Mask)</div>
+                        <div role="button" tabindex="0" class="group inline-flex overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 hover:scale-[1.03] text-[#E3E1DC] bg-[#121212] pt-5 pr-12 pb-5 pl-12 relative shadow-[0_20px_40px_rgba(0,0,0,0.1)] items-center justify-center">
+                            <div class="origin-bottom transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-y-100 bg-[#ffffff] w-full h-full absolute top-0 right-0 bottom-0 left-0 scale-y-0"></div>
+                            <span class="flex items-center gap-4 uppercase transition-all duration-500 group-hover:text-black z-10 text-xs font-medium tracking-[0.2em] relative">
+                                Contate-nos
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Botão 3: Link Sublinhado -->
+                    <div class="bg-[#1a1a1a] p-8 rounded-xl">
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-6">C. Inline Card Link (Dark Mode)</div>
+                        <button class="uppercase text-[#E3E1DC] hover:text-white transition-colors cursor-pointer text-xs tracking-widest text-left w-max border-white/30 border-b pb-2">
+                            Ver Plantas
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <!-- COMPONENT: INTERACTIVE LINKS -->
+            <section class="md:px-20 grid md:grid-cols-2 max-w-[1800px] mr-auto ml-auto pt-32 pr-6 pb-32 pl-6 gap-x-16 gap-y-16">
+                <div>
+                    <!-- SplitText applied here via JS -->
+                    <div class="split-text display text-4xl md:text-5xl leading-tight">SEU OÁSIS PESSOAL</div>
+                </div>
+                
+                <a href="#" class="inline-flex items-center gap-6 no-underline transition-all duration-500 group">
+                    <div class="relative flex items-center justify-center w-14 h-14 rounded-full border border-black/10 transition-all duration-700 group-hover:bg-[#121212] group-hover:border-[#121212] group-hover:rotate-[360deg] overflow-hidden">
+                        <i data-lucide="layout-grid" class="w-5 h-5 text-[#121212] transition-colors duration-700 group-hover:text-[#E3E1DC] z-10 relative"></i>
+                        <div class="transition-all duration-700 group-hover:scale-100 group-hover:opacity-100 bg-orange-200 opacity-0 rounded-full absolute inset-0 scale-150 z-0"></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em] opacity-60 mb-1">Informações</span>
+                        <div class="flex items-center gap-2">
+                            <span class="uppercase transition-all duration-500 group-hover:border-black group-hover:tracking-[0.2em] text-sm font-medium tracking-[0.15em] border-black/10 border-b pb-1">Brochura</span>
+                            <i data-lucide="chevron-right" class="w-3 h-3 translate-y-[-2px] transition-transform duration-500 group-hover:translate-x-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="inline-flex items-center gap-6 no-underline transition-all duration-500 group">
+                    <div class="relative flex items-center justify-center w-14 h-14 rounded-full border border-black/10 transition-all duration-700 group-hover:bg-[#121212] group-hover:border-[#121212] group-hover:rotate-[360deg] overflow-hidden">
+                        <i data-lucide="layout-grid" class="w-5 h-5 text-[#121212] transition-colors duration-700 group-hover:text-[#E3E1DC] z-10 relative"></i>
+                        <div class="transition-all duration-700 group-hover:scale-100 group-hover:opacity-100 bg-sky-200 opacity-0 rounded-full absolute inset-0 scale-150 z-0"></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em] opacity-60 mb-1">vista interativa</span>
+                        <div class="flex items-center gap-2">
+                            <span class="uppercase transition-all duration-500 group-hover:border-black group-hover:tracking-[0.2em] text-sm font-medium tracking-[0.15em] border-black/10 border-b pb-1">Explorar Tour 3D</span>
+                            <i data-lucide="chevron-right" class="w-3 h-3 translate-y-[-2px] transition-transform duration-500 group-hover:translate-x-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="inline-flex items-center gap-6 no-underline transition-all duration-500 group">
+                    <div class="relative flex items-center justify-center w-14 h-14 rounded-full border border-black/10 transition-all duration-700 group-hover:bg-[#121212] group-hover:border-[#121212] group-hover:rotate-[360deg] overflow-hidden">
+                        <i data-lucide="layout-grid" class="w-5 h-5 text-[#121212] transition-colors duration-700 group-hover:text-[#E3E1DC] z-10 relative"></i>
+                        <div class="transition-all duration-700 group-hover:scale-100 group-hover:opacity-100 bg-yellow-200 opacity-0 rounded-full absolute inset-0 scale-150 z-0"></div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase font-semibold text-[#374336] tracking-[0.3em] opacity-60 mb-1">Agende uma visita</span>
+                        <div class="flex items-center gap-2">
+                            <span class="uppercase transition-all duration-500 group-hover:border-black group-hover:tracking-[0.2em] text-sm font-medium tracking-[0.15em] border-black/10 border-b pb-1">contate-nos</span>
+                            <i data-lucide="chevron-right" class="w-3 h-3 translate-y-[-2px] transition-transform duration-500 group-hover:translate-x-2"></i>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
+            <!-- COMPONENT: PROJECTS STACK -->
+            <section class="stack-section">
+                <div class="text-center mb-20 px-6">
+                    <h2 class="display md:text-7xl text-5xl">PROJETO</h2>
+                </div>
+                <div class="stack-container" id="stack-container">
+                    
+                    <!-- Card 1 -->
+                    <div class="card-item">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div>
+                                    <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">01</div>
+                                    <h3 class="text-3xl font-bold">OASIS TIBASOSA</h3>
+                                    <p class="uppercase text-sm tracking-widest opacity-70 mt-4">Entregas 2026-2027</p>
+                                </div>
+                                <div class="font-light text-gray-400">Projeto residencial na planta em Tibasosa, desenhado para quem busca exclusividade, acabamentos de luxo, amplitude e uma excelente oportunidade para viver ou investir.</div>
+                                <button class="uppercase hover:text-white transition-colors cursor-pointer text-xs tracking-widest text-left w-max border-white/30 border-b pb-2">contate-nos</button>
+                            </div>
+                            <div class="card-img-wrap">
+                                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ee8291f-7ae3-4d42-a3cd-5daf4c55cd01_1600w.png" class="card-img" alt="OASIS TIBASOSA" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="card-item">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div>
+                                    <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">02</div>
+                                    <h3 class="text-3xl font-bold">LOCALIZAÇÃO</h3>
+                                    <p class="uppercase text-sm tracking-widest opacity-70 mt-4">A apenas 5 minutos de Guátika</p>
+                                </div>
+                                <div class="font-light text-gray-400">Viva em uma zona com encanto, fácil acesso e excelente projeção, em um dos setores mais atrativos para aproveitar ou investir em Boyacá.</div>
+                                <button class="uppercase hover:text-white transition-colors cursor-pointer text-xs tracking-widest text-left w-max border-white/30 border-b pb-2">Ver localização</button>
+                            </div>
+                            <div class="card-img-wrap">
+                                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d80df894-ec92-4775-9434-f9d03bcca8bc_1600w.png" class="card-img" alt="LOCALIZAÇÃO" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card-item">
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <div>
+                                    <div class="text-5xl display mb-2 text-[var(--c-bg)] opacity-30">03</div>
+                                    <h3 class="text-3xl font-bold">SEU LAR</h3>
+                                    <p class="uppercase text-sm tracking-widest opacity-70 mt-4">Entrega com acabamentos completos</p>
+                                </div>
+                                <div class="font-light text-gray-400">Cada casa conta com 184 m² de área construída distribuída em 2 andares e um sótão; com 3 quartos, 4 banheiros, 1 vaga de garagem, acabamentos completos e personalizável segundo o gosto do comprador.</div>
+                                <button class="uppercase hover:text-white transition-colors cursor-pointer text-xs tracking-widest text-left w-max border-white/30 border-b pb-2">Ver plantas</button>
+                            </div>
+                            <div class="card-img-wrap">
+                                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/58aa6982-fe12-4ec2-ad7e-c7ad22f29b7d_1600w.png" class="card-img" alt="SEU LAR" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- COMPONENT: FINAL BANNER / BUTTON -->
+            <section class="flex flex-col cursor-pointer z-10 text-center bg-[#E3E1DC] pt-40 pb-40 relative items-center justify-center">
+                <h2 class="display md:text-5xl text-3xl mb-8" style="animation: smoothEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards">
+                    Faça parte de um projeto único
+                </h2>
+                <div class="leading-relaxed font-light text-gray-600 max-w-xl mb-12" style="animation: smoothEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards">
+                    Descubra cada detalhe do Oasis Tibasosa e receba atendimento personalizado para encontrar a casa ideal para você.
+                </div>
+                <div 
+                    role="button" 
+                    tabindex="0" 
+                    class="group inline-flex overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1 hover:scale-[1.03] text-[#E3E1DC] bg-[#121212] mt-6 pt-5 pr-12 pb-5 pl-12 relative shadow-[0_20px_40px_rgba(0,0,0,0.1)] items-center justify-center" 
+                    style="animation: buttonFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+                >
+                    <div class="origin-bottom transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-y-100 bg-[#ffffff] w-full h-full absolute top-0 right-0 bottom-0 left-0 scale-y-0"></div>
+                    <span class="flex items-center gap-4 uppercase transition-all duration-500 group-hover:text-black z-10 text-xs font-medium tracking-[0.2em] relative">
+                        contate-nos
+                    </span>
+                </div>
+            </section>
+
+        </div> 
+        <!-- END WRAPPER -->
+
+        <!-- FOOTER PREVIEW (STICKY) -->
+        <footer class="footer-sticky">
+            <div class="z-10 text-center relative" id="footer-content" style="transform: translateY(100px) scale(0.9); opacity: 0.5;">
+                <div class="uppercase text-xs text-gray-500 tracking-[0.3em] mb-4">invista no futuro</div>
+                <a href="#" class="display text-[8vw] leading-none hover:text-gray-400 transition-colors">VIVA OASIS</a>
+                <div class="flex gap-8 uppercase text-sm text-gray-400 tracking-widest mt-12 flex-wrap justify-center">
+                    <a href="#" class="hover:text-white">Instagram</a>
+                    <a href="#" class="hover:text-white">whatsapp</a>
+                    <a href="#" class="hover:text-white">email</a>
+                    <a href="#" class="hover:text-white">Brochura</a>
+                </div>
+                <div class="text-[10px] text-gray-300 mt-20">Designs sujeitos a alterações</div>
+            </div>
+            <img 
+                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a390cc5d-988e-43f3-a17e-a320383e6c07_3840w.png" 
+                class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" 
+                alt="Footer Background"
+            />
+        </footer>
+
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader Logic
+            const loader = document.getElementById('loader');
+            const loaderText = document.getElementById('loader-text');
+            const loaderBar = document.getElementById('loader-bar');
+            const appContent = document.getElementById('app-content');
+            const heroTextLines = document.querySelectorAll('.hero-text-line');
+
+            let currentProgress = 0;
+            const interval = setInterval(() => {
+                currentProgress += Math.random() * 15;
+                if (currentProgress >= 100) {
+                    currentProgress = 100;
+                    clearInterval(interval);
+                    setTimeout(() => { if(loaderText) loaderText.classList.add('fade-out'); }, 200);
+                    setTimeout(() => { if(loader) loader.classList.add('hidden'); }, 800);
+                    
+                    // Show app content and reveal Hero texts
+                    setTimeout(() => {
+                        if(appContent) appContent.classList.add('loaded');
+                        heroTextLines.forEach(line => line.classList.add('revealed'));
+                    }, 1800);
+                }
+                if(loaderBar) loaderBar.style.width = `${Math.min(currentProgress, 100)}%`;
+            }, 100);
+
+            // SplitText Logic
+            const splitTexts = document.querySelectorAll('.split-text');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const words = entry.target.querySelectorAll('.word-inner');
+                            words.forEach((word, i) => {
+                                word.classList.add('revealed');
+                                word.style.transitionDelay = `${i * 100}ms`;
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            splitTexts.forEach(el => {
+                const text = el.textContent.trim();
+                el.innerHTML = '';
+                text.split(' ').forEach((word) => {
+                    const wrap = document.createElement('span');
+                    wrap.className = 'word-wrap mr-[0.3em]';
+                    const inner = document.createElement('span');
+                    inner.className = 'word-inner';
+                    inner.innerHTML = word + '&nbsp;';
+                    wrap.appendChild(inner);
+                    el.appendChild(wrap);
+                });
+                observer.observe(el);
+            });
+
+            // Parallax & Stacking Cards Logic
+            const heroImg = document.getElementById('hero-img');
+            const cards = document.querySelectorAll('.card-item');
+            const footerContent = document.getElementById('footer-content');
+            const wrapper = document.getElementById('wrapper');
+
+            window.addEventListener('scroll', () => {
+                // Preloader guard: if not loaded, skip
+                if(!appContent.classList.contains('loaded')) return;
+
+                const scrollY = window.scrollY;
+
+                // 1. Hero Parallax
+                if (heroImg) {
+                    heroImg.style.transform = `translateY(${scrollY * 0.3}px)`;
+                }
+
+                // 2. Card Stack Effect
+                cards.forEach((card, i) => {
+                    const nextCard = cards[i + 1];
+                    const inner = card.querySelector('.card-inner');
+                    if (nextCard && inner) {
+                        const nextRect = nextCard.getBoundingClientRect();
+                        const startFade = window.innerHeight;
+                        const endFade = window.innerHeight * 0.1;
+
+                        let progress = 0;
+                        if (nextRect.top < startFade) {
+                            progress = 1 - (nextRect.top - endFade) / (startFade - endFade);
+                            progress = Math.max(0, Math.min(1, progress));
+                        }
+
+                        const scale = 1 - progress * 0.1;
+                        const opacity = 1 - progress * 0.6;
+                        inner.style.transform = `scale(${scale})`;
+                        inner.style.opacity = opacity;
+                    }
+                });
+
+                // 3. Footer Parallax
+                if (footerContent && wrapper) {
+                    const wrapperBottom = wrapper.getBoundingClientRect().bottom;
+                    const windowHeight = window.innerHeight;
+
+                    if (wrapperBottom <= windowHeight) {
+                        const revealAmount = windowHeight - wrapperBottom;
+                        const progress = revealAmount / windowHeight;
+
+                        const y = 100 * (1 - progress);
+                        const opacity = 0.5 + 0.5 * progress;
+                        const scale = 0.9 + 0.1 * progress;
+
+                        footerContent.style.transform = `translateY(${y}px) scale(${scale})`;
+                        footerContent.style.opacity = opacity;
+                    } else {
+                        footerContent.style.transform = `translateY(100px) scale(0.9)`;
+                        footerContent.style.opacity = 0.5;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
