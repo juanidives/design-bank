@@ -21,15 +21,17 @@ Leia o HTML inteiro antes de qualquer ação. Procure CSS em todos os lugares:
 - Arquivos externos linkados via `<link>`
 
 Monte internamente estas listas:
-1. **Cores** — todo hex, rgba, hsl, gradiente encontrado
+1. **Estrutura da Hero** — layout exato, colunas, elementos flutuantes, badges, botões
 2. **Tipografia** — todas as font-family, tamanhos, pesos, line-heights
-3. **Animações** — todo `@keyframes`, `animation`, `transition` com valores exatos
-4. **Componentes JS** — cursor custom, carousel, tabs, parallax, Three.js, GSAP, stack cards
-5. **Efeitos especiais** — glass panels, glow, blobs, noise overlay, gradient-blur, dot-grid, border-spin
-6. **Estrutura da Hero** — layout exato, colunas, elementos flutuantes, badges, botões
+3. **Cores** — todo hex, rgba, hsl, gradiente encontrado
+4. **Animações** — todo `@keyframes`, `animation`, `transition` com valores exatos
+5. **Componentes JS** — cursor custom, carousel, tabs, parallax, Three.js, GSAP, stack cards
+6. **Efeitos especiais** — glass panels, glow, blobs, noise overlay, gradient-blur, dot-grid, border-spin
+
 
 **Após a leitura, confirme ao usuário:**
-"Li o HTML completo. Encontrei: [X cores] / [X fontes] / [lista de animações] / [lista de componentes JS] / [descrição da Hero em 2 linhas]. Posso prosseguir?"
+"Li o HTML completo. Encontrei: [descrição da Hero em 2 linhas] / [X fontes] / [X cores] / [lista de animações] / [lista de componentes JS] / [lista de efeitos especiais]. 
+Posso prosseguir?"
 
 **Espere confirmação antes de escrever qualquer arquivo.**
 
