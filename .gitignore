@@ -9,3 +9,6 @@
 *.zip
 *.tar
 *.gz
+# Google Drive viewer assets
+*_view.html
+*_7MvXZ.html
